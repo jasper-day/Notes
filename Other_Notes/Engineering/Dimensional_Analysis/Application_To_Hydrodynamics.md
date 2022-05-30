@@ -1,0 +1,45 @@
+---
+title: Dimensional Analysis with Linear Algebra
+author: Jasper Day
+colorlinks: true
+header-includes:
+- \usepackage{kmath,kerkis}
+---
+
+Hydrodynamics is fully defined by these factors:
+
+Mass density $\rho$, speed $\nu$, pressure $p$, viscosity $\mu$, and the acceleration due to gravity $g$.
+
+Take for example the capillary effect:
+
+| Symbol | Description | Base Dimensions |
+|---|---|---|
+| $h$ | Distance water is drawn into the tube | $L$ |
+| $d$ | Diameter of the tube | $L$ |
+| $\sigma$ | Surface tension of the water | $MT^{-2}$ |
+| $\rho$ | Mass density of water | $ML^{-3}$ |
+| $g$ | Acceleration due to gravity | $LT^{-2}$ |
+
+$h$ is some function of the other three quantities:
+
+$$
+h = f\left( d, \sigma, \rho, g \right)
+$$
+
+Then 
+
+$$
+\textbf{A} = \begin{bmatrix}
+    1 & 0 & -3 & 1 \\
+    0 & 1 & 1 & 0 \\
+    0 & -2 & 0 & -2 \\
+\end{bmatrix}
+$$
+
+The null space of $\textbf{A}$ is linear combinations of the vector $\left(-2, 1, -1, 1\right)$
+
+Therefore 
+
+$$
+h = d \cdot g\left(\frac{\sigma g}{d^{2}p}\right)
+$$
