@@ -19,7 +19,7 @@ The following assumptions must hold:
 $$
 u = f\left(x_{1}, x_{2}, x_{3}, \ldots, x_{n}\right)
 $$ 
-\t is dimensionally homogeneous.
+is dimensionally homogeneous.
 
 2. The quantities $\{u, x_{1}, x_{2}, x_{3}, \ldots, x_{n}\}$ are measured in terms of $\text{m}$ fundamental dimensions $\{ L_{1}, L_{2}, L_{3}, \ldots, L_{n} \}$
 
@@ -52,7 +52,7 @@ $$
 k + 1 = n + 1 - \texttt{rank}\left(A\right)
 $$
 
-\t (The reason for k + 1 is that we pull out the original quantity $u$ from the matrix $\textbf{A}$. Otherwise this term would not appear.)
+(The reason for k + 1 is that we pull out the original quantity $u$ from the matrix $\textbf{A}$. Otherwise this term would not appear.)
 
 3. Since $\textbf{A}$ has $\texttt{rank}\left(A\right) = n - k$, there are $k$ linearly independent solutions of $\textbf{Az} = \textbf{0}$ denoted as $z^{1}, z^{2}, \ldots, z^{k}$.
 
@@ -65,3 +65,23 @@ $$
 Then the relation $u = f\left(x_{1}, x_{2}, \ldots, x_{n} \right)$ simplifies to $g\left(\Pi_{1}, \Pi_{2}, \ldots, \Pi_{k} \right)$.
 
 There is one $\Pi$ group for each linearly indepenent set of $\textbf{Az} = \textbf{0}$, plus one $\Pi$ group for $u$. The parameters in each pi group are raised to the respective row of $z\prime$.
+
+# Why it Works:
+
+Recall that the nullspace of a matrix $\textbf{A}$ is the space of all vectors $\textbf{z}$ for which $\textbf{Az} = \textbf{0}$. The multiplication $\textbf{Az}$ is a linear combinations of the columns of $\textbf{A}$:
+
+$$
+\textbf{Az} = \left[
+    z_{1}\textbf{P}_{1} | z_{2}\textbf{P}_{2} | \ldots | z_{n}\textbf{P}_{n}
+\right]
+$$
+
+This linear combination of the columns of $\textbf{A}$ is the same thing that you get when you raise each of the parameters $x_{n}$ to the respective element of $\textbf{z}$:
+
+$$
+\left[x_{i}^{z_{i}}\right] = \left[W\right]^{z_{i}} =
+    \left(L_{1}^{p_{1}} \cdot L_{2}^{p_{2}} \cdot \ldots \cdot L_{m}^{p_{m}}\right)^{z_{i}} =
+    L_{1}^{p_{1}z_{i}} \cdot L_{2}^{p_{2}z_{i}} \cdot \ldots \cdot L_{m}^{p_{m}z_{i}}
+$$
+
+Which corresponds to column $i$ of $\textbf{Az}$. Finally, since $\textbf{z}$ is in the nullspace of $\textbf{A}$, the sum of the powers on each of the base units $L$ will be 0, resulting in an overall dimensionless quantity.
