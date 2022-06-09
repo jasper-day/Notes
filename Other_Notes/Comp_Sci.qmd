@@ -1,0 +1,6 @@
+---
+title: Computer Science
+listing:
+  contents: Comp_Sci/*.qmd
+---
+

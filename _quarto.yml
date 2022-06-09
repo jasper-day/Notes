@@ -1,0 +1,35 @@
+project:
+  type: website
+  title: "Class Notes"
+
+website:
+  title: "Class Notes"
+  navbar:
+    pinned: false
+    search: true
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - href: /Class_Notes.qmd
+        text: Class Notes
+      - href: Other_Notes.qmd
+        text: Other Notes
+
+
+number-sections: true
+freeze: auto
+
+format:
+  html:
+    favicon: favicon_io/favicon.ico
+    lang: en
+    theme:
+      - custom.scss
+    # css: styles.css
+    toc: true
+    html-math-method: katex
+    reference-location: margin
+    smooth-scroll: true
+    cap-location: margin
+    code-fold: true

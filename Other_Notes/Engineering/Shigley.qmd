@@ -1,0 +1,6 @@
+---
+title: Shigley
+subtitle: Series in Mechanical Engineering
+listing:
+  contents: Shigley/*
+---

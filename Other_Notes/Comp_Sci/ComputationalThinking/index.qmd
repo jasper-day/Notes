@@ -1,0 +1,13 @@
+---
+title: "Introduction to Computational Thinking"
+author: "Jasper Day"
+date: "6/6/2022"
+number-sections: false
+---
+
+# About
+
+These are my course notes for MIT 18.S191, introduction to Computational Thinking using Julia.
+
+## [Class Notes](classes.qmd)
+

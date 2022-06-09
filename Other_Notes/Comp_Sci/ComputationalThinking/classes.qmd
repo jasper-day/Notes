@@ -1,0 +1,13 @@
+---
+title: "Listing of classes"
+listing:
+    type: table
+    contents: Classes/*.qmd
+---
+
+ # About
+
+These are my course notes for [MIT 18.S191](https://computationalthinking.mit.edu/Fall20/), introduction to Computational Thinking using Julia.
+
+
+

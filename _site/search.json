@@ -1,0 +1,226 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "Class_Notes.html",
+    "href": "Class_Notes.html",
+    "title": "Class Notes",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MarkdownMaster",
+    "section": "",
+    "text": "These are the collected notes I’ve taken for my various classes and projects."
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Convolutions.html",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Convolutions.html",
+    "title": "Convolutions",
+    "section": "",
+    "text": "2 The Convolution Function\nWe need a convolution function. That\n\n\n3 Edge detection\nTo do edge detection, use a kernel that subtracts the top half from the bottom half, or vice versa.\n\n\nCode\n@show horEdgeKern = Kernel.sobel()[1];\n@show vertEdgeKern = Kernel.sobel()[2];\n\n\nhorEdgeKern = (Kernel.sobel())[1] = [-0.125 -0.25 -0.125; 0.0 0.0 0.0; 0.125 0.25 0.125]\nvertEdgeKern = (Kernel.sobel())[2] = [-0.125 0.0 0.125; -0.25 0.0 0.25; -0.125 0.0 0.125]\n\n\nThe horizontal edge detection kernel looks like this:\n\nK = \\begin{bmatrix}\n    -0.125 & 0.0 & 0.125 \\\\\n    -0.25 & 0.0 & 0.25 \\\\\n    -0.125 & 0.0 & 0.125 \\\\\n\\end{bmatrix}\n\nAnd the vertical edge detection kernel is the transpose of the horizontal.\nWhen you get values that change above and below the center of the kernel, the edge detection kernels return either a positive or a negative number.\nA convolutional neural network uses a machine to learn which kernel it should use to get the desired output.\nIn the mathematical context, you generally rotate the convolutional kernel 180° before you apply it.\n\n\n4 Polynomial Multiplication\nConsider:\n\n\\left( k_0 + k_1x + k_2x^2\\right)\\left(a_0 + a_1x + a_2x^2 + a_3x^3 + a_4x^4 \\cdots \\right)\n\nThe constant for the x^3 term in this expression is\n\nk_2a_1 + k_1a_2 + k_0a_3\n\\tag{2}\nThe total multiplication is:\n\n\\begin{split}\n(k_0a_0)x^0 &+\\\\\n(k_1a_0 + k_0a_1)x^1 &+\\\\\n(k_2a_0 + k_1a_1 + k_0a_2)x^2 &+\\\\\n(k_2a_1 + k_1a_2 + k_0a_3)x^3 &+\\\\\n(k_2a_2 + k_1a_3 + k_0a_4)x^4 &+\\\\\n(k_2a_3 + k_1a_4 + k_0a_5)x^5 &+\\\\\n&\\vdots \\end{split}\n\\tag{3}\nYou could describe the polynomial multiplication in Equation 3 as a convolution between the terms of \\left( k_0 + k_1x + k_2x^2\\right) and \\left(a_0 + a_1x + a_2x^2 + a_3x^3 + a_4x^4 \\cdots \\right)! But in order for that to work, you first have to rotate the k polynomial by 180 degrees, so that k_2x^2 comes first and k_0 comes last.\nThis becomes a convention.\nPixel data isn’t actually stored as a multiple of powers of x, but it is common to see pixel data as a fourier transform, in which case you would be multiplying the kernel by\n\n\\left(\n    a_0\n    + a_1\\left(e^{2\\pi i f}\\right)\n    + a_2\\left(e^{2\\pi i f}\\right)^2\n    + a_3\\left(e^{2\\pi i f}\\right)^3\n    + a_4\\left(e^{2\\pi i f}\\right)^4\n    + \\cdots\n\\right)\n\\tag{4}\n\nRemark. Note about fourier transforms: They’re very analogous to power series, in that we’re multiplying by something we have successive powers of. When we multiply two fourier series, the result corresponds to convolving the original terms of the series.\n\nSo we can take the fourier transforms of our image and our kernel, multiply them together, and detransform. The multiplication of the two fourier transforms is equivalent to convolving by the (rotated) kernel.\n\n\n5 Takeaways\n\nA simple tool that seems specific (taking the moving averages of the pixel values in an image) can be split into the general idea (in this case convolution), which opens up a lot more room to play.\n\nBlurring, sharpening, edge detecting\n\nRepresenting the same data, or the same operations, different ways in different domains can allow you to solve problems much faster."
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Code\nusing Images\n\n\n\n\n\n\nCode\nrandom_vect = rand(10)\n\n\n10-element Vector{Float64}:\n 0.9827024725034592\n 0.23351703378467137\n 0.566013192204552\n 0.5033260361871896\n 0.29450854009628125\n 0.4391106920029324\n 0.9449099759555715\n 0.3454579621531365\n 0.8143944219882098\n 0.6890101286912893\n\n\n\n\n\n\nMake a function mean using a for loop, which computes the mean of a vector\n\n\n\nCode\nfunction mean(x)\n    sumph = 0\n    for i in x\n        sumph += i\n    end\n    sumph /= length(x)\n    return sumph\nend\n\n\nmean (generic function with 1 method)\n\n\nTesting our function:\n\n\nCode\n@show mean([1,2,3]);\n\n\nmean([1, 2, 3]) = 2.0\n\n\n\nDefine m to be the mean of random_vect:\n\n\n\nCode\nm = mean(random_vect)\n\n\n0.5812950455567293\n\n\n\nA new function demean takes a vector x and subtracts the mean from each value in x.\n\n\n\nCode\nfunction demean(x)\n    return copy(x) .- mean(x)\nend\n\n\ndemean (generic function with 1 method)\n\n\nThe mean of demean(random_vect) should therefore be 0:\n\n\nCode\nmean(demean(random_vect))\n\n\n1.1102230246251566e-17\n\n\nThe answer is just about machine \\epsilon, which is nice.\n\n\n\n\nGenerate a vector of 100 zeros. Change the center 20 to 1.\n\n\n\nCode\nfunction create_bar()\n    barvec = zeros(100)\n    barvec[40:60] .= 1\n    return barvec\nend\n\n\ncreate_bar (generic function with 1 method)\n\n\n\n\n\n\nWrite a function that turns a Vector of Vectors into a matrix:\n\n\n\nCode\nfunction vecvec_to_matrix(vecvec)\n    tempmat = Matrix{typeof(vecvec[1][1])}(undef, length(vecvec), length(vecvec[1]))\n    for i in 1:length(vecvec)\n        tempmat[:,i] = vecvec[i]\n    end\n    return tempmat\nend\n\n\nvecvec_to_matrix (generic function with 1 method)\n\n\nAnd the reverse:\n\n\nCode\nfunction matrix_to_vecvec(matrix)\n    newVec = Vector{Vector{typeof(matrix[1])}}(undef, size(matrix)[2])\n    for i in 1:size(matrix)[2]\n        newVec[i] = matrix[:,i]\n    end\n    return newVec\nend\n\n\nmatrix_to_vecvec (generic function with 1 method)\n\n\nTesting:\n\n\nCode\n@show vecvec_to_matrix([[6 7], [8 9]]);\n@show matrix_to_vecvec([6 7; 8 9]);\n\n\nvecvec_to_matrix([[6 7], [8 9]]) = [6 8; 7 9]\n\n\nmatrix_to_vecvec([6 7; 8 9]) = [[6, 8], [7, 9]]\n\n\nThis is the best solution I could find to keep the types consistent. It feels a bit awkward to have to explicitly declare the types, but that’s fine. It’s also going to be faster than using a mutating function like push! or append!, since we give the vectors a full size when we create them, so no memory reallocation ever has to occur.\nAnyway…\n\n\n\n\n\nCode\n# Definitions from homework notebook\ncolored_line(x::Vector{<:Real}) = Gray.(Float64.((hcat(x)')))\ncolored_line(x::Any) = nothing\nexample_vector = [0.5, 0.4, 0.3, 0.2, 0.1, 0.0, 0.7, 0.0, 0.7, 0.9]\ndisplay(colored_line(example_vector));\n\n\n\n\n\n\n\nCode\ndisplay(colored_line(random_vect))\n\n\n\n\n\n\n\nCode\ndisplay(colored_line(create_bar()))"
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#mean-colors",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#mean-colors",
+    "title": "Homework 1",
+    "section": "2.1 Mean Colors",
+    "text": "2.1 Mean Colors\n\nWrite a function mean_colors that accepts an object called image. It should calculate the mean (average) amounts of red, green and blue in the image and return a tuple (r, g, b) of those means.\n\n\n\nCode\nfunction mean_colors(image)\n    avgrgb = sum(philip_file) ./ length(philip_file)\n    # Honestly you could stop here. Not sure why this all needs to be a whole function.\n    return (avgrgb.r, avgrgb.b, avgrgb.b)\nend\n\n\nmean_colors (generic function with 1 method)"
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#quantizing-numbers",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#quantizing-numbers",
+    "title": "Homework 1",
+    "section": "2.2 Quantizing numbers",
+    "text": "2.2 Quantizing numbers\n\nLook up the documentation on the floor function. Use it to write a function quantize(x::Number) that takes in a value x (which you can assume is between 0 and 1) and “quantizes” it into bins of width 0.1. For example, check that 0.267 gets mapped to 0.2.\n\n\n\nCode\nquantize(x::Number) = floor(10x)/10\n@show quantize(0.267)\n@show quantize(0.91)\n\n\nquantize(0.267) = 0.2\nquantize(0.91) = 0.9\n\n\n0.9"
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#a-second-method",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#a-second-method",
+    "title": "Homework 1",
+    "section": "2.3 A second method:",
+    "text": "2.3 A second method:\n\nWrite the second method of the function quantize, i.e. a new version of the function with the same name. This method will accept a color object called color, of the type AbstractRGB.\n\nThe method you write should return a new RGB object, in which each component (r, g and b) are quantized.\n\n\nCode\nquantize(x::AbstractRGB) = RGB(quantize(x.r), quantize(x.g), quantize(x.b))\n\n\nquantize (generic function with 2 methods)"
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#a-third-method",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#a-third-method",
+    "title": "Homework 1",
+    "section": "2.4 A third method:",
+    "text": "2.4 A third method:\n\nWrite a method quantize(image::AbstractMatrix) that quantizes an image by quantizing each pixel in the image. (You may assume that the matrix is a matrix of color objects.)\n\n\n\nCode\nquantize(image::AbstractMatrix) = quantize.(image)\ndisplay(quantize(philip_file))\n\n\n\n\n\nIt surprisingly looks prety good, despite having half the color bandwidth of the original photo. With 10 buckets, though, you can definitely see some artefacting on the walls.\nLet’s try larger buckets:\n\n\nCode\nquantize(x::Number, buckets::Integer) = floor(buckets*x)/buckets\nquantize(x::AbstractRGB, buckets::Integer) = RGB(quantize(x.r, buckets), quantize(x.g, buckets), quantize(x.b, buckets))\nquantize(image::AbstractMatrix, buckets::Integer) = quantize.(image, buckets)\n\n\nquantize (generic function with 6 methods)\n\n\nHere’s Philip with 5 buckets:\n\n\nCode\ndisplay(quantize(philip_file, 5))\n\n\n\n\n\nPretty exciting. I like the obvious lines in the shadow.\n2 buckets:\n\n\nCode\ndisplay(quantize(philip_file, 2))\n\n\n\n\n\nMost of the picture is taken up by the rather bland RGB(0.5,0.5,0.5). I liked 5 buckets better, I think."
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#color-inversion",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#color-inversion",
+    "title": "Homework 1",
+    "section": "2.5 Color inversion",
+    "text": "2.5 Color inversion\n\nWrite a function invert that inverts a color, i.e. sends (r, g, b) to (1 - r, 1-g, 1-b).\n\n\n\nCode\ninvert(x::AbstractRGB) = RGB(1-x.r, 1-x.g, 1-x.b)\n\n\ninvert (generic function with 1 method)\n\n\nJeez man.\nPlaying around with color inversion:\n\n\nCode\nblack = RGB(0.0,0.0,0.0)\ninvert(black)\n\n\n\n\n\nIt’s white.\n\n\nCode\ninvert.(philip_file)\n\n\n\n\n\nHe looks rather ectoplasmic. The shadow in the background now reveals its secrets: it’s floorboards all the way back!"
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#noisify",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#noisify",
+    "title": "Homework 1",
+    "section": "2.6 Noisify",
+    "text": "2.6 Noisify\n\nWrite a function noisify(x::Number, s) to add randomness of intensity s to a value x, i.e. to add a random value between -s and +s to x. If the result falls outside the range (0, 1) you should “clamp” it to that range. (Note that Julia has a clamp function, but you should write your own function myclamp(x).)\n\n\n\nCode\nusing Distributions\n\n\nWARNING: using Distributions.mean in module Main conflicts with an existing identifier.\n\n\n\n\nCode\nmyclamp(x::Number) = x>1 ? 1 : (x<0 ? 0 : x)\nnoisifyp(x::Number, s) = myclamp(x + 2s*(rand()-0.5))\n# That ^ works but I don't like it.\nnoisify(x::Number, s) = myclamp(x + rand(Uniform(-s,s)))\n# I like that a little more but it may actually be slower.\nnoisifyp(x::AbstractRGB, s) = RGB(noisifyp(x.r, s), noisifyp(x.g, s), noisifyp(x.b, s))\nnoisify(x::AbstractRGB, s) = RGB(noisify(x.r, s), noisify(x.g, s), noisify(x.b, s))\nnoisifyp(x::AbstractMatrix, s) = noisifyp.(x, s)\nnoisify(x::AbstractMatrix, s) = noisify.(x, s);\n\n\nInterestingly, the story of the two different noisifies appears to be a story of making a solution worse in an attempt to make it more elegant. It’s much worse, apparently, to take a random number from a uniform distribution across the desired range than to simply multiply rand() to change it into the desired range. Probably this is because the rand(Uniform(-s, s)) calls two different functions, and who knows how optimized the function for the uniform distribution is. rand(), on the other hand, can be super optimized, so the multiplication and subtraction doesn’t add too much cost.\nI found that noisifyp on the picture of Philip, with a noise level of 1, tended to run in 4 seconds or less, even with 8% compilation time. The best I could get out of noisify was 4.3 seconds, with upper bounds closer to 5 seconds. Sometimes the clunkier solution is actually faster.\nThe image is still (barely) recognizable with a noise level of 10:\n\n\nCode\nnoisifyp(philip_file, 10)\n\n\n\n\n\nIt becomes completely unrecognizable at a noise level of 20, though.\n\n\nCode\nnoisifyp(philip_file, 20)\n\n\n\n\n\nAlthough you can still just barely make out where the eyes are supposed to be, at least if you already knew it.\nBy the way, here is Grant’s (much better) definition of decimate (see mine here):\n\n\nCode\ndecimate(image, ratio=5) = image[1:ratio:end, 1:ratio:end]\n\n\ndecimate (generic function with 2 methods)"
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#boundary-conditions",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#boundary-conditions",
+    "title": "Homework 1",
+    "section": "3.1 Boundary conditions",
+    "text": "3.1 Boundary conditions\n\nWe need to decide how to handle the boundary conditions, i.e. what happens if we try to access a position in the vector v beyond 1:n. The simplest solution is to assume that v_{i} is 0 outside the original vector; however, this may lead to strange boundary effects.\n\n\nA better solution is to use the closest value that is inside the vector. Effectively we are extending the vector and copying the extreme values into the extended positions. (Indeed, this is one way we could implement this; these extra positions are called ghost cells.)\n\n\nWrite a function extend(v, i) that checks whether the position i is inside 1:n. If so, return the ith component of v; otherwise, return the nearest end value.\n\n\n\nCode\nextend(v, i) = i in 1:length(v) ? v[i] : (i < 1 ? first(v) : last(v))\n\n\nextend (generic function with 1 method)"
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#d-blur",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#d-blur",
+    "title": "Homework 1",
+    "section": "3.2 1D blur",
+    "text": "3.2 1D blur\n\nWrite a function blur_1D(v, l) that blurs a vector v with a window of length l by averaging the elements within a window from -\\ell to \\ell. This is called a box blur.\n\n\n\nCode\nblur_1D(v,l) = [sum([extend(v,j + i) for j in -l:l]) / (2l + 1) for i in 1:length(v)]\n# Look how sexy. One line. No silly functions like \"copy.\" I liiiike it. Even though all it can do is the box average :)\n\n\nblur_1D (generic function with 1 method)\n\n\nIn \\text{\\LaTeX}, that line of code translates to:\n\nv'_i = \\frac{\\sum_{j = -\\ell}^{\\ell}v_{j+i}}{2\\ell+1}\n\nNot sure if that makes it any clearer.\n\n\nCode\ncolored_line(example_vector)\n\n\n\n\n\n\n\nCode\ncolored_line(blur_1D(example_vector, 2))\n\n\n\n\n\nYou can tell that the dark spots still exist under the box blur, but there’s no purely black spots left. Generally the gradient is softer across the vector."
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#different-size-box_blurs",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#different-size-box_blurs",
+    "title": "Homework 1",
+    "section": "3.3 Different size box_blurs",
+    "text": "3.3 Different size box_blurs\nNo interactive controls here. Just a couple of well-chosen examples.\n\n\nCode\nl_box = 0\ncolored_line(blur_1D(v,l_box))\n\n\n\n\n\n\n\nCode\nl_box = 2\ncolored_line(blur_1D(v,l_box))\n\n\n\n\n\n\n\nCode\nl_box = 4\ncolored_line(blur_1D(v,l_box))\n\n\n\n\n\n\n\nCode\nl_box = 10\ncolored_line(blur_1D(v,l_box))\n\n\n\n\n\nBy 10, the whole vector is basically just gray."
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#general-1d-convolutions",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#general-1d-convolutions",
+    "title": "Homework 1",
+    "section": "3.4 General 1D Convolutions",
+    "text": "3.4 General 1D Convolutions\n\nThe box blur is a simple example of a convolution, i.e. a linear function of a window around each point, given by\n\n\nv'_{i} = \\sum_{n}\\,v_{i - n}\\,k_{n}\n\n\nwhere k is a vector called a kernel.\nAgain, we need to take care about what happens if v_{i -n } falls off the end of the vector.\nWrite a function convolve_vector(v, k) that performs this convolution. You need to think of the vector k as being centred on the position i. So n in the above formula runs between -\\ell and \\ell, where 2\\ell + 1 is the length of the vector k. You will need to do the necessary manipulation of indices.\n\n\n\nCode\nconvolve_vector(v,k) = [sum([extend(v,i-(n-1 - length(k)÷2)) * k[n] # assume k is not an offset matrix\n        for n in 1:length(k)])\n    for i in 1:length(v)]\n\n\nconvolve_vector (generic function with 1 method)\n\n\nAlso neatly fits into (almost) one line. I like Julia more and more the more I use it. Although my obsession with single-line functions is somewhat to the detriment of the readability of my code.\n\n\nCode\ntest_convolution = let\n    v = [1, 10, 100, 1000, 10000]\n    k = [2, 1, 0, 1, 3]\n    convolve_vector(v, k)\nend\n\n\n5-element Vector{Int64}:\n   214\n  2104\n 21013\n 30130\n 31300\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhen using \\sum_{n}\\,v_{i - n}\\,k_{n}, the kernel is basically flipped 180°. You can avoid this behavior by using \\sum_{n}\\,v_{i + n}\\,k_{n}, but you shouldn’t."
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#gaussian-kernel",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#gaussian-kernel",
+    "title": "Homework 1",
+    "section": "3.5 Gaussian kernel",
+    "text": "3.5 Gaussian kernel\nThe definition of a Gaussian kernel in 1D is:\n\nG(x) = \\frac{1}{\\sqrt{2\\pi \\sigma^2}} \\exp\\left({\\frac{-x^2}{2\\sigma^2}}\\right)\n\n\nWe need to sample (evaluate) this at each pixel in a rigion of size n^2, and then normalize so that the sum of the resulting kernel is 1.\n\n\n\n\n\n\n\nNote\n\n\n\nRather than taking \\sigma=1 for simplicity, I chose to allow any value of \\sigma.\nAlso, there seems to be a typo in the instructions. We should be evaluating over 2n+1, not n^2.\n\n\n\n\nCode\nnormalize(v) = [v[i] / sum(v) for i in 1:length(v)]\n\nfunction gaussian_kernel(n::Integer, σ=1)\n    G(x) = 1/√(2π*σ^2) * exp(-x^2/(2σ^2))\n    new_vec = zeros(n)\n    [new_vec[i] = G(i-1 - n÷2) for i in 1:n]\n    return normalize(new_vec)\nend\n\n\ngaussian_kernel (generic function with 2 methods)\n\n\nSeems to work. 🤞\n\n\nCode\ngaussian_kernel_size_1D = 5\n\ntest_gauss_1D_a = let\n    v = rand(20)\n    k = gaussian_kernel(gaussian_kernel_size_1D)\n    \n    if k !== missing\n        convolve_vector(v, k)\n    end\nend\n\n\n20-element Vector{Float64}:\n 0.6128542497065008\n 0.5186034430596811\n 0.5372194280082668\n 0.4713691462679216\n 0.35370291693454403\n 0.3532706050294181\n 0.5461461212015242\n 0.6872961055423357\n 0.6528729325348471\n 0.5959611796394492\n 0.6430531892648421\n 0.6320452254327004\n 0.512943091287473\n 0.42294081010027856\n 0.47313256349785776\n 0.5610035386788762\n 0.5626955062503793\n 0.64101717209861\n 0.792577764458673\n 0.8449002553443036\n\n\nYou can get some very pretty gradients by increasing the standard deviation of the gaussian kernel. For example:\n\n\nCode\nnice_gradient = let\n    v = rand(20)\n    k = gaussian_kernel(10, 2)\n    convolve_vector(v,k)\nend\n\ncolored_line(nice_gradient)"
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#extend_matrix",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#extend_matrix",
+    "title": "Homework 1",
+    "section": "4.1 Extend_matrix:",
+    "text": "4.1 Extend_matrix:\n\nWrite a function extend_mat that takes a matrix M and indices i and j, and returns the closest element of the matrix.\n\n\n\nCode\nextend_mat(M::AbstractMatrix, i, j) = M[clamp(i, 1, size(M)[1]), clamp(j, 1, size(M)[2])];\n\n\nLet’s extend Philip:\n\n\nCode\nlet\n    philip_head = philip_file[250:430,110:230]\n    [extend_mat(philip_head, i, j) for (i,j) in Iterators.product(-50:size(philip_head,1)+51, (-50:size(philip_head,2)+51))]\nend\n\n\n\n\n\nMore single line functions. Are they beautiful or annoying? That’s your choice.\nNow (finally!) the meat of the first homework:"
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#convolve_image",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/Homework_1.html#convolve_image",
+    "title": "Homework 1",
+    "section": "4.2 Convolve_image",
+    "text": "4.2 Convolve_image\n\nImplement a function convolve_image(M, K).\n\n\n\nCode\nfunction convolve_image(M::AbstractMatrix, K::AbstractMatrix)\n    NewMat = zeros(size(M))\n    adjustx = size(K)[1] ÷ 2 + 1\n    adjusty = size(K)[2] ÷ 2 + 1\n    for (i,j) in Iterators.product(1:size(M)[1], 1:size(M)[2]) ## for each M_{i,j}\n        NewMat[i,j] = sum([\n            extend_mat(M, i-k - adjustx, j-l - adjusty) .* K[k,l]\n            for (k,l) in Iterators.product(1:size(K)[1], 1:size(K)[2])\n        ])\n    end\n    return NewMat\nend\n\n\nconvolve_image (generic function with 1 method)"
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/ManipulatingImages.html",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/Classes/Week_1/ManipulatingImages.html",
+    "title": "Introduction to Images",
+    "section": "",
+    "text": "2 Image manipulation:\nThere are two ways to get in an image and change it:\n\nModify the numbers inside the array (mutations): this is useful to change a small piece of the array\nCreate a new copy of the array: this is useful to alter everything together. Use copy().\n\n\n\nCode\nnew_phil = copy(head)\nnew_phil[1:100, 1:300] .= RGBX(1,0,0)\n# You could also do this with two nested \"for\" loops.\ndisplay(new_phil)\n\n\n\n\n\nThe above is an example of broadcasting, which allows element-wise operation of various functions on the elements of arrays.\nYou can broadcast with functions:\n\n\nCode\nfunction redify(color)\n    return RGB(color.r, 0, 0)\nend\n\n\nredify (generic function with 1 method)\n\n\nThe function redify pulls out only the red portion of the given color. We can use the dot operator . to apply our new function to every element of an array.\n\n\nCode\nredify.(head)\n# \"Dot\" operator applies redify across every element of philip\n\n\n\n\n\nTo get our start with image manipulation, let’s write a function to compress images:\n(see Grant’s far better implementation of the function here)\n\n\nCode\nfunction decimate(array, elements)\n    (x, y) = size(array)\n    new_array = copy(array[range(start=1,step=elements,stop=x),range(start=1,step=elements,stop=y)])\n    return new_array\nend\n\n\ndecimate (generic function with 1 method)\n\n\nLet’s decimate poor Phil:\n\n\nCode\n@show size(new_phil)\npoor_phil = decimate(new_phil, 5)\n@show size(poor_phil)\ndisplay(poor_phil)\n\n\nsize(new_phil) = (1839, 2392)\n\n\nsize(poor_phil) = (368, 479)\n\n\n\n\n\nAs you can see, we’ve reduced the size of Phil by a factor of 5."
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/classes.html",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/classes.html",
+    "title": "Listing of classes",
+    "section": "",
+    "text": "These are my course notes for MIT 18.S191, introduction to Computational Thinking using Julia.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking/index.html",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking/index.html",
+    "title": "Introduction to Computational Thinking",
+    "section": "",
+    "text": "These are my course notes for MIT 18.S191, introduction to Computational Thinking using Julia."
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci/ComputationalThinking.html",
+    "href": "Other_Notes/Comp_Sci/ComputationalThinking.html",
+    "title": "Computational Thinking",
+    "section": "",
+    "text": "Jun 6, 2022\n\n\nJasper Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Other_Notes/Comp_Sci.html",
+    "href": "Other_Notes/Comp_Sci.html",
+    "title": "Computer Science",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "Other_Notes/Engineering/Dimensional_Analysis/Application_To_Hydrodynamics.html",
+    "href": "Other_Notes/Engineering/Dimensional_Analysis/Application_To_Hydrodynamics.html",
+    "title": "Dimensional Analysis with Linear Algebra",
+    "section": "",
+    "text": "Mass density \\rho, speed \\nu, pressure p, viscosity \\mu, and the acceleration due to gravity g.\nTake for example the capillary effect:\n\n\n\nSymbol\nDescription\nBase Dimensions\n\n\n\n\nh\nDistance water is drawn into the tube\nL\n\n\nd\nDiameter of the tube\nL\n\n\n\\sigma\nSurface tension of the water\nMT^{-2}\n\n\n\\rho\nMass density of water\nML^{-3}\n\n\ng\nAcceleration due to gravity\nLT^{-2}\n\n\n\nh is some function of the other three quantities:\n\nh = f\\left( d, \\sigma, \\rho, g \\right)\n\nThen\n\n\\textbf{A} = \\begin{bmatrix}\n    1 & 0 & -3 & 1 \\\\\n    0 & 1 & 1 & 0 \\\\\n    0 & -2 & 0 & -2 \\\\\n\\end{bmatrix}\n\nThe null space of \\textbf{A} is linear combinations of the vector \\left(-2, 1, -1, 1\\right)\nTherefore\n\nh = d \\cdot g\\left(\\frac{\\sigma g}{d^{2}p}\\right)"
+  },
+  {
+    "objectID": "Other_Notes/Engineering/Dimensional_Analysis/Buckingham_Pi.html",
+    "href": "Other_Notes/Engineering/Dimensional_Analysis/Buckingham_Pi.html",
+    "title": "Dimensional Analysis with Linear Algebra",
+    "section": "",
+    "text": "Buckingham’s Pi theorem states that any relations between natural quantities can be expressed in an equivalent form using Pi groups, dimensionless quantities formed between those quantities.\n\n1 Assumptions:\nThe following assumptions must hold:\n\n\\textit{u}, our quantity of interest, must equal some function f\\left(x_{1}, x_{2}, x_{3}, \\ldots, x_{n}\\right), that is, \\textit{n} measurable quantities expressed as independent variables & parameters x_{i}. It is further assumed that the equation\n\n\nu = f\\left(x_{1}, x_{2}, x_{3}, \\ldots, x_{n}\\right)\n\nis dimensionally homogeneous.\n\nThe quantities \\{u, x_{1}, x_{2}, x_{3}, \\ldots, x_{n}\\} are measured in terms of \\text{m} fundamental dimensions \\{ L_{1}, L_{2}, L_{3}, \\ldots, L_{n} \\}\nIf \\text{W} is any quantity of \\{ u, x_{1}, \\ldots, x_{n}\\}, then\n\n\n\\left[W\\right] = L_{1}^{p_{1}} \\cdot L_{2}^{p_{2}} \\cdot \\ldots \\cdot L_{m}^{p_{m}}\n\nThen we can create \\textbf{P} = \\begin{bmatrix}p_{1} \\\\ p_{2} \\\\ \\vdots \\\\ p_{m} \\\\\\end{bmatrix}, the dimension vector of W.\nThis gives us the m\\times n dimension matrix\n\n\\textbf{A} = \\begin{bmatrix} \\textbf{P}_{1} | \\textbf{P}_{2} | \\cdots | \\textbf{P}_{n} \\\\ \\end{bmatrix} = \\begin{bmatrix}\n    p_{11} & p_{12} & \\cdots & p_{1n} \\\\\n    p_{21} & p_{22} & \\cdots & p_{2n} \\\\\n    \\vdots & \\vdots & \\vdots & \\vdots \\\\\n    p_{m1} & p_{m2} & \\cdots & p_{mn} \\\\\n    \\end{bmatrix}\n\n\n\n2 Conclusions of the Buckingham Pi Theorem\n\nThe relation u = f\\left(x_{1}, x_{2}, \\ldots, x_{n} \\right) can be expressed in terms of dimensionless quantities.\nThe number of dimensionless quantities is\n\n\nk + 1 = n + 1 - \\texttt{rank}\\left(A\\right)\n\n(The reason for k + 1 is that we pull out the original quantity u from the matrix \\textbf{A}. Otherwise this term would not appear.)\n\nSince \\textbf{A} has \\texttt{rank}\\left(A\\right) = n - k, there are k linearly independent solutions of \\textbf{Az} = \\textbf{0} denoted as z^{1}, z^{2}, \\ldots, z^{k}.\n\nLet \\textbf{a}, an m-column vector, be the dimension vector of u, and let \\textbf{y}, an n-column vector, be a solution of\n\n\\textbf{Ay} = -\\textbf{a}\n\nThen the relation u = f\\left(x_{1}, x_{2}, \\ldots, x_{n} \\right) simplifies to g\\left(\\Pi_{1}, \\Pi_{2}, \\ldots, \\Pi_{k} \\right).\nThere is one \\Pi group for each linearly indepenent set of \\textbf{Az} = \\textbf{0}, plus one \\Pi group for u. The parameters in each pi group are raised to the respective row of z\\prime.\n\n\n3 Why it Works:\nRecall that the nullspace of a matrix \\textbf{A} is the space of all vectors \\textbf{z} for which \\textbf{Az} = \\textbf{0}. The multiplication \\textbf{Az} is a linear combinations of the columns of \\textbf{A}:\n\n\\textbf{Az} = \\left[\n    z_{1}\\textbf{P}_{1} | z_{2}\\textbf{P}_{2} | \\ldots | z_{n}\\textbf{P}_{n}\n\\right]\n\nThis linear combination of the columns of \\textbf{A} is the same thing that you get when you raise each of the parameters x_{n} to the respective element of \\textbf{z}:\n\n\\left[x_{i}^{z_{i}}\\right] = \\left[W\\right]^{z_{i}} =\n    \\left(L_{1}^{p_{1}} \\cdot L_{2}^{p_{2}} \\cdot \\ldots \\cdot L_{m}^{p_{m}}\\right)^{z_{i}} =\n    L_{1}^{p_{1}z_{i}} \\cdot L_{2}^{p_{2}z_{i}} \\cdot \\ldots \\cdot L_{m}^{p_{m}z_{i}}\n\nWhich corresponds to column i of \\textbf{Az}. Finally, since \\textbf{z} is in the nullspace of \\textbf{A}, the sum of the powers on each of the base units L will be 0, resulting in an overall dimensionless quantity."
+  },
+  {
+    "objectID": "Other_Notes/Engineering/Dimensional_Analysis.html",
+    "href": "Other_Notes/Engineering/Dimensional_Analysis.html",
+    "title": "Dimensional Analysis",
+    "section": "",
+    "text": "Dimensional Analysis with Linear Algebra\n\n\n\n\n\n\n\n\n\n\n\n\nJasper Day\n\n\n\n\n\n\n\n\nDimensional Analysis with Linear Algebra\n\n\n\n\n\n\n\n\n\n\n\n\nJasper Day\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Other_Notes/Engineering/Shigley.html",
+    "href": "Other_Notes/Engineering/Shigley.html",
+    "title": "Shigley",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "Other_Notes/Engineering.html",
+    "href": "Other_Notes/Engineering.html",
+    "title": "Engineering Notes",
+    "section": "",
+    "text": "Series in Mechanical Engineering\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Other_Notes/Mathematics/DiffEqs.html",
+    "href": "Other_Notes/Mathematics/DiffEqs.html",
+    "title": "Differential Equations",
+    "section": "",
+    "text": "The first couple lectures\n\n\n\n\n\n\n\n\n\nJun 9, 2022\n\n\nJasper Day\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Other_Notes/Mathematics.html",
+    "href": "Other_Notes/Mathematics.html",
+    "title": "Mathematics",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "Other_Notes/Personal.html",
+    "href": "Other_Notes/Personal.html",
+    "title": "Personal Notes",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "Other_Notes.html",
+    "href": "Other_Notes.html",
+    "title": "Non-Class Notes",
+    "section": "",
+    "text": "No matching items"
+  }
+]

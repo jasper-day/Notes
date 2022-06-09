@@ -1,0 +1,6 @@
+---
+title: "MarkdownMaster"
+---
+
+These are the collected notes I've taken for my various [classes](Class_Notes.qmd) and [projects](Other_Notes.qmd).
+

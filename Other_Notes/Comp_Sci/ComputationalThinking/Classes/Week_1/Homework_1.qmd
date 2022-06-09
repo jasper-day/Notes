@@ -1,0 +1,510 @@
+---
+title: "Homework 1"
+author: "Jasper Day"
+date: "6/6/2022"
+freeze: auto
+---
+
+# Manipulating Vectors (1D images)
+
+```{julia}
+using Images
+```
+
+## Make a random vector of length 10:
+
+```{julia}
+random_vect = rand(10)
+```
+
+## `mean` and `demean`
+
+> Make a function `mean` using a `for` loop, which computes the mean of a vector
+
+```{julia}
+function mean(x)
+    sumph = 0
+    for i in x
+        sumph += i
+    end
+    sumph /= length(x)
+    return sumph
+end
+```
+
+Testing our function:
+
+```{julia}
+@show mean([1,2,3]);
+```
+
+> Define `m` to be the mean of `random_vect`:
+
+```{julia}
+m = mean(random_vect)
+```
+
+> A new function `demean` takes a vector `x` and subtracts the mean from each value in `x`.
+
+```{julia}
+function demean(x)
+    return copy(x) .- mean(x)
+end
+```
+
+The mean of `demean(random_vect)` should therefore be 0:
+
+```{julia}
+mean(demean(random_vect))
+```
+
+The answer is just about machine $\epsilon$, which is nice.
+
+## `create_bar()`
+
+> Generate a vector of 100 zeros. Change the center 20 to 1.
+
+```{julia}
+function create_bar()
+    barvec = zeros(100)
+    barvec[40:60] .= 1
+    return barvec
+end
+```
+
+## `vecvec_to_matrix` and the reverse
+
+> Write a function that turns a `Vector` of `Vector`s into a matrix:
+
+```{julia}
+function vecvec_to_matrix(vecvec)
+    tempmat = Matrix{typeof(vecvec[1][1])}(undef, length(vecvec), length(vecvec[1]))
+    for i in 1:length(vecvec)
+        tempmat[:,i] = vecvec[i]
+    end
+    return tempmat
+end
+```
+
+And the reverse:
+
+```{julia}
+function matrix_to_vecvec(matrix)
+    newVec = Vector{Vector{typeof(matrix[1])}}(undef, size(matrix)[2])
+    for i in 1:size(matrix)[2]
+        newVec[i] = matrix[:,i]
+    end
+    return newVec
+end
+```
+
+Testing:
+
+```{julia}
+@show vecvec_to_matrix([[6 7], [8 9]]);
+@show matrix_to_vecvec([6 7; 8 9]);
+```
+
+This is the best solution I could find to keep the types consistent. It feels a bit awkward to have to explicitly declare the types, but that's fine. It's also going to be faster than using a mutating function like `push!` or `append!`, since we give the vectors a full size when we create them, so no memory reallocation ever has to occur.
+
+Anyway...
+
+## colored_line
+
+```{julia}
+# Definitions from homework notebook
+colored_line(x::Vector{<:Real}) = Gray.(Float64.((hcat(x)')))
+colored_line(x::Any) = nothing
+example_vector = [0.5, 0.4, 0.3, 0.2, 0.1, 0.0, 0.7, 0.0, 0.7, 0.9]
+display(colored_line(example_vector));
+```
+
+```{julia}
+display(colored_line(random_vect))
+```
+
+```{julia}
+display(colored_line(create_bar()))
+```
+
+# Manipulating Images
+
+
+> In this exercise we will get familiar with matrices (2D arrays) in Julia, by manipulating images.
+> Recall that in Julia images are matrices of `RGB` color objects.
+
+> Let's load a picture of Philip again.
+
+```{julia}
+philip_file = let
+    original = load(download("https://i.imgur.com/VGPeJ6s.jpg"))
+    original[1:8:size(original)[1], 1:8:size(original)[2]]
+end
+```
+
+## `Mean Colors`
+
+> Write a function **`mean_colors`** that accepts an object called `image`. It should calculate the mean (average) amounts of red, green and blue in the image and return a tuple `(r, g, b)` of those means.
+
+```{julia}
+function mean_colors(image)
+    avgrgb = sum(philip_file) ./ length(philip_file)
+    # Honestly you could stop here. Not sure why this all needs to be a whole function.
+    return (avgrgb.r, avgrgb.b, avgrgb.b)
+end
+```
+
+## Quantizing numbers
+
+> Look up the documentation on the `floor` function. Use it to write a function `quantize(x::Number)` that takes in a value $x$ (which you can assume is between 0 and 1) and "quantizes" it into bins of width 0.1. For example, check that 0.267 gets mapped to 0.2.
+
+```{julia}
+quantize(x::Number) = floor(10x)/10
+@show quantize(0.267)
+@show quantize(0.91)
+```
+
+## A second method:
+
+> Write the second **method** of the function `quantize`, i.e. a new *version* of the function with the *same* name. This method will accept a color object called `color`, of the type `AbstractRGB`.
+
+The method you write should return a new `RGB` object, in which each component ($r$, $g$ and $b$) are quantized.
+
+```{julia}
+quantize(x::AbstractRGB) = RGB(quantize(x.r), quantize(x.g), quantize(x.b))
+```
+
+## A third method:
+
+> Write a method `quantize(image::AbstractMatrix)` that quantizes an image by quantizing each pixel in the image. (You may assume that the matrix is a matrix of color objects.)
+
+```{julia}
+quantize(image::AbstractMatrix) = quantize.(image)
+display(quantize(philip_file))
+```
+
+It surprisingly looks prety good, despite having half the color bandwidth of the original photo. With 10 buckets, though, you can definitely see some artefacting on the walls.
+
+Let's try larger buckets:
+
+```{julia}
+quantize(x::Number, buckets::Integer) = floor(buckets*x)/buckets
+quantize(x::AbstractRGB, buckets::Integer) = RGB(quantize(x.r, buckets), quantize(x.g, buckets), quantize(x.b, buckets))
+quantize(image::AbstractMatrix, buckets::Integer) = quantize.(image, buckets)
+```
+
+Here's Philip with 5 buckets:
+
+```{julia}
+display(quantize(philip_file, 5))
+```
+
+Pretty exciting. I like the obvious lines in the shadow.
+
+2 buckets:
+
+```{julia}
+display(quantize(philip_file, 2))
+```
+
+Most of the picture is taken up by the rather bland `RGB(0.5,0.5,0.5)`. I liked 5 buckets better, I think.
+
+## Color inversion
+
+> Write a function `invert` that inverts a color, i.e. sends $(r, g, b)$ to $(1 - r, 1-g, 1-b)$.
+
+```{julia}
+invert(x::AbstractRGB) = RGB(1-x.r, 1-x.g, 1-x.b)
+```
+
+Jeez man.
+
+Playing around with color inversion:
+
+```{julia}
+black = RGB(0.0,0.0,0.0)
+invert(black)
+```
+
+It's white.
+
+```{julia}
+invert.(philip_file)
+```
+
+He looks rather ectoplasmic. The shadow in the background now reveals its secrets: it's floorboards all the way back!
+
+## Noisify
+
+> Write a function `noisify(x::Number, s)` to add randomness of intensity $s$ to a value $x$, i.e. to add a random value between $-s$ and $+s$ to $x$. If the result falls outside the range $(0, 1)$ you should "clamp" it to that range. (Note that Julia has a `clamp` function, but you should write your own function `myclamp(x)`.)
+
+```{julia}
+using Distributions
+```
+
+```{julia}
+myclamp(x::Number) = x>1 ? 1 : (x<0 ? 0 : x)
+noisifyp(x::Number, s) = myclamp(x + 2s*(rand()-0.5))
+# That ^ works but I don't like it.
+noisify(x::Number, s) = myclamp(x + rand(Uniform(-s,s)))
+# I like that a little more but it may actually be slower.
+noisifyp(x::AbstractRGB, s) = RGB(noisifyp(x.r, s), noisifyp(x.g, s), noisifyp(x.b, s))
+noisify(x::AbstractRGB, s) = RGB(noisify(x.r, s), noisify(x.g, s), noisify(x.b, s))
+noisifyp(x::AbstractMatrix, s) = noisifyp.(x, s)
+noisify(x::AbstractMatrix, s) = noisify.(x, s);
+```
+
+Interestingly, the story of the two different noisifies appears to be a story of making a solution *worse* in an attempt to make it more elegant. It's much worse, apparently, to take a random number from a uniform distribution across the desired range than to simply multiply `rand()` to change it into the desired range. Probably this is because the `rand(Uniform(-s, s))` calls two different functions, and who knows how optimized the function for the uniform distribution is. `rand()`, on the other hand, can be super optimized, so the multiplication and subtraction doesn't add too much cost.
+
+I found that `noisifyp` on the picture of Philip, with a noise level of 1, tended to run in 4 seconds or less, even with 8% compilation time. The best I could get out of `noisify` was 4.3 seconds, with upper bounds closer to 5 seconds. Sometimes the clunkier solution is actually faster. 
+
+The image is still (barely) recognizable with a noise level of 10:
+
+```{julia}
+noisifyp(philip_file, 10)
+```
+
+It becomes completely unrecognizable at a noise level of 20, though.
+
+```{julia}
+noisifyp(philip_file, 20)
+```
+
+Although you can still just barely make out where the eyes are supposed to be, at least if you already knew it.
+
+By the way, here is Grant's (much better) definition of decimate (see mine [here](ManipulatingImages.qmd#decimate)):
+
+```{julia}
+#| label: decimate
+decimate(image, ratio=5) = image[1:ratio:end, 1:ratio:end]
+```
+
+# Convolutions
+
+> As we have seen in the videos, we can produce cool effects using the mathematical technique of >**convolutions**. We input one image $M$ and get a new image $M'$ back. 
+>
+> Conceptually we think of $M$ as a matrix. In practice, in Julia it will be a `Matrix` of color objects, and we may need to take that into account. Ideally, however, we should write a **generic** function that will work for any type of data contained in the matrix.
+> 
+> A convolution works on a small **window** of an image, i.e. a region centered around a given point $(i, j)$. We will suppose that the window is a square region with odd side length $2\ell + 1$, running from $-\ell, \ldots, 0, \ldots, \ell$.
+> 
+> The result of the convolution over a given window, centred at the point $(i, j)$ is a *single number*; this number is the value that we will use for $M'_{i, j}$.
+> (Note that neighbouring windows overlap.)
+> 
+> To get started let's restrict ourselves to convolutions in 1D.
+> So a window is just a 1D region from $-\ell$ to $\ell$.
+
+> Let's create a vector `v` of random numbers of length `n=100`.
+
+```{julia}
+n = 100
+v = rand(n)
+colored_line(v)
+```
+
+## Boundary conditions
+
+> We need to decide how to handle the **boundary conditions**, i.e. what happens if we try to access a position in the vector `v` beyond `1:n`.  The simplest solution is to assume that $v_{i}$ is 0 outside the original vector; however, this may lead to strange boundary effects.
+    
+> A better solution is to use the *closest* value that is inside the vector. Effectively we are extending the vector and copying the extreme values into the extended positions. (Indeed, this is one way we could implement this; these extra positions are called **ghost cells**.)
+
+> Write a function `extend(v, i)` that checks whether the position $i$ is inside `1:n`. If so, return the $i$th component of `v`; otherwise, return the nearest end value.
+
+```{julia}
+extend(v, i) = i in 1:length(v) ? v[i] : (i < 1 ? first(v) : last(v))
+```
+
+## 1D blur
+
+> Write a function `blur_1D(v, l)` that blurs a vector `v` with a window of length `l` by averaging the elements within a window from $-\ell$ to $\ell$. This is called a **box blur**.
+
+```{julia}
+blur_1D(v,l) = [sum([extend(v,j + i) for j in -l:l]) / (2l + 1) for i in 1:length(v)]
+# Look how sexy. One line. No silly functions like "copy." I liiiike it. Even though all it can do is the box average :)
+```
+
+In $\text{\LaTeX}$, that line of code translates to:
+
+$$
+v'_i = \frac{\sum_{j = -\ell}^{\ell}v_{j+i}}{2\ell+1}
+$$
+
+Not sure if that makes it any clearer.
+
+```{julia}
+colored_line(example_vector)
+```
+
+```{julia}
+colored_line(blur_1D(example_vector, 2))
+```
+
+You can tell that the dark spots still exist under the box blur, but there's no purely black spots left. Generally the gradient is softer across the vector.
+
+## Different size box_blurs
+
+No interactive controls here. Just a couple of well-chosen examples.
+
+```{julia}
+l_box = 0
+colored_line(blur_1D(v,l_box))
+```
+
+```{julia}
+l_box = 2
+colored_line(blur_1D(v,l_box))
+```
+
+```{julia}
+l_box = 4
+colored_line(blur_1D(v,l_box))
+```
+
+```{julia}
+l_box = 10
+colored_line(blur_1D(v,l_box))
+```
+
+By 10, the whole vector is basically just gray.
+
+## General 1D Convolutions
+
+> The box blur is a simple example of a **convolution**, i.e. a linear function of a window around each point, given by 
+>
+$$
+v'_{i} = \sum_{n}\,v_{i - n}\,k_{n}
+$$
+> 
+> where $k$ is a vector called a **kernel**.
+>     
+> Again, we need to take care about what happens if $v_{i -n }$ falls off the end of the vector.
+>     
+> Write a function `convolve_vector(v, k)` that performs this convolution. You need to think of the vector $k$ as being *centred* on the position $i$. So $n$ in the above formula runs between $-\ell$ and $\ell$, where $2\ell + 1$ is the length of the vector $k$. You will need to do the necessary manipulation of indices.
+
+```{julia}
+convolve_vector(v,k) = [sum([extend(v,i-(n-1 - length(k)÷2)) * k[n] # assume k is not an offset matrix
+        for n in 1:length(k)])
+    for i in 1:length(v)]
+```
+
+Also neatly fits into (almost) one line. I like Julia more and more the more I use it. Although my obsession with single-line functions is somewhat to the detriment of the readability of my code.
+
+```{julia}
+test_convolution = let
+    v = [1, 10, 100, 1000, 10000]
+    k = [2, 1, 0, 1, 3]
+    convolve_vector(v, k)
+end
+```
+
+:::{.callout-note}
+When using $\sum_{n}\,v_{i - n}\,k_{n}$, the kernel is basically flipped 180°. You can avoid this behavior by using $\sum_{n}\,v_{i + n}\,k_{n}$, but [you shouldn't.](Convolutions.qmd#polynomial-multiplication)
+:::
+
+## Gaussian kernel
+
+The definition of a Gaussian kernel in 1D is:
+
+$$
+G(x) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left({\frac{-x^2}{2\sigma^2}}\right)
+$$
+
+> We need to **sample** (evaluate) this at each pixel in a rigion of size $n^2$, and then **normalize** so that the sum of the resulting kernel is 1.
+
+:::{.callout-note}
+Rather than taking $\sigma=1$ for simplicity, I chose to allow any value of $\sigma$.
+
+Also, there seems to be a typo in the instructions. We should be evaluating over $2n+1$, not $n^2$.
+:::
+
+
+```{julia}
+normalize(v) = [v[i] / sum(v) for i in 1:length(v)]
+
+function gaussian_kernel(n::Integer, σ=1)
+    G(x) = 1/√(2π*σ^2) * exp(-x^2/(2σ^2))
+    new_vec = zeros(n)
+    [new_vec[i] = G(i-1 - n÷2) for i in 1:n]
+    return normalize(new_vec)
+end
+```
+
+Seems to work. 🤞
+
+```{julia}
+gaussian_kernel_size_1D = 5
+
+test_gauss_1D_a = let
+	v = rand(20)
+	k = gaussian_kernel(gaussian_kernel_size_1D)
+	
+	if k !== missing
+		convolve_vector(v, k)
+	end
+end
+```
+
+You can get some very pretty gradients by increasing the standard deviation of the gaussian kernel. For example:
+
+```{julia}
+nice_gradient = let
+    v = rand(20)
+    k = gaussian_kernel(10, 2)
+    convolve_vector(v,k)
+end
+
+colored_line(nice_gradient)
+```
+
+# Convolutions of Images
+
+With 2D images, the convolution is given by a **kernel matrix** $K$:
+
+$$
+M'_{i,j} = \sum_{k,l} \, M_{i-k,j-l} \, K_{k,l}
+$$
+
+where the sum is over the possible values of $k$ and $l$ in the window. The window is centered at $(i,j)$. The convolution is often notated with a star $*$:
+
+$$
+M' = M * K
+$$
+
+
+## Extend_matrix:
+
+> Write a function extend_mat that takes a matrix M and indices i and j, and returns the closest element of the matrix.
+
+```{julia}
+extend_mat(M::AbstractMatrix, i, j) = M[clamp(i, 1, size(M)[1]), clamp(j, 1, size(M)[2])];
+```
+
+Let's extend Philip:
+```{julia}
+let
+	philip_head = philip_file[250:430,110:230]
+	[extend_mat(philip_head, i, j) for (i,j) in Iterators.product(-50:size(philip_head,1)+51, (-50:size(philip_head,2)+51))]
+end
+```
+
+More single line functions. Are they beautiful or annoying? That's your choice.
+
+Now (finally!) the meat of the first homework:
+
+## `Convolve_image`
+
+> Implement a function convolve_image(M, K).
+
+```{julia}
+function convolve_image(M::AbstractMatrix, K::AbstractMatrix)
+    NewMat = zeros(size(M))
+    adjustx = size(K)[1] ÷ 2 + 1
+    adjusty = size(K)[2] ÷ 2 + 1
+    for (i,j) in Iterators.product(1:size(M)[1], 1:size(M)[2]) ## for each M_{i,j}
+        NewMat[i,j] = sum([
+            extend_mat(M, i-k - adjustx, j-l - adjusty) .* K[k,l]
+            for (k,l) in Iterators.product(1:size(K)[1], 1:size(K)[2])
+        ])
+    end
+    return NewMat
+end
+```

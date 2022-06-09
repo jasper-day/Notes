@@ -1,0 +1,6 @@
+---
+title: Non-Class Notes
+subtitle: Stuff I've been Learning
+listing:
+  contents: Other_Notes/*.qmd
+---

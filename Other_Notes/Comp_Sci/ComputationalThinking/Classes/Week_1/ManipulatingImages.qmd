@@ -1,0 +1,114 @@
+---
+title: Introduction to Images
+author: "Jasper Day"
+date: "6/6/2022"
+freeze: auto
+---
+
+# What is an image?
+
+On a computer, an image is a grid of coloured squares. You index into the array from the upper left hand corner.
+
+You can download images from online using `download(url, "filename")`.
+
+First we load the dependencies:
+
+```{julia}
+using Images
+```
+
+Then we can start loading images.
+
+```{julia}
+url = "https://i.imgur.com/VGPeJ6s.jpg"
+download(url, "./philip.jpg")
+```
+
+![Here's the image we just downloaded](/Week 1/philip.jpg){#fig-downloaded width=50%}
+
+And here's the image loaded into a Julia variable:
+
+```{julia}
+philip = load("./philip.jpg")
+@show typeof(philip)
+@show size(philip)
+# Philip is an array of these RGBX objects.
+RGBX(0.1,0.9,0.2)
+```
+
+When you index into the array, it returns an `RGBX` object, which shows RGB colors with three values between 0 and 1. You can also slice into an image using ranges to call the array, as usual.
+
+```{julia}
+(h,w) = size(philip)
+head = philip[(h ÷ 2):h, (w ÷ 10): (9w ÷ 10)]
+```
+
+You can also concatenate arrays:
+
+```{julia}
+[head head]
+```
+
+You could create a kaleidoscopic corgi: (`dims` is which dimension to reverse along.)
+
+```{julia}
+[
+    head                    reverse(head, dims=2)
+    reverse(head, dims=1)   reverse(reverse(head, dims=1), dims=2)
+]
+```
+
+# Image manipulation:
+
+There are two ways to get in an image and change it:
+
+- **Modify** the numbers inside the array (mutations): this is useful to change a small piece of the array
+- Create a new **copy** of the array: this is useful to alter everything together. Use `copy()`.
+
+```{julia}
+new_phil = copy(head)
+new_phil[1:100, 1:300] .= RGBX(1,0,0)
+# You could also do this with two nested "for" loops.
+display(new_phil)
+```
+
+The above is an example of **broadcasting**, which allows element-wise operation of various functions on the elements of arrays.
+
+You can broadcast with functions:
+
+```{julia}
+function redify(color)
+    return RGB(color.r, 0, 0)
+end
+```
+
+The function `redify` pulls out only the red portion of the given color. We can use the dot operator `.` to apply our new function to every element of an array.
+
+```{julia}
+redify.(head)
+# "Dot" operator applies redify across every element of philip
+```
+
+To get our start with image manipulation, let's write a function to compress images:
+
+(see Grant's far better implementation of the function [here](Homework_1.qmd#decimate))
+
+```{julia}
+#| label: decimate
+function decimate(array, elements)
+    (x, y) = size(array)
+    new_array = copy(array[range(start=1,step=elements,stop=x),range(start=1,step=elements,stop=y)])
+    return new_array
+end
+```
+
+Let's **decimate** poor Phil:
+
+```{julia}
+@show size(new_phil)
+poor_phil = decimate(new_phil, 5)
+@show size(poor_phil)
+display(poor_phil)
+```
+
+As you can see, we've reduced the size of Phil by a factor of 5.

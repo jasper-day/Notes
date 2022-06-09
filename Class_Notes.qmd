@@ -1,0 +1,7 @@
+---
+title: Class Notes
+subtitle: Classes I've taken
+listing:
+  contents: Class_Notes/*.qmd
+---
+

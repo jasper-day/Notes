@@ -1,0 +1,5 @@
+---
+title: Personal Notes
+listing: 
+  contents: Personal/*.qmd
+---
