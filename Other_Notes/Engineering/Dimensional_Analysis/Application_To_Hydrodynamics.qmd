@@ -1,5 +1,5 @@
 ---
-title: Dimensional Analysis with Linear Algebra
+title: Application to Hydrodynamics
 author: Jasper Day
 colorlinks: true
 ---

@@ -58,20 +58,42 @@ ul.task-list{list-style: none;}
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-Shigley .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-subtitle','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-subtitle","listing-description"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-Shigley'] = new List('listing-Shigley', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-Dim_Ana .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-Dim_Ana'] = new List('listing-Dim_Ana', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -136,7 +158,14 @@ ul.task-list{list-style: none;}
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#shigley" id="toc-shigley" class="nav-link active" data-scroll-target="#shigley"> <span class="header-section-number">1</span> <span>Shigley</span></a></li>
+  <li><a href="#dimensional-analysis" id="toc-dimensional-analysis" class="nav-link" data-scroll-target="#dimensional-analysis"> <span class="header-section-number">2</span> <span>Dimensional Analysis</span></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -157,53 +186,76 @@ ul.task-list{list-style: none;}
 
 </header>
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<section id="shigley" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="shigley"><span class="header-section-number">1</span> <a href="../Other_Notes/Engineering/Shigley.html">Shigley</a></h2>
+<div id="listing-Shigley" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1654784162297" data-listing-reading-time-sort="0.05">
+
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="dimensional-analysis" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="dimensional-analysis"><span class="header-section-number">2</span> <a href="../Other_Notes/Engineering/Dimensional_Analysis.html">Dimensional Analysis</a></h2>
+<div id="listing-Dim_Ana" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1654784338251" data-listing-reading-time-sort="0.77">
 <div class="body">
-<a href="../Other_Notes/Engineering/Dimensional_Analysis.html">
+<a href="../Other_Notes/Engineering/Dimensional_Analysis/Application_To_Hydrodynamics.html">
 <h3 class="no-anchor listing-title">
-Dimensional Analysis
+Dimensional Analysis with Linear Algebra
 </h3>
 <div class="listing-subtitle">
 
 </div>
 <div class="listing-description">
-How do you describe physical systems with dimensionally balanced equations?
+Hydrodynamics is fully defined by these factors:
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="../Other_Notes/Engineering/Dimensional_Analysis.html"> </a>
+<a href="../Other_Notes/Engineering/Dimensional_Analysis/Application_To_Hydrodynamics.html">
+<div class="listing-author">
+Jasper Day
+</div>
+</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1654784038167" data-listing-reading-time-sort="0.005">
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1654784342396" data-listing-reading-time-sort="2.46">
 <div class="body">
-<a href="../Other_Notes/Engineering/Shigley.html">
+<a href="../Other_Notes/Engineering/Dimensional_Analysis/Buckingham_Pi.html">
 <h3 class="no-anchor listing-title">
-Shigley
+Dimensional Analysis with Linear Algebra
 </h3>
 <div class="listing-subtitle">
-Series in Mechanical Engineering
+
 </div>
 <div class="listing-description">
-
+Source
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="../Other_Notes/Engineering/Shigley.html"> </a>
+<a href="../Other_Notes/Engineering/Dimensional_Analysis/Buckingham_Pi.html">
+<div class="listing-author">
+Jasper Day
+</div>
+</a>
 </div>
 </div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div></main> <!-- /main -->
+</div>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";

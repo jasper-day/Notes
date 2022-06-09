@@ -151,14 +151,14 @@
     "href": "Other_Notes/Comp_Sci/ComputationalThinking.html",
     "title": "Computational Thinking",
     "section": "",
-    "text": "Jun 6, 2022\n\n\nJasper Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+    "text": "Introduction to Computational Thinking\n\n\n\n\n\n\n\n\n\n\n\n\nJun 6, 2022\n\n\nJasper Day\n\n\n\n\n\n\n\n\nListing of classes\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Other_Notes/Comp_Sci.html",
     "href": "Other_Notes/Comp_Sci.html",
     "title": "Computer Science",
     "section": "",
-    "text": "No matching items"
+    "text": "Jun 6, 2022\n\n\nJasper Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Other_Notes/Engineering/Dimensional_Analysis/Application_To_Hydrodynamics.html",
@@ -193,21 +193,63 @@
     "href": "Other_Notes/Engineering.html",
     "title": "Engineering Notes",
     "section": "",
-    "text": "Series in Mechanical Engineering\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+    "text": "No matching items"
+  },
+  {
+    "objectID": "Other_Notes/Engineering.html#dimensional-analysis",
+    "href": "Other_Notes/Engineering.html#dimensional-analysis",
+    "title": "Engineering Notes",
+    "section": "2 Dimensional Analysis",
+    "text": "2 Dimensional Analysis\n\n\n\n\n\n\nDimensional Analysis with Linear Algebra\n\n\n\n\n\n\n\n\n\n\n\n\nJasper Day\n\n\n\n\n\n\n\n\nDimensional Analysis with Linear Algebra\n\n\n\n\n\n\n\n\n\n\n\n\nJasper Day\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html",
+    "href": "Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html",
+    "title": "Overview + The Calculus You Need",
+    "section": "",
+    "text": "A big part of the series will be first order equations and second order equations.\n\n\nThese equations take the form\n\n\\frac{dy}{dt} = ay + q(t)\n\\tag{1}\nor\n\n\\frac{dy}{dt} = f(y)\n\\tag{2}\nEquations like Equation 1 mean that the rate of change of y (\\frac{dy}{dt}) are partly dependent on the solution itself, y, and partly dependent on the inputs q(t), which produce their own change.\nEquation 1 is a linear equation with a forcing term on the right hand side. “Linear” means we have y by itself.\nEquation 2 is a nonlinear equation, since f(y) could be y^2, y^3, etc. It doesn’t have the forcing term; the rate of change of y is dependent only on the value of y itself.\n\n\n\nThese equations have a second derivative (acceleration).\n\n\\frac{d^2y}{dt^2} = -ky\n\\tag{3}\nEquation 3 is Newton’s law.\n\nmy'' + by' + ky = f(t)\n\\tag{4}\nIn Equation 4, f(t) is your external (forcing) term.\nWe want linearity and constant coefficients m, b, and k.\n\n\n\nEquations that are Linear with constant coefficients are good equations:\n\n\\text{Nice function} \\, f(t) \\rightarrow \\text{Nice function} \\, y(t)\n\nSometimes we can just get the equation; sometimes we need to do the equation with integrals.\nWhen you have varying coefficients and nonlinear forcing terms, you need to find numerical solutions.\n\n\n\nIn reality, we often have many equations.\n\n\\frac{d\\textbf{y}}{dt} = \\textbf{Ay}\n\\tag{5}\nIn Equation 5, \\textbf{y} is a vector \\left(y_1, y_2, \\ldots, y_n \\right) and \\textbf{A} is an n \\times n matrix (n coupled equations, n unknowns).\n\n\\frac{d^2\\textbf{y}}{dt^2} = -\\textbf{Sy}\n\\tag{6}\nHere, y is still a vector of n unknowns, but S is a symmetric matrix. Again, linear, constant coefficients… but several variables at once.\nWe will need eigenvalues and eigenvectors to turn the n coupled equations into n uncoupled equations that we can solve separately.\n\n\n\nGenerally, solutions are found numerically, and there’s a lot to learn about exactly how that’s done. MATLAB is a first-class package (lol) that gives you lots of equations to solve differential equations.\nODE45: Ordinary Differential Equations 45.\nEuler came up with the first numerical method for calculating differential equations; his solution was fine but not sufficiently accurate - ODE45 has much higher accuracy and higher flexibility.\n\n\n\n\n\\frac{du}{dx} = \\frac{d^2u}{dx^2}\n\\tag{7}\nHere we have 2 variables: time and x, in the space direction. Equation 7 is the heat equation.\n\n\\frac{d^2u}{dt^2} = \\frac{d^2u}{dx^2}\n\\tag{8}\nEquation 8 is the wave equation. Equation 7 and Equation 8 are both infinite systems of equations in space and time.\n\n\\frac{d^2u}{dx^2} + \\frac{d^2u}{dx^2} = 0\n\\tag{9}\nEquation 9 is the Laplace equation.\n\n\n\nGet a standard, clear picture of the basic differential equations that we can solve and understand."
+  },
+  {
+    "objectID": "Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html#important-derivatives",
+    "href": "Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html#important-derivatives",
+    "title": "Overview + The Calculus You Need",
+    "section": "2.1 Important Derivatives:",
+    "text": "2.1 Important Derivatives:\n\n\\frac{d}{dx}x^n = nx^{n-1}\n\n\n\\begin{aligned}\n\\frac{d}{dx}(\\sin{x}) &= \\cos{x} \\\\\n\\frac{d}{dx}(\\cos{x}) &= -\\sin{x}\n\\end{aligned}\n\n\n\\frac{d}{dx}e^x = e^x\n\n\n\\frac{d}{dx}\\ln{x} = \\frac{1}{x}"
+  },
+  {
+    "objectID": "Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html#derivative-rules",
+    "href": "Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html#derivative-rules",
+    "title": "Overview + The Calculus You Need",
+    "section": "2.2 Derivative Rules:",
+    "text": "2.2 Derivative Rules:\n\n\\frac{d}{dx}(f + g) = \\frac{d}{dx}f + \\frac{d}{dx}g\n\nThe product rule (Equation 10):\n\n\\frac{d}{dx}(fg) = g\\frac{df}{dx} + f\\frac{dg}{dx}\n\\tag{10}\nThe quotient rule (Equation 11)1:1 Easily remembered by taking the product rule on f and \\frac{1}{g}\n\n\\frac{d}{dx}\\left(\\frac{f}{g}\\right) = \\frac{g\\frac{df}{dx}-f\\frac{dg}{dx}}{g^2}\n\\tag{11}\nAnd the all-important chain rule (Equation 12):\n\n\\frac{d}{dx}\\left(f(g)\\right) = \\frac{df}{dg}\\frac{dg}{dx}= g'(f) \\cdot f'\n\\tag{12}\nLast, the Fundamental Theorem of Calculus (Equation 13):\n\n\\frac{d}{dx} \\int_0^xy(t)dt = y(x)\n\\tag{13}\nYou take a function, you integrate it, you take the derivative, you get it back."
+  },
+  {
+    "objectID": "Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html#applying-the-fundamental-theorem",
+    "href": "Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html#applying-the-fundamental-theorem",
+    "title": "Overview + The Calculus You Need",
+    "section": "2.3 Applying the Fundamental Theorem:",
+    "text": "2.3 Applying the Fundamental Theorem:\n\ny(t) = \\int_0^te^{t-s}q(s)ds \\hspace{2em} \\text{solves} \\hspace{2em} \\frac{dy}{dt} = y + q(t)\n\\tag{14}\nWe want to show that Equation 1 is solved by the integral in Equation 14.\nLet’s take the derivative of the integral:\n\n\\begin{aligned}\ny(t) &= \\int_0^te^{t-s}q(s)ds \\\\\n\\frac{dy}{dt} &= \\frac{d}{dt}\\left(\\int_0^t e^{t-s}q(s)ds\\right) \\\\\n&= \\frac{d}{dt}\\left(e^t\\int_0^t e^{-s}q(s)ds\\right) \\\\\n&= e^t\\frac{d}{dt}\\left(\\int_0^t e^{-s}q(s)ds\\right)\n    + \\frac{de^t}{dt}\\left(\\int_0^t e^{-s}q(s)ds\\right)\\\\\n&= e^t\\left(e^{-t} q(t) \\right) + e^t\\left(\\int_0^t e^{-s}q(s)ds\\right)\\\\\n&= q(t) + \\int_0^te^{t-s}q(s)ds\n\\end{aligned}\n\nTherefore:\n\n\\frac{dy}{dt} = y(t) + q(t)\n\nAnd Equation 1 is satisfied."
+  },
+  {
+    "objectID": "Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html#the-taylor-series",
+    "href": "Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html#the-taylor-series",
+    "title": "Overview + The Calculus You Need",
+    "section": "2.4 The Taylor Series",
+    "text": "2.4 The Taylor Series\nTangent line to a graph:\n\n\\begin{aligned}\nf(t + \\Delta t) &\\approx f(t) + \\Delta t \\frac{df}{dt}(t)\\\\\n\\frac{\\Delta f}{\\Delta t} &\\approx \\frac{df}{dt}\n\\end{aligned}\n\\tag{15}\nEquation 15 expresses the most fundamental idea of differential calculus. At the point t, the derivative \\frac{df}{dt} is very close to the change in the function over a short distance \\Delta t.\nHence, on the graph of e(t):\n\n\n\n\n\nSince \\frac{d}{dt}\\left(e^x\\right) = e^x, the slope of the tangent line at any point along the graph is the height of the graph at that point.\nWe can get closer to our function if, instead of a tangent line, we use a tangent parabola:\n\nf(t + \\Delta t) \\approx \\frac{df}{dt} + \\frac{1}{2!}(\\Delta t)^2\\frac{df^2}{dt^2}\n\n\n\n\n\n\nYou can see that the tangent parabola approximates e^x much better than the tangent line does.\nTo do better, we could take the third derivative, the fourth derivative, etc… and when we’re done, we get e^t.\nThis leads us to the Taylor Series:\n\nf(x) = \\sum_0^{\\infty} \\frac{1}{n!}(\\Delta t)^n \\frac{d^n f}{dt^n}\n\\tag{16}"
   },
   {
     "objectID": "Other_Notes/Mathematics/DiffEqs.html",
     "href": "Other_Notes/Mathematics/DiffEqs.html",
     "title": "Differential Equations",
     "section": "",
-    "text": "The first couple lectures\n\n\n\n\n\n\n\n\n\nJun 9, 2022\n\n\nJasper Day\n\n\n\n\n\n\nNo matching items"
+    "text": "Overview + The Calculus You Need\n\n\nThe first couple lectures\n\n\n\n\n\n\n\n\n\nJun 9, 2022\n\n\nJasper Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Other_Notes/Mathematics.html",
     "href": "Other_Notes/Mathematics.html",
     "title": "Mathematics",
     "section": "",
-    "text": "No matching items"
+    "text": "The first couple lectures\n\n\n\n\n\n\n\n\n\nJun 9, 2022\n\n\nJasper Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Other_Notes/Personal.html",
@@ -221,6 +263,27 @@
     "href": "Other_Notes.html",
     "title": "Non-Class Notes",
     "section": "",
-    "text": "No matching items"
+    "text": "Series in Mechanical Engineering\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Other_Notes.html#computer-science",
+    "href": "Other_Notes.html#computer-science",
+    "title": "Non-Class Notes",
+    "section": "2 Computer Science",
+    "text": "2 Computer Science\n\n\n\n\n\n\nComputational Thinking\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Other_Notes.html#mathematics",
+    "href": "Other_Notes.html#mathematics",
+    "title": "Non-Class Notes",
+    "section": "3 Mathematics",
+    "text": "3 Mathematics\n\n\n\n\n\n\nDifferential Equations\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Other_Notes.html#personal-notes",
+    "href": "Other_Notes.html#personal-notes",
+    "title": "Non-Class Notes",
+    "section": "4 Personal Notes",
+    "text": "4 Personal Notes\n\n\n\n\n\nNo matching items"
   }
 ]

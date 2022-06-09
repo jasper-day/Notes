@@ -1,5 +1,11 @@
 ---
 title: Mathematics
 listing:
-  contents: Mathematics/*.qmd
+  - id: DiffEqs
+    contents: "Mathematics/DiffEqs/*.qmd"
 ---
+
+## [Differential Equations](Mathematics/DiffEqs.qmd)
+
+::: {#DiffEqs}
+:::

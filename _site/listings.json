@@ -17,7 +17,8 @@
   {
     "listing": "/Other_Notes/Comp_Sci.html",
     "items": [
-      "/Other_Notes/Comp_Sci/ComputationalThinking.html"
+      "/Other_Notes/Comp_Sci/ComputationalThinking/index.html",
+      "/Other_Notes/Comp_Sci/ComputationalThinking/classes.html"
     ]
   },
   {
@@ -34,20 +35,22 @@
   {
     "listing": "/Other_Notes/Engineering.html",
     "items": [
-      "/Other_Notes/Engineering/Dimensional_Analysis.html",
-      "/Other_Notes/Engineering/Shigley.html"
+      "/Other_Notes/Engineering/Dimensional_Analysis/Application_To_Hydrodynamics.html",
+      "/Other_Notes/Engineering/Dimensional_Analysis/Buckingham_Pi.html"
     ]
   },
   {
     "listing": "/Other_Notes/Mathematics/DiffEqs.html",
     "items": [
-      "/Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html"
+      "/Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html",
+      "/Other_Notes/Mathematics/DiffEqs/Response_To_Exponential.html"
     ]
   },
   {
     "listing": "/Other_Notes/Mathematics.html",
     "items": [
-      "/Other_Notes/Mathematics/DiffEqs.html"
+      "/Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html",
+      "/Other_Notes/Mathematics/DiffEqs/Response_To_Exponential.html"
     ]
   },
   {
@@ -57,10 +60,10 @@
   {
     "listing": "/Other_Notes.html",
     "items": [
-      "/Other_Notes/Comp_Sci.html",
-      "/Other_Notes/Engineering.html",
-      "/Other_Notes/Mathematics.html",
-      "/Other_Notes/Personal.html"
+      "/Other_Notes/Engineering/Dimensional_Analysis.html",
+      "/Other_Notes/Engineering/Shigley.html",
+      "/Other_Notes/Comp_Sci/ComputationalThinking.html",
+      "/Other_Notes/Mathematics/DiffEqs.html"
     ]
   }
 ]

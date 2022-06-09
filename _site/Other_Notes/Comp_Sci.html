@@ -58,20 +58,20 @@ ul.task-list{list-style: none;}
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-Comp-Think .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-Comp-Think'] = new List('listing-Comp-Think', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -136,7 +136,13 @@ ul.task-list{list-style: none;}
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#computational-thinking" id="toc-computational-thinking" class="nav-link active" data-scroll-target="#computational-thinking"> <span class="header-section-number">1</span> <span>Computational Thinking</span></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -157,35 +163,64 @@ ul.task-list{list-style: none;}
 
 </header>
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<section id="computational-thinking" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="computational-thinking"><span class="header-section-number">1</span> <a href="../Other_Notes/Comp_Sci/ComputationalThinking.html">Computational Thinking</a></h2>
+<div id="listing-Comp-Think" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1654783950896" data-listing-reading-time-sort="0.005">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1654488000000" data-listing-file-modified-sort="1654783809726" data-listing-reading-time-sort="0.08">
 <div class="body">
-<a href="../Other_Notes/Comp_Sci/ComputationalThinking.html">
+<a href="../Other_Notes/Comp_Sci/ComputationalThinking/index.html">
 <h3 class="no-anchor listing-title">
-Computational Thinking
+Introduction to Computational Thinking
 </h3>
 <div class="listing-subtitle">
 
 </div>
 <div class="listing-description">
-
+These are my course notes for MIT 18.S191, introduction to Computational Thinking using Julia.
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="../Other_Notes/Comp_Sci/ComputationalThinking.html"> </a>
+<a href="../Other_Notes/Comp_Sci/ComputationalThinking/index.html">
+<div class="listing-date">
+Jun 6, 2022
+</div>
+<div class="listing-author">
+Jasper Day
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1654783940480" data-listing-reading-time-sort="0.08">
+<div class="body">
+<a href="../Other_Notes/Comp_Sci/ComputationalThinking/classes.html">
+<h3 class="no-anchor listing-title">
+Listing of classes
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+# About
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../Other_Notes/Comp_Sci/ComputationalThinking/classes.html"> </a>
 </div>
 </div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div></main> <!-- /main -->
+</div>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";

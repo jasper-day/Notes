@@ -3,5 +3,243 @@ title: "Overview + The Calculus You Need"
 subtitle: "The first couple lectures"
 author: "Jasper Day"
 date: 6/9/2022
+freeze: auto
 ---
 
+# Overview
+
+A big part of the series will be [first order equations] and [second order equations].
+
+## First Order Equations
+
+These equations take the form 
+
+$$
+\frac{dy}{dt} = ay + q(t)
+$${#eq-first-1}
+
+or 
+
+$$
+\frac{dy}{dt} = f(y)
+$${#eq-first-2}
+
+Equations like @eq-first-1 mean that the *rate of change* of $y$ ($\frac{dy}{dt}$) are partly dependent on the solution itself, $y$, and partly dependent on the inputs $q(t)$, which produce their own change.
+
+@eq-first-1 is a **linear** equation with a forcing term on the right hand side. "Linear" means we have $y$ by itself.
+
+@eq-first-2 is a nonlinear equation, since $f(y)$ could be $y^2$, $y^3$, etc. It doesn't have the forcing term; the rate of change of $y$ is dependent only on the value of $y$ itself. 
+
+## Second Order Equations
+
+These equations have a second derivative (acceleration).
+
+$$
+\frac{d^2y}{dt^2} = -ky
+$${#eq-second-1}
+
+@eq-second-1 is Newton's law.
+
+$$
+my'' + by' + ky = f(t)
+$${#eq-second-2}
+
+In @eq-second-2, $f(t)$ is your external (forcing) term.
+
+We want *linearity* and *constant coefficients* $m$, $b$, and $k$.
+
+## Good equations
+
+Equations that are *Linear with constant coefficients* are good equations:
+
+$$
+\text{Nice function} \, f(t) \rightarrow \text{Nice function} \, y(t)
+$$
+
+Sometimes we can just get the equation; sometimes we need to do the equation with integrals.
+
+When you have varying coefficients and nonlinear forcing terms, you need to find numerical solutions.
+
+## Systems of $n$ equations
+
+In reality, we often have many equations. 
+
+$$
+\frac{d\textbf{y}}{dt} = \textbf{Ay}
+$${#eq-system-1}
+
+In @eq-system-1, $\textbf{y}$ is a vector $\left(y_1, y_2, \ldots, y_n \right)$ and $\textbf{A}$ is an $n \times n$ matrix ($n$ coupled equations, $n$ unknowns).
+
+$$
+\frac{d^2\textbf{y}}{dt^2} = -\textbf{Sy}
+$${#eq-system-2}
+
+Here, $y$ is still a vector of $n$ unknowns, but $S$ is a *symmetric* matrix. Again, linear, constant coefficients... but several variables at once.
+
+We will need *eigenvalues* and *eigenvectors* to turn the $n$ coupled equations into $n$ *uncoupled* equations that we can solve separately.
+
+## Numerical Analysis
+
+Generally, solutions are found numerically, and there's a lot to learn about exactly how that's done. MATLAB is a first-class package (lol) that gives you lots of equations to solve differential equations.
+
+**ODE45**: **O**rdinary **D**ifferential **E**quations 45.
+
+Euler came up with the first numerical method for calculating differential equations; his solution was fine but not sufficiently accurate - ODE45 has much higher accuracy and higher flexibility.
+
+
+## Partial Differential Equations
+
+$$
+\frac{du}{dx} = \frac{d^2u}{dx^2}
+$${#eq-heat}
+
+Here we have 2 variables: time and $x$, in the space direction. @eq-heat is the *heat equation.*
+
+$$
+\frac{d^2u}{dt^2} = \frac{d^2u}{dx^2}
+$${#eq-wave}
+
+@eq-wave is the *wave equation*. @eq-heat and @eq-wave are both infinite systems of equations in space and time.
+
+$$
+\frac{d^2u}{dx^2} + \frac{d^2u}{dx^2} = 0
+$${#eq-laplace}
+
+@eq-laplace is the *Laplace equation.*
+
+## Goal
+
+Get a *standard, clear picture* of the basic differential equations that we can solve and understand.
+
+# The calculus you need
+
+## Important Derivatives:
+
+$$
+\frac{d}{dx}x^n = nx^{n-1}
+$$
+
+$$
+\begin{aligned}
+\frac{d}{dx}(\sin{x}) &= \cos{x} \\
+\frac{d}{dx}(\cos{x}) &= -\sin{x} 
+\end{aligned}
+$$
+
+$$
+\frac{d}{dx}e^x = e^x
+$$
+
+$$
+\frac{d}{dx}\ln{x} = \frac{1}{x}
+$$
+
+## Derivative Rules:
+$$
+\frac{d}{dx}(f + g) = \frac{d}{dx}f + \frac{d}{dx}g
+$$
+
+The product rule (@eq-prod):
+$$
+\frac{d}{dx}(fg) = g\frac{df}{dx} + f\frac{dg}{dx}
+$${#eq-prod}
+
+The quotient rule (@eq-quot)^[Easily remembered by taking the product rule on $f$ and $\frac{1}{g}$]:
+$$
+\frac{d}{dx}\left(\frac{f}{g}\right) = \frac{g\frac{df}{dx}-f\frac{dg}{dx}}{g^2}
+$${#eq-quot}
+
+And the all-important chain rule (@eq-chain):
+
+$$
+\frac{d}{dx}\left(f(g)\right) = \frac{df}{dg}\frac{dg}{dx}= g'(f) \cdot f'
+$${#eq-chain}
+
+Last, the Fundamental Theorem of Calculus (@eq-fund):
+
+$$
+\frac{d}{dx} \int_0^xy(t)dt = y(x)
+$${#eq-fund}
+
+You take a function, you integrate it, you take the derivative, you get it back.
+
+## Applying the Fundamental Theorem:
+
+$$
+y(t) = \int_0^te^{t-s}q(s)ds \hspace{2em} \text{solves} \hspace{2em} \frac{dy}{dt} = y + q(t)
+$${#eq-app}
+
+We want to show that @eq-first-1 is solved by the integral in @eq-app.
+
+Let's take the derivative of the integral:
+
+$$
+\begin{aligned}
+y(t) &= \int_0^te^{t-s}q(s)ds \\
+\frac{dy}{dt} &= \frac{d}{dt}\left(\int_0^t e^{t-s}q(s)ds\right) \\
+&= \frac{d}{dt}\left(e^t\int_0^t e^{-s}q(s)ds\right) \\
+&= e^t\frac{d}{dt}\left(\int_0^t e^{-s}q(s)ds\right) 
+    + \frac{de^t}{dt}\left(\int_0^t e^{-s}q(s)ds\right)\\
+&= e^t\left(e^{-t} q(t) \right) + e^t\left(\int_0^t e^{-s}q(s)ds\right)\\
+&= q(t) + \int_0^te^{t-s}q(s)ds
+\end{aligned}
+$$
+
+Therefore:
+$$
+\frac{dy}{dt} = y(t) + q(t)
+$$
+
+And @eq-first-1 is satisfied. 
+
+## The Taylor Series
+
+Tangent line to a graph:
+
+$$
+\begin{aligned}
+f(t + \Delta t) &\approx f(t) + \Delta t \frac{df}{dt}(t)\\
+\frac{\Delta f}{\Delta t} &\approx \frac{df}{dt}
+\end{aligned}
+$${#eq-diff-calc}
+
+@eq-diff-calc expresses the most fundamental idea of differential calculus. At the point $t$, the derivative $\frac{df}{dt}$ is *very close* to the change in the function over a short distance $\Delta t$.
+
+Hence, on the graph of e(t):
+
+```{julia}
+#| echo: false
+using Plots
+using LaTeXStrings
+x = -2:0.01:2
+Fline(x) = x + 1
+G = [exp.(x), Fline.(x)]
+plot(x, G, label=[L"e^x" "Tangent line at x = 0"], lw=2)
+```
+
+Since $\frac{d}{dt}\left(e^x\right) = e^x$, the slope of the tangent line at any point along the graph is the *height of the graph at that point.*
+
+We can get closer to our function if, instead of a tangent line, we use a tangent *parabola*:
+
+$$
+f(t + \Delta t) \approx \frac{df}{dt} + \frac{1}{2!}(\Delta t)^2\frac{df^2}{dt^2}
+$$
+
+```{julia}
+#| echo: false
+x = -2:0.001:2
+Fline(x) = x + 1
+Fparab(x) = x + 1 + (x^2)/2
+G = [exp.(x), Fparab.(x), Fline.(x)]
+plot(x, G, label=[L"e^x" "Tangent Parabola" "Tangent Line"], lw=2)
+```
+
+You can see that the tangent parabola approximates $e^x$ much better than the tangent line does.
+
+To do better, we could take the third derivative, the fourth derivative, etc... and when we're done, we get $e^t$. 
+
+This leads us to the *Taylor Series*:
+
+$$
+f(x) = \sum_0^{\infty} \frac{1}{n!}(\Delta t)^n \frac{d^n f}{dt^n}
+$${#eq-taylor-series}

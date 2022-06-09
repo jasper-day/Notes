@@ -1,5 +1,18 @@
 ---
 title: Engineering Notes
 listing:
-  contents: Engineering/*.qmd
+  - id: Shigley
+    contents: "Engineering/Shigley/*.qmd"
+  - id: Dim_Ana
+    contents: "Engineering/Dimensional_Analysis/*.qmd"
 ---
+
+## [Shigley](Engineering/Shigley.qmd)
+
+::: {#Shigley}
+:::
+
+## [Dimensional Analysis](Engineering/Dimensional_Analysis.qmd)
+
+::: {#Dim_Ana}
+:::

@@ -3,3 +3,5 @@ title: Differential Equations
 listing:
   contents: DiffEqs/*.qmd
 ---
+
+Based off the MIT Differential Equations course: <http://ocw.mit.edu/RES-18-009F15> 

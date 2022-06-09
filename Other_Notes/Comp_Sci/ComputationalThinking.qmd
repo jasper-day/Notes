@@ -3,3 +3,5 @@ title: Computational Thinking
 listing:
   contents: ComputationalThinking/*.qmd
 ---
+
+Based off the MIT Introduction to Computational Thinking, 22.S092: <https://computationalthinking.mit.edu/Fall20/>

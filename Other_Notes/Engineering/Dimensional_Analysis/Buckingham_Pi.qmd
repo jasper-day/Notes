@@ -1,5 +1,6 @@
 ---
 title: Dimensional Analysis with Linear Algebra
+subtitle: "Exploration of Buckingham's Pi Theorem"
 author: Jasper Day
 colorlinks: true
 number-sections: true

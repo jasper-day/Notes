@@ -58,7 +58,29 @@ ul.task-list{list-style: none;}
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-Eng .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-subtitle','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-subtitle","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-Eng'] = new List('listing-Eng', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-Comp .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -71,7 +93,51 @@ ul.task-list{list-style: none;}
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-Comp'] = new List('listing-Comp', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-Math .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-Math'] = new List('listing-Math', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-Personal .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: [],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-Personal'] = new List('listing-Personal', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -136,7 +202,16 @@ ul.task-list{list-style: none;}
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#engineering" id="toc-engineering" class="nav-link active" data-scroll-target="#engineering"> <span class="header-section-number">1</span> <span>Engineering</span></a></li>
+  <li><a href="#computer-science" id="toc-computer-science" class="nav-link" data-scroll-target="#computer-science"> <span class="header-section-number">2</span> <span>Computer Science</span></a></li>
+  <li><a href="#mathematics" id="toc-mathematics" class="nav-link" data-scroll-target="#mathematics"> <span class="header-section-number">3</span> <span>Mathematics</span></a></li>
+  <li><a href="#personal-notes" id="toc-personal-notes" class="nav-link" data-scroll-target="#personal-notes"> <span class="header-section-number">4</span> <span>Personal Notes</span></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -158,20 +233,36 @@ ul.task-list{list-style: none;}
 
 </header>
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<section id="engineering" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="engineering"><span class="header-section-number">1</span> <a href="./Other_Notes/Engineering.html">Engineering</a></h2>
+<div id="listing-Eng" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1654783961354" data-listing-reading-time-sort="0.005">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1654784162297" data-listing-reading-time-sort="0.05">
 <div class="body">
-<a href="./Other_Notes/Comp_Sci.html">
+<a href="./Other_Notes/Engineering/Dimensional_Analysis.html">
 <h3 class="no-anchor listing-title">
-Computer Science
+Dimensional Analysis
 </h3>
 <div class="listing-subtitle">
 
+</div>
+<div class="listing-description">
+How do you describe physical systems with dimensionally balanced equations?
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./Other_Notes/Engineering/Dimensional_Analysis.html"> </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1654784038167" data-listing-reading-time-sort="0.005">
+<div class="body">
+<a href="./Other_Notes/Engineering/Shigley.html">
+<h3 class="no-anchor listing-title">
+Shigley
+</h3>
+<div class="listing-subtitle">
+Series in Mechanical Engineering
 </div>
 <div class="listing-description">
 
@@ -179,68 +270,87 @@ Computer Science
 </a>
 </div>
 <div class="metadata">
-<a href="./Other_Notes/Comp_Sci.html"> </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1654783966388" data-listing-reading-time-sort="0.005">
-<div class="body">
-<a href="./Other_Notes/Engineering.html">
-<h3 class="no-anchor listing-title">
-Engineering Notes
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./Other_Notes/Engineering.html"> </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1654783971702" data-listing-reading-time-sort="0.005">
-<div class="body">
-<a href="./Other_Notes/Mathematics.html">
-<h3 class="no-anchor listing-title">
-Mathematics
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./Other_Notes/Mathematics.html"> </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1654783974614" data-listing-reading-time-sort="0.005">
-<div class="body">
-<a href="./Other_Notes/Personal.html">
-<h3 class="no-anchor listing-title">
-Personal Notes
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./Other_Notes/Personal.html"> </a>
+<a href="./Other_Notes/Engineering/Shigley.html"> </a>
 </div>
 </div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div></main> <!-- /main -->
+</div>
+</section>
+<section id="computer-science" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="computer-science"><span class="header-section-number">2</span> <a href="./Other_Notes/Comp_Sci.html">Computer Science</a></h2>
+<div id="listing-Comp" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1654791665545" data-listing-reading-time-sort="0.05">
+<div class="body">
+<a href="./Other_Notes/Comp_Sci/ComputationalThinking.html">
+<h3 class="no-anchor listing-title">
+Computational Thinking
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+Based off the MIT Introduction to Computational Thinking, 22.S092: https://computationalthinking.mit.edu/Fall20/
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./Other_Notes/Comp_Sci/ComputationalThinking.html"> </a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="mathematics" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="mathematics"><span class="header-section-number">3</span> <a href="./Other_Notes/Mathematics.html">Mathematics</a></h2>
+<div id="listing-Math" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1654789734882" data-listing-reading-time-sort="0.045">
+<div class="body">
+<a href="./Other_Notes/Mathematics/DiffEqs.html">
+<h3 class="no-anchor listing-title">
+Differential Equations
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+Based off the MIT Differential Equations course: http://ocw.mit.edu/RES-18-009F15
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./Other_Notes/Mathematics/DiffEqs.html"> </a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="personal-notes" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="personal-notes"><span class="header-section-number">4</span> <a href="./Other_Notes/Personal.html">Personal Notes</a></h2>
+<div id="listing-Personal" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";

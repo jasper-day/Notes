@@ -1,6 +1,12 @@
 ---
 title: Computer Science
 listing:
-  contents: Comp_Sci/*.qmd
+  - id: Comp-Think
+    contents: "Comp_Sci/ComputationalThinking/*.qmd"
 ---
+
+## [Computational Thinking](Comp_Sci/ComputationalThinking.qmd)
+
+::: {#Comp-Think}
+:::
 

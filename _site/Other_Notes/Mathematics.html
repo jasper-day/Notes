@@ -58,20 +58,20 @@ ul.task-list{list-style: none;}
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-DiffEqs .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-DiffEqs'] = new List('listing-DiffEqs', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -136,7 +136,13 @@ ul.task-list{list-style: none;}
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#differential-equations" id="toc-differential-equations" class="nav-link active" data-scroll-target="#differential-equations"> <span class="header-section-number">1</span> <span>Differential Equations</span></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -157,17 +163,39 @@ ul.task-list{list-style: none;}
 
 </header>
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<section id="differential-equations" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="differential-equations"><span class="header-section-number">1</span> <a href="../Other_Notes/Mathematics/DiffEqs.html">Differential Equations</a></h2>
+<div id="listing-DiffEqs" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1654784045634" data-listing-reading-time-sort="0.005">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1654747200000" data-listing-file-modified-sort="1654791551578" data-listing-reading-time-sort="3.775">
 <div class="body">
-<a href="../Other_Notes/Mathematics/DiffEqs.html">
+<a href="../Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html">
 <h3 class="no-anchor listing-title">
-Differential Equations
+Overview + The Calculus You Need
+</h3>
+<div class="listing-subtitle">
+The first couple lectures
+</div>
+<div class="listing-description">
+A big part of the series will be first order equations and second order equations.
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html">
+<div class="listing-date">
+Jun 9, 2022
+</div>
+<div class="listing-author">
+Jasper Day
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1654789678292" data-listing-reading-time-sort="0">
+<div class="body">
+<a href="../Other_Notes/Mathematics/DiffEqs/Response_To_Exponential.html">
+<h3 class="no-anchor listing-title">
 </h3>
 <div class="listing-subtitle">
 
@@ -178,14 +206,20 @@ Differential Equations
 </a>
 </div>
 <div class="metadata">
-<a href="../Other_Notes/Mathematics/DiffEqs.html"> </a>
+<a href="../Other_Notes/Mathematics/DiffEqs/Response_To_Exponential.html"> </a>
 </div>
 </div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div></main> <!-- /main -->
+</div>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";

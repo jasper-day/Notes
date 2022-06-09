@@ -2,5 +2,32 @@
 title: Non-Class Notes
 subtitle: Stuff I've been Learning
 listing:
-  contents: Other_Notes/*.qmd
+  - id: Eng
+    contents: Other_Notes/Engineering/*.qmd
+  - id: Comp
+    contents: Other_Notes/Comp_Sci/*.qmd
+  - id: Math
+    contents: Other_Notes/Mathematics/*.qmd
+  - id: Personal
+    contents: Other_Notes/Personal/*.qmd
 ---
+
+## [Engineering](Other_Notes/Engineering.qmd)
+
+::: {#Eng}
+:::
+
+## [Computer Science](Other_Notes/Comp_Sci.qmd)
+
+::: {#Comp}
+:::
+
+## [Mathematics](Other_Notes/Mathematics.qmd)
+
+::: {#Math}
+:::
+
+## [Personal Notes](Other_Notes/Personal.qmd)
+
+::: {#Personal}
+:::
