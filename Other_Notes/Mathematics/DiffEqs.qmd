@@ -4,4 +4,4 @@ listing:
   contents: DiffEqs/*.qmd
 ---
 
-Based off the MIT Differential Equations course: <http://ocw.mit.edu/RES-18-009F15> 
+Based off the MIT Differential Equations course: <https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/pages/syllabus/> 

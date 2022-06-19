@@ -1,0 +1,102 @@
+---
+title: Response to Exponential Inputs
+subtitle: Exponential
+author: Jasper Day
+---
+
+# Response to Exponential Input
+
+We start with an equation of form 
+
+$$
+\frac{dy}{dt} = ay + e^{st}
+$${#eq-source}
+
+The output, $y(t)$, is called the "exponential response."
+
+We have a starting deposit (initial condition) $y = y(0)$ at time $t = 0$, and additional deposits equalling $e^{st}$. 
+
+With @eq-source, the solutions will be a multiple of $e^{st}$, written 
+
+$$
+y_p = Ye^{st}
+$${#eq-yp}
+
+($y_p$ is a *particular* solution of y.)
+
+So we can substitute @eq-yp into @eq-source and solve for $Y$.
+
+$$
+\begin{gathered}
+Yse^{st} = aYe^{st} + e^{st} \\
+(s-a)Y = 1
+Y = \frac{1}{s-a}
+\end{gathered}
+$$
+
+We've found a particular solution, but to find the complete set of solutions, we need to add all null solutions, where the input is zero.
+
+$$
+\begin{gathered}
+\frac{dy}{dt} = ay \\
+y = e^at
+\end{gathered}
+$$
+
+So the complete set of solutions $y_p + y_n$ is:
+
+$$
+y(t) = \frac{e^{st}}{s-a} + Ce^{at}
+$$
+
+and
+
+$$
+y(0) = \frac{1}{s-a} + C
+$$
+
+The complete solution that satisfies the initial conditions is:
+
+$$
+\begin{aligned}
+y(t) &= \frac{e^{st}}{s-a} + \left[ y(0) - \frac{1}{s-a} \right]e^{at} \\
+&= \frac{e^{st}-e^{at}}{s-a} + y(0)e^{at}
+\end{aligned}
+$$
+
+$y(0)e^{at}$ is the term growing out of the initial deposit (to use the money-in-the-bank scenario again), and $\frac{e^{st}-e^{at}}{s-a}$ is the term growing out of the additional deposits. 
+
+$\frac{e^{st}-e^{at}}{s-a}$ is the "very particular solution", since it equals $0$ at $t=0$, giving us the form $y_{vp} + y_n$.
+
+## Resonance
+
+There is one problem: what if $s=a$?
+
+Then you have *resonance*: you are putting money in with the same exponential as the natural growth of the money, and our formula has to change. The very particular solution will then be $\frac{0}{0}$: the formula has broken down.
+
+So IF $s=a$,
+
+$$
+y_{vp} + y_n = te^{at} + y(0)e^{at}
+$${#eq-resonance}
+
+How do we get the resonant answer? We use *l'Hôpital's rule*. 
+
+$$
+\begin{aligned}
+\lim_{s\to a} \frac{e^{st}-e^{at}}{s-a} &= \frac{\frac{d}{ds}\left(e^{st} - e^{at} \right)}{\frac{d}{ds}(s-a)} \\
+&= \frac{te^{st}}{1} \\
+&= te^{at}
+\end{aligned}
+$$ {#eq-hopital}
+
+^[Clearly, @eq-hopital works whether you take the derivative with respect to $s$ or with respect to $a$.]
+
+## Sum
+
+So, to recap: 
+
+1. Find a particular solution $y_p$
+2. Find the nullspace, all solutions where the input (in this case $e^st$ equals zero)
+3. Combine the particular and null solutions, then find an equation in terms of $y(0)$
+4. Check for resonance
