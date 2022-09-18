@@ -11,7 +11,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - href: /Class_Notes.qmd
+      - href: Class_Notes.qmd
         text: Class Notes
       - href: Other_Notes.qmd
         text: Other Notes
