@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 1a1858db-d266-4969-9d80-b865a2fa0830
+      url: 'https://quartopub.com/sites/jasper-day/notes'
