@@ -11,17 +11,17 @@ number-sections: false
 
 # Year 2 Mandatory Courses
 
-- [Structural Mechanics 2](2A_Struc_Mech/2A_Struc_Mech.qmd)
-- [Fluid Mechanics 2](2A_Fluid_Mech/2A_Fluid_Mech.qmd)
-- [Engineering Mathematics 2A](2A_Eng_Math/2A_Eng_Math.qmd)
-- [Programming Skills for Engineers 2](2A_Prog_Skill/2A_Prog_Skill.qmd)
-- [Tools for Engineering Design 2](2B_Eng_Design/2B_Eng_Design.qmd)
-- [Dynamics 2](2B_Dynamics/2B_Dynamics.qmd)
-- [Engineering Thermodynamics 2](2B_Eng_Therm/2B_Eng_Therm.qmd)
-- [Engineering Mathematics 2B](2B_Eng_Math/2B_Eng_Math.qmd)
-- [Professional Development for Engineers 2](2B_Prof_Dev/2B_Prof_Dev.qmd)
-- [Materials 2](2B_Materials/2B_Materials.qmd)
-- [Practical Skills in Mechanical Engineering](2_Prac_Skills/2_Prac_Skills.qmd)
+- [*Structural Mechanics 2*](2A_Struc_Mech/2A_Struc_Mech.qmd)
+- [*Fluid Mechanics 2*](2A_Fluid_Mech/2A_Fluid_Mech.qmd)
+- [*Engineering Mathematics 2A*](2A_Eng_Math/2A_Eng_Math.qmd)
+- [*Programming Skills for Engineers 2*](2A_Prog_Skill/2A_Prog_Skill.qmd)
+- [*Tools for Engineering Design 2*](2B_Eng_Design/2B_Eng_Design.qmd)
+- [*Dynamics 2*](2B_Dynamics/2B_Dynamics.qmd)
+- [*Engineering Thermodynamics 2*](2B_Eng_Therm/2B_Eng_Therm.qmd)
+- [*Engineering Mathematics 2B*](2B_Eng_Math/2B_Eng_Math.qmd)
+- [*Professional Development for Engineers 2*](2B_Prof_Dev/2B_Prof_Dev.qmd)
+- [*Materials 2*](2B_Materials/2B_Materials.qmd)
+- [*Practical Skills in Mechanical Engineering*](2_Prac_Skills/2_Prac_Skills.qmd)
 
 # Year 2 Optional Courses
 
