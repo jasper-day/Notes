@@ -5,3 +5,4 @@ listing:
   contents: Class_Notes/*.qmd
 ---
 
+[Course List](Class_Notes/courses.qmd)
