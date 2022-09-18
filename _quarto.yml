@@ -6,7 +6,6 @@ website:
   title: "Class Notes"
   navbar:
     pinned: false
-    search: true
     left:
       - href: index.qmd
         text: Home
@@ -15,6 +14,40 @@ website:
         text: Class Notes
       - href: Other_Notes.qmd
         text: Other Notes
+  # sidebar: 
+  #   auto: true
+  #   contents:
+  #     - section: Year 2
+  #       contents: 
+  #         - section: Practical Skills
+  #           contents: Class_Notes/2_Prac_Skills/*
+  #         - section: Engineering Math 2A
+  #           contents: Class_Notes/2A_Eng_Math/*
+  #         - section: Fluid Mechanics
+  #           contents: Class_Notes/2A_Fluid_Mech/*
+  #         - section: Power Engineering
+  #           contents: Class_Notes/2A_Power_Eng/*
+  #         - section: Programming Skills
+  #           contents: Class_Notes/2A_Prog_Skill/*
+  #         - section: Structural Mechanics
+  #           contents: Class_Notes/2A_Struc_Mech/*
+  #         - section: Dynamics
+  #           contents: Class_Notes/2B_Dynamics/*
+  #         - section: Engineering Design
+  #           contents: Class_Notes/2B_Eng_Design/*
+  #         - section: Engineering Math 2B
+  #           contents: Class_Notes/2B_Eng_Math/*
+  #         - section: Engineering Thermodynamics
+  #           contents: Class_Notes/Eng_Therm/*
+  #         - section: Materials
+  #           contents: Class_Notes/2B_Materials/*
+  #         - section: Professional Development
+  #           contents: Class_Notes/2B_Prof_Dev/*
+  #         - section: Sensor Networks and Data Analysis
+  #           # contents: Class_Notes/2B_Sensor_Nets/*
+  #   style: "floating"
+  #   search: true
+
 
 
 number-sections: true
