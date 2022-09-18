@@ -1,0 +1,320 @@
+<table class="sitstablegrid">
+<!--FB 2/1/11 is course marked as closed? -->
+<caption>Course Outline</caption>
+<tr>
+<td class="rowhead1">School</td><td>School of Engineering</td>
+<td class="rowhead1">College</td><td>College of Science and Engineering</td>
+</tr>
+<tr>
+<td class="rowhead1">Credit level (Normal year taken)</td><td>SCQF Level 8 (Year 2 Undergraduate)</td>
+<td class="rowhead1">Availability</td><td>Available to all students</td>
+</tr>
+<tr>
+<td class="rowhead1">SCQF Credits</td><td>10</td>
+<td class="rowhead1">ECTS Credits</td><td>5</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class="rowhead1">Summary</td><td colspan="99">The student should develop an awareness of the qualitive behaviour of fluids in typical situations so that models of problems can be set up for solution. The course's objectives are to:<br/>
+1.	Produce quantitative solutions for models derived from some useful applications in the fields of measurement and pipe flow;<br/>
+2.	Establish enough theoretical background to enable the range of validity of these basic solutions to be understood; and to <br/>
+3.	Provide a starting point with respect to terminology and theory for more advanced study in subsequent years.<br/>
+</td>
+</tr>
+<tr>
+<td class="rowhead1">Course description</td><td colspan="99">
+    
+    L1	Properties of  Fluids<br/>
+	Shear stress, viscosity, density, compressibility, surface tension.<br/>
+<br/>
+L2	Simple Flow Fields and Phenomena 1<br/>
+Laminar and turbulent flow states; flow in a duct, flow over a flat plate; flow round objects; separation &amp; wakes; vortex shedding; drag. <br/>
+<br/>
+L3	Simple Flow Fields and Phenomena 2<br/>
+Reynolds number; Strouhal number. More simple flow fields; orifice flow, flow round bends. Terminology: external/internal; steady/transient, real/ideal, laminar/turbulent,  compressible/incompressible;  vectors, streamlines &amp; pathlines.<br/>
+<br/>
+L4	Introduction to Dimensional Analysis<br/>
+<br/>
+L5	Fluid Statics 1<br/>
+Pressure; variation of pressure with height; 'head'; manometers and other pressure measurement devices.<br/>
+<br/>
+L6	Fluid Statics 2<br/>
+Forces on submerged surfaces - 'centre of pressure', 'centre of force'.<br/>
+<br/>
+L7	The Continuity Equation<br/>
+The continuity equation; flow between plane walls. pipe flow.<br/>
+<br/>
+L8	Equations of Motion<br/>
+Equation of motion along a streamline; steady-state equation (Euler's momentum equation); motion perpendicular to a streamline - significance of pressure gradients.<br/>
+<br/>
+L9	Bernouilli¿s Equation<br/>
+Time dependent Bernoulli equation; Steady state Bernoulli equation.<br/>
+<br/>
+L10	Applications of Bernouilli<br/>
+Example applications of Bernoulli equation: siphons, flow with area change, flow around a pipe bend.<br/>
+<br/>
+L11	Velocity and Flow Rate Measurement<br/>
+Pitot tube &amp; Pitot-static tube. Flow rate measurement - restriction flow meters (general); venturi meter.<br/>
+<br/>
+L12	Hydraulic Structures<br/>
+Orifice plate; reservoir-orifice flow; linked reservoirs; orifice flow under varying head; flow over weirs.<br/>
+<br/>
+L13	Laminar and Turbulent Flow<br/>
+Laminar flow between plates. Laminar flow through a round pipe - Hagen Poiseuille equation.<br/>
+<br/>
+L14	Turbulent Flow in Pipes<br/>
+Head/pressure losses due to friction; friction coefficient - functional dependency via dimensional analysis.<br/>
+<br/>
+L15	Losses in Real Pipes<br/>
+Moody diagram &amp; equation. <br/>
+<br/>
+L16	Pipe Systems<br/>
+Losses in bends and fittings; loss coefficient.<br/>
+<br/>
+L17	The Momentum Equation<br/>
+The momentum equation for steady flow.<br/>
+<br/>
+L18	Applications of the Momentum Equation <br/>
+Force of jet on plates and vanes; force on pipe bends; head loss due to sudden expansion / contraction<br/>
+<br/>
+L19	Revision /  contingency<br/>
+<br/>
+L20	Revision /  contingency<br/>
+</td>
+</tr>
+</table>, <table class="sitstablegrid">
+<caption>Entry Requirements (not applicable to Visiting Students)</caption>
+<tr>
+<td class="rowhead1">Pre-requisites</td>
+<td></td>
+<td class="rowhead1">Co-requisites</td><td></td>
+</tr>
+<tr>
+<td class="rowhead1">Prohibited Combinations</td><td></td>
+<td class="rowhead1">Other requirements</td><td> None</td>
+</tr>
+<!-- show add costs for portal View Course, course catalogue and from OCE, but only if there are some -->
+<tr>
+<td class="rowhead1">Additional Costs</td><td colspan="4"> PPE (lab coat, safety glasses, safety shoes/boots as prescribed by programme handbook).</td>
+</tr>
+</table>, <table class="sitstablegrid">
+<caption>Information for Visiting Students</caption>
+<tr>
+<td class="rowhead1">Pre-requisites</td><td colspan="4">None</td>
+</tr>
+<tr>
+<td class="rowhead1">High Demand Course?</td>
+<td class="data1nobg" colspan="4">Yes</td>
+</tr>
+</table>, <table class="sitstablegrid">
+<caption>Course Delivery Information</caption>
+<!-- GSL_TMP1 = indicates whether a list of different courses' classes will be displayed. Values: Y - display course code
+at top of table, suppress additional and first class information. If blank then assume single course, so 
+don't display course code, but do display additional class and first class information.  This is so table can be used in individual MOD/MAV report or when listing a number of MODs (eg listing teaching activities for a list of SMAs)  -->
+<!-- GSL_TMP2 - display links to other SRLs (links won't work this from published (IPP)) N: don't, otherwise do-->
+<!-- GSL_TMP4 - Set to Y if first class and additional information to be displayed -->
+<!-- GSL_TMP5- Set to DRPS if SRL called via DRPS publish path- SRL not used for timetable and VS (uses CLASSES_TAB2)-->
+<!-- calling SRL must specify table, table caption (if required) eg:
+<table class="sitstablegrid">
+<caption>Course Delivery </caption> 
+---- call to this SRL ----
+</table> -->
+<tr><td colspan="99" style="height:5px;"></td></tr>
+<!--
+<tr><td colspan="99" style="height:5px;"> 
+ IN MAV_CLASSES_TAB </br>
+GSLTMP1:N</br>
+GSLTMP2:N </br>
+GSLTMP3: </br>
+GSLTMP4:Y </br>
+GSLTMP5:DRPS </br>
+GSLTMP6: </br>
+</td></tr>
+-->
+<tr>
+<td class="rowhead1" colspan="2" style="width:50%;">Academic year 2022/23, Available to all students (SV1) 
+  <!-- Quota moved from mod.course_dets cms call 882028 -->
+</td>
+<td class="rowhead1" colspan="99">Quota:��None</td>
+</tr>
+<!-- Course start (delivery period) -->
+<tr><td class="rowhead1">Course Start</td>
+<td colspan="14">Semester 1</td>
+</tr>
+<!-- Course start date (for invoiced courses) -->
+<!-- VISITING STUDENTS : gsl_tmp6 is set up in mod.course_dets for visiting students only. setup from slp: sma_vs_r then calls mod.course_dets. Test in url_link for this gsl_tmp6  -->
+<!-- ayr code: 22 fixed 18 -->
+<td class="rowhead1" target="_blank">Timetable </td>
+<td class="data1nobg" colspan="99">
+<a href="https://www.ted.is.ed.ac.uk/UOE2223_SWS/TIMETABLE.ASP?OBJECTCLASS=MODULE&amp;IDENTIFIER=SCEE08003_SV1_SEM1
+&amp;STYLE=TEXTSPREADSHEET&amp;TEMPLATE=SWSCUST+OBJECT+TEXTSPREADSHEET&amp;WEEK=9-19" target="_blank">Timetable</a></td>
+<tr>
+<td class="rowhead1" style="width:15%;">Learning and Teaching activities <a href="http://www.studentsystems.is.ed.ac.uk/staff/Support/User_Guides/CCAM//Teaching_Learning.htm" target="_blank">(Further Info)</a></td>
+<td colspan="14"> 
+ Total Hours:
+100
+
+(
+ Lecture Hours 22,
+
+
+ Supervised Practical/Workshop/Studio Hours 3,
+
+
+
+
+ Formative Assessment Hours 1,
+ Summative Assessment Hours 3.5,
+
+
+ Programme Level Learning and Teaching Hours 2,
+
+Directed Learning and Independent Learning Hours
+68 )
+
+</td>
+</tr>
+<!-- Display Futher L&T Notes -->
+<!-- Display Assessment details -->
+<tr>
+<td class="rowhead1" style="width:15%;">Assessment <a href="http://www.studentsystems.is.ed.ac.uk/staff/Support/User_Guides/CCAM//Assessment_Methods.htm" target="_blank">(Further Info)</a></td>
+<td colspan="14"> 
+  Written Exam
+50 %,
+Coursework
+50 %,
+Practical Exam
+0 %
+</td>
+</tr>
+<tr>
+<tr>
+<td class="rowhead1" stlye="width:15%;">Additional Information (Assessment)</td>
+<td colspan="14">50% Examination<br/>
+50% Coursework<br/>
+<br/>
+The School has a 40% Rule for 1st and 2nd year courses, i.e. you must achieve a minimum of 40% in coursework and 40% in written exam components, as well as an overall mark of 40% to pass a course. If you fail a course you will be required to resit it. You are only required to resit components which have been failed.</td>
+</tr>
+<tr>
+<td class="rowhead1" stlye="width:15%;">Feedback</td>
+<td colspan="14">Not entered</td>
+</tr>
+<!--FB 11Oct10: Exam info displayed if it exists, 14/1/11:do not display stationery and comments for GSL_TMP5=DRPS-->
+<tr>
+<td class="rowhead1" colspan="99">Exam Information</td>
+</tr>
+<tr>
+<td class="rowhead1">Exam Diet</td>
+<td class="rowhead1" colspan="2">Paper Name</td>
+<td class="rowhead1">Hours &amp; Minutes</td>
+<td class="rowhead1" colspan="11"></td>
+</tr>
+<tr>
+<td class="data1nobg" nowrap="nowrap">Main Exam Diet S1 (December)</td><td colspan="2"></td><td>1:30</td><td colspan="11"></td></tr><tr><td class="data1nobg" nowrap="nowrap">Resit Exam Diet (August)</td><td colspan="2"></td><td>1:30</td><td colspan="11"></td></tr><tr>
+</tr>
+<!--31/1/11 FB-Teaching load display if exists-->
+<!--Get MABs based on MAP code on MAV
+output heading for Standard student
+SEL on sequence 001-099: <td class="data1nobg"><<DATA FIELD>></td> 
+SEL on sequence 001-099: <td class="data1nobg"><<DATA FIELD>></td> 
+SEL on sequence 001-099: <td class="data1nobg"><<DATA FIELD>></td> 
+SEL on sequence 001-099: <td class="data1nobg"><<DATA FIELD>></td> 
+
+output VS student heading
+select on sequence >= 101:  select on sequence >= 101:  select on sequence >= 101:  select on sequence >= 101:  -->
+<!-- Learning outcomes, FB 1/4/11 add other learning outcomes for ECA -->
+<table class="sitstablegrid">
+<caption>Learning Outcomes</caption>
+<tr>
+<td>    On completion of the course students should be able to:<br/>
+1.	Qualitatively describe and categorise fluid flow regimes, including internal vs external flows; laminar vs turbulent flows; boundary layers and velocity profiles; separation and wakes.<br/>
+2. 	Appreciate the importance of Dimensional Analysis techniques and dimensionless parameters in fluid mechanics; Reynolds number; Mach number.<br/>
+3.	Calculate form and skin friction drag forces using appropriate drag formulae and coefficients.<br/>
+4.	Solve basic hydrostatics problems involving manometers and submerged surfaces.<br/>
+5.	Explain the significance of pressure gradients parallel to, and normal to a streamline.<br/>
+6. 	Understand the concept of continuity, and be able to use the continuity equation to calculate the flow rate in a duct using an appropriate velocity profile;<br/>
+7.	Understand physical basis of Bernoulli's equation, and apply it in flow measurement (orifice and Venturi meter, Pitot-static tube), and to a variety of problems involving area change and height change.<br/>
+8.	Solve basic problems involving pressure losses through pipes and pipe bends and fittings.<br/>
+9. 	Understand the basic Momentum equation and the concept of a control volume. Use the equation to calculate impulse and reaction forces due to the interaction of a fluid stream with objects, and pressure drops.<br/>
+</td>
+</tr>
+</table>
+<table class="sitstablegrid">
+<caption>Reading List</caption>
+<tr><td>Civil ¿ Chadwick, Morfett &amp; Borthwick: Hydraulics in Civil and Environmental Engineering, 5th edition, Spon, £38 <br/>
+<br/>
+Chemical ¿ McCabe, Smith and Harriott: Unit Operations of Chemical Engineering, Intl edition, McGraw Hill, £53<br/>
+<br/>
+Mechanical ¿ Douglas, Gasiorek, Swaffield &amp; Jack: Fluid Mechanics, 6th edition, Pearson, (with ¿free¿ on-line tools) £47.50<br/>
+<br/>
+but I suggest that you don¿t rush off and buy¿ try library copies of these and others; consider 2nd hand copies (earlier editions usually fine)</td></tr>
+</table>
+<!-- CG 14/10/09 changed to show additional costs here only for CCAM amend function -->
+<table class="sitstablegrid">
+<caption>Additional Information</caption>
+<tr>
+<td class="rowhead1">Graduate Attributes and Skills</td>
+<td>Not entered</td>
+</tr>
+<tr>
+<td class="rowhead1">Keywords</td><td>Not entered</td>
+</tr>
+</table>
+<!-- Contact information -->
+<table class="sitstablegrid">
+<caption>Contacts</caption>
+<tr>
+<td class="rowhead1">Course organiser</td><td>Prof Tom Bruce<br/>
+<b>Tel:</b> (0131 6)50 8701<br/>
+<b>Email:</b> Tom.Bruce@ed.ac.uk</td>
+<td class="rowhead1">Course secretary</td><td>Miss Chloe Fleming<br/>
+<b>Tel:</b> <br/>
+<b>Email:</b> cflemin7@ed.ac.uk</td>
+</tr>
+</table>
+<!-- if called from CCAM then show extra course details -->
+</tr></table>, <table class="sitstablegrid">
+<caption>Learning Outcomes</caption>
+<tr>
+<td>    On completion of the course students should be able to:<br/>
+1.	Qualitatively describe and categorise fluid flow regimes, including internal vs external flows; laminar vs turbulent flows; boundary layers and velocity profiles; separation and wakes.<br/>
+2. 	Appreciate the importance of Dimensional Analysis techniques and dimensionless parameters in fluid mechanics; Reynolds number; Mach number.<br/>
+3.	Calculate form and skin friction drag forces using appropriate drag formulae and coefficients.<br/>
+4.	Solve basic hydrostatics problems involving manometers and submerged surfaces.<br/>
+5.	Explain the significance of pressure gradients parallel to, and normal to a streamline.<br/>
+6. 	Understand the concept of continuity, and be able to use the continuity equation to calculate the flow rate in a duct using an appropriate velocity profile;<br/>
+7.	Understand physical basis of Bernoulli's equation, and apply it in flow measurement (orifice and Venturi meter, Pitot-static tube), and to a variety of problems involving area change and height change.<br/>
+8.	Solve basic problems involving pressure losses through pipes and pipe bends and fittings.<br/>
+9. 	Understand the basic Momentum equation and the concept of a control volume. Use the equation to calculate impulse and reaction forces due to the interaction of a fluid stream with objects, and pressure drops.<br/>
+</td>
+</tr>
+</table>, <table class="sitstablegrid">
+<caption>Reading List</caption>
+<tr><td>Civil ¿ Chadwick, Morfett &amp; Borthwick: Hydraulics in Civil and Environmental Engineering, 5th edition, Spon, £38 <br/>
+<br/>
+Chemical ¿ McCabe, Smith and Harriott: Unit Operations of Chemical Engineering, Intl edition, McGraw Hill, £53<br/>
+<br/>
+Mechanical ¿ Douglas, Gasiorek, Swaffield &amp; Jack: Fluid Mechanics, 6th edition, Pearson, (with ¿free¿ on-line tools) £47.50<br/>
+<br/>
+but I suggest that you don¿t rush off and buy¿ try library copies of these and others; consider 2nd hand copies (earlier editions usually fine)</td></tr>
+</table>, <table class="sitstablegrid">
+<caption>Additional Information</caption>
+<tr>
+<td class="rowhead1">Graduate Attributes and Skills</td>
+<td>Not entered</td>
+</tr>
+<tr>
+<td class="rowhead1">Keywords</td><td>Not entered</td>
+</tr>
+</table>, <table class="sitstablegrid">
+<caption>Contacts</caption>
+<tr>
+<td class="rowhead1">Course organiser</td><td>Prof Tom Bruce<br/>
+<b>Tel:</b> (0131 6)50 8701<br/>
+<b>Email:</b> Tom.Bruce@ed.ac.uk</td>
+<td class="rowhead1">Course secretary</td><td>Miss Chloe Fleming<br/>
+<b>Tel:</b> <br/>
+<b>Email:</b> cflemin7@ed.ac.uk</td>
+</tr>
+</table>
