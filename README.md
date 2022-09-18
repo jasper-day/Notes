@@ -6,6 +6,7 @@ It's designed to easily allow me to publish new notes to my blog, create good lo
 
 This note contains the overall file structure.
 
+```
 MarkdownMaster
 |-Blog
 | |-{Projects}
@@ -24,3 +25,4 @@ MarkdownMaster
 | | | |
 | | |-Personal
 | | | |
+```
