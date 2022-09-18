@@ -1,0 +1,70 @@
+# Year 1 Mandatory Courses
+
+- Engineering Mathematics 1a
+- Engineering Principles 1
+- Engineering Mathematics 1b
+- Engineering Design 1
+
+# Year 2 Mandatory Courses
+
+- [Structural Mechanics 2](2A_Struc_Mech/2A_Struc_Mech.qmd)
+- [Fluid Mechanics 2](2A_Fluid_Mech/2A_Fluid_Mech.qmd)
+- [Engineering Mathematics 2A](2A_Eng_Math/2A_Eng_Math.qmd)
+- [Programming Skills for Engineers 2](2A_Prog_Skill/2A_Prog_Skill.qmd)
+- [Tools for Engineering Design 2](2B_Eng_Design/2B_Eng_Design.qmd)
+- [Dynamics 2](2B_Dynamics/2B_Dynamics.qmd)
+- [Engineering Thermodynamics 2](2B_Eng_Therm/2B_Eng_Therm.qmd)
+- [Engineering Mathematics 2B](2B_Eng_Math/2B_Eng_Math.qmd)
+- [Professional Development for Engineers 2](2B_Prof_Dev/2B_Prof_Dev.qmd)
+- [Materials 2](2B_Materials/2B_Materials.qmd)
+- [Practical Skills in Mechanical Engineering](2_Prac_Skills/2_Prac_Skills.qmd)
+
+# Year 2 Optional Courses
+
+- Separation Processes 2
+- Environmental Engineering and Sustainability 2
+- Fire Science and Engineering 2
+- Analogue Circuits 2
+- Microelectronics 2
+- [*Power Engineering 2*](2A_Power_Eng/2A_Power_Eng.qmd)
+- Engineering Principles and Design 2
+- Introduction to Biochemical Engineering 2
+- Process Plant Engineering 2
+- Geotechnical Engineering 2
+- Digital System Design 2
+- [*Sensor Networks and Data Analysis 2*](2B_Sensor_Nets/2B_Sensor_Nets.qmd)
+
+# Year 3 Mandatory Courses
+
+- Professional Issues for Mechanical Engineers 3
+- Manufacture 3
+- Computational Methods and Modelling 3
+- Structural Mechanics and Dynamics 3
+- Sustainable Energy Group Design Project 3
+- Conceptual Design for Mechanical Engineers 3
+- Thermofluids 3
+- Control and Instrumentation Engineering 3
+
+# Year 4 Mandatory Courses
+
+- Mechanical Engineering Group Project 4
+- BEng Mechanical Engineering Project 4
+
+# Year 4 Optional Courses
+
+- Finite Element Methods for Solids and Structures 4
+- The Finite Element Method 5
+- Supply Chain Management 4
+- Operations Management 4
+- Engineering Project Management 4
+- Dynamics 4
+- Fluid Mechanics (Mechanical) 4
+- Polymers and Composite Materials 4
+- Thermodynamics (Mechanical) 4
+- Bio-Inspired Engineering 4
+- Living Materials and their Biomaterial Replacements 4
+- Design of Surgical Tools and Implanted Medical Devices 4
+- Wind Energy 5
+- Marine Energy 5
+- Digital Manufacture 5
+- Surface Engineering and Coatings 5
