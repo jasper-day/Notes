@@ -1,3 +1,7 @@
+---
+title: Course list (BEng Mechanical Engineering)
+number-sections: false
+---
 # Year 1 Mandatory Courses
 
 - Engineering Mathematics 1a

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.165">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Class Notes – a_struc_mech</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Class Notes</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="//Class_Notes.html">Class Notes</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Other_Notes.html">Other Notes</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<table class="sitstablegrid">
+<!--FB 2/1/11 is course marked as closed? -->
+<caption>
+Course Outline
+</caption>
+<tbody><tr>
+<td class="rowhead1" width="15%">
+School
+</td>
+<td width="35%">
+School of Engineering
+</td>
+<td class="rowhead1" width="15%">
+College
+</td>
+<td width="35%">
+College of Science and Engineering
+</td>
+</tr>
+<tr>
+<td class="rowhead1" width="15%">
+Credit level (Normal year taken)
+</td>
+<td width="35%">
+SCQF Level 8 (Year 2 Undergraduate)
+</td>
+<td class="rowhead1" width="15%">
+Availability
+</td>
+<td width="35%">
+Available to all students
+</td>
+</tr>
+<tr>
+<td class="rowhead1" width="15%">
+SCQF Credits
+</td>
+<td width="35%">
+10
+</td>
+<td class="rowhead1" width="15%">
+ECTS Credits
+</td>
+<td width="35%">
+5
+</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class="rowhead1" width="15%">
+Summary
+</td>
+<td colspan="99" width="85%">
+This course engages students with the fundamental principles of Structural Mechanics relevant to civil and mechanical engineers. Specific topics including: equilibrium, stress, strain, axial load, torsion, bending, shear, and deflections in structural elements including beams, columns, struts, ties, and trusses.
+</td>
+</tr>
+<tr>
+<td class="rowhead1" width="15%">
+Course description
+</td>
+<td colspan="99" width="85%">
+<p>Lecture Topics:<br> <br> - T1 Introduction and Overview: Course structure and organisation. What is structural mechanics? <br> - T2 Structural forms: Structural elements and examples. Strength and stiffness. Loads and factors.<br> - T3 Global Equilibrium: Forces and moments, point and distributed loads. Support conditions. Global equilibrium of structures. Concept of structural determinacy and indeterminacy.<br> - T4 Free Body Diagrams and Stress Resultants<br> Truss equilibrium. Stress resultants in struts (axial load), shafts (torsion), beams (shear and bending) and pressure vessels (membrane forces).<br> - T5 Members carrying Axial Load<br> Simple mechanical behaviour. Deformation (due to load and thermal strain).<br> - T6 Members carrying Torsion<br> Torsion of circular shafts and other closed sections. Torsional stiffness and deformation.<br> - T7 Stress Resultants in Determinate Beams (1)<br> Sign conventions. Shear force and bending moment diagrams.<br> - T8 Stress Resultants in Determinate Beams (2)<br> Relationships between w, V, and M<br> - T9 Bending of Beams (1)<br> Euler Beam Theory. Curvature. Plane sections. Bending strains<br> - T10 Bending of Beams (2)<br> Euler Beam Theory. Elastic bending stresses. The neutral axis. Moment - curvature - stress - strain relationships.<br> - T11 Deflection of Beams<br> Double integration of curvature to find deflection. Support boundary conditions. Beam stiffness<br> - T12 Superposition of Deflection<br> Deflection coefficients. Superposition of deflections.<br> - T13 Geometric Section Properties<br> Area, 2nd moments of area, Parallel axis theorem. Rectangular, circular, T and I sections<br> - T14 Composite Beam Sections<br> Modular ratio and equivalent section. Stress and strain diagrams.<br> - T15 Shear Stresses in Beams (1)<br> Complimentary shear. Derivation of shear stress formulae.<br> - T16 Shear Stresses in Beams (2)<br> Shear flow. Rectangular, box and flanged sections.<br> - T17 Combined Loading<br> Combining axial, torsion, shear and biaxial bending stresses.<br> - T18 Stress and Strain Transformation<br> Plane stress, plane strain. Mohr’s circle.<br> <br> Tutorials:<br> - 9 ‘Tutorials’ (Format to be decided)<br> <br> Laboratory experiments:<br> - 4-6 ‘Physical Experiments/Demonstrations’ (Format to be decided)</p>
+</td>
+</tr>
+
+</tbody></table>
+,
+
+<table class="sitstablegrid">
+<caption>
+Entry Requirements (not applicable to Visiting Students)
+</caption>
+<tbody><tr>
+<td class="rowhead1" width="15%">
+Pre-requisites
+</td>
+<td width="35%">
+</td>
+<td class="rowhead1" width="15%">
+Co-requisites
+</td>
+<td width="35%">
+</td>
+</tr>
+<tr>
+<td class="rowhead1" width="15%">
+Prohibited Combinations
+</td>
+<td width="35%">
+</td>
+<td class="rowhead1" width="15%">
+Other requirements
+</td>
+<td width="35%">
+None
+</td>
+</tr>
+<!-- show add costs for portal View Course, course catalogue and from OCE, but only if there are some -->
+
+</tbody></table>
+,
+
+<table class="sitstablegrid">
+<caption>
+Information for Visiting Students
+</caption>
+<tbody><tr>
+<td class="rowhead1" width="15%">
+Pre-requisites
+</td>
+<td colspan="4" width="85%">
+None
+</td>
+</tr>
+<tr>
+<td class="rowhead1" width="15%">
+High Demand Course?
+</td>
+<td class="data1nobg" colspan="4" width="85%">
+Yes
+</td>
+</tr>
+
+</tbody></table>
+,
+
+<table class="sitstablegrid">
+<caption>
+Course Delivery Information
+</caption>
+
+<!-- GSL_TMP1 = indicates whether a list of different courses' classes will be displayed. Values: Y - display course code
+at top of table, suppress additional and first class information. If blank then assume single course, so 
+don't display course code, but do display additional class and first class information.  This is so table can be used in individual MOD/MAV report or when listing a number of MODs (eg listing teaching activities for a list of SMAs)  -->
+<!-- GSL_TMP2 - display links to other SRLs (links won't work this from published (IPP)) N: don't, otherwise do-->
+<!-- GSL_TMP4 - Set to Y if first class and additional information to be displayed -->
+
+<!-- GSL_TMP5- Set to DRPS if SRL called via DRPS publish path- SRL not used for timetable and VS (uses CLASSES_TAB2)-->
+<!-- calling SRL must specify table, table caption (if required) eg:
+<table class="sitstablegrid">
+<caption>Course Delivery </caption> 
+---- call to this SRL ----
+</table> -->
+<tbody><tr>
+<td colspan="99" style="height:5px;">
+</td>
+</tr>
+<!--
+<tr><td colspan="99" style="height:5px;"> 
+ IN MAV_CLASSES_TAB </br>
+GSLTMP1:N</br>
+GSLTMP2:N </br>
+GSLTMP3: </br>
+GSLTMP4:Y </br>
+GSLTMP5:DRPS </br>
+GSLTMP6: </br>
+</td></tr>
+-->
+<tr>
+<td class="rowhead1" colspan="2" style="width:50%;">
+Academic year 2022/23, Available to all students (SV1) <!-- Quota moved from mod.course_dets cms call 882028 -->
+</td>
+<td class="rowhead1" colspan="99">
+Quota:ááNone
+</td>
+</tr>
+<!-- Course start (delivery period) -->
+<tr>
+<td class="rowhead1" width="5%">
+Course Start
+</td>
+<td colspan="14">
+Semester 1
+</td>
+</tr>
+<!-- Course start date (for invoiced courses) -->
+<!-- VISITING STUDENTS : gsl_tmp6 is set up in mod.course_dets for visiting students only. setup from slp: sma_vs_r then calls mod.course_dets. Test in url_link for this gsl_tmp6  -->
+<!-- ayr code: 22 fixed 18 -->
+<tr><td class="rowhead1" target="_blank" width="15%">
+Timetable
+</td>
+<td class="data1nobg" colspan="99">
+<a href="https://www.ted.is.ed.ac.uk/UOE2223_SWS/TIMETABLE.ASP?OBJECTCLASS=MODULE&amp;IDENTIFIER=CIVE08026_SV1_SEM1
+&amp;STYLE=TEXTSPREADSHEET&amp;TEMPLATE=SWSCUST+OBJECT+TEXTSPREADSHEET&amp;WEEK=9-19" target="_blank">Timetable</a>
+</td>
+</tr><tr>
+<td class="rowhead1" style="width:15%;">
+Learning and Teaching activities <a href="http://www.studentsystems.is.ed.ac.uk/staff/Support/User_Guides/CCAM//Teaching_Learning.htm" target="_blank">(Further Info)</a>
+</td>
+<td colspan="14">
+<p>Total Hours: 100</p>
+<p>( Lecture Hours 18, Seminar/Tutorial Hours 9,</p>
+<p>Supervised Practical/Workshop/Studio Hours 3,</p>
+<p>Online Activities 0.5,</p>
+<p>Summative Assessment Hours 1.5,</p>
+<p>Programme Level Learning and Teaching Hours 2,</p>
+<p>Directed Learning and Independent Learning Hours 66 )</p>
+</td>
+</tr>
+<!-- Display Futher L&T Notes -->
+<!-- Display Assessment details -->
+<tr>
+<td class="rowhead1" style="width:15%;">
+Assessment <a href="http://www.studentsystems.is.ed.ac.uk/staff/Support/User_Guides/CCAM//Assessment_Methods.htm" target="_blank">(Further Info)</a>
+</td>
+<td colspan="14">
+Written Exam 80 %, Coursework 20 %, Practical Exam 0 %
+</td>
+</tr>
+<tr>
+</tr><tr>
+<td class="rowhead1" stlye="width:15%;">
+Additional Information (Assessment)
+</td>
+<td colspan="14">
+Written Exam %: 80<br> Practical Exam %: 0<br> Coursework %: 20<br> <br> The School has a 40% Rule for 1st and 2nd year courses, i.e.&nbsp;you must achieve a minimum of 40% in coursework and 40% in written exam components, as well as an overall mark of 40% to pass a course. If you fail a course you will be required to resit it. You are only required to resit components which have been failed.
+</td>
+</tr>
+<tr>
+<td class="rowhead1" stlye="width:15%;">
+Feedback
+</td>
+<td colspan="14">
+Weekly seminars and written feedback on coursework.
+</td>
+</tr>
+<!--FB 11Oct10: Exam info displayed if it exists, 14/1/11:do not display stationery and comments for GSL_TMP5=DRPS-->
+<tr>
+<td class="rowhead1" colspan="99">
+Exam Information
+</td>
+</tr>
+<tr>
+<td class="rowhead1">
+Exam Diet
+</td>
+<td class="rowhead1" colspan="2">
+Paper Name
+</td>
+<td class="rowhead1">
+Hours &amp; Minutes
+</td>
+<td class="rowhead1" colspan="11">
+</td>
+</tr>
+<tr>
+<td class="data1nobg" nowrap="nowrap">
+Main Exam Diet S1 (December)
+</td>
+<td colspan="2">
+</td>
+<td>
+1:30
+</td>
+<td colspan="11">
+</td>
+</tr>
+<tr>
+<td class="data1nobg" nowrap="nowrap">
+Resit Exam Diet (August)
+</td>
+<td colspan="2">
+</td>
+<td>
+1:30
+</td>
+<td colspan="11">
+</td>
+</tr>
+<tr>
+</tr>
+<!--31/1/11 FB-Teaching load display if exists-->
+<!--Get MABs based on MAP code on MAV
+output heading for Standard student
+SEL on sequence 001-099: <td class="data1nobg"><<DATA FIELD>></td> 
+SEL on sequence 001-099: <td class="data1nobg"><<DATA FIELD>></td> 
+SEL on sequence 001-099: <td class="data1nobg"><<DATA FIELD>></td> 
+SEL on sequence 001-099: <td class="data1nobg"><<DATA FIELD>></td> 
+
+output VS student heading
+select on sequence >= 101:  select on sequence >= 101:  select on sequence >= 101:  select on sequence >= 101:  -->
+<!-- Learning outcomes, FB 1/4/11 add other learning outcomes for ECA -->
+
+</tbody></table><table class="sitstablegrid">
+<caption>
+Learning Outcomes
+</caption>
+<tbody><tr>
+<td>
+On completion of this course, the student will be able to:
+<ol style="font-family:inherit;font-size:inherit;">
+<li>
+Describe and manipulate fundamental concepts of stress, strain, and deformation in members carrying axial, bending, shear, and torsional loads;
+</li>
+<li>
+Determine how statically determinate trusses and beams carry load; for beams using diagrams of bending moment and shear force, and evaluate the resulting elastic deflections of the beams;
+</li>
+<li>
+Analyse structural cross sections, so as to determine the elastic stress and strain distributions, as well as the deformations, resulting from axial, bending and torsional actions;
+</li>
+<li>
+Describe and manipulate relevant concepts of combined loadings and stress and strain transformation.
+</li>
+</ol>
+</td>
+</tr>
+
+</tbody></table>
+<table class="sitstablegrid">
+<caption>
+Reading List
+</caption>
+<tbody><tr>
+<td>
+None
+</td>
+</tr>
+
+</tbody></table>
+<!-- CG 14/10/09 changed to show additional costs here only for CCAM amend function -->
+
+<table class="sitstablegrid">
+<caption>
+Additional Information
+</caption>
+<tbody><tr>
+<td class="rowhead1" width="15%">
+Graduate Attributes and Skills
+</td>
+<td width="85%">
+Not entered
+</td>
+</tr>
+<tr>
+<td class="rowhead1" width="15%">
+Keywords
+</td>
+<td width="85%">
+Equilibrium,Stress,Strain,Axial load,Torsion,Bending,Shear,Deflections,Beams,Columns,Struts,Ties
+</td>
+</tr>
+
+</tbody></table>
+<!-- Contact information -->
+
+<table class="sitstablegrid">
+<caption>
+Contacts
+</caption>
+<tbody><tr>
+<td class="rowhead1" width="15%">
+Course organiser
+</td>
+<td width="35%">
+Dr Thomas Reynolds<br> <b>Tel:</b> (0131 6)50 5633<br> <b>Email:</b> treynold@exseed.ed.ac.uk
+</td>
+<td class="rowhead1" width="15%">
+Course secretary
+</td>
+<td width="35%">
+Mr Craig Hovell<br> <b>Tel:</b> (0131 6)51 7080<br> <b>Email:</b> c.hovell@ed.ac.uk
+</td>
+</tr>
+
+</tbody></table>
+<!-- if called from CCAM then show extra course details -->
+
+
+
+,
+
+<table class="sitstablegrid">
+<caption>
+Learning Outcomes
+</caption>
+<tbody><tr>
+<td>
+On completion of this course, the student will be able to:
+<ol style="font-family:inherit;font-size:inherit;">
+<li>
+Describe and manipulate fundamental concepts of stress, strain, and deformation in members carrying axial, bending, shear, and torsional loads;
+</li>
+<li>
+Determine how statically determinate trusses and beams carry load; for beams using diagrams of bending moment and shear force, and evaluate the resulting elastic deflections of the beams;
+</li>
+<li>
+Analyse structural cross sections, so as to determine the elastic stress and strain distributions, as well as the deformations, resulting from axial, bending and torsional actions;
+</li>
+<li>
+Describe and manipulate relevant concepts of combined loadings and stress and strain transformation.
+</li>
+</ol>
+</td>
+</tr>
+
+</tbody></table>
+,
+
+<table class="sitstablegrid">
+<caption>
+Reading List
+</caption>
+<tbody><tr>
+<td>
+None
+</td>
+</tr>
+
+</tbody></table>
+,
+
+<table class="sitstablegrid">
+<caption>
+Additional Information
+</caption>
+<tbody><tr>
+<td class="rowhead1" width="15%">
+Graduate Attributes and Skills
+</td>
+<td width="85%">
+Not entered
+</td>
+</tr>
+<tr>
+<td class="rowhead1" width="15%">
+Keywords
+</td>
+<td width="85%">
+Equilibrium,Stress,Strain,Axial load,Torsion,Bending,Shear,Deflections,Beams,Columns,Struts,Ties
+</td>
+</tr>
+
+</tbody></table>
+,
+
+<table class="sitstablegrid">
+<caption>
+Contacts
+</caption>
+<tbody><tr>
+<td class="rowhead1" width="15%">
+Course organiser
+</td>
+<td width="35%">
+Dr Thomas Reynolds<br> <b>Tel:</b> (0131 6)50 5633<br> <b>Email:</b> treynold@exseed.ed.ac.uk
+</td>
+<td class="rowhead1" width="15%">
+Course secretary
+</td>
+<td width="35%">
+Mr Craig Hovell<br> <b>Tel:</b> (0131 6)51 7080<br> <b>Email:</b> c.hovell@ed.ac.uk
+</td>
+</tr>
+
+</tbody></table>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

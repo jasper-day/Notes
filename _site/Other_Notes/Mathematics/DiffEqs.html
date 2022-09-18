@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.515">
+<meta name="generator" content="quarto-1.1.165">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -35,7 +40,7 @@ ul.task-list{list-style: none;}
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,6 +82,12 @@ ul.task-list{list-style: none;}
       window['quarto-listing-loaded']();
     }
   });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
@@ -105,9 +116,11 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="../../index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Class Notes</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -120,7 +133,7 @@ ul.task-list{list-style: none;}
     <a class="nav-link" href="../../about.html">About</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../..//Class_Notes.html">Class Notes</a>
+    <a class="nav-link" href="//Class_Notes.html">Class Notes</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../Other_Notes.html">Other Notes</a>
@@ -157,14 +170,36 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>Based off the MIT Differential Equations course: <a href="http://ocw.mit.edu/RES-18-009F15" class="uri">http://ocw.mit.edu/RES-18-009F15</a></p>
+<p>Based off the MIT Differential Equations course: <a href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/pages/syllabus/" class="uri">https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/pages/syllabus/</a></p>
 
 
 
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1654747200000" data-listing-file-modified-sort="1654791551578" data-listing-reading-time-sort="3.775">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1663514361402" data-listing-reading-time-sort="1.68">
+<div class="body">
+<a href="../../Other_Notes/Mathematics/DiffEqs/Lec_1.html">
+<h3 class="no-anchor listing-title">
+Geometric And Numeric Interpretation of Differential Equations
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+Ordinary Differential Equations
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../Other_Notes/Mathematics/DiffEqs/Lec_1.html">
+<div class="listing-author">
+Jasper Day
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1654729200000" data-listing-file-modified-sort="1654791551578" data-listing-reading-time-sort="3.775">
 <div class="body">
 <a href="../../Other_Notes/Mathematics/DiffEqs/Overview_Calculus.html">
 <h3 class="no-anchor listing-title">
@@ -189,7 +224,29 @@ Jasper Day
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1654789678292" data-listing-reading-time-sort="0">
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1655665991696" data-listing-reading-time-sort="1.6">
+<div class="body">
+<a href="../../Other_Notes/Mathematics/DiffEqs/Exponential_Input.html">
+<h3 class="no-anchor listing-title">
+Response to Exponential Inputs
+</h3>
+<div class="listing-subtitle">
+Exponential
+</div>
+<div class="listing-description">
+We start with an equation of form
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="../../Other_Notes/Mathematics/DiffEqs/Exponential_Input.html">
+<div class="listing-author">
+Jasper Day
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1654789678292" data-listing-reading-time-sort="0">
 <div class="body">
 <a href="../../Other_Notes/Mathematics/DiffEqs/Response_To_Exponential.html">
 <h3 class="no-anchor listing-title">
@@ -213,6 +270,24 @@ No matching items
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -262,7 +337,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.515">
+<meta name="generator" content="quarto-1.1.165">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -35,7 +40,7 @@ ul.task-list{list-style: none;}
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,9 +87,11 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="../../../index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Class Notes</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -97,7 +104,7 @@ ul.task-list{list-style: none;}
     <a class="nav-link" href="../../../about.html">About</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../..//Class_Notes.html">Class Notes</a>
+    <a class="nav-link" href="//Class_Notes.html">Class Notes</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../Other_Notes.html">Other Notes</a>
@@ -113,26 +120,26 @@ ul.task-list{list-style: none;}
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"> <span class="header-section-number">1</span> Overview</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="toc-section-number">1</span>  Overview</a>
   <ul class="collapse">
-  <li><a href="#first-order-equations" id="toc-first-order-equations" class="nav-link" data-scroll-target="#first-order-equations"> <span class="header-section-number">1.1</span> First Order Equations</a></li>
-  <li><a href="#second-order-equations" id="toc-second-order-equations" class="nav-link" data-scroll-target="#second-order-equations"> <span class="header-section-number">1.2</span> Second Order Equations</a></li>
-  <li><a href="#good-equations" id="toc-good-equations" class="nav-link" data-scroll-target="#good-equations"> <span class="header-section-number">1.3</span> Good equations</a></li>
-  <li><a href="#systems-of-n-equations" id="toc-systems-of-n-equations" class="nav-link" data-scroll-target="#systems-of-n-equations"> <span class="header-section-number">1.4</span> Systems of <span class="math inline">n</span> equations</a></li>
-  <li><a href="#numerical-analysis" id="toc-numerical-analysis" class="nav-link" data-scroll-target="#numerical-analysis"> <span class="header-section-number">1.5</span> Numerical Analysis</a></li>
-  <li><a href="#partial-differential-equations" id="toc-partial-differential-equations" class="nav-link" data-scroll-target="#partial-differential-equations"> <span class="header-section-number">1.6</span> Partial Differential Equations</a></li>
-  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal"> <span class="header-section-number">1.7</span> Goal</a></li>
+  <li><a href="#first-order-equations" id="toc-first-order-equations" class="nav-link" data-scroll-target="#first-order-equations"><span class="toc-section-number">1.1</span>  First Order Equations</a></li>
+  <li><a href="#second-order-equations" id="toc-second-order-equations" class="nav-link" data-scroll-target="#second-order-equations"><span class="toc-section-number">1.2</span>  Second Order Equations</a></li>
+  <li><a href="#good-equations" id="toc-good-equations" class="nav-link" data-scroll-target="#good-equations"><span class="toc-section-number">1.3</span>  Good equations</a></li>
+  <li><a href="#systems-of-n-equations" id="toc-systems-of-n-equations" class="nav-link" data-scroll-target="#systems-of-n-equations"><span class="toc-section-number">1.4</span>  Systems of <span class="math inline">n</span> equations</a></li>
+  <li><a href="#numerical-analysis" id="toc-numerical-analysis" class="nav-link" data-scroll-target="#numerical-analysis"><span class="toc-section-number">1.5</span>  Numerical Analysis</a></li>
+  <li><a href="#partial-differential-equations" id="toc-partial-differential-equations" class="nav-link" data-scroll-target="#partial-differential-equations"><span class="toc-section-number">1.6</span>  Partial Differential Equations</a></li>
+  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal"><span class="toc-section-number">1.7</span>  Goal</a></li>
   </ul></li>
-  <li><a href="#the-calculus-you-need" id="toc-the-calculus-you-need" class="nav-link" data-scroll-target="#the-calculus-you-need"> <span class="header-section-number">2</span> The calculus you need</a>
+  <li><a href="#the-calculus-you-need" id="toc-the-calculus-you-need" class="nav-link" data-scroll-target="#the-calculus-you-need"><span class="toc-section-number">2</span>  The calculus you need</a>
   <ul class="collapse">
-  <li><a href="#important-derivatives" id="toc-important-derivatives" class="nav-link" data-scroll-target="#important-derivatives"> <span class="header-section-number">2.1</span> Important Derivatives:</a></li>
-  <li><a href="#derivative-rules" id="toc-derivative-rules" class="nav-link" data-scroll-target="#derivative-rules"> <span class="header-section-number">2.2</span> Derivative Rules:</a></li>
-  <li><a href="#applying-the-fundamental-theorem" id="toc-applying-the-fundamental-theorem" class="nav-link" data-scroll-target="#applying-the-fundamental-theorem"> <span class="header-section-number">2.3</span> Applying the Fundamental Theorem:</a></li>
-  <li><a href="#the-taylor-series" id="toc-the-taylor-series" class="nav-link" data-scroll-target="#the-taylor-series"> <span class="header-section-number">2.4</span> The Taylor Series</a></li>
+  <li><a href="#important-derivatives" id="toc-important-derivatives" class="nav-link" data-scroll-target="#important-derivatives"><span class="toc-section-number">2.1</span>  Important Derivatives:</a></li>
+  <li><a href="#derivative-rules" id="toc-derivative-rules" class="nav-link" data-scroll-target="#derivative-rules"><span class="toc-section-number">2.2</span>  Derivative Rules:</a></li>
+  <li><a href="#applying-the-fundamental-theorem" id="toc-applying-the-fundamental-theorem" class="nav-link" data-scroll-target="#applying-the-fundamental-theorem"><span class="toc-section-number">2.3</span>  Applying the Fundamental Theorem:</a></li>
+  <li><a href="#the-taylor-series" id="toc-the-taylor-series" class="nav-link" data-scroll-target="#the-taylor-series"><span class="toc-section-number">2.4</span>  The Taylor Series</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -276,7 +283,7 @@ my'' + by' + ky = f(t)
 <p><span id="eq-prod"><span class="math display">
 \frac{d}{dx}(fg) = g\frac{df}{dx} + f\frac{dg}{dx}
 \tag{10}</span></span></p>
-<div class="page-columns page-full"><p>The quotient rule (<a href="#eq-quot">Equation&nbsp;11</a>)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p><div class="no-row-height column-margin column-container"><li id="fn1" role="doc-endnote"><p><sup>1</sup>&nbsp;Easily remembered by taking the product rule on <span class="math inline">f</span> and <span class="math inline">\frac{1}{g}</span></p></li></div></div>
+<div class="page-columns page-full"><p>The quotient rule (<a href="#eq-quot">Equation&nbsp;11</a>)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Easily remembered by taking the product rule on <span class="math inline">f</span> and <span class="math inline">\frac{1}{g}</span></p></li></div></div>
 <p><span id="eq-quot"><span class="math display">
 \frac{d}{dx}\left(\frac{f}{g}\right) = \frac{g\frac{df}{dx}-f\frac{dg}{dx}}{g^2}
 \tag{11}</span></span></p>
@@ -355,6 +362,24 @@ f(x) = \sum_0^{\infty} \frac{1}{n!}(\Delta t)^n \frac{d^n f}{dt^n}
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -404,7 +429,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

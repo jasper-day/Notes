@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.515">
+<meta name="generator" content="quarto-1.1.165">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -55,7 +60,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -68,7 +73,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -98,7 +103,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="../../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -145,9 +150,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="../../../../../index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../../../index.html">
     <span class="navbar-title">Class Notes</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -160,7 +167,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="../../../../../about.html">About</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../..//Class_Notes.html">Class Notes</a>
+    <a class="nav-link" href="//Class_Notes.html">Class Notes</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../../../Other_Notes.html">Other Notes</a>
@@ -176,20 +183,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#kernels-and-convolutions" id="toc-kernels-and-convolutions" class="nav-link active" data-scroll-target="#kernels-and-convolutions"> <span class="header-section-number">1</span> Kernels and Convolutions</a></li>
-  <li><a href="#the-convolution-function" id="toc-the-convolution-function" class="nav-link" data-scroll-target="#the-convolution-function"> <span class="header-section-number">2</span> The Convolution Function</a></li>
-  <li><a href="#edge-detection" id="toc-edge-detection" class="nav-link" data-scroll-target="#edge-detection"> <span class="header-section-number">3</span> Edge detection</a></li>
-  <li><a href="#polynomial-multiplication" id="toc-polynomial-multiplication" class="nav-link" data-scroll-target="#polynomial-multiplication"> <span class="header-section-number">4</span> Polynomial Multiplication</a></li>
-  <li><a href="#takeaways" id="toc-takeaways" class="nav-link" data-scroll-target="#takeaways"> <span class="header-section-number">5</span> Takeaways</a></li>
+  <li><a href="#kernels-and-convolutions" id="toc-kernels-and-convolutions" class="nav-link active" data-scroll-target="#kernels-and-convolutions"><span class="toc-section-number">1</span>  Kernels and Convolutions</a></li>
+  <li><a href="#the-convolution-function" id="toc-the-convolution-function" class="nav-link" data-scroll-target="#the-convolution-function"><span class="toc-section-number">2</span>  The Convolution Function</a></li>
+  <li><a href="#edge-detection" id="toc-edge-detection" class="nav-link" data-scroll-target="#edge-detection"><span class="toc-section-number">3</span>  Edge detection</a></li>
+  <li><a href="#polynomial-multiplication" id="toc-polynomial-multiplication" class="nav-link" data-scroll-target="#polynomial-multiplication"><span class="toc-section-number">4</span>  Polynomial Multiplication</a></li>
+  <li><a href="#takeaways" id="toc-takeaways" class="nav-link" data-scroll-target="#takeaways"><span class="toc-section-number">5</span>  Takeaways</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -219,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="kernels-and-convolutions" class="level1" data-number="1">
+<section id="kernels-and-convolutions" class="level1 page-columns page-full" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Kernels and Convolutions</h1>
 <p>Start with a blur:</p>
 <p>For each pixel, take the average of the pixels around it (or a weighted sum of the pixels around it.)</p>
@@ -244,10 +251,10 @@ K = \begin{bmatrix}
 </details>
 </div>
 <p>Here’s the image we’ll use today.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
 <p><a href="https://unsplash.com/photos/yMSecCHsIBc" height="50%"><img src="../../../../../coolcat.jpg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Cool cat courtesy of Raoul Droog on Unsplash</figcaption><p></p>
+<p></p><figcaption class="figure-caption margin-caption">Cool cat courtesy of Raoul Droog on Unsplash</figcaption><p></p>
 </figure>
 </div>
 <div class="cell" data-execution_count="2">
@@ -384,6 +391,24 @@ k_2a_1 + k_1a_2 + k_0a_3
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -433,7 +458,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

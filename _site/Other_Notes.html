@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.515">
+<meta name="generator" content="quarto-1.1.165">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -35,7 +40,7 @@ ul.task-list{list-style: none;}
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,6 +82,12 @@ ul.task-list{list-style: none;}
       window['quarto-listing-loaded']();
     }
   });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -99,6 +110,12 @@ ul.task-list{list-style: none;}
       window['quarto-listing-loaded']();
     }
   });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -121,6 +138,12 @@ ul.task-list{list-style: none;}
       window['quarto-listing-loaded']();
     }
   });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -143,6 +166,12 @@ ul.task-list{list-style: none;}
       window['quarto-listing-loaded']();
     }
   });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
@@ -171,9 +200,11 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="./index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Class Notes</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -186,7 +217,7 @@ ul.task-list{list-style: none;}
     <a class="nav-link" href="./about.html">About</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".//Class_Notes.html">Class Notes</a>
+    <a class="nav-link" href="//Class_Notes.html">Class Notes</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./Other_Notes.html" aria-current="page">Other Notes</a>
@@ -202,14 +233,14 @@ ul.task-list{list-style: none;}
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#engineering" id="toc-engineering" class="nav-link active" data-scroll-target="#engineering"> <span class="header-section-number">1</span> <span>Engineering</span></a></li>
-  <li><a href="#computer-science" id="toc-computer-science" class="nav-link" data-scroll-target="#computer-science"> <span class="header-section-number">2</span> <span>Computer Science</span></a></li>
-  <li><a href="#mathematics" id="toc-mathematics" class="nav-link" data-scroll-target="#mathematics"> <span class="header-section-number">3</span> <span>Mathematics</span></a></li>
-  <li><a href="#personal-notes" id="toc-personal-notes" class="nav-link" data-scroll-target="#personal-notes"> <span class="header-section-number">4</span> <span>Personal Notes</span></a></li>
+  <li><a href="#engineering" id="toc-engineering" class="nav-link active" data-scroll-target="#engineering"><span class="toc-section-number">1</span>  Engineering</a></li>
+  <li><a href="#computer-science" id="toc-computer-science" class="nav-link" data-scroll-target="#computer-science"><span class="toc-section-number">2</span>  Computer Science</a></li>
+  <li><a href="#mathematics" id="toc-mathematics" class="nav-link" data-scroll-target="#mathematics"><span class="toc-section-number">3</span>  Mathematics</a></li>
+  <li><a href="#personal-notes" id="toc-personal-notes" class="nav-link" data-scroll-target="#personal-notes"><span class="toc-section-number">4</span>  Personal Notes</a></li>
   </ul>
 </nav>
     </div>
@@ -237,7 +268,7 @@ ul.task-list{list-style: none;}
 <h2 data-number="1" class="anchored" data-anchor-id="engineering"><span class="header-section-number">1</span> <a href="./Other_Notes/Engineering.html">Engineering</a></h2>
 <div id="listing-Eng" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1654784162297" data-listing-reading-time-sort="0.05">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1654796360206" data-listing-reading-time-sort="0.05">
 <div class="body">
 <a href="./Other_Notes/Engineering/Dimensional_Analysis.html">
 <h3 class="no-anchor listing-title">
@@ -247,7 +278,7 @@ Dimensional Analysis
 
 </div>
 <div class="listing-description">
-How do you describe physical systems with dimensionally balanced equations?
+<em>How do you describe physical systems with dimensionally balanced equations?</em>
 </div>
 </a>
 </div>
@@ -311,7 +342,7 @@ No matching items
 <h2 data-number="3" class="anchored" data-anchor-id="mathematics"><span class="header-section-number">3</span> <a href="./Other_Notes/Mathematics.html">Mathematics</a></h2>
 <div id="listing-Math" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1654789734882" data-listing-reading-time-sort="0.045">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1655665961780" data-listing-reading-time-sort="0.045">
 <div class="body">
 <a href="./Other_Notes/Mathematics/DiffEqs.html">
 <h3 class="no-anchor listing-title">
@@ -321,7 +352,7 @@ Differential Equations
 
 </div>
 <div class="listing-description">
-Based off the MIT Differential Equations course: http://ocw.mit.edu/RES-18-009F15
+Based off the MIT Differential Equations course: https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/pages/syllabus/
 </div>
 </a>
 </div>
@@ -353,6 +384,24 @@ No matching items
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -402,7 +451,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
