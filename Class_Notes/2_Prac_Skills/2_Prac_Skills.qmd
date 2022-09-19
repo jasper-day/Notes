@@ -22,17 +22,17 @@ Students will achieve a pass in this course when they have completed the followi
 
 - Joining and metrology sessions.
 
-## Timing:
+#
 
 10 hours of practical sessions
 
-## Assessment:
+#
 
 - Written Exam 0 %,
 - Coursework 0 %,
 - Practical Exam 100 %
 
-## Learning goals:
+#
 
 On completion of this course, the student will be able to:
 

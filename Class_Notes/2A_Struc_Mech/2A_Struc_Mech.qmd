@@ -106,7 +106,7 @@ Laboratory experiments:
 - Coursework 20 %
 - Practical Exam 0 %
 
-## Learning goals:
+#
 
 1. Describe and manipulate fundamental concepts of stress, strain, and deformation in members carrying axial, bending, shear, and torsional loads; 
 2. Determine how statically determinate trusses and beams carry load; for beams using diagrams of bending moment and shear force, and evaluate the resulting elastic deflections of the beams;
