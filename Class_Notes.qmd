@@ -10,7 +10,7 @@ number-sections: false
 
 ## Full Year
 
-- [*Practical Skills in Mechanical Engineering*](2_Prac_Skills/2_Prac_Skills.qmd)
+- [*Practical Skills in Mechanical Engineering*](Class_Notes/2_Prac_Skills/2_Prac_Skills.qmd)
 
 ## First Semester
 
