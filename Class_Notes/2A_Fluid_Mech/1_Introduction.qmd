@@ -1,0 +1,8 @@
+---
+title: Introduction to Fluid Mechanics
+subtitle: Fluid Properties, Flow Fields and Phenomena, Dimensional Analysis
+author: Jasper Day
+---
+
+# Properties of Fluids
+
