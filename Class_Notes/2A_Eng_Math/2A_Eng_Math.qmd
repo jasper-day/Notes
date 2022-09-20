@@ -15,7 +15,7 @@ Ordinary differential equations, transforms and Fourier series with applications
 
 ## Course description
 
-#
+### Differential Equations
 
 - Linear Differential Equations 1 lecture
 
@@ -23,13 +23,13 @@ Ordinary differential equations, transforms and Fourier series with applications
 
 - Second order linear constant coefficient differential  equations, forcing and damping 2 lectures
 
-#
+### Laplace Transforms
 
 - Definition, simple transforms, properties, inverse and shift theorem 3 lectures
 
 - Solution of ODEs 3 lectures
 
-#
+### Fourier Series
 
 - Fourier series, coefficients, even/odd functions, linearity,  convergence 2 lectures
 
@@ -37,7 +37,7 @@ Ordinary differential equations, transforms and Fourier series with applications
 
 - Integration and differentiation of Fourier series 1 lecture
 
-#
+### Partial Differential Equations
 
 - Wave equation, Heat or diffusion equation, Laplace equation  1 lecture
 

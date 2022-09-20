@@ -2,6 +2,8 @@
 
 ## Course Outline
 
+| School | School of Engineering | College | College of Science and Engineering |
+|--------|-----------------------|---------|------------------------------------|
 | Credit level (Normal year taken) | SCQF Level 8 (Year 2 Undergraduate) | Availability | Available to all students |
 | SCQF Credits | 10 | ECTS Credits | 5 |
 
@@ -22,17 +24,17 @@ Students will achieve a pass in this course when they have completed the followi
 
 - Joining and metrology sessions.
 
-#
+# Total Hours: 10
 
 10 hours of practical sessions
 
-#
+# Assessment
 
 - Written Exam 0 %,
 - Coursework 0 %,
 - Practical Exam 100 %
 
-#
+# Learning Outcomes
 
 On completion of this course, the student will be able to:
 

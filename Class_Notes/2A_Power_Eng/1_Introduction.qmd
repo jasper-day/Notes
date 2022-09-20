@@ -98,6 +98,7 @@ $$
 P = VI
 I = \frac{V}{R}
 P = \frac{V^2}{R}
+\end{gather}
 $$
 
 ## Components

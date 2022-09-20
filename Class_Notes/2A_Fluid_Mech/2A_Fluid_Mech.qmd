@@ -19,51 +19,39 @@ The student should develop an awareness of the qualitive behaviour of fluids in 
 ## Course description
 
 - L1	Properties of  Fluids
-
-Shear stress, viscosity, density, compressibility, surface tension.
-
+    - Shear stress, viscosity, density, compressibility, surface tension.
 
 - L2	Simple Flow Fields and Phenomena 1
-
-- Laminar and turbulent flow states; flow in a duct, flow over a flat plate; flow round objects; separation &amp; wakes; vortex shedding; drag. 
+    - Laminar and turbulent flow states; flow in a duct, flow over a flat plate; flow round objects; separation &amp; wakes; vortex shedding; drag. 
 
 - L3	Simple Flow Fields and Phenomena 2
-
-Reynolds number; Strouhal number. More simple flow fields; orifice flow, flow round bends. Terminology: external/internal; steady/transient, real/ideal, laminar/turbulent,  compressible/incompressible;  vectors, streamlines &amp; pathlines.
+    - Reynolds number; Strouhal number. More simple flow fields; orifice flow, flow round bends. Terminology: external/internal; steady/transient, real/ideal, laminar/turbulent,  compressible/incompressible;  vectors, streamlines &amp; pathlines.
 
 - L4	Introduction to Dimensional Analysis
 
 - L5	Fluid Statics 1
-
-Pressure; variation of pressure with height; 'head'; manometers and other pressure measurement devices.
+    - Pressure; variation of pressure with height; 'head'; manometers and other pressure measurement devices.
 
 - L6	Fluid Statics 2
-
-Forces on submerged surfaces - 'centre of pressure', 'centre of force'.
+    - Forces on submerged surfaces - 'centre of pressure', 'centre of force'.
 
 - L7	The Continuity Equation
-
-The continuity equation; flow between plane walls. pipe flow.
+    - The continuity equation; flow between plane walls. pipe flow.
 
 - L8	Equations of Motion
-
-Equation of motion along a streamline; steady-state equation (Euler's momentum equation); motion perpendicular to a streamline - significance of pressure gradients.
+    - Equation of motion along a streamline; steady-state equation (Euler's momentum equation); motion perpendicular to a streamline - significance of pressure gradients.
 
 - L9	Bernouilli¿s Equation
-
-Time dependent Bernoulli equation; Steady state Bernoulli equation.
+    - Time dependent Bernoulli equation; Steady state Bernoulli equation.
 
 - L10	Applications of Bernouilli
-
-Example applications of Bernoulli equation: siphons, flow with area change, flow around a pipe bend.
+    - Example applications of Bernoulli equation: siphons, flow with area change, flow around a pipe bend.
 
 - L11	Velocity and Flow Rate Measurement
-
-Pitot tube &amp; Pitot-static tube. Flow rate measurement - restriction flow meters (general); venturi meter.
+    - Pitot tube &amp; Pitot-static tube. Flow rate measurement - restriction flow meters (general); venturi meter.
 
 - L12	Hydraulic Structures
-
-Orifice plate; reservoir-orifice flow; linked reservoirs; orifice flow under varying head; flow over weirs.
+    - Orifice plate; reservoir-orifice flow; linked reservoirs; orifice flow under varying head; flow over weirs.
 
 - L13	Laminar and Turbulent Flow
 
@@ -71,23 +59,22 @@ Orifice plate; reservoir-orifice flow; linked reservoirs; orifice flow under var
 
 - L14	Turbulent Flow in Pipes
 
-Head/pressure losses due to friction; friction coefficient - functional dependency via dimensional analysis.
+    - Head/pressure losses due to friction; friction coefficient - functional dependency via dimensional analysis.
 
 - L15	Losses in Real Pipes
 
-Moody diagram &amp; equation. 
+    - Moody diagram &amp; equation. 
 
 - L16	Pipe Systems
 
-- Losses in bends and fittings; loss coefficient.
+    - Losses in bends and fittings; loss coefficient.
 
 - L17	The Momentum Equation
 
-The momentum equation for steady flow.
+    - The momentum equation for steady flow.
 
 - L18	Applications of the Momentum Equation 
-
-Force of jet on plates and vanes; force on pipe bends; head loss due to sudden expansion / contraction
+    - Force of jet on plates and vanes; force on pipe bends; head loss due to sudden expansion / contraction
 
 - L19	Revision /  contingency
 

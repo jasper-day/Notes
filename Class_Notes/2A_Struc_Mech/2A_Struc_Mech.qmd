@@ -23,63 +23,63 @@ This course engages students with the fundamental principles of Structural Mecha
 
 - T4 Free Body Diagrams and Stress Resultant
 
-  Truss equilibrium. Stress resultants in struts (axial load), shafts (torsion), beams (shear and bending) and pressure vessels (membrane forces)
+    Truss equilibrium. Stress resultants in struts (axial load), shafts (torsion), beams (shear and bending) and pressure vessels (membrane forces)
 
 - T5 Members carrying Axial Load
 
-  Simple mechanical behaviour. Deformation (due to load and thermal strain)
+    Simple mechanical behaviour. Deformation (due to load and thermal strain)
 
 - T6 Members carrying Torsion
 
-  Torsion of circular shafts and other closed sections. Torsional stiffness and deformation
+    Torsion of circular shafts and other closed sections. Torsional stiffness and deformation
 
 - T7 Stress Resultants in Determinate Beams (1)
 
-  Sign conventions. Shear force and bending moment diagrams
+    Sign conventions. Shear force and bending moment diagrams
 
 - T8 Stress Resultants in Determinate Beams (2)
 
-  Relationships between w, V, and 
+    Relationships between w, V, and 
 
 - T9 Bending of Beams (1)
 
-  Euler Beam Theory. Curvature. Plane sections. Bending strain
+    Euler Beam Theory. Curvature. Plane sections. Bending strain
 
 - T10 Bending of Beams (2)
 
-  Euler Beam Theory. Elastic bending stresses. The neutral axis. Moment - curvature - stress - strain relationships
+    Euler Beam Theory. Elastic bending stresses. The neutral axis. Moment - curvature - stress - strain relationships
 
 - T11 Deflection of Beams
 
-  Double integration of curvature to find deflection. Support boundary conditions. Beam stiffnes
+    Double integration of curvature to find deflection. Support boundary conditions. Beam stiffness
 
 - T12 Superposition of Deflection
 
-  Deflection coefficients. Superposition of deflections
+    Deflection coefficients. Superposition of deflections
 
 - T13 Geometric Section Properties
 
-  Area, 2nd moments of area, Parallel axis theorem. Rectangular, circular, T and I section
+    Area, 2nd moments of area, Parallel axis theorem. Rectangular, circular, T and I section
 
 - T14 Composite Beam Sections
 
-  Modular ratio and equivalent section. Stress and strain diagrams
+    Modular ratio and equivalent section. Stress and strain diagrams
 
 - T15 Shear Stresses in Beams (1)
 
-  Complimentary shear. Derivation of shear stress formulae
+    Complimentary shear. Derivation of shear stress formulae
 
 - T16 Shear Stresses in Beams (2)
 
-  Shear flow. Rectangular, box and flanged sections
+    Shear flow. Rectangular, box and flanged sections
 
 - T17 Combined Loading
 
-  Combining axial, torsion, shear and biaxial bending stresses
+    Combining axial, torsion, shear and biaxial bending stresses
 
 - T18 Stress and Strain Transformation
 
-  Plane stress, plane strain. Mohr's circle
+    Plane stress, plane strain. Mohr's circle
 
 
 Tutorials:
@@ -101,12 +101,12 @@ Laboratory experiments:
 - Programme Level Learning and Teaching Hours 2,
 - Directed Learning and Independent Learning Hours 66
 
-## Assessment: 
+## Assessment
 - Written exam 80 %
 - Coursework 20 %
 - Practical Exam 0 %
 
-#
+## Learning Outcome
 
 1. Describe and manipulate fundamental concepts of stress, strain, and deformation in members carrying axial, bending, shear, and torsional loads; 
 2. Determine how statically determinate trusses and beams carry load; for beams using diagrams of bending moment and shear force, and evaluate the resulting elastic deflections of the beams;
