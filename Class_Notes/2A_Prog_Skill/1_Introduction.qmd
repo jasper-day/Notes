@@ -1,0 +1,22 @@
+---
+title: Introduction to Python
+date: 9/20/2022
+author: Jasper Day
+---
+
+```{python}
+print("Hello World!")
+```
+
+# Blinkstick Information:
+
+[Configure Blinkstick](Code/configure_blinkstick.py)
+
+Noteable:
+
+Online Jupyter Notebook viewer through the university. Worth checking out if it runs faster than my computer can natively run it, especially on this machine which is (\*cough) a little bit underpowered. 
+
+:::{.callout-note}
+Sharing instructions as a downloadable `.docx`, on a school website whose *only purpose* is to share text that is viewable in the browser, could be classified as a crime against humanity in certain countries. Spare a thought for the Arch btw 😭
+:::
+
