@@ -6,3 +6,20 @@ author: Jasper Day
 
 # Properties of Fluids
 
+When you push on a solid with a shear stress $\tau$, it deforms a certain amount:
+
+![Pushing on a solid block](Images/1_Solid_deformation_1.png)
+
+Double the force on the block, and the deflection $\phi$ doubles:
+
+![Pushing twice as hard](Images/1_Solid_deformation_2.png)
+
+However, when you enact a shear stress on a liquid, it keeps deflecting:
+
+![Pushing on a liquid element](Images/1_Liquid_deformation_1.png)
+
+The *rate of deflection* $\frac{d\phi}{dt}$ doubles when you double the shear stress:
+
+![Pushing twice as hard on a liquid](Images/1_Liquid_deformation_2.png)
+
+Thus, a fluid deforms continuously when a force is applied. Liquids flow if and only if something creates a shear stress (not perpendicular to the walls of the container). If a liquid is not flowing, then no such shear stresses exist.

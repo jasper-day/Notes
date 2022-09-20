@@ -11,7 +11,7 @@ This is an introduction course to the techniques and equipment used in the gener
 
 Course description
 
-- Introduction to Electrical Circuits
+- [Introduction to Electrical Circuits](1_Introduction.qmd)
 - Introduction to Power Systems
 - Electrical Safety &amp; Wiring
 - Phasor Representation of AC Signals

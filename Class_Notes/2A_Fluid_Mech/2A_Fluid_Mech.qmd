@@ -18,7 +18,7 @@ The student should develop an awareness of the qualitive behaviour of fluids in 
 
 ## Course description
 
-- L1	Properties of  Fluids
+- L1	[Properties of  Fluids](1_Introduction.qmd)
     - Shear stress, viscosity, density, compressibility, surface tension.
 
 - L2	Simple Flow Fields and Phenomena 1

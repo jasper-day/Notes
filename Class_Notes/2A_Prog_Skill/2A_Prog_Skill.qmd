@@ -11,6 +11,10 @@
 
 This course introduces python programming, software engineering and design techniques to Engineering students. It also introduces the use of libraries like SciPy, NumPy and Matplotlib for solving equations (using appropriate numerical methods) and the use of JuPyter Lab notebooks to present calculations.
 
+## Course Notes
+
+- [Introduction to Python](1_Introduction.qmd)
+
 ## Course description
 
 Computer programmes are more often read than written, so it is critical that they are written in a way which makes it easy for the programme to be modified in the future and so that the programmer knows the code works (and fails) as designed.  
