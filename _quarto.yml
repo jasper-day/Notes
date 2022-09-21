@@ -55,7 +55,7 @@ freeze: auto
 
 format:
   html:
-    favicon: favicon_io/favicon.ico
+    favicon: favicon_io/site.webmanifest
     lang: en
     theme:
       - custom.scss
