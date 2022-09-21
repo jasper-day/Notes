@@ -202,7 +202,7 @@ When you have a *voltage divider*, the following equation attains:
 ![Voltage divider](Images/1_Voltage_Divider.png)
 
 $$
-V_{out} = V_{in} \frac{R_1}{R_2+R_1}
+V_{out} = V_{in} \frac{R_2}{R_2+R_1}
 $$
 
 With these rules, you should be able to take any circuit (made up only of voltage sources and resistors) to its circuit equivalent, with one power source and one resistor:
