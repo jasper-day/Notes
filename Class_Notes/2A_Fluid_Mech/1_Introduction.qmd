@@ -23,3 +23,100 @@ The *rate of deflection* $\frac{d\phi}{dt}$ doubles when you double the shear st
 ![Pushing twice as hard on a liquid](Images/1_Liquid_deformation_2.png)
 
 Thus, a fluid deforms continuously when a force is applied. Liquids flow if and only if something creates a shear stress (not perpendicular to the walls of the container). If a liquid is not flowing, then no such shear stresses exist.
+
+# Viscosity
+
+- First property of a fluid.
+
+Note that shear force per unit area ($F/A$) in a solid is the shear *stress*, $\tau$. The shear strain is an angle of deformation $\phi$, which (in the elastic region of deformation) is proportional to shear stress.
+
+In a solid,
+$$
+\phi \propto \tau
+$$
+
+This is Hooke's Law.
+
+In a liquid, the *rate of change of strain* is proportional to the shear stress, ie
+
+$$
+\frac{d\phi}{dt} \propto \tau
+$$
+
+We put a few symbols around that. For small $\phi$, $\phi \approx \frac{x}{y}$. At the start of the process, y is constant.
+
+$$
+\begin{gather}
+\frac{\partial\phi}{\partial t} = \frac{\partial}{\partial t} \left( \frac{x}{y} \right) \\
+= \frac{1}{y}\frac{\partial x}{\partial t}
+\end{gather}
+$$
+
+$\frac{\partial x}{partial t}$, the velocity in the $x$ direction, is given its own symbol $u$. Generally, a flow vector $\textbf{u}$ has flow speed components $u, v, w$ in the $x, y, z$ directions respectively.
+
+So $\tau \propto \frac{\partial \phi}{\partial t} \propto \frac{u}{y}$. 
+
+Consider the graph of x velocity w.r.t y; there is a certain slope to that graph. The slope of that graph is directly related to viscosity by some constant $\mu$ with units $kg m^{-1} s^{-1}$. We call that constant $\mu$ the **viscosity** of the liquid.
+
+![Low vs high viscosity comparison](Images/1_viscosity_graph.png)
+
+On the left, a fluid with a low viscosity has a high slope (the fluid starts moving quickly as you get away from the wall); a fluid with a high viscosity has a low slope (the fluid moves slowly even a far distance from the wall).
+
+## Newton's Law of Viscosity
+
+$$
+\tau = \mu\frac{du}{dy}
+$$
+
+There is a linear relationship between the distance from a wall and the rate of flow parallel to that wall.
+
+## Conclusions
+
+Viscosity tells us how easy it is to shear the fluid; a measure of friction within the fluid. Fluids obeying Newton's law are *Newtonian Fluids*: the shear stress is linearly related to the velocity in the fluid (with a slope of $\mu$ as you get further from the wall).
+
+Non-Newtonian fluids have a non-linear relationship between the amount of shear stress and the rate of motion within the fluid. 
+
+Picture the fluid flowing in *layers*, where each layer of the fluid (a plane at a certain distance from the wall) drags the layer of fluid below it along.
+
+:::{.callout-note}
+Viscosity is usually measured as the force created between two driven plates with a fluid between (or practically, two cylinders with a layer of fluid of known height in between).
+:::
+
+At the wall, there is a *no-slip condition*: the fluid sticks to the wall as $u=0$. 
+
+Intuitively, $\mu_{gases} << \mu_{liquids}$
+
+For gases, viscosity increases with temperature due to intermolecular interactions. With liquids, viscosity is caused by intermolecular cohesion, which decreases as temperature increases.
+
+Kinematic viscosity $\frac{\mu}{\rho} = \nu$ is its own thing (unit viscosity per mass density).
+
+# Density
+
+- Second property of the fluid.
+
+Density is *mass* per *unit volume*: $\rho = \frac{m}{V}$.
+
+**Specific Density** is $\frac{\rho}{\rho_{water}}$. Remember that $\rho_{water}$ is 1000 $kg m^{-3}$. 
+
+Flows with negligible variations in $\rho$ are **incompressible** flows; flows in which variations in $\rho$ are non-negligible are **compressible**.
+
+:::{.callout-note}
+- All liquid flows may be regarded as incompressible
+- Gas flows in which the flow speed **u** is well below the speed of sound ($c_s$) may also be regarded as incompressible.
+
+$\frac{u}{c_s} = M$, the Mach number. Below a Mach number of 0.3, changes in density can be expected to be less than 5%; the flow is incompressible.
+:::
+
+# Surface Tension
+
+- Surface tension is the third basic property of a fluid.
+
+Surface tension is a force in the surface of a liquid. Recall that all of the molecules within a liquid attract each other. On the surface of the liquid, there are internal molecules on one side of the surface and none on the other. Therefore, there is a net intermolecular force on the molecules at the surface.
+
+![Surface molecules experiencing a net force](Images/1_surface_tension.png)
+
+Surface tension $\sigma$ is defined as the force in a liquid's surface along a line of unit length in the surface. Since it's defined as the force divided along a line, it has units $kg s^{-2}$. 
+
+Surface tension *decreases* with temperature, as IMFs decrease.
+
+Surface tension forces are often small & neglected; but they may dominate when dealing with droplets or bubbles.
