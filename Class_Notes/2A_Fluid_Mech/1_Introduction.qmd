@@ -52,7 +52,7 @@ $$
 \end{gather}
 $$
 
-$\frac{\partial x}{partial t}$, the velocity in the $x$ direction, is given its own symbol $u$. Generally, a flow vector $\textbf{u}$ has flow speed components $u, v, w$ in the $x, y, z$ directions respectively.
+$\frac{\partial x}{\partial t}$, the velocity in the $x$ direction, is given its own symbol $u$. Generally, a flow vector $\textbf{u}$ has flow speed components $u, v, w$ in the $x, y, z$ directions respectively.
 
 So $\tau \propto \frac{\partial \phi}{\partial t} \propto \frac{u}{y}$. 
 

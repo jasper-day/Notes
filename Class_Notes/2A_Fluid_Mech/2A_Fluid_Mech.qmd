@@ -18,6 +18,12 @@ The student should develop an awareness of the qualitive behaviour of fluids in 
 
 ## Course description
 
+![Course Structure](Images/0_Course_Structure.png)
+
+:::{.callout-warning}
+All the lectures are delivered *online asynchronous*
+:::
+
 - L1	[Properties of  Fluids](1_Introduction.qmd)
     - Shear stress, viscosity, density, compressibility, surface tension.
 
@@ -84,6 +90,10 @@ The student should develop an awareness of the qualitive behaviour of fluids in 
 
 PPE (lab coat, safety glasses, safety shoes/boots as prescribed by programme handbook).
 
+## Laboratories
+
+![Laboratory overview](Images/0_Laboratories.png)
+
 ## Timetable 
 
 <a href="https://www.ted.is.ed.ac.uk/UOE2223_SWS/TIMETABLE.ASP?OBJECTCLASS=MODULE&amp;IDENTIFIER=SCEE08003_SV1_SEM1">Timetable link</a>
@@ -101,6 +111,8 @@ Learning and Teaching activities <a href="http://www.studentsystems.is.ed.ac.uk/
 
 
 ## Assessment <a href="http://www.studentsystems.is.ed.ac.uk/staff/Support/User_Guides/CCAM//Assessment_Methods.htm" target="_blank">(Further Info)</a>
+
+![Assessment structure](Images/0_Assessment.png)
 
 - Written Exam 50 %,
 - Coursework 50 %,
@@ -142,6 +154,7 @@ but I suggest that you don¿t rush off and buy¿ try library copies of these and
 |------|--------|
 | Tel: |  (0131 6)50 8701 | 
 | Email: |  Tom.Bruce@ed.ac.uk | 
+| Picture | ![Tom Bruce](Images/0_Tom_Bruce.png) |
 
 | Course secretary | Miss Chloe Fleming | 
 | Tel: |   | 
