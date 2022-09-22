@@ -1,0 +1,11 @@
+---
+title: Introduction to Structures
+subtitle: Lecture \# 1
+author: Jasper Day
+---
+
+Structures are everywhere, if you care to notice them.
+
+# Structural Elements:
+
+![Pinned support](Images/1_Pinned_Support.png)

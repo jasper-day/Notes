@@ -85,11 +85,19 @@ This course engages students with the fundamental principles of Structural Mecha
 Tutorials:
 - 9 'Tutorials' (Format to be decided)
 
+Come in with whatever things you had the most trouble with.
 
 Laboratory experiments:
 
 - 4-6 'Physical Experiments/Demonstrations' (Format to be decided)
 
+The truss lab is completed online.
+
+All labs are completed *before* the relevant theory is taught. The point is foremost data collection.
+
+Think about *sources of error*.
+
+The report should wind up about 6 pages long (1.5 pages per experiment).
 
 ## Total Hours: 100
 
@@ -105,6 +113,8 @@ Laboratory experiments:
 - Written exam 80 %
 - Coursework 20 %
 - Practical Exam 0 %
+
+Note that the coursework is all *one submission*, which is intended to have been completed over the course of the course.
 
 ## Learning Outcome
 
