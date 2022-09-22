@@ -1,0 +1,63 @@
+---
+title: Basic Flow Fields and Phenomena
+author: Jasper Day
+---
+
+# Laminar Flow
+
+![Laminar flow](Images/1_2_Laminar_Flow.png)
+
+Laminar flow has smooth fluid motion in "layers" (laminae). 
+
+Reynold's experiment (after 19th centure Manchester professor). The experiment involves creating *dye lines* at different flow speeds. With a low flow speed, the dye line is straight and parallel, and remains clearly defined through the length of the pipe. With a faster flow speed, the dye line starts to break up and eventually engages in runaway disturbances (turbulent state): the dye line breaks up into a *myriad of entangled threads*. 
+
+The transition from *laminar* to *turbulent* flow is quite abrupt.
+
+# Turbulent Flow
+
+![Turbulent Flow](Images/1_2_Turbulent_Flow.png)
+
+There is still a net flow, but now there's a lot of 3d random motion as well, which creates a very unstable regime.
+
+# Reynolds number
+
+$$
+Re \equiv \frac{\rho u D}{\mu}
+$$
+
+Ratio of the *inertial*, or *disturbing* forces ($\rho$, $u$, $D$) to the [viscous](1_Introduction.qmd#viscosity) forces ($\mu$).
+
+For flow in a pipe:
+- Re < $\approx$ 2000 creates *laminar* flow (if undisturbed)
+- Re > $\approx$ 4000 creates *turbulent* flow
+- 2000 < Re < 4000 is *transitional* flow: it could be either laminar or turbulent, but you can't tell from the Reynold's number alone.
+
+At a low Re, viscous forces dominate. At high Re, viscous forces become negligible.
+
+:::{.callout-warning}
+These numbers *only* apply for flow in a pipe. Other values must be taken for other flow situations.
+:::
+
+ # Flow in a pipe
+
+ Near the walls of the pipe, the fluid *shears* and the velocity drops. This is the *boundary layer*. At the walls, you have the *no-slip* condition from earlier. In the boundary layer, viscous effects dominate.
+
+![Laminar flow in a pipe](Images/1_2_Pipe_flow.png)
+
+ The boundary layer thickness ($\delta$) is greater for more viscous fluids, lesser with higher flow rates, and increases as you move down the pipe.
+
+ The variation of $u$ (flow speed) with the cross-duct position $y$ is the *velocity profile* $u(y)$.
+
+With laminar flow, $u(y)$ creates a *parabola*.
+
+![Laminar velocity profile](Images/1_2_Laminar_Boundary.png)
+
+With turbulent flow, between the boundary layers, there is a roughly flat profile. The fluid within the pipe is mixed, and the momentum of the fluid is evenly distributed beyond the boundary layer.
+
+![Turbulent velocity profile](Images/1_2_Turbulent_boundary.png)
+
+An **ideal fluid** is *incompressible* and *inviscid*, ie has no viscosity. Since there's no shearing, the flow in the pipe is uniform with respect to $y$.
+
+![Ideal velocity profile](Images/1_2_Ideal_Boundary.png)
+
+# 
