@@ -1,21 +1,23 @@
-# Engineering Mathematics 2A
+---
+title: Engineering Mathematics 2A
+---
 
+Mathematics is your toolbox to design, model, and control systems. 
 
-
-## Course Outline
+# Course Outline
 
 | School | School of Engineering | College | College of Science and Engineering |
 |--------|-----------------------|---------|------------------------------------|
 | Credit level (Normal year taken) | SCQF Level 8 (Year 2 Undergraduate) | Availability | Available to all students |
 | SCQF Credits | 10 | ECTS Credits | 5 |
 
-## Summary
+# Summary
 
 Ordinary differential equations, transforms and Fourier series with applications to engineering. Linear differential equations, homogeneous and non-homogeneous equations, particular solutions for standard forcings; Laplace transforms and applications; standard Fourier series, half range sine and cosine series, complex form; convergence of Fourier series, differentiation and integration of Fourier series. Introduction to Partial Differential Equations.
 
-## Course description
+# Course description
 
-### Differential Equations
+## Differential Equations
 
 - Linear Differential Equations 1 lecture
 
@@ -23,13 +25,13 @@ Ordinary differential equations, transforms and Fourier series with applications
 
 - Second order linear constant coefficient differential  equations, forcing and damping 2 lectures
 
-### Laplace Transforms
+## Laplace Transforms
 
 - Definition, simple transforms, properties, inverse and shift theorem 3 lectures
 
 - Solution of ODEs 3 lectures
 
-### Fourier Series
+## Fourier Series
 
 - Fourier series, coefficients, even/odd functions, linearity,  convergence 2 lectures
 
@@ -37,7 +39,7 @@ Ordinary differential equations, transforms and Fourier series with applications
 
 - Integration and differentiation of Fourier series 1 lecture
 
-### Partial Differential Equations
+## Partial Differential Equations
 
 - Wave equation, Heat or diffusion equation, Laplace equation  1 lecture
 
@@ -50,7 +52,7 @@ Additional Costs: Students are expected to own a copy of:
 
 2. Advanced Modern Engineering Mathematics by Glyn James, Prentice Hall, ISBN 978-0-273-71923-6
 
-## Total Hours: 100
+# Total Hours: 100
 
 - Lecture Hours 20,
 - Seminar/Tutorial Hours 5,
@@ -59,13 +61,16 @@ Additional Costs: Students are expected to own a copy of:
 - Programme Level Learning and Teaching Hours 2,
 - Directed Learning and Independent Learning Hours 61
 
-## Assessment
+# Assessment
 
 - Written Exam 50 %,
 - Coursework 50 %,
+    - 3 coursework:
+        - Differential Equations coursework due 13.10.2022 at 3 pm (37.5%)
+        - Laplace transform coursework with peer assessmentq
 - Practical Exam 0 %
     
-## Learning Outcomes
+# Learning Outcomes
 
 On completion of this course, the student will be able to:
 
@@ -75,6 +80,7 @@ On completion of this course, the student will be able to:
 - Use Fourier series analysis to approximate periodic functions, solve differential equations and analyse the response of systems to periodic forcing
 -  Distinguish between ordinary and partial differential equations and solve special cases of the wave equation
 
+# Course Contacts
 
 | Course organiser | Dr Daniel Friedrich |
 |------------------|---------------------|

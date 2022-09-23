@@ -6,6 +6,118 @@ author: Jasper Day
 
 Structures are everywhere, if you care to notice them.
 
-# Structural Elements:
+# What is a structure?
 
-![Pinned support](Images/1_Pinned_Support.png)
+- Assembly of different types of (structural) members
+- Carries loads & transmits forces through its members
+- Functional
+    - Buildings
+    - Bridges
+    - Dams
+    - Tunnels
+    - Rockets......
+
+Structural design is about the selection of safe and effective structural forms. The use of materials is determined by *stresses* and *deformations* under design loads. It's analysed through structural mechanics and structural analysis.
+
+# Structural Members
+
+## Struts and ties
+
+Only transmit axial forces (compression and tension), do not transmit bending forces.
+
+:::{.callout-note}
+Of course everything acts in bending, etc. In real life, nothing is *only* submitted to axial forces. But we take the situation where the main function of the member is to resist axial forces.
+:::
+
+Struts are drawn with a single thin line:
+
+![Struts](Images/1_Struts.png)
+
+## Trusses
+
+An assembly of struts and ties (bars) providing a stiff frame with efficient use of material.
+
+Efficient in use of material, strong and stiff. Many bridges are truss bridges; see the Forth road bridge.
+
+![Truss](Images/1_Truss.png)
+
+## Beams
+
+Members also subjected to bending moments and shear forces. Drawn with a slightly thicker line.
+
+![Beam](Images/1_Beam.png)
+
+## Columns
+
+Resist compressive axial force. Often found in buildings.
+
+## Shafts
+
+Only subject to torsion, not compression or tension.
+
+## Arches
+
+Structures curved in the vertical plane. Any load is transmitted directly into the ground; the whole structure is in compression (very strong). May be built from loose bricks.
+
+Domes are 3D arches. (solid of revolution)
+
+## Plates and slabs
+
+A two dimensional beam which gives a complete floor. Plates are metal, slabs are concrete.
+
+## Shells and pressure vessels
+
+3D curved thin structures, usuallyl for storing things and building stiff and strong structures. The airframe of a rocket is an example of a shell.
+
+## Supports
+
+Set the *boundary conditions* for the structures.
+
+### Pinned support
+
+1 degree of freedom. Does not support translations; only rotations are allowed.
+
+![Pinned support](Images/1_Pin_Sup.png)
+
+### Roller support
+
+2 degrees of freedom. Supports translation in the direction of the roller as well as spin.
+
+![Roller support](Images/1_Roller.png)
+
+### Fixed support
+
+No degrees of freedom.
+
+![Fixed support](Images/1_Fixed.png)
+
+# Representing structures
+
+Done through *structural diagrams*.
+
+Relevant information:
+
+- Geometry
+- Type of member, type of material
+- Sources of load
+
+
+![Joints](Images/1_Joints.png)
+
+Joints are free to rotate.
+
+![Forces](Images/1_Force.png)
+
+Forces would cause translations in a system outside of equilibrium. Act on a point.
+
+![Moments](Images/1_Moment.png)
+
+Moments would cause rotations in a system out of equilibrium. Act on a point.
+
+![Distributed loads](Images/1_Dist_Load.png)
+
+Forces spread out across an area.
+
+# Assignment
+
+[Structure Photography Assignment]()

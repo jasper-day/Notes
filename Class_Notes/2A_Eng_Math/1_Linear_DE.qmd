@@ -4,3 +4,31 @@ subtitle: Linear constant coefficient homogeneous differential equations
 author: Jasper Day
 ---
 
+# Introduction to Differential Equations
+
+There are two main types of differential equations: *Ordinary* and *partial*. Partial differential lequations involve partial derivatives of vectors; ordinary differential equations do not. These are simpler to solve than partial DEs.
+
+In $\frac{df}{dx}$, f is the *dependent variable* and x is the *independent variable*.
+
+The *order* of a differential equation is the degree of the highest derivative occuring in that equation.
+
+## Linear vs Nonlinear
+
+*Linear equations* are those equations in which the **dependent variables and their derivatives** do not occur as products, raised to powers or in nonlinear functions. *Nonlinear equations* are all other equations. 
+
+## Homogeneous and Nonhomogeneous
+
+### How to arrange differential equations
+
+The terms with the *dependent variable* go on the left hand side (ie $x$ in $\frac{dx}{dt}$), and all terms not containing the dependent variable (either terms containing only the independent variable, in this case $t$, or constant terms) go on the right hand side of the equation.
+
+### Determining
+
+When the terms are [arranged properly](1_Linear_DE.qmd#how-to-arrange-differential-equations), then **if the right hand side of the equation is ZERO** then the equation is **homogeneous**. If the right hand side (terms without the dependent variable) is **NONZERO**, then the equation is **nonhomogeneous**.
+
+In other words, each term in a homogeneous differential equation involves a dependent variable or its derivatives.
+
+## Solutions to differential equations
+
+The solutions to differential equations generally comprise a function space, or family of related functions.
+
