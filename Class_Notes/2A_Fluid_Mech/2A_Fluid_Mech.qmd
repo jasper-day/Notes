@@ -1,5 +1,6 @@
 # Fluid Mechanics 2
 
+[Reference Tables](Reference_Tables.qmd)
 
 | School | School of Engineering | College | College of Science and Engineering |
 |--------|-----------------------|---------|------------------------------------|
@@ -27,7 +28,7 @@ All the lectures are delivered *online asynchronous*
 - L1	[Properties of  Fluids](1_Introduction.qmd)
     - Shear stress, viscosity, density, compressibility, surface tension.
 
-- L2	Simple Flow Fields and Phenomena 1
+- L2	[Simple Flow Fields and Phenomena 1](1_2_Flow_Fields.qmd)
     - Laminar and turbulent flow states; flow in a duct, flow over a flat plate; flow round objects; separation &amp; wakes; vortex shedding; drag. 
 
 - L3	Simple Flow Fields and Phenomena 2

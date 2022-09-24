@@ -1,0 +1,51 @@
+---
+title: Reference Tables
+---
+
+# Properties of water vs temperature
+
+![](Images/RT_a1_1.png)
+
+# Bulk modulus of elasticity of water vs temperature and pressure
+
+![](Images/RT_a1_2.png)
+
+# Properties of air vs temperature, atmospheric pressure
+
+![](Images/RT_a1_3.png)
+
+# Properties of common liquids
+
+![](Images/RT_a1_4.png)
+
+# Properties of common gases
+
+![](Images/RT_a1_5.png)
+
+# International Standard Atmosphere
+
+![](Images/RT_a1_6.png)
+
+# Solubility of Air in Pure Water
+
+![](Images/RT_a1_7.png)
+
+# Absolute Viscosity of Common Fluids
+
+![](Images/RT_a1_8.png)
+
+# Drag Coefficient For Body Shapes
+
+![](Images/RT_a1_9.png)
+
+Drag coefficient for various body shapes at $Re \approx 10^5$, based on frontal area, except for the inclined plate where $A = L \times W$.
+
+$$
+C_D = 2(\textnormal{Drag})/(\rho u^2 A)
+$$
+
+$$
+F_D = \frac{1}{2}C_D \rho A u^2
+$$
+
+Flow is from left to right w.r.t the body shape. $a$ is the body dimension in the direction of flow and $b$ is perpendicular to it.
