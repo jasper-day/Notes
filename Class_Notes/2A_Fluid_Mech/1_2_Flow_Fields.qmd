@@ -60,4 +60,115 @@ An **ideal fluid** is *incompressible* and *inviscid*, ie has no viscosity. Sinc
 
 ![Ideal velocity profile](Images/1_2_Ideal_Boundary.png)
 
-# 
+# Flow Past a Bluff Body
+
+> Bluff: The opposite of streamlined.
+
+There are 5 regimes of flow, corresponding to different Reynolds numbers.
+
+The Re number is now partly determined by the size of the cylinder - the characteristic length will be the diameter of the cylinder.
+
+## 5 regimes
+
+### Ideal - Flow attached
+
+![Ideal flow attached to cylinder](Images/1_2_Ideal_FA.png)
+
+Here the reynolds number is very low (under 0.1 or so). Here the flow is *streamlined*, where no flow crosses a streamline. The flow absolutely follows the geometry.
+
+### Separated - steady
+
+![Separated steady flow around a cylinder](Images/1_2_Separated_Steady.png)
+
+Here the reynolds number is slightly higher - from 1 or 2 to perhaps a few 10s. The flow has separated from the cylinder on the far side of the flow, creating two recirculating regions of fluid. 
+
+### Unsteady - oscillating
+
+![Vortex shedding around a cylinder](Images/1_2_Unsteady_Oscillating.png)
+
+In this case, the flow separates, departing from the geometry of the cylinder.  Downstream of the cylinder, there's a wake. *Vortices* are shed alternately off the top and the bottom of the cylinder. 
+
+### Laminar - Separated
+
+![Laminar and separated flow around a cylinder](Images/1_2_Laminar_Separated.png)
+
+Instead of the beautiful vortex shedding, you get a simple mess. The wake behind is unstructured and messy. 
+
+This occurs for $20,000 < Re < 100,000$.
+
+### Turbulent - Separated
+
+![Turbulent, separated flow](Images/1_2_Turbulent_Separated.png)
+
+The separation point is now further to the rear of the cylinder, occuring at the upper end of engineering flows. The boundary layer around the cylinder is turbulnent, allowing the stream to follow the cylinder further to the rear than the laminar layer. 
+
+Re > 200,000
+
+## External Flow
+
+![Flow Diagram](Images/1_2_Flow_Diagram.png)
+
+There are 3 main flow regimes: 
+
+- The "Free Stream" has largely undisturbed flow
+- Adjacent to the body is the *boundary layer flow*
+    - The stream *shears* within this region due to adhesion to the wall.
+- Separated regions - the wake, where the boundary layer has separated from the surface of the body. These tend to have recirculating water.
+
+## Drag
+
+General term for force on a body in a downstream direction.
+
+Flow past a bluff body results in "**form drag**", rather than skin-friction drag.
+
+This is created by 
+- Recirculation in wake (lots of viscous friction caused by shearing particles)
+- Energy losses in wake due to viscous friction, causing the pressure in the wake to drop
+- The fluid slowing in front of the stagnation point causes the pressure in front of the body to increase.
+
+These pressure differences (enhanced zone in front of the body, decreased pressure to the rear of the body) create a net force on the body from its front to its back. To find the force, multiply the pressure by the area of the bluff body. 
+
+To streamline, reduce the area of the wake, reducing the area for the pressure difference.
+
+### Drag force equation
+
+$$
+F_D = \frac{1}{2}C_D \rho A u^2
+$$
+
+$F_D$ is the form drag of the body. $C_D$ is the *drag coefficient*, particular to the geometry of each separate body. $u$ is the velocity of the fluid (in the undisturbed stream), $\rho$ is the mass density, $A$ is the area of the body.
+
+Different $C_D$:
+
+- older car: $\approx$ 0.6 to 0.8
+- modern car: $\approx$ 0.25
+- racing car: $\approx$ 0.18
+
+The object size is accounted for by $A$, the *projected frontal area* of the object.
+
+![Drag force chart]
+
+Dotted line is a cylinder, 
+
+For very low Re, the drag force decreases as Re increases. From an Re of several hundred to an Re of several hundred thousand, the drag coefficient is pretty much flat at $\approx$ 1 to 1.2. This is because the flow is separating at roughly the same place. At the low end, you have the pretty Von Karman wake, and at the high end a less pretty wake, but the fluid separates at the same place.
+
+The "drag crisis" point where the drag drops precipitously corresponds to the point where the bluff body becomes more streamlined, with a narrower wake due to the turbulence in the fluid. Since the wake is smaller, the pressure - induced drag is reduced (acting on a smaller area).
+
+## Vortex Shedding
+
+For long, slender bodies like cylinders, wake *oscillates*. At a lower Re, you have two recirculating regions, then at a higher Re you see one of those vortices begin to "win", eventually fall off and start to trade off with each other.  
+
+Vortex shedding creates transverse lift forces, perpendicular to the flow of the liquid. Since the flow oscillates, the transverse lift forces also oscillate, potentially causing a ringing motion.
+
+With a half cylinder, the separation is quite strong, and so the vortex shedding is even more intense.
+
+### Vortex shedding formula
+
+$$
+\frac{fD}{u} \approx 0.198\left(1 - \frac{19.7}{Re} \right) \approx 0.2
+$$
+
+$\frac{fD}{u}$ is the **Strouhal number** $St$ for a cylinder, where $f$ is the frequency in Hz at which vortices are shed, $D$ is the cylinder diameter in meters, and $u$ is the free stream flow speed in meters per second. 
+
+The formula applies for 250 < Re < $2\times 10^5$. Since Re is so small, the RHS may easily be approximated to 2 for large Re.
+
