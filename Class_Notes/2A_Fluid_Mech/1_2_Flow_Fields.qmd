@@ -38,9 +38,9 @@ At a low Re, viscous forces dominate. At high Re, viscous forces become negligib
 These numbers *only* apply for flow in a pipe. Other values must be taken for other flow situations.
 :::
 
- # Flow in a pipe
+# Flow in a pipe
 
- Near the walls of the pipe, the fluid *shears* and the velocity drops. This is the *boundary layer*. At the walls, you have the *no-slip* condition from earlier. In the boundary layer, viscous effects dominate.
+Near the walls of the pipe, the fluid *shears* and the velocity drops. This is the *boundary layer*. At the walls, you have the *no-slip* condition from earlier. In the boundary layer, viscous effects dominate.
 
 ![Laminar flow in a pipe](Images/1_2_Pipe_flow.png)
 
