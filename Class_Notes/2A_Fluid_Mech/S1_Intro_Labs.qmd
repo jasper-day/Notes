@@ -1,0 +1,51 @@
+---
+title: Introduction to Laboratories
+subtitle: Arf Arf
+date: Mon 09/26/2022
+---
+
+![Labs](https://www.scotsman.com/webimg/b25lY21zOjVlZTJiZmUyLTBhYzEtNGE0YS04NzNmLTllMzdjOTU5NTVmYzo0NTg5Mzk1NC0xYTA5LTQ0NGEtOWIxMi00NThjOGViZWY3MTA=.jpg?width=1200&enable=upscale)
+
+For *1, 3, and 5*, there are no substantial submissions - you have to analyze the data, but you don't have to produce any graphs. 
+
+FM2 labs support the lectures, but they also build your professional skills. 
+
+You have to show:
+- Beautiful and effective graphs
+- Dealing with uncertainty
+- Drawing good conclusions
+
+# Drag Laboratory
+
+Reminder: the [drag force equation](1_2_Flow_Fields.qmd#drag-force-equation) is 
+
+$$
+F_D = \frac{1}{2}C_D \rho p A u^2
+$$
+
+The point of the lab is to measure the relationship between the drag coefficient and [Reynolds number](1_2_Flow_Fields.qmd#reynolds-number) for a portion of the graph.
+
+$$
+Re = \frac{\rho_f u D}{\mu}
+$$
+
+Large and fast objects, travelling in low viscosity fluid, have greater Reynolds numbers than the obverse.
+
+We will be dropping small aluminum / plastic spheres down columns of water and oil, recreating a small range of Reynolds numbers.
+
+We know the density and viscosity of the fluid ($\rho_f, \mu$), we know the diameter of the sphere, and we will time the descent of the sphere to find its velocity.
+
+To find the drag force on the sphere, we use this free body diagram.
+
+$$
+F_D = F_W - F_B
+$$
+
+$F_D$ is the drag force, the unknown we wish to solve. $F_W$ is the mass of the sphere times g, which can be directly measured (or calculated using the density of the sphere), and $F_B$ is the force of buoyancy, which equals $\rho \dot g \dot V$.
+
+# Excel sheet for the lab
+
+The [excel sheet](Sample_Lab_F1.xlsx) is prepared as follows:
+
+1. Set up a new excel workbook and copy the properties of the 
+

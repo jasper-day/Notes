@@ -90,4 +90,40 @@ You may further simplify by making $A + B = C$ and $A - B = D$.
 
 If $m_1 = m_2 = k$, then the general solution with linear superposition breaks down (the function vectors are no longer linearly independent and are not sufficient to span a function space).
 
-For a differential equation to have a repeated root at m = k, then 
+For a differential equation to have a repeated root at m = k, then the characteristic quadratic must be a square:
+
+$$
+\begin{gather}
+am^2 - 2akm + ak^2 = 0 \\
+a(m - k)^2 = 0
+\end{gather}
+$$
+
+Then the differential equation takes this form:
+
+$$
+a \frac{d^2x}{dt^2} -2ak \frac{dx}{dt} + ak^2x = 0
+$$
+
+Take the "test solution" $x(t) = t^p e^{mt}$. Then $\frac{dx}{dt} = p\left(t^{p-1} \right)e^{mt} + m t^p e^{mt}$ by the power rule and product rule, and 
+$$
+\frac{d^2x}{dt^2} = m^2 t^p e^{mt} + 2 \left( m p t^{p-1} e^{mt} \right) + p(p-1)t^{p-2}e^mt.
+$$
+
+Substitute these expressions into the differential equation:
+
+![](Images/1_Same_Root_DE.png)
+
+For the result to hold, it must be the case that $m = k$ and $p \in \{ 0,1 \}$. Going back to our test solution, we see that either $x(t) = e^{mt}$ or $x(t) = te^{mt}$. Taking the space spanned by these two functions, we find that 
+
+$$
+\begin{gather}
+x(t) \in \texttt{span}\left(e^{mt}, te^{mt}\right) \\
+x(t) = Ae^{mt} + Bte^{mt} \\
+x(t) = (A + Bt)e^{mt}
+\end{gather}
+$$
+
+# Conclusion
+
+To solve a linear homogeneous constant coefficient differential equation, find the roots of the *characteristic equation* with all nth order derivatives replaced with nth powers of x. Then the solutions are the space spanned by all $e^{\textnormal{(root)}t}$, multiplied by a power of $t$ every time a root repeats.

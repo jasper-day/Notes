@@ -1,0 +1,91 @@
+---
+title: Wiring and Safety systems
+date: Mon 09/26/2022 
+---
+
+# Domestic Suppply
+
+For single phase (most UK supply), the wire has 3 cables
+
+- Brown: LIVE wire
+- Blue: NEUTRAL wire
+- Yellow and green: EARTH wire
+
+Plugs look like this:
+
+![UK plug](Images/2_UK_Outlet.png)
+
+In 3-phase current, you add two cables and get 3x the power transmission
+
+- Brown: Phase 1
+- Black: Phase 2
+- Gray: Phase 3
+- Blue: Neutral
+- Yellow and green: Earth
+
+Near each house there is a substation transformer, which takes in 3 phase current and supplies 1 phase to each building connected to it. It has a central ground, which is the neutral of your power supply. Your house also has a ground.
+
+Transformer stations have massive grounds made up of a sunken grid of conductors.
+
+## Risks
+
+- Electrical fire from resistive heating
+- Electrical shock from creating a potential difference across your body.
+
+**Never touch** something if your other hand is holding a wire that could potentially be live! It is much better for the current to travel through your *boots* to the ground than through your *hands* to the ground. This also redirects the current away from your chest.
+
+The resistance of a human body is ~1000 $\Omega$ from one hand to the other hand. It only takes 30mA of current to cause serious danger.
+
+If you touch just the live wire of a system, you will get an electric shock -- you close the circuit between your ground and the substation ground. The danger ddepends on your resistance to ground - wear thick boots with rubber soles; don't stand in a puddle.
+
+## Switching
+
+The switch to any load should *always be connected on the live side*. In this case, when the switch is off, the load is fully disconnected from the supply. If the switch is on the neutral side, then any short will shock you. You don't want your appliances to be at potential.
+
+# Safety Systems
+
+### Fuses
+
+Fuses protect equipment by limiting current flow. Fuses generally trip at 3A of current (30-50 mA will kill you). The fuse is a resistor that melts at a certain rated current.
+
+Like a switch, the fuse should always be on the live side of the wires.
+
+For semiconductor loads, fuses should blow very quickly
+
+For motors, with high inrush currents, you should have *slow blow* fuses. Anything with a coil or capacitor, which make take inrush currents up to 10x normal operation, should be equipped with a slow blow fuse.
+
+Manufacturers will publish log-log graphs showing how long it takes a fuse to blow versus current flow.
+
+Fuse *grading* involves placing larger and larger fuses at each level of load aggregation.
+
+![Fuse grading in action](Images/1_2_Graded_Fuses.png)
+
+### Miniature Circuit Breakers
+
+Thermal:
+- Bimetallic strip heats up and bends, disconnecting current
+- Slow blow
+
+Magnetic:
+- Solenoid (coil assembly) creates magnetic field that trips the breaker. 
+
+Most MCBs combine the two mechanisms: if there is an overload for a long period of time, the bimetallic strip triggers. If there is a short circuit, the solenoid trips super fast. Obviously the trip point for the solenoid is at a much higher current than that of the bimetallic strip. The multiple of rated current at which the magnetic section trips determines the rating of the MCB: for industrial applications (welding, large motors, x-rays) the rating would be D type (10-30x rated current) and for home applications the rating is usually B type (3-5x rated).
+
+![MCB tripping characteristics](Images/2_1_MCB.png)
+
+The manufacturer guarantees that the actual characteristic of the MCB lies between the red and the blue lines.
+
+MCBs are more expensive than fuses, but reset themselves automatically.
+
+### Residual Current Device
+
+If something comes into contact with the live conductor, these quickly isolate the current. These are intended to protect people.
+
+The live and neutral are both passed through a core. If the live and neutral are equal, no current is induced in the solenoid; the live and neutral are a closed system. In the US, this would be a ground fault circuit interruptor (GFCI). 
+
+
+# Wiring Lab
+
+The object is to assemble and test a three-phase switch panel for a 180 W, 200 V AC cage induction motor.
+
+[Laboratory PDF](Laboratory.pdf)
