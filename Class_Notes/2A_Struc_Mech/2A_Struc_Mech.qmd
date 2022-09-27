@@ -15,7 +15,7 @@ This course engages students with the fundamental principles of Structural Mecha
 
 ## Course Description
 
-- T1 Introduction and Overview: Course structure and organisation. What is structural mechanics? 
+- T1 [Introduction and Overview](1_Introduction.qmd): Course structure and organisation. What is structural mechanics? 
 
 - T2 Structural forms: Structural elements and examples. Strength and stiffness. Loads and factors
 
