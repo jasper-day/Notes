@@ -23,7 +23,7 @@ There is still a net flow, but now there's a lot of 3d random motion as well, wh
 
 $$
 Re \equiv \frac{\rho u D}{\mu}
-$$
+$${#eq-reynolds}
 
 Ratio of the *inertial*, or *disturbing* forces ($\rho$, $u$, $D$) to the [viscous](1_Introduction.qmd#viscosity) forces ($\mu$).
 
@@ -174,6 +174,8 @@ The formula applies for 250 < Re < $2\times 10^5$. Since Re is so small, the RHS
 
 # Flow Along a Flat Plate
 
+> And how it leads to skin friction drag
+
 :::{.callout-note}
 
 The flow visualizations in the old videos are created through the [hydrogen bubble technique](https://www.researchgate.net/publication/303784988_Hydrogen_Bubble_Flow_Visualization), which basically just means placing a thin piece of wire as a continuous electrode off of which tiny hydrogen bubbles continuously flow. Very cool.
@@ -181,4 +183,75 @@ The flow visualizations in the old videos are created through the [hydrogen bubb
 ![Flow visualization with the hydrogen bubble technique](Images/1_2_Hydrogen_Bubble.png)
 
 :::
+
+![Flow along a flat plate](Images/1_2_Flat_Plate_Boundary.png)
+
+Before the flow reaches the plate (in the free stream) it feels no effect, but as soon as it hits the plate a *no-slip condition* forms, creating a boundary layer whose thickness increases as the flow travels further along the plate. Within the boundary layer, viscous effects are dominant; without the bounddary layer the flow is inviscid; there is no shear between the layers of the fluid.
+
+## Boundary Layer
+
+The **boundary layer thickness** $\delta$ is equivalent to the distance away from the wall (the $y$-distance) at which the flow speed $u$ reaches 99% of the undisturbed (free stream) flow speed $u_{\infty}$. This is the velocity definition of the boundary layer.
+
+The boundary layer flow may be either *laminar* or *turbulent*
+
+## Reynolds number on a flat plate
+
+Here, the [Reynolds Number](1_2_Flow_Fields.qmd#reynolds-number) @eq-reynolds is defined with respect to the characteristic length $x$, that is, the distance along the plate which the fluid has travelled. 
+
+$$
+Re_x = \frac{\rho u_\infty x}{\mu} = \frac{u_\infty x}{\nu}
+$${eq-reynolds-plate}
+
+As before, $Re_x$ indicates whether to expect laminar or turbulent flow. On a flat plate, the flow is laminar when $Re_x < 10,000$, and the flow is turbulent above around $Re_x > 20,000$.
+
+When the flow is **laminar**, the boundary layer thickness $\delta$ is equal to 
+
+$$
+\delta = \frac{5x}{Re_x^{1/2}},
+$$
+
+which means that $\delta \propto \root \of x$ (since $Re_x \propto x$), and 
+$\delta \propto \frac{1}{\root \of {u_\infty}}$ (since $Re_x \propto u$). That is to say, the boundary layer increases with the square root of the distance from the leading edge, and the boundary layer thickness increases with one over the square root of the free stream velocity.
+
+When the flow is **turbulent**, the relationship to $Re_x$ is much weaker:
+
+$$
+\delta = \frac{0.37 x}{Re_x^{1/5}}
+$$
+
+The boundary layer thickness with turbulent flow increases with $x^{4/5}$, and it increases with $1/(\root^{1/5} \of {u_\infty})$). This is much closer to a straight line in x.
+
+## Skin Friction Drag
+
+The shearing on the plate induces a force in the direction of flow. Conversely, if you attempt to move an object through flow, you experience the same retarding force in the opposite direction of the motion of the body. This is *skin friction drag*.
+
+Recall that the *form* [drag force](1_2_Flow_Fields.qmd#drag-force-equation) on a cylinder created by the pressure differential on either side of the cylinder was given by 
+
+$$
+F_D = \frac{1}{2}C_D \rho A u^2
+$$
+
+This drag is created by surfaces *perpendicular* to the direction of flow. Skin friction drag, on the other hand, is created by surfaces *tangent* to the direction of flow. The equation for skin friction drag is
+
+$$
+F_dD = \frac{1}{2} C_f \, \rho \, A \, u_\infty^2
+$$
+
+Here the drag is created by the area of the which is actually in contact with the fluid.
+
+### Skin Friction Drag Coefficient
+
+$C_f$ is the *skin friction drag coefficient*, which has different values for turbulent and laminar flow:
+
+In laminar flow,
+
+$$
+C_f = \frac{1.4}{Re_x^{1/2}}
+$$
+
+In turbulent flow, 
+
+$$
+C_F = \frac{0.074}{Re_x^{1/5}}
+$$.
 
