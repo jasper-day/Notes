@@ -88,7 +88,7 @@ So the question is, how do you find a particular integral?
 - trial and error
 - give up
 
-## An example
+# Solving a Polynomial RHS
 
 Find the general solution of 
 
@@ -104,7 +104,12 @@ $$
 
 with roots $m \in \{ 1, -6 \}$.
 
-The nullspace of $L[x]$ is then $x(t) = Ae^{t} + Be^{-6t}$.
+The nullspace of $L[x]$ is then 
+$$
+x(t) = Ae^{t} + Be^{-6t}.
+$${#eq-nullspace}
+
+## Finding the particular integral
 
 To find a particular integral, test with the polynomial
 
@@ -132,4 +137,24 @@ $$
 2P &+ 5Q &-6R &= 0 \\
 \end{cases}
 $$
+
+Solving through back-substitution, $P = -\frac{1}{6}, Q = -\frac{5}{18}, R = -\frac{31}{108}$.
+
+Then the particular integral is 
+$$ 
+-\frac{1}{6}t^2 -\frac{5}{18}t -\frac{31}{108}.
+$$
+
+## The general solution
+
+To find the general solution, we add back in the nullspace of $L[x]$, which we defined in @eq-nullspace:
+
+$$
+-\frac{1}{6}t^2 -\frac{5}{18}t -\frac{31}{108} + Ae^{t} + Be^{-6t}.
+$$
+
+You can do this with any polynomial RHS - just use the fully general polynomial of the same degree as your test case.
+
+# Solving an Exponential RHS
+
 
