@@ -22,6 +22,8 @@ Ordinary differential equations, transforms and Fourier series with applications
 - Linear Differential Equations 1 lecture
 
 - Linear constant coefficient Differential Equations 3  lectures
+    - [Homogeneous Differential Equations](1_Linear_DE.qmd)
+    - [Inhomogeneous Differential Equations](2_Inhomogeneous_Linear_DE.qmd)
 
 - Second order linear constant coefficient differential  equations, forcing and damping 2 lectures
 
