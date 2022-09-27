@@ -143,6 +143,14 @@ Where $L$ is the inductance, measured in Henrys.
 
 Often used as filters.
 
+### Fuses
+
+Prevent current from passing above a certain amperage (thin wire which melts).
+
+![Fuse 1](Images/1_Fuse_1.png)
+![Fuse 2](Images/1_Fuse_2.png)
+![Fuse 3](Images/1_fuse_3.png)
+
 ## Use of components
 
 Capacitors, resistors, and inductors are used to develop *models* for larger, more complicated systems.
