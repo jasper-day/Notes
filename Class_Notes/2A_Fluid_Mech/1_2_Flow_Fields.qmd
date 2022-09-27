@@ -174,3 +174,11 @@ The formula applies for 250 < Re < $2\times 10^5$. Since Re is so small, the RHS
 
 # Flow Along a Flat Plate
 
+:::{.callout-note}
+
+The flow visualizations in the old videos are created through the [hydrogen bubble technique](https://www.researchgate.net/publication/303784988_Hydrogen_Bubble_Flow_Visualization), which basically just means placing a thin piece of wire as a continuous electrode off of which tiny hydrogen bubbles continuously flow. Very cool.
+
+![Flow visualization with the hydrogen bubble technique](Images/1_2_Hydrogen_Bubble.png)
+
+:::
+
