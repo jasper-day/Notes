@@ -28,11 +28,11 @@ When the terms are [arranged properly](1_Linear_DE.qmd#how-to-arrange-differenti
 
 In other words, each term in a homogeneous differential equation involves a dependent variable or its derivatives.
 
-## Solutions to differential equations
+# Solutions to differential equations
 
 The solutions to differential equations generally comprise a function space, or family of related functions.
 
-### 1st order linear differential equations
+## 1st order linear differential equations
 
 For the equation
 $$
@@ -45,7 +45,7 @@ $$
 x = Ae^{mt}, \textnormal{where } am + b = 0
 $$
 
-### Second Order DEs
+## Second Order DEs
 
 Now consider what happens with a 2nd order DE:
 
@@ -66,13 +66,13 @@ So $x(t) = e^{mt}$ is a solution if $am^2 + bm + c = 0$.
 
 $am^2 + bm + c = 0$ is the characteristic equation. It's a quadratic; it has 2 roots $m_1$ and $m_2$.
 
-#### Distinct real roots
+### Distinct real roots
 
 When $m_1$ and $m_2$ are distinct real roots, then 
 
 $x(t) = Ae^{m_1t} + Be^{m_2t}$ (all linear combinations of $e^{m_1t}$ and $e^{m_2t}$.)
 
-#### Complex roots
+### Complex roots
 
 When $m_1$ and $m_2$ are complex conjugates, it's slightly more complex. $m_1 = \phi + j\psi$ and $m_2 = \phi - j\psi$. 
 
@@ -86,7 +86,7 @@ $$
 
 You may further simplify by making $A + B = C$ and $A - B = D$.
 
-#### The Same Root
+### The Same Root
 
 If $m_1 = m_2 = k$, then the general solution with linear superposition breaks down (the function vectors are no longer linearly independent and are not sufficient to span a function space).
 
