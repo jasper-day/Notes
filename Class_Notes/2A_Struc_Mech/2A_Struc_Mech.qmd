@@ -17,9 +17,9 @@ This course engages students with the fundamental principles of Structural Mecha
 
 - T1 [Introduction and Overview](1_Introduction.qmd): Course structure and organisation. What is structural mechanics? 
 
-- T2 Structural forms: Structural elements and examples. Strength and stiffness. Loads and factors
+- T2 [Structural forms](1_Introduction.qmd#structural-members): Structural elements and examples. Strength and stiffness. Loads and factors
 
-- T3 Global Equilibrium: Forces and moments, point and distributed loads. Support conditions. Global equilibrium of structures. Concept of structural determinacy and indeterminacy
+- T3 [Global Equilibrium](3_Static_Equilibrium.qmd): Forces and moments, point and distributed loads. Support conditions. Global equilibrium of structures. Concept of structural determinacy and indeterminacy
 
 - T4 Free Body Diagrams and Stress Resultant
 
