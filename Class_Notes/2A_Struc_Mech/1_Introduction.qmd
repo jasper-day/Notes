@@ -29,6 +29,8 @@ Only transmit axial forces (compression and tension), do not transmit bending fo
 Of course everything acts in bending, etc. In real life, nothing is *only* submitted to axial forces. But we take the situation where the main function of the member is to resist axial forces.
 :::
 
+Note that beams are generally stronger in *tension* than they are in *compression*: compressive forces have a tendency to cause *buckling*.
+
 Struts are drawn with a single thin line:
 
 ![Struts](Images/1_Struts.png)
@@ -71,7 +73,7 @@ A two dimensional beam which gives a complete floor. Plates are metal, slabs are
 
 ## Supports
 
-Set the *boundary conditions* for the structures.
+Set the *boundary conditions* for the structures. When drawing a support, don't draw a continuous floor if it's not necessary; draw floor only where the supports connect to something fixed. It's often a good idea to draw the *minimum* necessary support to make a structure stand.
 
 ### Pinned support
 
@@ -121,3 +123,9 @@ Forces spread out across an area.
 # Assignment
 
 [Structure Photography Assignment]()
+
+:::{.callout-note}
+
+The difference between a structure and a mechanism would be the number of reaction forces supplied to the fixed reference; a mechanism has degrees of freedom (used in slightly different way in structural mechanics). A support may have "degrees of freedom" - any part of the structure that can theoretically move, which prevents it from creating force in that direction. So the actual difference of the structure is that that motion is *resisted* by the structure, whereas the motion is not *resisted* by the mechanism. It can't move horizontally, vertically, and it can't rotate: there are horizontal reaction forces, vertical reaction forces, and rotational reaction forces.
+
+The difference is - if you can push on it with a small force to cause it to move, it's a *mechanism* not a structure.
