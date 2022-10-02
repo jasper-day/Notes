@@ -115,3 +115,12 @@ Note that in the example above, since we know from @eq-horizontal that $\Sigma F
 A [fixed support](1_Introduction.qmd#fixed-support) has all 3 reaction forces $F_y, F_z,$ and $M$.
 
 Your first job in a structural mechanics question is to find the *support reactions* created by the supports.
+
+# Static Determinacy
+
+Maxwell's rule looks at the number of internal bars and pins within a structure to  determine whether the structure is *internally* statically determinate. This is beyond the scope of this course.
+
+Here we examine *external determinacy* only. We examine whether the support reactions can be determined through equilibrium alone ([equilibrium calculations](3_Static_Equilibrium.qmd#static-equilibrium) result in a single value for the support reactions). With a statically determinate structure, any damage at any point is immediately enough to make the structure fail catastrophically; with a *redundant* (indeterminate) structure this is not the case.
+
+Basically, for a structure to be externally statically determinate, it must have the *minimum number* of reaction forces and members necessary to support it.
+
