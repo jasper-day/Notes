@@ -51,7 +51,8 @@ website:
 
 
 number-sections: true
-freeze: auto
+execute: 
+  freeze: auto
 
 format:
   html:
