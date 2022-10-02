@@ -5,3 +5,42 @@ date: Sun 10/02/2022
 ---
 
 # Flow Through an Orifice
+
+:::{#def-orifice}
+
+## Orifice
+
+A restriction in a duct or a pipe.
+
+:::
+
+![](Images/1_3_Orifice_Flow.png)
+
+And the same in 2D:
+
+![](Images/1_3_Orifice_Flow_2D.png)
+
+There are lots of things to note in this diagram.
+
+1. Far away from the orifice in either direction, the flow is essentially undisturbed, as you would expect. 
+2. The streamlines *continue to converge* for a short time after passing through the orifice, as they have momentum towards the center of the pipe. Thus the section of flow with the shortest cross-sectional area (the **vena contracta**) occurs slightly *beyond* the orifice itself.
+3. In front of the orifice, the fluid is stagnant. Beyond the orifice, there is a separation point, which causes a lot of shear; this creates recirculating flow directly behind the orifice. 
+
+The energy losses caused by flow travelling through an orifice take 2 forms. First, there is a pressure loss as the flow *diverges*. Second, there is an energy loss caused by the area of recirculating flow just beyond the orifice, due to excessive shear within the liquid. Together, these two factors cause significant energy loss, which means that the pressure downstream of the orifice is less than the pressure in front of the orifice.
+
+# Flow Around a Sharp Bend
+
+![](Images/1_3_Flow_Around_Corner.png)
+
+As before, we start with a thought experiment. Note the points of interest in the diagram:
+
+1. The flow separates from the pipe walls around the inner corner of the bend, where momentum carries the bottom streamlines past that corner. 
+2. There is a stagnant zone in the far corner of the bend.
+3. There is an area of high shear and recirculation past the inner corner
+5. The flow lines again converge to a *vena contracta* somewhere past the bend itself.
+
+As before, the region of divergence beyond the vena contracta and the point of flow separation cause an energy loss beyond a sharp bend, which results in a permanent pressure drop past that bend.
+
+The consequence is that in a pipe network, every corner and every orifice induces an energy loss.
+
+All of these features are going to be less pronounced in a corner with a larger radius of curvature, as the flow lines will contour better to the walls.
