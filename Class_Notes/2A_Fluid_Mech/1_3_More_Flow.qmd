@@ -1,0 +1,7 @@
+---
+title: Continuing Flow Fields
+subtitle: Reynolds number; Strouhal number. More simple flow fields; orifice flow, flow round bends.
+date: Sun 10/02/2022
+---
+
+# Flow Through an Orifice
