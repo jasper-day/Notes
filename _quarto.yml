@@ -56,7 +56,7 @@ execute:
 
 format:
   html:
-    favicon: favicon_io/site.webmanifest
+    favicon: favicon.io/android-chrome-512x512.png
     lang: en
     theme:
       - custom.scss

@@ -3,7 +3,7 @@
   "result": {
     "markdown": "---\ntitle: Introduction to Python\ndate: 9/20/2022\nauthor: Jasper Day\n---\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nprint(\"Hello World!\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nHello World!\n```\n:::\n:::\n\n\n# Blinkstick Information:\n\n[Configure Blinkstick](Code/configure_blinkstick.py)\n\nNoteable:\n\nOnline Jupyter Notebook viewer through the university. Worth checking out if it runs faster than my computer can natively run it, especially on this machine which is (\\*cough) a little bit underpowered. \n\n:::{.callout-note}\nSharing text as a downloadable `.docx`, on a school website whose *only purpose* is to share text that is viewable in the browser, could be classified as a crime against humanity in certain countries. Spare a thought for the Arch btw 😭\n:::\n\n",
     "supporting": [
-      "1_Introduction_files\\figure-html"
+      "1_Introduction_files"
     ],
     "filters": [],
     "includes": {}
