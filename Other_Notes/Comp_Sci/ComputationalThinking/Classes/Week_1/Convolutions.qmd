@@ -2,7 +2,6 @@
 title: "Convolutions"
 author: "Jasper Day"
 date: "6/6/2022"
-freeze: auto
 ---
 
 # Kernels and Convolutions
