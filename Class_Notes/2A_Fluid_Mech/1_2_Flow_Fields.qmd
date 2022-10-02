@@ -210,8 +210,8 @@ $$
 \delta = \frac{5x}{Re_x^{1/2}},
 $$
 
-which means that $\delta \propto \root \of x$ (since $Re_x \propto x$), and 
-$\delta \propto \frac{1}{\root \of {u_\infty}}$ (since $Re_x \propto u$). That is to say, the boundary layer increases with the square root of the distance from the leading edge, and the boundary layer thickness increases with one over the square root of the free stream velocity.
+which means that $\delta \propto \sqrt{x}$ (since $Re_x \propto x$), and 
+$\delta \propto \frac{1}{\sqrt{u_\infty}}$ (since $Re_x \propto u$). That is to say, the boundary layer increases with the square root of the distance from the leading edge, and the boundary layer thickness increases with one over the square root of the free stream velocity.
 
 When the flow is **turbulent**, the relationship to $Re_x$ is much weaker:
 
@@ -219,7 +219,8 @@ $$
 \delta = \frac{0.37 x}{Re_x^{1/5}}
 $$
 
-The boundary layer thickness with turbulent flow increases with $x^{4/5}$, and it increases with $1/(\root^{1/5} \of {u_\infty})$). This is much closer to a straight line in x.
+The boundary layer thickness with turbulent flow increases with $x^{4/5}$, and it increases with 
+$1/(\sqrt[5]{u_\infty})$). This is much closer to a straight line in x.
 
 ## Skin Friction Drag
 
