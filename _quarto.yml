@@ -52,7 +52,7 @@ website:
 
 number-sections: true
 execute: 
-  freeze: auto
+  freeze: true
 
 format:
   html:
