@@ -1,0 +1,44 @@
+---
+title: Pressure
+---
+
+In a static fluid, there are no shearing forces. Thus there are no shear forces, no flow, and all forces at the boundaries occur *normal* to the plane at that point.
+
+Recall that pressure is force per unit area:
+
+$$
+p = \frac{\partial F}{\partial A}
+$$
+
+which can be taken to the limit at a piont:
+
+$$
+p = \frac{dF}{dA}
+$$
+
+The SI unit of pressure is newtons per square meter ($N/m^2$, Pa).
+
+Standard atmospheric pressure is 101.325kPa.
+- 100kPa = 1 bar
+- 100 Pa = 1 mbar
+
+## Definitions of pressure
+
+The pressure above an absolute vacuum (0 Pa) is the absolute pressure. You would measure this with a barometer.
+
+Usually, however, pressure is measured as the difference between two pressures of interest, with a U-shaped gauge which is open to the air at one end and connected to the pressure of interest with a pressure tube at the other end. You determine the pressure differential by taking the difference in the height of the liquid between the two tubes, and then the pressure differential is $\rho gh$.
+
+## Pascal's Law
+
+The pressure at a point is the same in all directions.
+
+# Vertical Pressure Variation
+
+![](Images/2_1_Fluid_Volume_Differential.png)
+
+Here we have a differential fluid area between $x+\Delta x$, $y+\Delta y$, and $z+\Delta z$. Since the only unbalanced force is the force of gravity $W$, the pressures in the $x$ and $y$ directions must be equal to each other. The force difference between the top and bottom must equal the weight of the fluid.
+
+$$
+P_{z+\Delta z}\, d A - P_z \, dA = W
+$$
+
