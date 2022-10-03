@@ -235,7 +235,7 @@ $$
 This drag is created by surfaces *perpendicular* to the direction of flow. Skin friction drag, on the other hand, is created by surfaces *tangent* to the direction of flow. The equation for skin friction drag is
 
 $$
-F_dD = \frac{1}{2} C_f \, \rho \, A \, u_\infty^2
+F_D = \frac{1}{2} C_f \, \rho \, A \, u_\infty^2
 $$
 
 Here the drag is created by the area of the which is actually in contact with the fluid.
