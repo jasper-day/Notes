@@ -1,6 +1,7 @@
 ---
 title: AC Power Systems Part 1
 subtitle: Power dissipation of a load in an AC power system
+date: Mon 10/03/2022 
 ---
 
 When you connect a load across a current source, the power consumed is the product of the voltage across the load and the current flowing through that load.
