@@ -1,6 +1,12 @@
-Sphere Type,Sphere Diameter (m),Sphere Density (kg/m^3)
-Al (Larger),0.01,2860
-Al (smaller),0.005,2860
-POM (larger),0.01,1430
-POM (smaller),0.005,1430
-Nylon,0.01,1150
+Sphere Type,Sphere Diameter (m),Sphere Density (kg/m^3), Time (s)
+Al (Larger),    0.01,   2860,   1.26, 1.46, 1.40
+Al (smaller),   0.005,  2860,   2.13, 2.07, 2.13
+POM (larger),   0.01,   1430,   3.22, 3.28, 3.22
+POM (smaller),  0.005,  1430,   4.10, 4.10, 4.22
+Nylon,          0.01,   1150,   4.94, 6.00, 5.43
+
+Al (Larger),    0.01,   2860,   2.75, 2.56, 2.68
+Al (smaller),   0.005,  2860,   6.31, 6.34, 6.13
+POM (larger),   0.01,   1430,   7.31, 7.44, 7.22
+POM (smaller),  0.005,  1430,   17.77, 17.40, 17.53
+Nylon,          0.01,   1150,   10.84, 10.50, 10.90

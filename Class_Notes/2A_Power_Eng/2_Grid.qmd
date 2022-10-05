@@ -1,6 +1,7 @@
 ---
 title: Power Systems
 subtitle: The present and future of the grid
+date: Mon 09/26/2022
 ---
 
 :::{.callout-caution}

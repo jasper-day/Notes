@@ -1,5 +1,6 @@
 ---
 title: Pressure
+date: Mon 10/03/2022 
 ---
 
 In a static fluid, there are no shearing forces. Thus there are no shear forces, no flow, and all forces at the boundaries occur *normal* to the plane at that point.

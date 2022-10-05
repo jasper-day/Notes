@@ -3,7 +3,7 @@ title: "MarkdownMaster"
 listing:
   contents: Class_Notes/**/**
   sort: 
-    - "date desc"
+    - "date"
     - "title desc"
   type: table
 
