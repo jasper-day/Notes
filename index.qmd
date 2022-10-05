@@ -1,6 +1,14 @@
 ---
 title: "MarkdownMaster"
+listing:
+  contents: Class_Notes/**/**
+  sort: 
+    - "date"
+    - "title desc"
+  type: table
+
 ---
 
 These are the collected notes I've taken for my various [classes](Class_Notes.qmd) and [projects](Other_Notes.qmd).
+
 
