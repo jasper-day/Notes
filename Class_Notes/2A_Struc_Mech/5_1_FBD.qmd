@@ -1,0 +1,97 @@
+---
+title: Internal Stresses
+subtitle: Free Body Diagrams with a Cut
+date: Thu 10/06/2022 
+author: Jasper Day
+---
+
+To create a free body diagram of internal stresses, place a cut somewhere in the structure and draw the forces acting on either side of the cut.
+
+![Airplane wing cut to reveal internal stresses](Images/5_Airplane_Cu.png)
+
+## Convention for Internal Forces
+
+### Axial Force
+
+![](Images/5_Tension.png)
+
+Symbol: **$N$**
+
+*Tension* is positive
+
+### Shear Force
+
+![](Images/5_Shear.png)
+
+Symbol: **$V$**
+
+*Clockwise* is positive. Shear comes in a [couple](3_Static_Equilibrium.qmd#couple).
+
+### Bending moment
+
+![](Images/5_Moment.png)
+
+Symbol: **$M$**
+
+*Sagging* is positive. In sagging, there is compression at the top of the beam and tension at the bottom, and in *hogging* those forces are reversed.
+
+Remember, sagging is happy (positive) and hogging is sad (negative)
+
+# Diagramming Shear and Moment
+
+A plot of the shear forces along a beam is a *shear force diagram*; a plot of the bending moments with respect to $x$ is called a *bending moment diagram*.
+
+## Example 1:
+
+![](Images/5_Example_Diagram.png)
+
+We set up our five equilibrium equations:
+
+$$
+\begin{align}
+\Sigma F_H = 0 &\Rightarrow H_A = 0 \\
+\Sigma F_V = 0 &\Rightarrow R_A = P \\
+\Sigma M = 0 &\Rightarrow M_A = P\,L
+\end{align}
+$$
+
+To find the *internal* stresses, we cut the beam at anny coordinate $z$ an d determine the internal stress resultants $N(z), V(z),$ and $M(z)$ at that point.
+
+![](Images/5_Diagram_Cut.png)
+
+We set up the same equations again (taking the sum of moments *at the point of the cut*):
+
+$$
+\begin{align}
+\Sigma F_H = 0 \hspace{2em} &\Rightarrow H_A = N(z) \hspace{2em} \Rightarrow N(z) = 0 \\
+\Sigma F_V = 0 \hspace{2em} &\Rightarrow R_A = V(z) \\
+\Sigma M_z = 0 \hspace{2em} &\Rightarrow M(z) = M_A - R_A \, z
+\end{align}
+$$
+
+That last moment equation further simplifies:
+
+$$
+\begin{gather}
+M(z) + M_A - R_A\,z = 0 \\
+M(z) + P\,L - P\,z = 0 \\
+\therefore M(z) = P(z-l)
+$$
+
+### Shear Force Diagram
+
+![](Images/5_Shear_Diagram.png)
+
+Since $V$ is unchanging with $z$, this graph is a straight line.
+
+### Bending Moment Diagram
+
+![](Images/5_Moment_Diagram.png)
+
+We go from $-P/L$ at $z = 0$ to 0 at $z = l$. The moment starts negative and goes to zero; this means that the beam is hogging *less and less* over its length.
+
+## Bending Moment in a Beam 
+
+![Bending moment in a beam as a result of an applied shear force](Images/5_Bending_Moment_Beam.png)
+
+Note that the shear force at a point is the derivative of the bending moment at the same point.
