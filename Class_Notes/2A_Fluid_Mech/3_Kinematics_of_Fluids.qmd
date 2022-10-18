@@ -1,0 +1,80 @@
+---
+title: Kinematics of Fluid Flow
+author: Jasper Day
+date: Tue 10/18/2022 
+---
+
+Fluids are generally modelled as a collection of fluid "particles" ($\epsilon = 10^{-9}m$ in size usually - per Fluid Mechanics textbook). 
+
+The motion of a fluid particle is determined by its *inertia*, *shear stresses*, and a gradient in the *pressure field*. 
+
+Shear stresses are your viscous forces; inertial forces are your inertial forces. [Reynolds Number](1_2_Flow_Fields.qmd#reynolds-number) tells us how relatively important each of those forces are.
+
+$$
+\textnormal{inertial forces} : \textnormal{viscous forces} \propto \textnormal{Re}
+$$
+
+# Definitions
+
+:::{#def-1d}
+
+## One-Dimensional Flow
+
+Flow with one principal flow direction. Many common problems can be treated as problems of one-dimensional flow. 
+
+:::
+
+:::{#def-steady}
+
+## Steady flow
+
+A flow in which the velocity at a given point is not varying with time.
+
+:::
+
+:::{#def-uniform}
+
+## Uniform Flow
+
+A flow in which, at a particular instant, all points have the same velocity.
+
+:::
+
+It's very important to notice the difference between *steady* flow and *uniform* flow! Steady flow is a condition of flow which is satisfied over a period of time, but allows for particles to have different velocities. Uniform flow is an instantaneous condition of the velocities of the points. Flow can be steady without being uniform (imagine flow passing over an airfoil in a wind tunnel), and vice versa (oscillating wind velocities).
+
+In FM2, we are dealing mainly with *steady flows*, where the following definitions converge to mean the same thing.
+
+:::{#def-pathline}
+
+## Pathline
+
+Line traced by a fluid element over time as it progresses through a flow.
+
+:::
+
+:::{#def-dyeline}
+
+## Streakline
+
+Line joining the instantaneous positions of all particles which have passed through a given point, eg the line traced by a spot of dye in a flow.
+
+:::
+
+:::{#def-streamline}
+
+## Streamline
+
+A line across which there is no flow. The local velocity (vectors of the particles in a) flow is always tangential to a streamline. 
+
+:::
+
+You can have a streakline without being a streamline if the flow is turbulent: the dye breaks up into many paths. Again, for steady flow, these all mean the same thing.
+
+:::{#def-streamtube}
+
+## Streamtube
+
+Although it sounds like a startup for watching livestreams, this actually refers to a bundle of streamlines in 3 dimensions, creating an invisible "pipe" through which flow does not cross.
+
+# Continuity Equation
+

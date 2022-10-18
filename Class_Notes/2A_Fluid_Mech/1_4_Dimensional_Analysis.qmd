@@ -1,6 +1,0 @@
----
-title: Dimensional Analysis
-subtitle: Buckingham Pi Theorem Makes a Comeback
-date: Sun 10/02/2022 
----
-
