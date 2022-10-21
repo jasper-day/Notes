@@ -57,6 +57,8 @@ With turbulent flow, between the boundary layers, there is a roughly flat profil
 
 ![Turbulent velocity profile](Images/1_2_Turbulent_boundary.png)
 
+## Ideal Fluid
+
 An **ideal fluid** is *incompressible* and *inviscid*, ie has no viscosity. Since there's no shearing, the flow in the pipe is uniform with respect to $y$.
 
 ![Ideal velocity profile](Images/1_2_Ideal_Boundary.png)

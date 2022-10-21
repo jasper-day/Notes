@@ -1,5 +1,5 @@
 ---
-title: Week 1
+title: Linear Differential Equations
 subtitle: Linear constant coefficient homogeneous differential equations
 author: Jasper Day
 date: 20/09/2022
@@ -76,6 +76,36 @@ $x(t) = Ae^{m_1t} + Be^{m_2t}$ (all linear combinations of $e^{m_1t}$ and $e^{m_
 ### Complex roots
 
 When $m_1$ and $m_2$ are complex conjugates, it's slightly more complex. $m_1 = \phi + j\psi$ and $m_2 = \phi - j\psi$. 
+
+:::{.callout-note}
+
+Here's a quick proof that complex roots must come as conjugates $z = \phi + j\psi$ and 
+$z^\star = \phi - j\psi$:
+
+First suppose we have some polynomial $P(x) = a_nx^n + a_{n-1}x^{n-1}+...+a_1x^1+a_0$ such that 
+$P(\phi + j\psi) = 0$. The binomial expansion of 
+$(\phi + j\psi)^n$ is 
+
+$$
+\psi^n + {n \choose 1}j\psi^{n-1}\phi + {n \choose 2}j^2\psi^{n-2}\phi^2 + ... + {n \choose n-1}j^{n-1}\psi\phi^{n-1} + j^n\phi^n.
+$$
+
+Only the odd terms of this binomial expansion are imaginary; the even terms are real.
+
+The binomial expansion of $(\phi - j\psi)^n$ is
+
+$$
+\psi^n + {n \choose 1}(-j)\psi^{n-1}\phi + {n \choose 2}(-j)^2\psi^{n-2}\phi^2 + ... + {n \choose n-1}(-j)^{n-1}\psi\phi^{n-1} + (-j)   ^n\phi^n.
+$$
+
+Comparing the two binomial expansions, the odd terms have switched sign. This means that the imaginary part of the second binomial expansion is the exact negative of the imaginary part of the first binomial expansion; **powers of complex conjugates remain conjugates**.
+
+Since exponentiation and multiplication by a constant preserve conjugacy, $P(z^\star) = P(z)^\star$. Since 
+$P(z) = 0$, and 
+$0^\star = 0$, 
+$P(z^\star) = 0$ for all $P(z) = 0$.
+
+:::
 
 $$
 \begin{align}
