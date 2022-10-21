@@ -1,0 +1,47 @@
+---
+title: Stress Analysis
+subtitle: Stress, Mohr's Circle, Triaxial Stress States, Uniformly Distributed Stresses, Elastic Strain, Stress-Strain Relations, Shear and Moment
+date: Fri 10/21/2022 
+author: Jasper Day
+---
+
+# Stress
+
+It's not just what you feel when you're 10 days behind in your lectures, desperately struggling to catch up. Stress is a force per unit area. In a differential material element, the stresses may be characterized as a tensor:
+
+![](Images/2_Unit_Tensor.png)
+
+The subscripts on the normal stresses $\sigma_x, \sigma_y, \sigma_z$ refer to the axis those stresses lie parallel with. The first subscript on the shear stresses $\tau$ refers to the face along which that stress lies, and the second subscript indicates the direction along that face.
+
+Since the element is in static equilibrium, the moments created by the stresses acting on each face of the element must cancel each other out. Therefore,
+
+$$
+\tau_{yx} = \tau_{xy} \hspace{2em}
+\tau_{yz} = \tau_{zy} \hspace{2em}
+\tau_{zx} = \tau_{xz} \hspace{2em}
+$$
+
+Tensile stresses are positive stresses, and shear stresses are positive if they act in the positive direction of a reference axis (arrows point in the positive direction in the diagram). The negative faces of the shear stress component have shear stresses actign in the opposite direction; these are also positive.
+
+It's more usual to see a 2D "slice" of a shear stress component:
+
+![](Images/2_2d_shear_component.png){#fig-2d-shear}
+
+The sense of the shear components is specified by the clockwise or counterclockwise convention: $\tau_{xy}$ is ccw and 
+$\tau_{yx}$ is cw.
+
+# Mohr's Circle
+
+If you cut the 2d shear component @fig-2d-shear with an oblique plane at angle $\phi$ to the x-axis, you see resultant shears $\sigma$ and $\tau$ acting on the cut plane.
+
+![](Images/2d_shear_cut.png)
+
+Assuming a unit cross-section, you can sum the forces to 0:
+
+$$
+\begin{gather}
+\sigma \, ds\, \sin (\phi) + \tau\,ds\,\cos(\phi) +  \tau_{xy}\, dx + \sigma_y \, dy = 0
+\sigma\,ds\,\cos(\phi) + \tau\,ds\,\sin(\phi) + \tau_{yx}\,dx + \sigma_y\,dy = 0
+\end{gather}
+$$
+

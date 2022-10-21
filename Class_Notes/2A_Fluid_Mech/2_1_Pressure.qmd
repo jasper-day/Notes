@@ -8,8 +8,10 @@ In a static fluid, there are no shearing forces. Thus there are no shear forces,
 Recall that pressure is force per unit area:
 
 $$
-p = \frac{\partial F}{\partial A}
+p = \frac{\delta F}{\delta A}
 $$
+
+We use $\delta$ rather than $F/A$ to indicate that we are taking the pressure at a point (1E-9 mm^3) rather than over a significant area.
 
 which can be taken to the limit at a piont:
 
@@ -29,6 +31,8 @@ The pressure above an absolute vacuum (0 Pa) is the absolute pressure. You would
 
 Usually, however, pressure is measured as the difference between two pressures of interest, with a U-shaped gauge which is open to the air at one end and connected to the pressure of interest with a pressure tube at the other end. You determine the pressure differential by taking the difference in the height of the liquid between the two tubes, and then the pressure differential is $\rho gh$.
 
+The difference between a measured pressure and the general atmospheric pressure is referred to as **gauge pressure**.
+
 ## Pascal's Law
 
 The pressure at a point is the same in all directions.
@@ -42,4 +46,50 @@ Here we have a differential fluid area between $x+\Delta x$, $y+\Delta y$, and $
 $$
 P_{z+\Delta z}\, d A - P_z \, dA = W
 $$
+
+# Manometer
+
+The following is a diagram of a simple U-tube manometer.
+
+![](Images/2_2_Manometer.png)
+
+The height difference $\Delta h$ shows the difference in pressure between p1 and p2. For a liquid with a density $\rho$, the pressure difference is $\rho g \Delta h$. 
+
+We can increase the accuracy somewhat by tilting the arm of the manometer to increase the distance travelled by the liquid to change height, and placing a large reservoir on one side to make sure that the water level on that side is essentially stable.
+
+Such manometers require an angle greater than 5° in order to avoid surface-tension issues from the buildup of a meniscus.
+
+![Tilted-arm manometer](Images/2_2_Tilted_arm.png)
+
+We can also increase the accuracy with a 2-fluid manometer, where displacements in the measuring fluid are replaced by the *working fluid* itself. In this case, we can say that the mass differential for a unit volume on either side of the tube is the mass difference between the working fluid and the measuring fluid:
+
+$$
+p_2 - p_1 = (\rho_y - \rho_x)\, g \, \Delta H
+$$
+
+Where fluid "y" is often mercury. With this setup, when $\rho_y$ and $\rho_x$ are very close together, the difference in height observed for a given pressure drop can be quite large, which increases your measurement precision.
+
+# Head
+
+Height is directly and simply related to pressure: $height = p / (\rho g)$
+
+Widely used practice describes pressures in terms of a *head H*, measured in meters. The head created by a certain pressure in a certain fluid is dependent on the density of that fluid. In a pipe full of water, a head of 1M indicates a pressure of about 10 kPa.
+
+# Forces on Submerged Surfaces
+
+Generally you can write a differential equation:
+
+$$
+dF = p \, dA = \rho \, g \, h \, dA
+$$
+
+For a surface at an angle $\theta$ such that $h = x \sin{\theta}$, $dF = \rho \, g \, x \sin{\theta} dA$.
+
+Then simply take the double integral across the surface *S*: $F = \iint_S \rho \, g \, h \, dA $. The *centroid*, or **center of area** is $G \equiv \bar{x}$ where 
+
+$$
+\iint_S x \, dA = A\bar{x}
+$$
+
+Thus the total force is alternatively defined as $F = \rho \, g\, \bar{h} A$, with $\bar{h}$ as the centroidal height.
 

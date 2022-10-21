@@ -1,0 +1,54 @@
+---
+title: Euler Beam Theory
+author: Jasper Day
+date: Fri 10/21/2022
+---
+
+# Euler Beam Theory of Pure Bending
+
+Bending stress:
+
+$$
+\sigma_z = E\kappa y
+$$
+
+# Geometry of the Cross-Section
+
+The position of the centroid $y_G$ is given by
+$$
+y_G = \frac{\int_A y' dA}{\int_A dA}
+$$
+
+The second moment of area is given by
+$$
+I_{xx} = \int_A y^2 dA
+$$
+
+This tells you the distribution of area with respect to the centroid.
+
+:::{#def-neutral}
+
+## Neutral Axis
+
+The neutral axis of a beam is the line along which there is no tension or compression in the fibers of the beam. 
+
+:::
+
+
+# Relationship between Bending Stress and Bending Moment
+
+$$
+\left.
+\begin{matrix}
+\sigma &= E \kappa y \\
+M &= EI\kappa
+\end{matrix}\,
+\right\}
+$$
+
+Therefore 
+$$
+\sigma = \frac{y}{i}M \textnormal{or} M = \frac{I}{y}\sigma
+$$
+
+from which we create the section modulus $Z_t = I/y$.
