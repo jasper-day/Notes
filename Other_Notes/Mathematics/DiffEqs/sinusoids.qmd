@@ -1,0 +1,61 @@
+---
+title: Real and Complex Sinusoids
+author: Jasper Day
+date: Sat 10/22/2022
+---
+
+Many problems in engineering (Power Engineering ring a bell?) involve inputs and outputs oscillating at the same frequency. The problem is to find the *amplitude* and *phase* of the resultinng output.
+
+The solution to $y' - ay = A \, \cos \omega t + B \, \sin \omega t$ is $y = M \, \cos \omega t + N \, \sin \omega t$. We simplify by turning the cosine and sine terms into a *complex exponential*.
+
+# Real Solution
+
+We know that $y = M \, \cos \omega t + N \, \sin \omega t$ is the form of the solution, so we can simply input that solution into 
+$y' - ay = A \, \cos \omega t + B \, \sin \omega t$. 
+Then perform the differentiation and create a system of equations:
+
+$\cos \omega t$ terms: $-a\,M + \omega \, N = A$
+$\sin \omega t$ terms: $-\omega\,M - a \, N = A$
+
+For two equations, you can use the 2x2 identity matrix to find the solution.
+
+$$
+\begin{bmatrix}
+-a & \omega \\ -\omega & -a
+\end{bmatrix}
+\begin{bmatrix}
+M \\ N
+\end{bmatrix} = \begin{bmatrix} A \\ B \end{bmatrix}
+\hspace{1em}
+\textnormal{gives}
+\hspace{1em}
+\begin{bmatrix} M \\ N \end{bmatrix} = \frac{1}{\omega^2 + a^2} 
+\begin{bmatrix}
+-a & -\omega \\ \omega & -a
+\end{bmatrix} \begin{bmatrix}
+A \\ B
+\end{bmatrix}
+$$
+
+Therefore,
+
+$$
+M = -\frac{aA + \omega B}{\omega^2 + a^2} \hspace{2em} N = \frac{\omega A - aB}{\omega^2 + a^2}
+$${#eq-sinusoidal}
+
+# Complex Solution
+
+Here the input is $q(t) = R\,e^{i\omega t}$. It oscillates with frequency $\omega$ rad/sec. The output $y(t)$ will oscillate with the same frequency $\omega$. This happens when $a$ is constant.
+
+Plug in $Y\,e^{i\omega t}$ to the differential equation $y' - ay = R\, e^{\omega t}$:
+
+$$
+i\omega Y \, e^{i\omega t} - aY \, e^{i \omega t} = R \, e^{i\omega t}
+$$
+
+From which:
+
+$$
+Y = \frac{R}{i\omega - a} \hspace{1em} \textnormal{and} \hspace{1em} y = Y\,e^{i\omega t}
+$$
+

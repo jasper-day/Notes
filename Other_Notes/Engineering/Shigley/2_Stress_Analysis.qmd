@@ -36,12 +36,111 @@ If you cut the 2d shear component @fig-2d-shear with an oblique plane at angle $
 
 ![](Images/2d_shear_cut.png)
 
-Assuming a unit cross-section, you can sum the forces to 0:
+Assuming a unit cross-section, you can sum the forces to 0 (take the components of the face normal and shear stresses parallel to the plane through which the stress component is cut) and get the normal stress acting on the cut plane:
+
+![](Images/2_sigma_balls.png)
+
+And the same for the plane shear stress:
+
+![](Images/2_tau_riders.png)
+
+:::{.callout-note}
+
+Shigleys is incorrect. The tau shear term should have **negative** $\frac{\sigma_x - \sigma_y}{2}\sin 2\phi$, not positive. This is why it pays to go through the derivations yourself!
+
+:::
+
+All in all, here are the equations for the shear stress and the normal stress on a plane at angle $\phi$ to the x-axis:
 
 $$
 \begin{gather}
-\sigma \, ds\, \sin (\phi) + \tau\,ds\,\cos(\phi) +  \tau_{xy}\, dx + \sigma_y \, dy = 0
-\sigma\,ds\,\cos(\phi) + \tau\,ds\,\sin(\phi) + \tau_{yx}\,dx + \sigma_y\,dy = 0
+\sigma = \frac{\sigma_x + \sigma_y}{2} + \frac{\sigma_x - \sigma_y}{2}\cos 2\phi + \tau_{xy} \sin 2\phi \\
+\tau = \frac{\sigma_x - \sigma_y}{2} \sin 2\phi + \tau_{xy} \cos 2\phi
 \end{gather}
 $$
 
+To find the minima and maxima, differentiate the functions with respect to $\phi$ and set the result equal to zero:
+
+$$
+\tan 2\phi = \frac{2\tau_{xy}}{\sigma_x - \sigma_y}
+$${#eq-normal-root}
+
+:::{.callout-note}
+
+Remember, All Stuy Teams Cheat. The values of the tangent of an angle repeat as you go around a circle!
+
+:::
+
+At the two points where @eq-normal-root applies, the normal stresses reach a minimum and maximum. Those two stresses are the *principal stresses*, and the directions in which they act are the *principal directions*. The angle between the principal directions is 90°.
+
+In a similar manner, you can differentiate the equation for shear stress to find the minima and maxima:
+
+$$
+\tan 2\phi = - \frac{\sigma_x - \sigma_y}{2\tau_{xy}}
+$${#eq-shear-root}
+
+The angles of $2\phi$ where @eq-shear-root obtains are the values where the shear stress \tau reaches its extremes.
+
+By rearranging @eq-normal-root and plugging into the equation for $\tau$, it can be shown that there is no shear stress acting on the plane in the principal directions. The normal stresses acting at the maxima of the shear stresses are 
+
+$$
+\sigma = \frac{\sigma_x + \sigma_y}{2},
+$$
+
+in other words, the average of the normal forces in the x and y directions. The normal stresses associated with the directions of the two maximum shear stresses are equal.
+
+### Formula for the principal shear stresses
+
+$$
+\sigma_1,\, \sigma_2 = \frac{\sigma_x + \sigma_y}{2}\pm\sqrt{\left( \frac{\sigma_x - \sigma-y}{2} \right)^2 + \tau_{xy}^2}
+$$
+
+### Diagram
+
+The Mohr's Circle diagram is an effective graphical representation of the stress state at a point.
+
+Create a coordinate system with normal stresses on the x-axis and shear stresses on the y-axis. Tensile normal stresses are plotted to the right of the origin and compressive normal stresses are plotted to the left. Clockwise shear stresses are plotted *up* on the y-axis, and counterclockwise shear stresses are plotted *down*.
+
+Plot Mohr's circle from the stress state by laying off $\sigma_x$ as OA, $\tau_{xy}$ as AB, $\sigma_y$ as OC, and $\tau_{yx}$ as CD. The line DEB is the diameter of Mohr's circle with center at E on the $\sigma$ axis.
+
+![Mohr's Circle](Images/2_Mohrs_Circle.png)
+
+Point B represents the stress coordinates $(\sigma_x, \tau_{xy})$ on the $x$ faces, and point D represents the stress coordinates $(\sigma_y, \tau_{yx})$ on the $y$ faces. Point F is the location of the maximum normal stress, and the angle from the xy-line to the abscissa is $2\phi$. Point G is the location of the minimum normal stress. The maximum shear stress occurs at points H and I.
+
+# Triaxial Stress States
+
+As with the two-dimensional case, there is a particular orientation of the stress element for which all shear-stress components are zero. When an element has this orientation, the normals to the faces are the principal stresses. The process involves finding the three roots to the cubic:
+
+$$
+\begin{gather}
+\sigma^3 - (\sigma_x + \sigma_y + \sigma_z)\sigma^2 \\ + (\sigma_x\,\sigma_y + \sigma_x\,\sigma_z + \sigma_y\,\sigma_z - \tau_{xy}^2 - \tau_{yz}^2 - \tau_{zx}^2)\sigma \\ - (\sigma_x\,\sigma_y\,\sigma_z + 2\tau_{xy}\,\tau_{yz}\,\tau_{zx} - \sigma_x\,\tau_{yz}^2 - \sigma_y\,\tau_{zx}^2 - \sigma_z\,\tau_{xy}^2) = 0
+\end{gather}
+$$
+
+# Uniformly Distributed Stresses
+
+Stress is often assumed to be uniformly distributed, resulting in *pure tension*, *pure compression*, or *pure shear*. 
+
+Take for example a tension rod: You pull a rod evenly between two pins with a force F. If you make a cut somewhere along the rod, the force acting on that cut surface should be $\sigma A$.
+
+![](Images/2_uniform_stress.png)
+
+For uniform stress to hold:
+
+1. The bar must be straight and homogeneous
+2. The line of action of the force must coincide with  the centroid of the section
+3. The section must betaken remote from the ends and remote from any discontinuity or abrupt change in cross  section.
+
+The same holds for compression, although caution should be taken placing slender bars in compression (they may fail by buckling.)
+
+# Elastic Strain
+
+When a straight bar is loaded in tensile stress, it elongates. The amount of elongation is called *strain*. The elongation per unit length of the bar (dimensionless quantity) is called *unit strain*. These terms may also be referred to as *total strain* and *strain* respectively.
+
+Strain is calculated as 
+
+$$
+\epsilon = \frac{\delta}{l}
+$$
+
+where $\delta$ is the total strain of the bar within the length $l$.

@@ -171,6 +171,14 @@ At each time $s$ between $0$ and $t$, the input is a source of strength $q(s)$. 
 
 # Four Particular Solutions
 
+Key ideas:
+1. The complete solution to a linear equation is the **null** solution(s) + the **particular solution**.
+2. The integrating factor $e^{-at}$ multiplies $y' - ay = q(t)$ to give our general solution for any input $q(t)$: $y(t) = e^{at}\,y(0) + e^{at}\int_0^t \,e^{-as}\,q(s)\,ds
+3. For $y' - ay = q =$ **constant**, the very particular solution is $q(e^{at} - 1)/a$
+4. $q(t) = H(t)$: the response to a unit step function is $y_p = (e^{at} - 1)/a$
+5. $q(t) = \delta(t)$: the response to a unit delta function is $y_p = e^{at}$
+6. $q(t) = e^{ct}$ gives $y_p = (e^{ct} - e^{at})/(c-a)$. In case $c = a$, change to $y_p = t\,e^{at}$.
+
 We start with $dy/dt = ay$, which is solved by 
 $y(t) = e^{at}\,y(0)$.
 
@@ -205,7 +213,7 @@ M(t)\,y(t) - M(0)\,y(0) &= \int_0^t M(s)\,q(s)\,ds \\
 y(t) &= \frac{y(0)}{M(t)} + \frac{1}{M(t)}\int_0^t M(s)\,q(s)\,ds \\
 y(t) &= e^{at}y(0) + e^{at}\int_0^t e^{-as}\,q(s)\,ds
 \end{align}
-$$
+$${#eq-main}
 
 This strategy of finding an integrating term M will return when our equations stop being linear.
 
@@ -290,3 +298,45 @@ $$
 
 ## Exponential Input
 
+Exponential input would describe growth, decay, or oscillation.
+
+The particular solution to an exponential source $e^{ct}$ is simply a multiple $Ye^{ct}$ of the same exponential function. Simply substitute $Ye^{ct}$ into $y' - ay = e^{ct}$:
+
+$$
+cYe^{ct} - aYe^{ct} = e^{ct}
+$$
+
+Then cancel out $e^{ct}$ (never equal to zero):
+
+$$
+\begin{gather}
+cY - aY = 1 \\
+Y = \frac{1}{c-a} \\
+y_p(t) = \frac{e^{ct}}{c-a}
+\end{gather}
+$$
+
+This particular solution is alright, but it doesn't equal 0 at $t=0$, which makes it a little less nice to work with. We can fix it by adding to the null solution:
+
+$$
+y_{\textnormal{complete}} = y(0)e^{at} - \frac{e^{at}}{c-a} + \frac{e^{ct}}{c-a}
+$$
+
+### Resonance
+
+When $c = a$ there is trouble: the denominator 
+$1/(c-a)$ does not exist. We go back to the mainn formula @eq-main to figure out our solution:
+
+$$
+y' - ay = e^{at} \hspace{1em} \textnormal{means} \hspace{1em} y = y(0)e^{at} + e^{at}\int_0^t e^{-as}\,e^{as}\,ds
+$$
+
+The integral evaluates to $\int 1\, ds = t$:
+
+$$
+y = y(0)e^{at} + t\,e^{at}
+$$
+
+# Real and Complex Sinusoids
+
+Split into its own document, see the link [here](sinusoids.qmd)
