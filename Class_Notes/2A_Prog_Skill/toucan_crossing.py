@@ -5,6 +5,7 @@
 # ++============================================++
 
 import numpy as np
+import matplotlib as mpt
 
 class TrafficObject:
-     pos2 = np.array([])
+     pos2 = np.array
