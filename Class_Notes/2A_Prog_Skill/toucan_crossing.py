@@ -22,17 +22,7 @@ def init():
     pathcol.set_offsets([[], []])
     return pathcol,
 
-def update(i, pathcol, data):
-    data[:, 0:2] += data[:, 2:4]
-    data[:, 2] = np.where(np.abs(data[:, 0]) > 5, -data[:, 2], data[:, 2])
-    data[:, 3] = np.where(np.abs(data[:, 1]) > 5, -data[:, 3], data[:, 3])
-    pathcol.set_offsets(data[:, 0:2])
-    return [pathcol]
+import numpy as np
 
-fig = plt.figure()
-ax = plt.axes(xlim=(-5, 5), ylim=(-5, 5))
-pathcol = plt.scatter([], [])
-data = gen_data()
-anim = animation.FuncAnimation(fig, update, init_func=init,
-                               fargs=(pathcol, data), interval=0, blit=True)
-plt.show()
+class TrafficObject:
+     pos2 = np.array([])
