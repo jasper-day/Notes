@@ -34,9 +34,9 @@ All the lectures are delivered *online asynchronous*
 - L3	[Simple Flow Fields and Phenomena 2](1_3_More_Flow.qmd)
     - Reynolds number; Strouhal number. More simple flow fields; orifice flow, flow round bends. Terminology: external/internal; steady/transient, real/ideal, laminar/turbulent,  compressible/incompressible;  vectors, streamlines &amp; pathlines.
 
-- L4	[Introduction to Dimensional Analysis](1_4_Dimensional_Analysis.qmd)
+- L4	[Introduction to Dimensional Analysis](/Other_Notes/Engineering/Dimensional_Analysis/Buckingham_Pi.qmd)
 
-- L5	Fluid Statics 1
+- L5	[Fluid Statics 1](2_1_Pressure.qmd)
     - Pressure; variation of pressure with height; 'head'; manometers and other pressure measurement devices.
 
 - L6	Fluid Statics 2

@@ -33,7 +33,7 @@ $$
 L[x] = f(t)
 $${#eq-first}
 
-be an *inhomogeneous* linear differential equation. If $x^*$ is any solution of @eq-first, and $x_c$ is a solution of the equivalent *homogeneous* differential equation
+be an*inhomogeneous* linear differential equation. If $x^*$ is any solution of @eq-first, and $x_c$ is a solution of the equivalent *homogeneous* differential equation
 
 $$
 L[x] = 0,
@@ -157,5 +157,4 @@ $$
 You can do this with any polynomial RHS - just use the fully general polynomial of the same degree as your test case.
 
 # Solving an Exponential RHS
-
 
