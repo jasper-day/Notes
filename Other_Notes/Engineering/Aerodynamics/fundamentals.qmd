@@ -1,0 +1,27 @@
+---
+title: Fundamental Principles of Fluid Mechanics
+author: Jasper Day
+date: Mon 10/24/2022 
+---
+
+> Fundamental principless, equations, fundamental principles, equations. More fundamental principles More equations.
+
+# Vector Relations
+
+## Coordinate Systems
+
+We have three common orthogonal coordinate systems: cartesian, cylindrical, and spherical.
+
+### Cartesian Coordinate System
+
+Cartesian coordinates in 3D space are defined by three mutually perpendicular unit vectors **i, j,** and **k**, which lie along the $x$, $y$, and $z$ axes respectively. An arbitrary point $P$ in space is located by specifying the three coordinates $(x,y,z)$. The point also has position vector 
+
+$$
+\textbf{r} = x\ \textbf{i} + y\ \textbf{j} + z\ \textbf{k}
+$$
+
+It's bog-standard. Everyone and their mother has been working in Cartesian coordinates since grade school.
+
+![Cartesian coordinates]()
+
+###

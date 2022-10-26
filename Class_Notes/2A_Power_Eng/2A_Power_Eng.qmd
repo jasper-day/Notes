@@ -14,11 +14,11 @@ Course description
 - [Introduction to Electrical Circuits](1_Introduction.qmd)
 - [Introduction to Power Systems](2_Grid.qmd)
 - [Electrical Safety &amp; Wiring](2_1_Safety.qmd)
-- Phasor Representation of AC Signals
+- [Phasor Representation of AC Signals](3_Phasor.qmd)
 - AC Power
 - Complex Impedances
 - Real &amp; Reactive Power
-- Three Phase Systems
+- [Three Phase Systems](5_Three_Phase_Systems.qmd)
 - An introduction on electrical machines and transformers
 - DC Machines
 - Induction Machines
