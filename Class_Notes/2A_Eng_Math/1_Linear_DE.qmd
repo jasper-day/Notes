@@ -2,7 +2,7 @@
 title: Linear Differential Equations
 subtitle: Linear constant coefficient homogeneous differential equations
 author: Jasper Day
-date: 2022/09/20
+date: 20/09/2022
 ---
 
 # Introduction to Differential Equations

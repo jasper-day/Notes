@@ -2,6 +2,7 @@
 title: Introduction to Laboratories
 subtitle: Arf Arf
 date: Mon 09/26/2022
+author: Jasper Day
 ---
 
 ![Labs](https://www.scotsman.com/webimg/b25lY21zOjVlZTJiZmUyLTBhYzEtNGE0YS04NzNmLTllMzdjOTU5NTVmYzo0NTg5Mzk1NC0xYTA5LTQ0NGEtOWIxMi00NThjOGViZWY3MTA=.jpg?width=1200&enable=upscale)

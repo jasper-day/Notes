@@ -1,7 +1,8 @@
 ---
 title: Inhomogeneous Linear Differential Equations
 subtitle: Lecture 3
-date: Saturday 2022/01/10
+date: Saturday 2022/10/01
+author: Jasper Day
 ---
 
 :::{#def-inhomogeneous}

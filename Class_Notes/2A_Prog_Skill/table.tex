@@ -1,0 +1,39 @@
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1039}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0649}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3117}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2727}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1039}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Period
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Use
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Signal for \newline Pedestrians
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Signal for \newline Vehicles
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Timing
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Variation
+\end{minipage} \\
+\midrule()
+\endhead
+I & Vehicle Running & Red & Green & 20 - 60 (ends at either max time or
+on pedestrian demand + gap. Vehicle actuation cancels gap for 6 sec) &
+Traffic volume \\
+II & Amber to Vehicles & Red & Amber & 3 & n/a \\
+III & Vehicle Clearance & Red & Red & 1 (gap in vehicles) - 3 (vehicle
+present) & Vehicle actuation \\
+IV & Pedestrian Crossing & Green & Red & 4 - 7 & Check maps \\
+V & Pedestrians keep crossing & Black & Red & 3 & n/a \\
+VI & Pedestrian clearance & Black & Red & 0 - 22 (pedestrian detection
+adds 2 sec) & Pedestrian actuation \\
+VII & Additional Pedestrian Crossing & Black & Red & 0 - 3 & Pedestrian
+detection \\
+VIII & All red & Red & Red & 1 - 3 & Free choice \\
+IX & Red / Amber to Vehicles & Red & Red/Amber & 2 & NA \\
+\bottomrule()
+\end{longtable}
