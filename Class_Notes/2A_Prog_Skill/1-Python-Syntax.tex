@@ -1,0 +1,1135 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Toucan Crossing Assignment},
+  pdfauthor={Jasper Day},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Toucan Crossing Assignment}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{An Object-Oriented Approach}
+\author{Jasper Day}
+\date{Thu 10/27/2022}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, boxrule=0pt, interior hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable, sharp corners]}{\end{tcolorbox}}\fi
+
+\hypertarget{python-language-syntax}{%
+\section{Python Language Syntax}\label{python-language-syntax}}
+
+\begin{itemize}
+\item
+  Python was originally developed as a teaching language
+\item
+  The cleanliness of Python's syntax has led some to call it
+  ``executable pseudocode''
+\item
+  This is a third bullet point
+\end{itemize}
+
+Syntax refers to the structure of the language (i.e., what constitutes a
+correctly-formed program).
+
+\hypertarget{example}{%
+\subsection{Example}\label{example}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# set the midpoint}
+\NormalTok{midpoint }\OperatorTok{=} \DecValTok{5}
+
+\CommentTok{\# make two empty lists}
+\NormalTok{lower }\OperatorTok{=}\NormalTok{ []}\OperatorTok{;}\NormalTok{ upper }\OperatorTok{=}\NormalTok{ []}
+
+\CommentTok{\# split the numbers into lower and upper}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{10}\NormalTok{):}
+    \ControlFlowTok{if}\NormalTok{ (i }\OperatorTok{\textless{}}\NormalTok{ midpoint):}
+\NormalTok{        lower.append(i)}
+    \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{        upper.append(i)}
+        
+\BuiltInTok{print}\NormalTok{(}\StringTok{"lower:"}\NormalTok{, lower)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"upper:"}\NormalTok{, upper)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+lower: [0, 1, 2, 3, 4]
+upper: [5, 6, 7, 8, 9]
+\end{verbatim}
+
+At this point in time, this script might not make a lot of sense to you,
+but it compactly illustrates several of the important aspects of the
+Python syntax. Let's walk through it and discuss some of the syntactical
+features of Python
+
+\hypertarget{comments-are-marked-by}{%
+\subsection{\texorpdfstring{Comments Are Marked by
+\texttt{\#}}{Comments Are Marked by \#}}\label{comments-are-marked-by}}
+
+The script starts with a comment (this means that python won't read this
+line\ldots.but this is very useful to provide information about your
+code):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# set the midpoint}
+\end{Highlighting}
+\end{Shaded}
+
+Comments in Python are indicated by \texttt{\#}, and anything on the
+line following the numbers sign is ignored by the interpreter.
+
+This means, for example, that you can have stand-alone comments like the
+one just shown, as well as inline comments that follow a statement. For
+example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{+=} \DecValTok{2}  \CommentTok{\# shorthand for x = x + 2}
+\end{Highlighting}
+\end{Shaded}
+
+So above, Python reads the first bit of code, but ignores the `comment'
+
+\hypertarget{end-of-line-terminates-a-statement}{%
+\subsection{End-of-Line Terminates a
+Statement}\label{end-of-line-terminates-a-statement}}
+
+The next line in the script is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{midpoint }\OperatorTok{=} \DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+This is an assignment operation, where we've created a variable named
+\texttt{midpoint} and assigned it the value \texttt{5}. Notice that the
+end of this statement is simply marked by the end of the line.
+
+In Python, if you'd like a statement to continue to the next line, it is
+possible to use the ``\texttt{\textbackslash{}}'' marker to indicate
+this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \DecValTok{1} \OperatorTok{+} \DecValTok{2} \OperatorTok{+} \DecValTok{3} \OperatorTok{+} \DecValTok{4} \OperatorTok{+\textbackslash{}}
+    \DecValTok{5} \OperatorTok{+} \DecValTok{6} \OperatorTok{+} \DecValTok{7} \OperatorTok{+} \DecValTok{8}
+\end{Highlighting}
+\end{Shaded}
+
+It is also possible to continue expressions on the next line within
+parentheses (or brackets), without using the
+``\texttt{\textbackslash{}}'' marker:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=}\NormalTok{ (}\DecValTok{1} \OperatorTok{+} \DecValTok{2} \OperatorTok{+} \DecValTok{3} \OperatorTok{+} \DecValTok{4} \OperatorTok{+}
+     \DecValTok{5} \OperatorTok{+} \DecValTok{6} \OperatorTok{+} \DecValTok{7} \OperatorTok{+} \DecValTok{8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The best way is to use the line continuation (within parentheses).
+
+\hypertarget{semicolon-can-optionally-terminate-a-statement}{%
+\subsection{Semicolon Can Optionally Terminate a
+Statement}\label{semicolon-can-optionally-terminate-a-statement}}
+
+Sometimes it can be useful to put multiple statements on a single line.
+
+The next portion of the script is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lower }\OperatorTok{=}\NormalTok{ []}\OperatorTok{;}\NormalTok{ upper }\OperatorTok{=}\NormalTok{ []}
+\end{Highlighting}
+\end{Shaded}
+
+This shows the example of how the semicolon (\texttt{;}) can be used
+optionally in Python to put two statements on a single line.
+
+This is exactly the same as writing the below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lower }\OperatorTok{=}\NormalTok{ []}
+\NormalTok{upper }\OperatorTok{=}\NormalTok{ []}
+\end{Highlighting}
+\end{Shaded}
+
+Using a semicolon to put multiple statements on a single line is
+generally discouraged by most Python style guides, though occasionally
+it proves convenient.
+
+\hypertarget{indentation-whitespace-matters}{%
+\subsection{Indentation: Whitespace
+Matters!}\label{indentation-whitespace-matters}}
+
+\begin{itemize}
+\item
+  We must use indentation (or more specific - 4 spaces!)
+\item
+  The top line will be the controlling statement.
+\item
+  Indented code blocks are always preceded by a colon (\texttt{:})
+\item
+  Anything indented below this top line will occur within it.
+\end{itemize}
+
+For example, the following two snippets will produce different results!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \DecValTok{5}
+\ControlFlowTok{if}\NormalTok{ x }\OperatorTok{\textless{}} \DecValTok{4}\NormalTok{:}
+\NormalTok{    y }\OperatorTok{=}\NormalTok{ x }\OperatorTok{*} \DecValTok{2}
+    \BuiltInTok{print}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \DecValTok{5}
+\ControlFlowTok{if}\NormalTok{ x }\OperatorTok{\textless{}} \DecValTok{4}\NormalTok{:}
+\NormalTok{    y }\OperatorTok{=}\NormalTok{ x }\OperatorTok{*} \DecValTok{2}
+\BuiltInTok{print}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+5
+\end{verbatim}
+
+\textbf{Python's use of meaningful whitespace leads to much more
+consistent and readable code than languages that do not enforce
+indentation of code blocks.}
+
+\hypertarget{whitespace-within-lines-does-not-matter}{%
+\subsection{\texorpdfstring{Whitespace \emph{Within} Lines Does Not
+Matter}{Whitespace Within Lines Does Not Matter}}\label{whitespace-within-lines-does-not-matter}}
+
+While the mantra of \emph{meaningful whitespace} holds true for
+whitespace \emph{before} lines (which indicate a code block), white
+space \emph{within} lines of Python code does not matter. For example,
+all three of these expressions are equivalent:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}\OperatorTok{=}\DecValTok{1}\OperatorTok{+}\DecValTok{2}
+\NormalTok{x }\OperatorTok{=} \DecValTok{1} \OperatorTok{+} \DecValTok{2}
+\NormalTok{x             }\OperatorTok{=}        \DecValTok{1}    \OperatorTok{+}                \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+Using whitespace effectively can lead to much more readable code,
+especially in cases where operators follow each other -- compare the
+following two expressions for exponentiating by a negative number:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}\OperatorTok{=}\DecValTok{10}\OperatorTok{**{-}}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+to
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \DecValTok{10} \OperatorTok{**} \OperatorTok{{-}}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{parentheses-are-for-grouping-or-calling}{%
+\subsection{Parentheses Are for Grouping or
+Calling}\label{parentheses-are-for-grouping-or-calling}}
+
+In the previous code snippet, we see two uses of parentheses. First,
+they can be used in the typical way to group statements or mathematical
+operations:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2} \OperatorTok{*}\NormalTok{ (}\DecValTok{3} \OperatorTok{+} \DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+14
+\end{verbatim}
+
+They can also be used to indicate that a \emph{function} is being
+called.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# example}
+\NormalTok{L }\OperatorTok{=}\NormalTok{ [}\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{]}
+\NormalTok{L.sort()}
+\BuiltInTok{print}\NormalTok{(L)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1, 2, 3, 4]
+\end{verbatim}
+
+The ``\texttt{()}'' after \texttt{sort} indicates that the function
+should be executed, and is required even if no arguments are necessary.
+
+\hypertarget{strings}{%
+\subsection{Strings!}\label{strings}}
+
+One of the most simple and important aspects of python you will be using
+constantly will be strings!
+
+Strings are designated by single or double quotation marks.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{"This is my python string"} 
+
+\CommentTok{\textquotesingle{}This is my second python string\textquotesingle{}}
+\end{Highlighting}
+\end{Shaded}
+
+We will be using `strings' throughout our whole Python lifetime.
+
+Things to remember:
+
+\begin{itemize}
+\item
+  Strings are not numbers. You'd have to convert them to a number if you
+  want to use them in math operations.
+\item
+  Floating numbers are needed due to memory limitations: we cannot have
+  infinitely precise numbers! - They take the form of scientific
+  notation. We can represent extremely large and small numbers in a very
+  compact and efficient way.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \StringTok{"4"} 
+\BuiltInTok{print}\NormalTok{(}\StringTok{"String: "}\NormalTok{, }\BuiltInTok{type}\NormalTok{(x),      x)}
+
+\NormalTok{x }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(x)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Integer: "}\NormalTok{, }\BuiltInTok{type}\NormalTok{(x),    x)}
+
+\NormalTok{x }\OperatorTok{=} \BuiltInTok{float}\NormalTok{(x)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Float: "}\NormalTok{, }\BuiltInTok{type}\NormalTok{(x),    x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+String:  <class 'str'> 4
+Integer:  <class 'int'> 4
+Float:  <class 'float'> 4.0
+\end{verbatim}
+
+\hypertarget{aside-a-note-on-the-print-function}{%
+\subsection{\texorpdfstring{Aside: A Note on the \texttt{print()}
+Function}{Aside: A Note on the print() Function}}\label{aside-a-note-on-the-print-function}}
+
+Above we used the example of the \texttt{print()} function. The
+\texttt{print()} function is one piece that has changed between Python
+\emph{2.x} and Python \emph{3.x}. In Python 2, \texttt{print} behaved as
+a statement: that is, you could write
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Python 2 only!}
+\OperatorTok{\textgreater{}\textgreater{}} \BuiltInTok{print} \StringTok{"first value:"}\NormalTok{, }\DecValTok{1}
+\NormalTok{first value: }\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+For various reasons, the language maintainers decided that in Python 3
+\texttt{print()} should become a function, so we now write
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Python 3 only!}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{print}\NormalTok{(}\StringTok{"first value:"}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{first value: }\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+This is one of the many backward-incompatible constructs between Python
+2 and 3.
+
+\hypertarget{references}{%
+\subsection{References}\label{references}}
+
+\begin{itemize}
+\item
+  The most widely used style guide in Python is known as PEP8, and can
+  be found at https://www.python.org/dev/peps/pep-0008/.
+\item
+  \emph{A Whirlwind Tour of Python} by Jake VanderPlas (O'Reilly).
+  Copyright 2016 O'Reilly Media, Inc., 978-1-491-96465-1
+\end{itemize}
+
+\hypertarget{license}{%
+\subsection{License}\label{license}}
+
+Open MIT License, adapted from the Python Course 2020 developed by Cefas
+(Centre for Environment, Fisheries and Aquaculture Science) and Python
+Course for SENSE (Centre for Satellite Data in Environmental Science)
+PhD students 2020.
+
+In this paper, we outline an object-oriented, easily extensible approach
+to modelling traffic light behavior using the Python programming
+language. At its core, the simulation loops over a function whose output
+corresponds to one second, or ``frame'' of real time. Every frame, all
+of the objects in the scene run their update functions; the timers tick
+forwards, and the various outputs are created.
+
+In its current iteration, the code only updates the traffic light and
+illuminates the Blinkstick, but the architecture of the code makes it
+very simple to extend its functionality to include a 2D representation
+of the scene and its contents, and to simulate the behaviour of
+pedestrians and cars (and update the traffic light based on that
+simulated behaviour).
+
+\hypertarget{class-structure}{%
+\section{Class Structure}\label{class-structure}}
+
+The first classes defined are the \texttt{Period} and
+\texttt{TrafficLightAssignments} classes. These classes are simply
+wrappers to define constants, extending the functionality of Python's
+\texttt{Enum} class. Their purpose is to make the code simpler and more
+readable: it's more convenient to store the state of the traffic light
+as \texttt{Period.I} than as a simple \texttt{int}, and the
+\texttt{Enum} wrapper adds little overhead to the actual runtime of the
+program.
+
+All of the scene information is contained in an object of the
+\texttt{Scene} class. The \texttt{Scene} class also implements the
+function for running a frame of simulation.
+
+The traffic light logic is implemented in the \texttt{TrafficLight}
+class. The \texttt{update} method runs different checks depending on the
+current state of the light. For example, in the first period of
+operation (\texttt{Period.I}), the traffic light is stipulated to change
+if either:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A pedestrian has requested a change (by pressing the cross button) AND
+  at least 6 seconds have elapsed since a car was last detected, OR
+\item
+  20-60 seconds (depending on the size of the road) have elapsed since
+  the beginning of the period.
+\end{enumerate}
+
+To implement this logic, the method checks both the time since its state
+has changed (\texttt{window.time\_since\_update}) and the time since a
+pedestrian has requested a crossing
+(\texttt{window.time\_since\_button}, currently unimplemented in the
+rest of the code). If either of the requisite conditions (1) or (2) are
+met, then the traffic light changes state to the next period.
+
+\hypertarget{simulation-output}{%
+\section{Simulation Output}\label{simulation-output}}
+
+Currently, the main output of the simulation is the Blinkstick itself, a
+matrix of RGB LEDs that changes color to match the current state of the
+traffic light. All of the interaction with the Blinkstick is sandboxed
+behind an Application Programming Interface (API) class titled
+\texttt{BlinkstickAPI} in the code.
+
+When the API class is initialized, it attempts to find a Blinkstick. If
+none is found, an exception is raised and the program unwinds. Once the
+Blinkstick has been found, it can be interacted with through the
+functions within the \texttt{BlinkstickAPI} class.
+
+\texttt{BlinkstickAPI.clear\_blinkstick} clears the Blinkstick, and is
+called every frame of the simulation. \texttt{clear\_blinkstick} is a
+solution to the problem otherwise encountered setting the LEDs on the
+Blinkstick: any LED set high in one state must be set low before
+switching to the next state. In future iterations of the program, it
+might be advisable to call this function only when the traffic light
+changes state. Currently, since the Blinkstick is cleared and re-lit
+every frame of the simulation, there is a slight but visible flicker in
+the Blinkstick as the simulation runs.
+
+\texttt{BlinkstickAPI.set\_light} is a method designed to interact with
+the \texttt{TrafficLightAssignments} class through use of the ``splat''
+operator \texttt{**}. This operator unpacks a dictionary of keys and
+values into the arguments of a function. Using
+\texttt{BlinkstickAPI.set\_light} in conjunction with the
+\texttt{TrafficLightAssignments} class avoids unnecessary repeated work
+in specifying the indices and values of the desired LEDs.
+
+The output of the simulation could easily be extended. Since the
+\texttt{window} object contains a framework for simulating a top-down
+map of the crossing, it would be easy to implement a function that
+displays that map every frame. This could be accomplished through the
+terminal, with a text output, or through the use of a plotting library
+like \texttt{matplotlib}.
+
+\hypertarget{further-extensibility}{%
+\section{Further Extensibility}\label{further-extensibility}}
+
+Thanks to the object-oriented paradigm, the written code is easy to
+extend and change as the engineering requirements of the simulation
+change over time. A framework is included for scene simulation with
+realistic pedestrians and cars. These objects would be implemented as
+subclasses of the \texttt{SceneObject} class, which allows the creation
+of arbitrary rectangular regions within the scene.
+
+When the \texttt{SceneObject} is initialized, the program checks whether
+the coordinates of the corners are valid, raising an exception if given
+invalid input. The coordinates are stored, enabling simple methods
+universal to \texttt{SceneObject}s, particularly checking whether one
+\texttt{SceneObject} contains another (highly important for pedestrian
+crossing buttons and car detectors).
+
+To make this framework fully functional, the following features need to
+be implemented:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A pathfinding function for the pedestrians and cars to update their
+  position towards their destinations during the appropriate periods of
+  the traffic light
+\item
+  A factory function (or set of factories) that creates cars and
+  pedestrians at random positions with random destinations throughout
+  the simulation
+\item
+  An \texttt{update} function for the \texttt{Pedestrian} and
+  \texttt{Car} classes that changes the simulation state appropriately.
+\end{enumerate}
+
+With these simple additions, a fully-fledged traffic light simulation
+application could easily be created. And thanks to the class
+architecture, adding those features would be as simple as extending the
+functionality of the given classes with a few new methods.
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+This software demonstrates a simple simulation of the state of a
+``toucan crossing'' style traffic light. The result is a highly-readable
+yet extensible codebase, which makes use of Python's object-oriented
+architecture. The code interfaces with external libraries, creates
+physical and textual outputs, and accurately and completely implements
+the logic outlined in national standard LTN2/95 for traffic lights.
+
+\clearpage
+
+\appendix
+
+\hypertarget{traffic-light-periods-and-timings}{%
+\section{Traffic Light Periods and
+Timings}\label{traffic-light-periods-and-timings}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0649}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2139}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1239}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1227}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3117}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Period
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Use
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Signal for \newline Pedestrians
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Signal for \newline Vehicles
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Timing
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Variation
+\end{minipage} \\
+\midrule()
+\endhead
+I & Vehicle Running & Red & Green & 20 - 60 (ends at either max time or
+on pedestrian demand + gap. Vehicle actuation cancels gap for 6 sec) &
+Traffic volume \\
+II & Amber to Vehicles & Red & Amber & 3 & n/a \\
+III & Vehicle Clearance & Red & Red & 1 (gap in vehicles) - 3 (vehicle
+present) & Vehicle actuation \\
+IV & Pedestrian Crossing & Green & Red & 4 - 7 & Check maps \\
+V & Pedestrians keep crossing & Black & Red & 3 & n/a \\
+VI & Pedestrian clearance & Black & Red & 0 - 22 (pedestrian detection
+adds 2 sec) & Pedestrian actuation \\
+VII & Additional Pedestrian Crossing & Black & Red & 0 - 3 & Pedestrian
+detection \\
+VIII & All red & Red & Red & 1 - 3 & Free choice \\
+IX & Red / Amber to Vehicles & Red & Red/Amber & 2 & NA \\
+\bottomrule()
+\end{longtable}
+
+\clearpage
+
+\hypertarget{toucan-crossing-python-code}{%
+\section{Toucan Crossing Python
+Code}\label{toucan-crossing-python-code}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# ++============================================++}
+\CommentTok{\# || Programming for Engineers: Toucan Crossing ||}
+\CommentTok{\# ||{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}||}
+\CommentTok{\# || Jasper Day  |  S2265891  |  2022/10/20     ||}
+\CommentTok{\# ++============================================++}
+
+\CommentTok{\# Description:}
+\CommentTok{\# ============}
+\CommentTok{\# \textasciigrave{}Period\textasciigrave{} tracks the state of the traffic light as the simulation advances. }
+\CommentTok{\# The \textasciigrave{}window\textasciigrave{} object contains a grid on which \textasciigrave{}SceneObjects\textasciigrave{} are located.}
+\CommentTok{\# }
+\CommentTok{\# As the simulation advances, every object (the traffic light and the scene }
+\CommentTok{\# objects) is updated. The \textasciigrave{}window\textasciigrave{} object mutates as these objects are updated.}
+\CommentTok{\# }
+\CommentTok{\# All of the logic (for traffic light state changes and \textasciigrave{}SceneObject\textasciigrave{} updates) }
+\CommentTok{\# is contained in the \textasciigrave{}update\textasciigrave{} implied functions for their respective members.}
+
+\ImportTok{from}\NormalTok{ blinkstick }\ImportTok{import}\NormalTok{ blinkstick}
+\ImportTok{import}\NormalTok{ matplotlib }\ImportTok{as}\NormalTok{ mpt}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{from}\NormalTok{ enum }\ImportTok{import}\NormalTok{ Enum}
+\ImportTok{import}\NormalTok{ time}
+
+
+\KeywordTok{class}\NormalTok{ Period(Enum):}
+    \CommentTok{\# Enum type allows state comparison of our traffic light variable.}
+    \CommentTok{\# \textasciigrave{}int\textasciigrave{} enum lets us augment state by addition operator +=}
+\NormalTok{    I }\OperatorTok{=} \DecValTok{1}
+\NormalTok{    II }\OperatorTok{=} \DecValTok{2}
+\NormalTok{    III }\OperatorTok{=} \DecValTok{3}
+    \CommentTok{\# I, II, and III are for Mayfield Roads}
+    \CommentTok{\# IA, IIA, and IIIA are for Westfield Mains}
+\NormalTok{    IA }\OperatorTok{=} \DecValTok{4}
+\NormalTok{    IIA }\OperatorTok{=} \DecValTok{5}
+\NormalTok{    IIIA }\OperatorTok{=} \DecValTok{6}
+    \CommentTok{\# Pedestrian Cycle}
+\NormalTok{    IV }\OperatorTok{=} \DecValTok{7}
+\NormalTok{    V }\OperatorTok{=} \DecValTok{8}
+\NormalTok{    VI }\OperatorTok{=} \DecValTok{9}
+\NormalTok{    VII }\OperatorTok{=} \DecValTok{10}
+\NormalTok{    VIII }\OperatorTok{=} \DecValTok{11}
+\NormalTok{    IX }\OperatorTok{=} \DecValTok{12}
+    \CommentTok{\# red / amber for westfield mains}
+\NormalTok{    IXA }\OperatorTok{=} \DecValTok{13}
+
+\KeywordTok{class}\NormalTok{ TrafficLightAssignments(}\BuiltInTok{dict}\NormalTok{, Enum):}
+    \CommentTok{\# Traffic Light assignments. }
+    \CommentTok{\# Traffic lights can be set with the splat operator **}
+\NormalTok{    MAYFIELD\_ROADS\_RED }\OperatorTok{=}\NormalTok{ \{}
+        \StringTok{"index"}\NormalTok{: }\DecValTok{0}\NormalTok{,}
+        \StringTok{"name"}\NormalTok{: }\StringTok{"red"}
+\NormalTok{    \}}
+\NormalTok{    MAYFIELD\_ROADS\_YELLOW }\OperatorTok{=}\NormalTok{ \{}
+        \StringTok{"index"}\NormalTok{: }\DecValTok{1}\NormalTok{,}
+        \StringTok{"name"}\NormalTok{: }\StringTok{"yellow"}
+\NormalTok{    \}}
+\NormalTok{    MAYFIELD\_ROADS\_GREEN }\OperatorTok{=}\NormalTok{ \{}
+        \StringTok{"index"}\NormalTok{: }\DecValTok{2}\NormalTok{,}
+        \StringTok{"name"}\NormalTok{: }\StringTok{"green"}
+\NormalTok{    \}}
+\NormalTok{    WESTFIELD\_MAINS\_RED }\OperatorTok{=}\NormalTok{ \{}
+        \StringTok{"index"}\NormalTok{: }\DecValTok{5}\NormalTok{,}
+        \StringTok{"name"}\NormalTok{: }\StringTok{"red"}
+\NormalTok{    \}}
+\NormalTok{    WESTFIELD\_MAINS\_YELLOW }\OperatorTok{=}\NormalTok{ \{}
+        \StringTok{"index"}\NormalTok{: }\DecValTok{4}\NormalTok{,}
+        \StringTok{"name"}\NormalTok{: }\StringTok{"yellow"}
+\NormalTok{    \}}
+\NormalTok{    WESTFIELD\_MAINS\_GREEN }\OperatorTok{=}\NormalTok{ \{}
+        \StringTok{"index"}\NormalTok{: }\DecValTok{3}\NormalTok{,}
+        \StringTok{"name"}\NormalTok{: }\StringTok{"green"}
+\NormalTok{    \}}
+\NormalTok{    PEDESTRIAN\_LIGHT\_GREEN }\OperatorTok{=}\NormalTok{ \{}
+        \StringTok{"index"}\NormalTok{: }\DecValTok{6}\NormalTok{,}
+        \StringTok{"name"}\NormalTok{: }\StringTok{"green"}
+\NormalTok{    \}}
+\NormalTok{    PEDESTRIAN\_LIGHT\_RED }\OperatorTok{=}\NormalTok{ \{}
+        \StringTok{"index"}\NormalTok{: }\DecValTok{7}\NormalTok{,}
+        \StringTok{"name"}\NormalTok{: }\StringTok{"red"}
+\NormalTok{    \}}
+
+\KeywordTok{class}\NormalTok{ Scene():}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, rows, columns):}
+\NormalTok{        scene }\OperatorTok{=}\NormalTok{ np.zeros([rows, columns])}
+    
+    \CommentTok{\# Global counters}
+\NormalTok{    time\_since\_car }\OperatorTok{=} \DecValTok{0}
+\NormalTok{    time\_since\_ped }\OperatorTok{=} \DecValTok{0}
+\NormalTok{    time\_since\_button }\OperatorTok{=} \DecValTok{0}
+    \CommentTok{\# time since period updated}
+\NormalTok{    time\_since\_update }\OperatorTok{=} \DecValTok{0}
+
+    \CommentTok{\# Advance simulation by one frame}
+    \KeywordTok{def}\NormalTok{ simulation\_step(}\VariableTok{self}\NormalTok{, traffic\_light):  }
+        \KeywordTok{global}\NormalTok{ TIME}
+
+        \CommentTok{\# }\AlertTok{TODO}\CommentTok{: broadcast call for all objects to update themselves (position, state, etc)}
+
+\NormalTok{        traffic\_light.update(}\VariableTok{self}\NormalTok{)}
+
+        \CommentTok{\# Print current state to terminal}
+        \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"State: }\SpecialCharTok{\{}\NormalTok{traffic\_light}\SpecialCharTok{.}\NormalTok{state}\SpecialCharTok{\}}\SpecialStringTok{, Time: }\SpecialCharTok{\{}\VariableTok{self}\SpecialCharTok{.}\NormalTok{time\_since\_update}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+        
+        \CommentTok{\# Tick timers forwards}
+\NormalTok{        TIME }\OperatorTok{+=} \DecValTok{1}
+        \VariableTok{self}\NormalTok{.time\_since\_button }\OperatorTok{+=} \DecValTok{1}
+        \VariableTok{self}\NormalTok{.time\_since\_car }\OperatorTok{+=} \DecValTok{1}
+        \VariableTok{self}\NormalTok{.time\_since\_ped }\OperatorTok{+=} \DecValTok{1}
+        \VariableTok{self}\NormalTok{.time\_since\_update }\OperatorTok{+=} \DecValTok{1}
+\NormalTok{        time.sleep(}\FloatTok{0.5}\NormalTok{)}
+
+\KeywordTok{class}\NormalTok{ BlinkstickAPI():}
+    \CommentTok{\# interface to easily change traffic lights}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{):}
+        \VariableTok{self}\NormalTok{.bstick }\OperatorTok{=}\NormalTok{ blinkstick.find\_first()}
+        \ControlFlowTok{if} \VariableTok{self}\NormalTok{.bstick }\OperatorTok{==} \VariableTok{None}\NormalTok{: }
+            \ControlFlowTok{raise} \PreprocessorTok{Exception}\NormalTok{(}\StringTok{"No blinkstick found"}\NormalTok{)}
+    
+    \KeywordTok{def}\NormalTok{ clear\_colors(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{8}\NormalTok{):}
+            \VariableTok{self}\NormalTok{.bstick.set\_color(index}\OperatorTok{=}\NormalTok{i, name}\OperatorTok{=}\StringTok{"black"}\NormalTok{)}
+    
+    \KeywordTok{def}\NormalTok{ set\_light(}\VariableTok{self}\NormalTok{, color\_dict):}
+        \CommentTok{\# For use with TrafficLightAssignments}
+        \VariableTok{self}\NormalTok{.bstick.set\_color(}\OperatorTok{**}\NormalTok{color\_dict)}
+    
+
+\KeywordTok{class}\NormalTok{ TrafficLight():}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, state: Period):}
+        \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ state}
+        \VariableTok{self}\NormalTok{.blinkstick }\OperatorTok{=}\NormalTok{ BlinkstickAPI()}
+
+    \KeywordTok{def}\NormalTok{ update(}\VariableTok{self}\NormalTok{, window: Scene):}
+        \CommentTok{\# Clear traffic light}
+        \VariableTok{self}\NormalTok{.blinkstick.clear\_colors()}
+
+        \ControlFlowTok{if} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.I:}
+            \CommentTok{\# Vehicle Running (Mayfield Roads)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_GREEN)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.PEDESTRIAN\_LIGHT\_RED)}
+            
+            \ControlFlowTok{if}\NormalTok{ (window.time\_since\_car }\OperatorTok{\textgreater{}=} \DecValTok{6} \KeywordTok{and} 
+\NormalTok{                window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{10} \KeywordTok{and} 
+\NormalTok{                window.time\_since\_update }\OperatorTok{\textgreater{}=}\NormalTok{ window.time\_since\_button):}
+                \CommentTok{\# Gap condition with pedestrian demand}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.II}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+
+            \ControlFlowTok{elif}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{20}\NormalTok{:}
+                \CommentTok{\# Max vehicle running duration}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.II}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+        
+        \ControlFlowTok{elif} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.II:}
+            \CommentTok{\# Amber to Vehicles (Mayfield Roads)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_YELLOW)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.PEDESTRIAN\_LIGHT\_RED)}
+            
+            \ControlFlowTok{if}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{3}\NormalTok{:}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.III}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+
+        \ControlFlowTok{elif} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.III:}
+            \CommentTok{\# Vehicle Clearance}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.PEDESTRIAN\_LIGHT\_RED)}
+
+            \ControlFlowTok{if}\NormalTok{ window.time\_since\_car }\OperatorTok{\textgreater{}=} \DecValTok{6} \KeywordTok{and}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{1}\NormalTok{:}
+                \CommentTok{\# Gap condition}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.IXA}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+            
+            \ControlFlowTok{elif}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{3}\NormalTok{:}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.IXA}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+
+        \ControlFlowTok{if} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.IXA:}
+            \CommentTok{\# Amber / Yellow (Westfield Mains)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_YELLOW)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.PEDESTRIAN\_LIGHT\_RED)}
+
+            \ControlFlowTok{if}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{2}\NormalTok{:}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.IA}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+            
+
+        \ControlFlowTok{if} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.IA:}
+            \CommentTok{\# Vehicle Running (Westfield Mains)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_GREEN)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.PEDESTRIAN\_LIGHT\_RED)}
+            
+            \ControlFlowTok{if}\NormalTok{ (window.time\_since\_car }\OperatorTok{\textgreater{}=} \DecValTok{6} \KeywordTok{and} 
+\NormalTok{                window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{10} \KeywordTok{and} 
+\NormalTok{                window.time\_since\_update }\OperatorTok{\textless{}=}\NormalTok{ window.time\_since\_button):}
+                \CommentTok{\# Gap condition with pedestrian demand}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.IIA}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+
+            \ControlFlowTok{elif}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{20}\NormalTok{:}
+                \CommentTok{\# Max vehicle running duration}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.IIA}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+        
+        \ControlFlowTok{elif} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.IIA:}
+            \CommentTok{\# Amber to Vehicles (Westfield Mains)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_YELLOW)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.PEDESTRIAN\_LIGHT\_RED)}
+            
+            \ControlFlowTok{if}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{3}\NormalTok{:}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.IIIA}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+
+        \ControlFlowTok{elif} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.IIIA:}
+            \CommentTok{\# Vehicle Clearance}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.PEDESTRIAN\_LIGHT\_RED)}
+            
+            \ControlFlowTok{if}\NormalTok{ window.time\_since\_car }\OperatorTok{\textgreater{}=} \DecValTok{6} \KeywordTok{and}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{1}\NormalTok{:}
+                \CommentTok{\# Gap condition}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.IV}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+            
+            \ControlFlowTok{elif}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{3}\NormalTok{:}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.IV}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+
+        \ControlFlowTok{elif} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.IV:}
+            \CommentTok{\# Pedestrian Crossing}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.PEDESTRIAN\_LIGHT\_GREEN)}
+            
+            \ControlFlowTok{if}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{6}\NormalTok{:}
+                \CommentTok{\# Appropriate time for 10+ m road}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.V}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+        
+        \ControlFlowTok{elif} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.V:}
+            \CommentTok{\# Fixed black{-}out}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_RED)}
+            
+            \ControlFlowTok{if}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{3}\NormalTok{:}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.VI}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+        
+        \ControlFlowTok{elif} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.VI:}
+            \CommentTok{\# Pedestrian Clearance}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_RED)}
+            \ControlFlowTok{if}\NormalTok{ window.time\_since\_ped }\OperatorTok{\textgreater{}=} \DecValTok{2} \KeywordTok{or}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{22}\NormalTok{:}
+                \CommentTok{\# Pedestrians extend clearance by 2s}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.VII}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+
+        \ControlFlowTok{elif} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.VII:}
+            \CommentTok{\# Additional Pedestrian Clearance}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_RED)}
+                    
+            \ControlFlowTok{if}\NormalTok{ window.time\_since\_ped }\OperatorTok{\textgreater{}=} \DecValTok{2} \KeywordTok{or}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{3}\NormalTok{:}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.VIII}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+
+
+        \ControlFlowTok{elif} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.VIII:}
+            \CommentTok{\# All{-}Red for 2s}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.PEDESTRIAN\_LIGHT\_RED)}
+            
+            \ControlFlowTok{if}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{2}\NormalTok{:}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.IX}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+
+        \ControlFlowTok{elif} \VariableTok{self}\NormalTok{.state }\OperatorTok{==}\NormalTok{ Period.IX:}
+            \CommentTok{\# Red/Amber Period}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.MAYFIELD\_ROADS\_YELLOW)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.WESTFIELD\_MAINS\_RED)}
+            \VariableTok{self}\NormalTok{.blinkstick.set\_light(TrafficLightAssignments.PEDESTRIAN\_LIGHT\_RED)}
+
+            \ControlFlowTok{if}\NormalTok{ window.time\_since\_update }\OperatorTok{\textgreater{}=} \DecValTok{2}\NormalTok{:}
+                \VariableTok{self}\NormalTok{.state }\OperatorTok{=}\NormalTok{ Period.I}
+\NormalTok{                window.time\_since\_update }\OperatorTok{=} \DecValTok{0}
+
+\KeywordTok{class}\NormalTok{ SceneObject():}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, window:Scene, row\_start:}\BuiltInTok{int}\NormalTok{, row\_end:}\BuiltInTok{int}\NormalTok{, col\_start:}\BuiltInTok{int}\NormalTok{, col\_end:}\BuiltInTok{int}\NormalTok{, letter):}
+        
+        \CommentTok{\# Check if bounds are valid}
+        \ControlFlowTok{if} \KeywordTok{not}\NormalTok{ (row\_start }\OperatorTok{\textless{}=}\NormalTok{ row\_end }\OperatorTok{\textless{}}\NormalTok{ window.scene.shape[}\DecValTok{0}\NormalTok{] }\KeywordTok{and} 
+\NormalTok{                col\_start }\OperatorTok{\textless{}=}\NormalTok{ col\_end }\OperatorTok{\textless{}}\NormalTok{ window.scene.shape[}\DecValTok{1}\NormalTok{]):}
+            \ControlFlowTok{raise} \PreprocessorTok{Exception}\NormalTok{(}\StringTok{"Incorrect bounds for object"}\NormalTok{) }
+        
+        \VariableTok{self}\NormalTok{.row\_start }\OperatorTok{=}\NormalTok{ row\_start}
+        \VariableTok{self}\NormalTok{.row\_end }\OperatorTok{=}\NormalTok{ row\_end}
+        \VariableTok{self}\NormalTok{.col\_start }\OperatorTok{=}\NormalTok{ col\_start}
+        \VariableTok{self}\NormalTok{.col\_end }\OperatorTok{=}\NormalTok{ col\_end}
+        \VariableTok{self}\NormalTok{.letter }\OperatorTok{=}\NormalTok{ letter}
+
+    \KeywordTok{def}\NormalTok{ contains(}\VariableTok{self}\NormalTok{, scene\_object):}
+        \ControlFlowTok{return}\NormalTok{ (}\VariableTok{self}\NormalTok{.row\_start }\OperatorTok{\textless{}=}\NormalTok{ scene\_object.row\_start }\KeywordTok{and} 
+                \VariableTok{self}\NormalTok{.row\_end }\OperatorTok{\textgreater{}=}\NormalTok{ scene\_object.row\_end }\KeywordTok{and} 
+                \VariableTok{self}\NormalTok{.col\_start }\OperatorTok{\textless{}=}\NormalTok{ scene\_object.col\_start }\KeywordTok{and} 
+                \VariableTok{self}\NormalTok{.col\_end }\OperatorTok{\textgreater{}=}\NormalTok{ scene\_object.col\_end)}
+    
+    \KeywordTok{def}\NormalTok{ centroid(}\VariableTok{self}\NormalTok{) }\OperatorTok{{-}\textgreater{}}\NormalTok{ (}\BuiltInTok{int}\NormalTok{, }\BuiltInTok{int}\NormalTok{):}
+        \ControlFlowTok{return}\NormalTok{ (np.floor((row\_start }\OperatorTok{+}\NormalTok{ row\_end)}\OperatorTok{/}\DecValTok{2}\NormalTok{), np.floor((col\_start }\OperatorTok{+}\NormalTok{ col\_end)}\OperatorTok{/}\DecValTok{2}\NormalTok{))}
+
+\KeywordTok{class}\NormalTok{ Sidewalk(SceneObject):}
+    \ControlFlowTok{pass}
+
+\KeywordTok{class}\NormalTok{ Road(SceneObject):}
+    \ControlFlowTok{pass}
+
+\KeywordTok{class}\NormalTok{ MobileObject(SceneObject):}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{,x:}\BuiltInTok{int}\NormalTok{,y:}\BuiltInTok{int}\NormalTok{,speed,destination: SceneObject, letter):}
+        \BuiltInTok{super}\NormalTok{().init(row\_start}\OperatorTok{=}\NormalTok{x,row\_end}\OperatorTok{=}\NormalTok{x,col\_start}\OperatorTok{=}\NormalTok{y,col\_end}\OperatorTok{=}\NormalTok{y, letter}\OperatorTok{=}\NormalTok{letter)}
+        \VariableTok{self}\NormalTok{.destination }\OperatorTok{=}\NormalTok{ destination}
+        \VariableTok{self}\NormalTok{.speed }\OperatorTok{=}\NormalTok{ speed}
+        \VariableTok{self}\NormalTok{.dest\_coords }\OperatorTok{=}\NormalTok{ destination.centroid()}
+    
+    \KeywordTok{def}\NormalTok{ update\_coords(}\VariableTok{self}\NormalTok{,new\_x,new\_y):}
+        \VariableTok{self}\NormalTok{.row\_start }\OperatorTok{=}\NormalTok{ new\_x}
+        \VariableTok{self}\NormalTok{.row\_end }\OperatorTok{=}\NormalTok{ new\_y}
+        \VariableTok{self}\NormalTok{.col\_start }\OperatorTok{=}\NormalTok{ new\_y}
+        \VariableTok{self}\NormalTok{.col\_end }\OperatorTok{=}\NormalTok{ new\_y}
+    
+    \KeywordTok{def}\NormalTok{ time\_step(}\VariableTok{self}\NormalTok{) }\OperatorTok{{-}\textgreater{}}\NormalTok{ (}\BuiltInTok{int}\NormalTok{, }\BuiltInTok{int}\NormalTok{):}
+        \ControlFlowTok{pass}    
+
+
+
+
+\KeywordTok{class}\NormalTok{ Car(MobileObject): }\CommentTok{\# Contents of Address Register. just kidding.}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, x, y, destination: SceneObject):}
+        \BuiltInTok{super}\NormalTok{().init(x}\OperatorTok{=}\NormalTok{x, y}\OperatorTok{=}\NormalTok{y, destination}\OperatorTok{=}\NormalTok{destination, letter}\OperatorTok{=}\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{)}
+
+\KeywordTok{class}\NormalTok{ Pedestrian(MobileObject): }\CommentTok{\# Contents of Address Register. just kidding.}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, x, y, destination: SceneObject):}
+        \BuiltInTok{super}\NormalTok{().init(x}\OperatorTok{=}\NormalTok{x, y}\OperatorTok{=}\NormalTok{y, destination}\OperatorTok{=}\NormalTok{destination, letter}\OperatorTok{=}\StringTok{\textquotesingle{}P\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# CONTROL FLOW STARTS HERE}
+
+\CommentTok{\# Size of the crosswalk simulation matrix. One square is 1 meter on a side.}
+\NormalTok{ROWS }\OperatorTok{=} \DecValTok{70}
+\NormalTok{COLUMNS }\OperatorTok{=} \DecValTok{30}
+\NormalTok{TIME }\OperatorTok{=} \DecValTok{0} \CommentTok{\# seconds}
+
+\NormalTok{window }\OperatorTok{=}\NormalTok{ Scene(rows}\OperatorTok{=}\NormalTok{ROWS, columns}\OperatorTok{=}\NormalTok{COLUMNS)}
+
+\NormalTok{traffic\_light }\OperatorTok{=}\NormalTok{ TrafficLight(Period.I)}
+
+\ControlFlowTok{while} \VariableTok{True}\NormalTok{:}
+\NormalTok{    window.simulation\_step(traffic\_light)}
+\end{Highlighting}
+\end{Shaded}
+
+
+
+
+\end{document}
