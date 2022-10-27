@@ -76,6 +76,8 @@ You can have a streakline without being a streamline if the flow is turbulent: t
 
 Although it sounds like a startup for watching livestreams, this actually refers to a bundle of streamlines in 3 dimensions, creating an invisible "pipe" through which flow does not cross.
 
+:::
+
 # Continuity Equation
 
 Here we apply the principle of *conservation of mass* to a fluid system. Whatever mass goes into our system every second should come out every second. No ifs, &&s, || buts.

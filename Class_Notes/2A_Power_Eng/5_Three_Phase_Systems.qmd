@@ -181,8 +181,8 @@ As long as the loads are balanced, you can analyze a single phase and easily ext
 
 | | Star | Delta |
 |---|---|---|
-| Voltage | $\|V_{line}\| = \sqrt{3} \ \|V_{phase}\|$ <nbsp> $V_{line}$ leads $V_{phase}$ by 30° | *Line voltage only* |
-| Current | $I_{line} = I_{phase} |  $\|I_{line}\| = \sqrt{3} \ \|I_{phase}\| $ <nbsp> $I_{line}$ lags $I_{phase}$ by 30° |
+| Voltage | $\|V_{line}\| = \sqrt{3} \ \|V_{phase}\|$ \n $V_{line}$ leads $V_{phase}$ by 30° | *Line voltage only* |
+| Current | $I_{line} = I_{phase}$ |  $\|I_{line}\| = \sqrt{3} \ \|I_{phase}\|$ <nbsp> $I_{line}$ lags $I_{phase}$ by 30° |
 
 Power:
 
@@ -201,6 +201,10 @@ The power of a system with voltage phasor **$V_{line}$** and power phasor **$I_{
 
 
 The power factor angle is the angle of *impedance*, which is going to be the phase diffference between voltage and current. $\phi = \phi_V - \phi_I$, so $\phi = \phi_Z$.
+
+This power factor angle, in a star-connected system, is the angle between the phase voltage and the phase current.
+
+:::
 
 # Unbalanced Systems
 
