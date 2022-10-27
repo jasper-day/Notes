@@ -5,6 +5,8 @@ author: Jasper Day
 date: Thu 10/27/2022 
 ---
 
+[PDF version](toucan_crossing.pdf)
+
 In this paper, we outline an object-oriented, easily extensible approach to modelling traffic light behavior using the Python programming language. At its core, the simulation loops over a function whose output corresponds to one second, or "frame" of real time. Every frame, all of the objects in the scene run their update functions; the timers tick forwards, and the various outputs are created. 
 
 In its current iteration, the code only updates the traffic light and illuminates the Blinkstick, but the architecture of the code makes it very simple to extend its functionality to include a 2D representation of the scene and its contents, and to simulate the behaviour of pedestrians and cars (and update the traffic light based on that simulated behaviour).
