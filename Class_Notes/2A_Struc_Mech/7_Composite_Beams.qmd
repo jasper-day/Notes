@@ -1,0 +1,34 @@
+---
+title: Composite Beam Sections
+author: Jasper Day
+date: Thu 10/27/2022 
+---
+
+In *normal language*, when we talk about "composites", that usually refers to glass fiber composites (such as are used in the midsection of Darwin III). Such materials generally form a homogeneous material on the level of analysis.
+
+In *structural mechanics II*, we're talking about large-scale inhomogeneities in otherwise solid beams. Since material further from the neutral axis experiences greater stress in bending, you put your more expensive material further from the neutral axis.
+
+Imagine a beam made of wood and steel:
+
+![]()
+
+The *strain* is evenly distributed through the material. The *stress*, however, is not.  Recall that in the elastic region of stress, the amount of strain is proportional to the amount of stress:
+
+$$
+\sigma = E \ \epsilon,
+$$
+
+where $E$ is the Young's Modulus specific to that material.   
+
+Since $E$ varies throughout the length of the section, the stress-height graph is not continuous.
+
+You deal with this problem by refactoring the composite beam as a beam made entirely of one material (either the timber or the steel).
+
+Take a thin slice of the material to be replaced of height $dy$ and area $dA$:
+
+$$
+dF = b_s \times dy \times E_s \times \epsilon,
+$$
+
+where $b_s$ is the breadth of the steel in that section, $b_s \times dy$ is the area of the cross section, and $E_s \times \epsilon$ is the stress in that section of the beam (Young's Modulus for steel times the amount of strain in that section of the steel).
+
