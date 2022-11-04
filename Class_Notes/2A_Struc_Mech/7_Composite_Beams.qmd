@@ -32,3 +32,13 @@ $$
 
 where $b_s$ is the breadth of the steel in that section, $b_s \times dy$ is the area of the cross section, and $E_s \times \epsilon$ is the stress in that section of the beam (Young's Modulus for steel times the amount of strain in that section of the steel).
 
+# Flexural Rigidity
+
+This quantity gives the stiffness of the material as a whole: 
+
+$$
+G = E\ I
+$$
+
+It takes into account both the material stiffness $E$ (the Young's Modulus) and the geometric stiffness $I$ (the second moment of area).
+

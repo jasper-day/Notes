@@ -144,3 +144,42 @@ $$
 $$
 
 where $\delta$ is the total strain of the bar within the length $l$.
+
+## Shear Strain
+
+Shear strain is denoted by $\gamma$, and refers to the change in a right angle of a stress element subjected to pure shear.
+
+    +----------+
+    | no shear |
+    +----------+
+
+      +----------+
+     / sheared  /
+    +----------+  <- γ
+
+When stress is proportional to strain,
+
+## Constants of proportionality
+
+$$
+\sigma = E \ \epsilon \hspace{2em} \tau = G \ \gamma
+$$
+
+The constant $E$ is the **modulus of elasticity**, and the constant $G$ is the **modulus of rigidity**, or the **shear modulus of elasticity**.
+
+When a bar is subject to axial loading only, it squishes or stretches a bit, causing some lateral strain. These strains are proportional to each other in the elastic region. 
+
+$$
+\nu = - \frac{\textnormal{lateral strain}}{\textnormal{axial strain}}
+$$
+
+$\nu$ is  **Poisson's ratio**.
+
+The three elastic constants are related to each other:
+
+$$
+E = 2G (1 + \nu)
+$$
+
+# Shear and Moment
+

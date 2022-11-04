@@ -1,0 +1,111 @@
+---
+title: Electrical Machines
+author: Jasper Day
+date: Mon 10/31/2022 
+---
+
+Electrical machines are everywhere - generating and using electrical power. They're used more and more in transportation as well as industry.
+
+Generation is done either with electromagnets or permanent magnets, and some hydro stations use induction machines.
+
+In a generator, the mechanical power in is converted into electrical power out. Some energy is lost in the generation of power, and some energy is lost in the conversion of the generated power into a useful form. The same happens in reverse for a motor: Electrical power in is converted into mechanical power, with some losses in the power converter and the motor itself.
+
+# Electric machines
+
+All machines consist of a *stator* and a *rotor*.
+
+The stator is stationary, the rotor rotates. Either one can contain conductors or permanent magnets (or occasionally neither!).
+
+A squirrel cage rotor has biased copper rods connected with a ring, inserted into the stator.
+
+# Electromagnetic terms
+
+## Flux
+
+Symbol $\phi$
+
+Measured in Webers (Wb)
+
+
+Always flows in closed loops
+
+The direction of flux is determined by the right hand rule. Put your thumb in the direction of current in a DC wire, and the fingers of your thumb match the direction of the flux.
+
+In a coil, put your forefingers in the direction of the current and your thumb points north.
+
+![](Images/6_rhr_flux.png)
+
+## Flux Density
+
+This is a measure of how much flux fows through a unit cross sectional area.
+
+Measured in Teslas, like my net worth.
+$$
+T = \frac{Wb}{m^2}
+$$
+
+Note that unlike most measures, where you measure an actual cross section, the area which goes into calculating Teslas is the product of the *axial length* in the direction of flux flow, and the *width* of the cross section under examination.
+
+## B-H curve
+
+In a B-H curve, you plot flux density against magnetic field strength. 
+
+$$
+B = \mu_0 \mu_r H
+$$
+
+where $\mu_0$ is the permeability of vacuum, and $\mu_r$ is the relative permeability of the material.
+
+## Flux linkage
+
+If a flux $\phi$ flows through a coil with $N$ turns, then the total flux $\psi = N \ \psi$. 
+
+## Inductance 
+
+Inductance is the flux linkage per unit of current producing the flux.
+
+When you have two coils linked by magnetic flux, you can define the Self Inductance as the inductance of the driving coil, and the mutualinductance is the inductance of the driven coil.
+
+# Faraday's Law
+
+**Electromagnetic force is induced by a conductor in a variable magnetic field.**
+
+The driving terms are:
+
+- Flux density $B$
+- Length of conductor $l$
+- Relative velocity of conductor and magnet $v$
+
+The voltage induced is the derivative of the flux induced o.
+
+# Lorentz force
+
+**F**irst finger - Field
+
+Se**C**ond finger - Motion
+
+Thumb - Direction of current
+
+![Demonstration of the Right Hand Rule](https://i.redd.it/iubn6b5725041.jpg)
+
+![](https://i.redd.it/ege0jpg7e4961.png)
+
+To determine the power in an electrical machine, note that the force creates a shear stress acting on the air in the air gap, of area $\pi \ D \  L$.
+
+
+$$
+P = 2 \ (B K_E) \left( \pi \frac{D^2}{4} L \right)\ \omega (W)
+$$
+
+You can use this relation to determine the size of the rotor needed to achieve a certain RPM, given the magnetic loading, electrical loading, and shear stress.
+
+Bigger power, lower working speed -> larger machine.
+
+# Machine operation 
+
+You can compare the speed and the torque of a machine to determine its type of operation. If the speed and the torque are in the same direction, the machine is in traction / motoring mode. If the speed and torque are in opposite directions, the machine is in generating  / braking mode. 
+
+You can see this by imagining an electrical car. When you push on the accelerator, you use power to create torque in the direction of power. If you push on the brake, the direction of torque swaps.
+
+Plot torque against speed. Electric motors have higher torque at low speeds, but their torque drops off at higher speeds (switching to constant power to protect the electric motor).
+
