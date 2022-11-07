@@ -60,6 +60,9 @@ where $\mu_0$ is the permeability of vacuum, and $\mu_r$ is the relative permeab
 
 If a flux $\phi$ flows through a coil with $N$ turns, then the total flux $\psi = N \ \psi$. 
 
+If that flux $\phi$ is produced by a coil with a particular current $I_f$, and if the material of the machine is within the linear current-flux portion of its B-H curve, then we can say that 
+$\phi = k\ I_f$.
+
 ## Inductance 
 
 Inductance is the flux linkage per unit of current producing the flux.
@@ -80,11 +83,15 @@ The voltage induced is the derivative of the flux induced o.
 
 # Lorentz force
 
+On the left hand:
+
 **F**irst finger - Field
 
 Se**C**ond finger - Motion
 
 Thumb - Direction of current
+
+You can also remember this much more simply by the right hand rule for cross products - curl your fingers in the direction of the second vector with relation to the first, and your thumb points in the correct normal direction. The Lorentz force operating on a conductor in a magnetic field is the is the cross product of the *length of the wire in the direction of current* times the *magnetic field*.
 
 ![Demonstration of the Right Hand Rule](https://i.redd.it/iubn6b5725041.jpg)
 
@@ -108,4 +115,3 @@ You can compare the speed and the torque of a machine to determine its type of o
 You can see this by imagining an electrical car. When you push on the accelerator, you use power to create torque in the direction of power. If you push on the brake, the direction of torque swaps.
 
 Plot torque against speed. Electric motors have higher torque at low speeds, but their torque drops off at higher speeds (switching to constant power to protect the electric motor).
-

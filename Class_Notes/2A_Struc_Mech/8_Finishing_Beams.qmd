@@ -1,0 +1,7 @@
+---
+title: Stress Strain Analysis in Euler Beams
+subtitle: Stiffness, linear superposition
+author: Jasper Day
+date: Fri 2022/11/04
+---
+
