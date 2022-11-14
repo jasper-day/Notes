@@ -1,0 +1,105 @@
+---
+title: Synchronous Machines
+date: Mon 2022/11/14
+author: Jasper Day
+---
+
+Synchronous machines are machines run off an AC voltage. AC is nice because you can change the voltages to reduce losses for transmission over long distances: use high voltages in transmission lines, low voltages in local distribution.
+
+# Induction Machines vs Synchronous Machines
+
+Induction motors are the AC alternative to synchronous machines.
+
+Probably make up 70% of all electric motors in industry. Induction machines are used primarily as a motor, but can also be used as generators (usually seen in onshore wind turbines). You can buy them off the shelf to suit pretty much any application.
+
+- Electric trains have induction motors driving their wheels
+- The very first Teslas had induction machines
+- Used in ship propulsion (GE builds the induction motors in Queen Elizabeth aircraft carrier)
+
+Synchronous machines are typically used as generators. They can either be permanent magnet (PM) or field wound. 
+
+When synchronous machines are used in direct-drive wind, wave, hydro, and tidal, since the speed of renewables is variable, the output AC waveform won't line up with the grid and needs to be rectified and inverted before being attached to the grid. In steam turbines, the synchronous machine will be run in sync with the grid.
+
+## 3-phase windings
+
+Stator coils are wound in diamond form. In very big machines, they will be wound in bars with coolant channels running through the center.
+
+The key to making a synchronous machine is to get a **rotating magnetic field** with **3 phases**. This is a mechanical challenge.
+
+In a **distributed winding**, the coils for each phase are distributed around the stator. The magnetic field in a single coil is constantly reversing itself due to the AC waveform. Then you place the coils next to each other so that the position of the peak magnetic field is basically chasing itself around the stator. The net result with all 3 phases in operation is a continuously rotating magnetic field which repeats around the length of the stator corresponding to the overlaps of the coils.
+
+DC machines need rectification (brushes) to achieve a rotating magnetic field; AC machines do not.
+
+The very simplest 3-phase machine has 1 coil per phase, and every time the phase repeats the magnetic field makes one full rotation around the stator. With a 50hz AC input, the machine will run at 50hz, or 3000 rpm (100π rad/sec).
+
+When you increase the number of poles, you decrease the mechanical speed accordingly. With two poles, a 50hz electrical frequency creates 1500rpm of mechanical frequency.
+
+The number of poles is determined by the periodicity of the phases. Each phase is placed next to each other; a group of three coils of different phases is referred to as a *phase band*.
+
+# Synchronous Machines
+
+AC on the outside (3-phase windings creating axial magnetic field) and DC on the inside.
+
+To get a synchronous machine going, you have to drive it externally (with a steam turbine). At no load, there's no angle between the rotor field and the stator field; they're perfectly aligned. You can do this because the machine is driven externally.
+
+When operating as a motor, the rotating mass *lags* the magnetic field (negative load angle $\delta$). When operating as a generator, the rotor *leads* the magnetic field (positive load angle $\delta$.). This creates a *phase difference* between the rotating magnetic field in the stator and the stationary magnetic field in the rotor.
+
+:::{.callout-danger}
+
+Don't let the load angle approach 90° - The  system becomes unstable.
+
+![Hydro plant failure in Siberia due to lost synchronism](https://ietp-web-cdn-eandt-legacy.azureedge.net/magazine/2011/07/images/640_buried-turbine.jpg)
+
+:::
+
+## Phasor Diagrams for Synchronous Machines
+
+As usual, you only model a single phase of the 3 and assume that everything is balanced among them.
+
+Stator coils have winding resistance (assumed negligible, designed low) and inductance, which determines the power factor of the machine.
+
+$V_p$ is the grid voltage and is fixed (the grid is much larger than you are). The free variable is $E_t$, the electromtive force induced in the  stator winding due to the rotation of the *rotor field* at synchronization speed.
+
+$$
+V_p = E_p + I_p \ldotp jX_a
+$$
+
+Since $X_a$ is inductive, it operates at 90° to the current.
+
+As a motor, $E_t$ will *lag* the  grid voltage $V_p$, and as a generator, $E_t$ will *lead* the grid voltage. In either case, it's possible for the current to lead or lag the grid voltage, which means that you can either generate or absorb reactive power in a synchronous machine.
+
+For an overxcited motor or an underexcited generator, $I_p$ leads $V_p$ and reactive power is generated. For an underexcited motor or an overexcited generator, $I_p$ lags $V_p$ and reactive power is absorbed.
+
+Real power P is sinusoidal in $\delta$:
+
+$$
+P_{total} = -3 \left( 
+    \frac{V_p}{X_a}
+\right) E_t \sin \delta
+$$
+
+Reactive powwer is cosinusoidal in $\delta$:
+
+$$
+Q_{total} = -3 \left( 
+    \frac{V_p}{X_a}
+\right)(V_p -  E_t \cos \delta)
+$$
+
+The most power is generated at the unstable 90° points, causing damage to the machine. The optimal points to operate at are the steep parts of the sine curve, where $\sin x \approx x$.
+
+## Synchronous compensator
+
+In a compensator, the load angle is always 0. This means no real power. 
+
+If $E_t > V_p$, the current leads the voltage by 90°, and the machine looks like a capactior. The generator looks like a capacitor, and reactive power is generated into the grid.
+
+If $E_t < V_p$, the current lags the voltage by 90°, and the generator looks like an inductance.
+
+Synchronous compensators are used in parts of the grid with unstable voltage to *stabilize* voltage under applied loads. Nowadays we use power electronics instead of synchronous machines (Static bar compensators, STATCOMs) in weak parts of the grid.
+
+# Summary 
+- Synchronous generators are found in all power stations. 
+- AC windings create a rotating magnetic field. 
+- Torque is produced by the slight angle $\delta$ between the rotating field of the stationary AC winding and the rotating DC field in the rotor.
+- Phasor diagrams are used to derive P and Q, given the inductance on the coils.

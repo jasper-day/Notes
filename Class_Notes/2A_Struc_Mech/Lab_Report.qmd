@@ -1,0 +1,50 @@
+---
+title: Coursework for Structural Mechanics
+author: Jasper Day
+date: Mon 2022/11/07
+
+---
+
+# Load and Stress in a Truss
+
+# Composite Action in a Beam
+
+## Weight Applied Vs. Strain Gauge Reading
+
+### Unbonded Beam
+
+| Weight | Gauge 1   | Gauge 2   | Gauge 3      | Gauge 4   | Gauge 5  | Gauge 6    |
+|:-------|----------:|----------:|-------------:|----------:|---------:|-----------:|
+| 30     | -13.3648  | 17.6874   | -100.6451    | 12.6810  | 5.61706  | 100.6510   |
+| 60     | -31.3564  | 41.3451   | -204.0247    | 24.5087  | 10.6981  | 204.6510   |
+| 90     | -49.6545  | 63.0456   | -309.5608    | 36.1560  | 14.1569  | 309.4564   |
+| 120    | -68.3243  | 88.0254   | -417.6570    | 49.1061  | 21.6059  | 416.4505   |
+| 150    | -87.6473  | 113.025   | -526.6406    | 60.5640  | 26.1606  | 525.2050   |
+
+### Bonded Beam
+
+| Weight | Gauge 1     | Gauge 2    | Gauge 3     | Gauge 4   | Gauge 5   | Gauge 6    |
+|:-------|------------:|-----------:|------------:|----------:|----------:|-----------:|
+| 30     | -46.6051    | -34.6504   | -33.6051    | 19.3210   | 19.2610   | 65.2601    |
+| 60     | -96.5406    | -70.0546   | -70.5061    | 41.2510   | 40.6210   | 136.510    |
+| 90     | -150.106    | -109.561   | -109.061    | 63.6510   | 62.2610   | 211.610    |
+| 120    | -206.514    | -150.501   | -149.006    | 88.6501   | 85.6901   | 289.261    |
+| 150    | -251.650    | -182.561   | -182.652    | 107.212   | 103.650   | 352.620    |
+
+## Analysis
+
+The force applied on the beam with a particular weight can be found by summing the moments about the pivot point $a$ to zero, keeping in mind that counterclockwise moments are positive and clockwise moments are negative:
+
+$$
+\begin{gather}
+\sum M_a = 0 \\
+n \ W + m \ F = 0 \\ 
+\textnormal{mass} = - \frac{m \ F}{n \ g}
+\end{gather}
+$$
+
+where $g$ is the acceleration due to gravity.
+
+# Torsion of a Shaft
+
+# Membrane Stresses in a Pressure Vessel

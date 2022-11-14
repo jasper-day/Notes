@@ -145,6 +145,7 @@ $$
 \begin{align}
 E_A &= K' \ I_F \ \omega \\
 T = K' \ I_F \ I_A
+\end{align}
 $$
 
 As long as the number of unknowns does not exceed the number of equations, they may be determined. Note that the $K'$ term only appears in a coil whose response to mmf is linear.
