@@ -78,7 +78,7 @@ P_{total} = -3 \left(
 \right) E_t \sin \delta
 $$
 
-Reactive powwer is cosinusoidal in $\delta$:
+Reactive power is cosinusoidal in $\delta$:
 
 $$
 Q_{total} = -3 \left( 
