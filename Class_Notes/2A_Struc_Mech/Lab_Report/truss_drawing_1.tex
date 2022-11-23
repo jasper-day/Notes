@@ -1,0 +1,55 @@
+\begin{figure}[H]
+\label{fig-trussdrawing1}
+\centering
+\caption{Truss setup with strain gauges labeled.}
+\begin{tikzpicture}
+
+    %\scaling{0.75};
+    %\draw[help lines, step=0.75] (-1, -1) grid (11*0.75, 6*0.75);
+
+    \point{a}{0}{5};
+    \point{b}{5}{5};
+    \point{c}{0}{0};
+    \point{d}{5}{0};
+    \point{e}{10}{0};
+
+    \beam{2}{a}{b};
+    \beam{2}{a}{d};
+    \beam{2}{b}{d};
+    \beam{2}{b}{e};
+    \beam{2}{c}{d};
+    \beam{2}{d}{e};
+
+    \support{1}{a}[270];
+    \support{1}{c}[270];
+
+    \hinge{1}{a};
+    \hinge{1}{b};
+    \hinge{1}{c};
+    \hinge{1}{d};
+    \hinge{1}{e};
+
+    \load{1}{e}[90][2];
+
+    \dimensioning{1}{c}{d}{-1.5}[$l$];
+    \dimensioning{1}{d}{e}{-1.5}[$l$];
+    \dimensioning{2}{c}{a}{-2}[$l$];
+
+    \notation{5}{a}{b}[G4][.5][above];
+    \notation{5}{a}{d}[G5][.5][above right];
+    \notation{5}{c}{d}[G6][.5][below];
+    \notation{5}{b}{e}[G1][.5][above right];
+    \notation{5}{d}{e}[G2][.5][below];
+    \notation{5}{b}{d}[G3][.5][right][1];
+    
+    \notation{1}{a}{A};
+    \notation{1}{b}{B};
+    \notation{1}{c}{C};
+    \notation{1}{d}{D};
+    \notation{1}{e}{E};
+    
+    \point{f}{10}{1};
+    \notation{1}{f}{$f$};
+    
+\end{tikzpicture}
+\end{figure}

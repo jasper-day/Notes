@@ -1,0 +1,178 @@
+---
+title: Structural Mechanics Coursework
+author: Jasper Day
+date: Mon 2022/11/07
+format:
+  pdf:
+    colorlinks: false
+    latex-auto-install: true
+    documentclass: scrreprt
+    include-in-header: 
+      text: |
+        \usepackage{stanli}
+---
+
+# Load and Stress in a Truss
+
+## Setup
+
+In this section, data from strain gauges is analyzed to determine the force applied to a truss structure.
+
+<!--Truss Graph-->
+
+The truss structure is shown in Figure 1.1.
+
+\input{truss_drawing_1}
+
+Figure 1.2 labels the internal forces evolved when a force $f$ is applied to point E in the truss.
+
+\input{truss_drawing_2}
+
+By summing the forces at each point to 0, the following relationships are obtained:
+
+| Force | Amount       | Sense       |
+|-------|--------------|-------------|
+| $f_1$ | $\sqrt{2}f$  | Tension     |
+| $f_2$ | $f$          | Compression |
+| $f_3$ | $f$          | Compression |
+| $f_4$ | $f$          | Tension     |
+| $f_5$ | $\sqrt{2}f$  | Tension     |
+| $f_6$ | $2f$         | Compression |
+
+: Internal forces evolved in truss structure {#tbl-internal}
+
+These forces create stress within the trusses
+
+$$
+\sigma = \frac{F}{A},
+$${#eq-stress}
+
+where A is the cross-sectional area of the truss ($250~\mathrm{mm}^2$).
+
+The strain associated with a stress $\sigma$ is 
+
+$$
+\epsilon = \frac{\sigma}{E},
+$${#eq-strain}
+
+where E is the Young's modulus of acrylic, or $2.5~\mathrm{GPa}$. 
+
+## Results
+
+The strain values are shown in @tbl-strain, and the relationship between strain and slider position is graphed in @fig-strain-1.
+
+| Slider     | Gauge 1/$\mu \epsilon$ | Gauge 2/$\mu \epsilon$ | Gauge 3/$\mu \epsilon$ | Gauge 4/$\mu \epsilon$ | Gauge 5/$\mu \epsilon$| Gauge 6/$\mu \epsilon$ |
+|------------|------------|------------|------------|------------|------------|------------|
+| 0          | -1.1       | -0.01      | 0.3        | 1.21       | 0.46       | -0.91      |
+| 3          | 0.23       | 0.04       | 1.01       | 0.16       | 0.4        | 1.83       |
+| 6          | 23.2       | -17.51     | -15.91     | 16.74      | 23         | -34.32     |
+| 9          | 101.36     | -76.16     | -77.43     | 67.6       | 101.42     | -156.98    |
+| 12         | 197.83     | -151.34    | -155.06    | 128.08     | 197.53     | -310.97    |
+| 15         | 314.3      | -235.97    | -249.47    | 198.57     | 305.93     | -482.21    |
+
+: Strain values at different slider positions {#tbl-strain}
+
+![Strain values plotted against slider position](Truss_Figure_1.png){#fig-strain-1}
+
+The slope of the line of best fit, as well as the $R^2$ coefficient for each line, is given in @tbl-parameters.
+
+| Gauge | Slope      | $R^2$ | Force/ N |
+|-------|------------|-------|-------|
+| G1    | 16.44  | 0.90 | 10.28      |
+| G2    | -12.41 | 0.90 | -7.75      |
+| G3    | -12.91 | 0.89 | -8.06      |
+| G4    | 10.55  | 0.91 | 6.59       |
+| G5    | 16.18  | 0.90 | 10.11      |
+| G6    | -25.41 | 0.90 | -15.88     |
+
+: Slope of best-fit line and $R^2$ {#tbl-parameters}
+
+According to this analysis, one tick on the slider would correspond to an applied force of $7.45~\mathrm N$ with a standard deviation of 0.51 N.
+
+## Sources of Error
+
+Two distinct sources of error were identified. First is the unavoidable random error created by imprecision in measuring the strain gauges. Over the course of the experiment, the strain gauges were observed to vary by $\pm 5 ~\mu \epsilon$. The second and much more significant source of error is backlash in the force-applying mechanism. Contrary to prediction, no increase in strain was observed between slider values of 0 and 3. This suggests that the mechanism did not begin to apply force to the truss until at least a slider value of 3. Such backlash is normally avoided by applying preload to a mechanism; it's likely that if the zero value on the slider corresponded to a non-zero amount of applied force, such backlash would not be observed.
+
+To see the effect of the systematic error caused by backlash, the linear regression was repeated starting at a slider value of 3 instead of the slider value of 0. The results from this analysis are given in @tbl-parameters-2 and @fig-strain-2.
+
+| Gauge | Slope      | $R^2$ | Force/ N|
+|-------|------------|-------|---------|
+| G1    | 23.07  | 0.97  | 14.41 |
+| G2    | -17.41 | 0.97 | -10.88 |
+| G3    | -18.15 | 0.96 | -11.34 |
+| G4    | 14.78  | 0.97 | 9.24 |
+| G5    | 22.69  | 0.97 | 14.18 |
+| G6    | -35.66    | 0.97 | -22.29 |
+
+: Slopes and $R^2$ starting from a slider value of 3 {#tbl-parameters-2}
+
+![Strain values and slider position starting at 3](Truss_Figure_2.png){#fig-strain-2}
+
+In this analysis, one tick on the slider would correspond to an applied force of $10.47~\mathrm N$ with a standard deviation of 0.73. 
+
+It is worth noting that, although removing the first measurement increased the accuracy of the linear regression (as indicated by the increased $R^2$ values), it increased the deviation in the force estimate.
+
+# Composite Action in a Beam
+
+## Setup
+
+In this section, beams of composite construction are loaded, and the evoked internal strains are compared against predictions from Euler beam theory.
+
+The force applied to the beam is created by the following lever system:
+
+\input{lever_drawing.tex}
+
+A simple moment analysis indicates that
+
+$$
+F = \frac{n}{m}W
+$${#eq-force}
+
+This force $F$ is applied equally at two point loads midway along the beam, with the strain gauge placed at point P.
+
+\input{beam_drawing.tex}
+
+The internal moment $M$ generated at point P can be found by a simple free-body diagram:
+
+\input{beam_fbd.tex}
+
+Summing the moments about P to zero, we find that
+
+$$
+M = 425~\frac{F}{2} = 212.5~F
+$${#eq-moment}
+
+
+
+
+
+## Weight Applied Vs. Strain Gauge Reading
+
+
+| Weight | Gauge 1/ $\mu \epsilon$| Gauge 2/ $\mu \epsilon$ | Gauge 3/ $\mu \epsilon$| Gauge 4/ $\mu \epsilon$ | Gauge 5/ $\mu \epsilon$| Gauge 6/ $\mu \epsilon$|
+|--------|-----------|-----------|--------------|-----------|----------|------------|
+| 30     | -13.3648  | 17.6874   | -100.6451    | 12.6810   | 5.61706  | 100.6510   |
+| 60     | -31.3564  | 41.3451   | -204.0247    | 24.5087   | 10.6981  | 204.6510   |
+| 90     | -49.6545  | 63.0456   | -309.5608    | 36.1560   | 14.1569  | 309.4564   |
+| 120    | -68.3243  | 88.0254   | -417.6570    | 49.1061   | 21.6059  | 416.4505   |
+| 150    | -87.6473  | 113.025   | -526.6406    | 60.5640   | 26.1606  | 525.2050   |
+
+: Weights and gauge readings in an unbonded beam {#tbl-unbonded} 
+
+
+| Weight | Gauge 1/$\mu \epsilon$ | Gauge 2/$\mu \epsilon$ | Gauge 3/ $\mu \epsilon$  | Gauge 4/$\mu \epsilon$ | Gauge 5/$\mu \epsilon$ | Gauge 6/$\mu \epsilon$ |
+|--------|-------------|------------|-------------|------------|------------|------------|
+| 30     | -46.6051    | -34.6504   | -33.6051    | 19.3210    | 19.2610     | 65.2601     |
+| 60     | -96.5406    | -70.0546   | -70.5061    | 41.2510    | 40.6210     | 136.510     |
+| 90     | -150.106    | -109.561   | -109.061    | 63.6510    | 62.2610     | 211.610     |
+| 120    | -206.514    | -150.501   | -149.006    | 88.6501    | 85.6901     | 289.261     |
+| 150    | -251.650    | -182.561   | -182.652    | 107.212    | 103.650     | 352.620     |
+
+: Weights and gauge readings in a bonded beam {#tbl-bonded}
+
+## Analysis
+
+
+# Torsion of a Shaft
+
+# Membrane Stresses in a Pressure Vessel

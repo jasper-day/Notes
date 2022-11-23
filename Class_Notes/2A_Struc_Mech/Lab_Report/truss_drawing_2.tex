@@ -1,0 +1,76 @@
+\begin{figure}[H]
+\label{fig-trussdrawing2}
+\caption{Truss analysis with internal forces shown.}
+\centering
+\begin{tikzpicture}
+    \point{a}{0}{5};
+    \point{b}{5}{5};
+    \point{c}{0}{0};
+    \point{d}{5}{0};
+    \point{e}{10}{0};
+    
+    \point{a1}{1}{5};
+    \point{a2}{1}{4};
+    \point{b1}{4}{5};
+    \point{b2}{5}{4};
+    \point{b3}{6}{4};
+    \point{c1}{1}{0};
+    \point{d1}{4}{0};
+    \point{d2}{4}{1};
+    \point{d3}{5}{1};
+    \point{d4}{6}{0};
+    \point{e1}{9}{0};
+    \point{e2}{9}{1};
+    
+    \beam{2}{a}{a1};
+    \beam{2}{a}{a2};
+    \beam{2}{b}{b1};
+    \beam{2}{b}{b2};
+    \beam{2}{b}{b3};
+    \beam{2}{c}{c1};
+    \beam{2}{d}{d1};
+    \beam{2}{d}{d2};
+    \beam{2}{d}{d3};
+    \beam{2}{d}{d4};
+    \beam{2}{e}{e1};
+    \beam{2}{e}{e2};
+
+    \support{1}{a}[270];
+    \support{1}{c}[270];
+    
+    \dimensioning{1}{c}{d}{-1.5}[$l$];
+    \dimensioning{1}{d}{e}{-1.5}[$l$];
+    \dimensioning{2}{c}{a}{-2}[$l$];
+
+    \load{1}{a1}[0][1];
+    \load{1}{a2}[-45][1];
+    \load{1}{b1}[180][1];
+    \load{1}{b2}[-90][1];
+    \load{1}{b3}[-45][1];
+    \load{1}{c1}[0][1];
+    \load{1}{d1}[180][1];
+    \load{1}{d2}[135][1];
+    \load{1}{d3}[90][1];
+    \load{1}{d4}[0][1];
+    \load{1}{e2}[135][1];
+    \load{1}{e1}[180][1];
+
+    \notation{5}{a}{b}[$f_4$][.5][above=-0.25];
+    \notation{5}{a}{d}[$f_5$][.5][right=-0.5];
+    \notation{5}{c}{d}[$f_6$][.5][below=-0.25];
+    \notation{5}{b}{e}[$f_1$][.5][right=-0.5];
+    \notation{5}{d}{e}[$f_2$][.5][below=-0.25];
+    \notation{5}{b}{d}[$f_3$][.5][right=-0.25][1];
+    
+    \notation{1}{a}{A};
+    \notation{1}{b}{B};
+    \notation{1}{c}{C};
+    \notation{1}{d}{D};
+    \notation{1}{e}{E};
+
+    \load{1}{e}[90][2];
+    \point{f}{10}{1};
+    \notation{1}{f}{$f$};
+
+\end{tikzpicture}
+\end{figure}
