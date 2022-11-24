@@ -2,15 +2,15 @@
 title: Structural Mechanics Coursework
 author: Jasper Day
 date: Mon 2022/11/07
-format:
-  pdf:
-    colorlinks: false
-    latex-auto-install: true
-    documentclass: scrreprt
-    include-in-header: 
-      text: |
-        \usepackage{stanli}
-        \usetikzlibrary{arrows}
+#format:
+#  pdf:
+#    colorlinks: false
+#    latex-auto-install: true
+#    documentclass: scrreprt
+#    include-in-header: 
+#      text: |
+#        \usepackage{stanli}
+#        \usetikzlibrary{arrows}
 ---
 
 # Load and Stress in a Truss
