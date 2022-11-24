@@ -10,6 +10,7 @@ format:
     include-in-header: 
       text: |
         \usepackage{stanli}
+        \usetikzlibrary{arrows}
 ---
 
 # Load and Stress in a Truss
@@ -106,7 +107,7 @@ To see the effect of the systematic error caused by backlash, the linear regress
 
 : Slopes and $R^2$ starting from a slider value of 3 {#tbl-parameters-2}
 
-![Strain values and slider position starting at 3](Truss_Figure_2.png){#fig-strain-2}
+![Regression of strain values and slider position starting at slider=3](Truss_Figure_2.png){#fig-strain-2}
 
 In this analysis, one tick on the slider would correspond to an applied force of $10.47~\mathrm N$ with a standard deviation of 0.73. 
 
@@ -142,14 +143,35 @@ $$
 M = 425~\frac{F}{2} = 212.5~F
 $${#eq-moment}
 
+To find the behavior of the beam under this moment, we create an equivalent, all-steel beam with a lower width of 
 
+$$
+b_{s} = b_a~\frac{E_a}{E_s}= 30~\frac{7}{20}
+$$
 
+The centroid of this beam is located 18.12 mm from the top of the beam, and it has a second moment of area $I_{eff}$ of 98718 mm^4.
 
+\input{beam_transformed.tex}
 
-## Weight Applied Vs. Strain Gauge Reading
+For a given moment $M$, we calculate the curvature 
 
+$$
+\kappa = \frac{M}{EI},
+$$
 
-| Weight | Gauge 1/ $\mu \epsilon$| Gauge 2/ $\mu \epsilon$ | Gauge 3/ $\mu \epsilon$| Gauge 4/ $\mu \epsilon$ | Gauge 5/ $\mu \epsilon$| Gauge 6/ $\mu \epsilon$|
+which we can use to find the strain at a height $y$
+
+$$
+\epsilon = \kappa y.
+$$
+
+These relationships hold because the load on the beam is incident on a principal axis of the beam.
+
+\pagebreak
+
+## Results
+
+| Weight/ N | Gauge 1/ $\mu \epsilon$| Gauge 2/ $\mu \epsilon$ | Gauge 3/ $\mu \epsilon$| Gauge 4/ $\mu \epsilon$ | Gauge 5/ $\mu \epsilon$| Gauge 6/ $\mu \epsilon$|
 |--------|-----------|-----------|--------------|-----------|----------|------------|
 | 30     | -13.3648  | 17.6874   | -100.6451    | 12.6810   | 5.61706  | 100.6510   |
 | 60     | -31.3564  | 41.3451   | -204.0247    | 24.5087   | 10.6981  | 204.6510   |
@@ -160,19 +182,45 @@ $${#eq-moment}
 : Weights and gauge readings in an unbonded beam {#tbl-unbonded} 
 
 
-| Weight | Gauge 1/$\mu \epsilon$ | Gauge 2/$\mu \epsilon$ | Gauge 3/ $\mu \epsilon$  | Gauge 4/$\mu \epsilon$ | Gauge 5/$\mu \epsilon$ | Gauge 6/$\mu \epsilon$ |
+| Weight/ N | Gauge 1/$\mu \epsilon$ | Gauge 2/$\mu \epsilon$ | Gauge 3/ $\mu \epsilon$  | Gauge 4/$\mu \epsilon$ | Gauge 5/$\mu \epsilon$ | Gauge 6/$\mu \epsilon$ |
 |--------|-------------|------------|-------------|------------|------------|------------|
-| 30     | -46.6051    | -34.6504   | -33.6051    | 19.3210    | 19.2610     | 65.2601     |
-| 60     | -96.5406    | -70.0546   | -70.5061    | 41.2510    | 40.6210     | 136.510     |
-| 90     | -150.106    | -109.561   | -109.061    | 63.6510    | 62.2610     | 211.610     |
-| 120    | -206.514    | -150.501   | -149.006    | 88.6501    | 85.6901     | 289.261     |
-| 150    | -251.650    | -182.561   | -182.652    | 107.212    | 103.650     | 352.620     |
+| 30     | -46.6051    | -34.6504   | -33.6051    | 19.3210    | 19.2610    | 65.2601    |
+| 60     | -96.5406    | -70.0546   | -70.5061    | 41.2510    | 40.6210    | 136.510    |
+| 90     | -150.106    | -109.561   | -109.061    | 63.6510    | 62.2610    | 211.610    |
+| 120    | -206.514    | -150.501   | -149.006    | 88.6501    | 85.6901    | 289.261    |
+| 150    | -251.650    | -182.561   | -182.652    | 107.212    | 103.650    | 352.620    |
 
 : Weights and gauge readings in a bonded beam {#tbl-bonded}
 
+![Predicted and measured strain vs internal height for 150N load](Beam_Figure_1.png){#fig-beamanal}
+
 ## Analysis
 
+From @fig-beamanal, the internally bonded beam had internal strains closely matching the prediction from Euler beam theory. However, the beam without the internal bond varied significantly from the predicted stress, with large discrepancies over the entire cross-section. 
+
+The discrepancy between prediction and experiment for the unbonded beam stems from the fact that Euler beam theory requires planar sections within the beam to remain planar. In the bonded beam, plane sections across the transition must remain planar, but the unbonded beams were able to shift relative to each other. 
+
+The result of this shift is that the unbonded case acts like two independent beams: the measured strain at Gauge 2 (the bottom of the steel section) is actually *positive*, indicating that the bottom of the steel section is in tension, instead of the expected compression. Contrast this with the bonded beam, where Gauge 2 and Gauge 3 (measuring the strain in the bottom of the steel section and the top of the aluminum section, respectively) have the same negative strain.
+
+\input{actual_beam_bending.tex}
 
 # Torsion of a Shaft
+
+## Setup
+
+In this section, a torque is applied to shafts of different materials via a lever arm, and the deflection of the lever arm is measured.
+
+The experimental setup is illustrated in Figure 3.1:
+
+\input{torsion_setup.tex}
+
+The weight $W$ acting on a lever arm evokes a moment $M$ in the shaft:
+
+\input{torsion_moment.tex}
+
+This moment causes a torsion in the beam, which creates a deflection in the lever arm. This deflection is measured at point $P$.
+
+\input{}
+
 
 # Membrane Stresses in a Pressure Vessel
