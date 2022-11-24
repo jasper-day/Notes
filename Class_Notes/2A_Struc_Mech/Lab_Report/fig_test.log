@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.11.23)  24 NOV 2022 04:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.11.23)  24 NOV 2022 05:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -694,22 +694,21 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Users\jaspe\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-)) (torsion_moment.tex
+)) (deflection.tex
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 12.
+(Font)              <10.95> on input line 15.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 12.
+(Font)              <8> on input line 15.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 12.
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+(Font)              <6> on input line 15.
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -725,19 +724,21 @@ Missing character: There is no ; in font nullfont!
 {C:/Users/jaspe/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (fig_test.au
 x) ) 
 Here is how much of TeX's memory you used:
- 19009 strings out of 478338
- 438722 string characters out of 2836699
+ 18945 strings out of 478338
+ 437510 string characters out of 2836699
  884586 words of memory out of 3000000
- 37126 multiletter control sequences out of 15000+600000
+ 37062 multiletter control sequences out of 15000+600000
  471998 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,8n,120p,10615b,817s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 125i,8n,120p,10615b,785s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Users/jaspe/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmmi10.pfb><C:/Users/jaspe/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr10.pfb>
-Output written on fig_test.pdf (1 page, 27574 bytes).
+msfonts/cm/cmmi8.pfb><C:/Users/jaspe/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmr10.pfb><C:/Users/jaspe/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on fig_test.pdf (1 page, 43586 bytes).
 PDF statistics:
- 19 PDF objects out of 1000 (max. 8388607)
+ 29 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

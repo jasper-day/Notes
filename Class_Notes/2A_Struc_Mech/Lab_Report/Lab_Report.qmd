@@ -48,7 +48,7 @@ $$
 \sigma = \frac{F}{A},
 $${#eq-stress}
 
-where A is the cross-sectional area of the truss ($250~\mathrm{mm}^2$).
+where $A = 250~\mathrm{mm}^2$ is the cross-sectional area of the truss.
 
 The strain associated with a stress $\sigma$ is 
 
@@ -56,7 +56,7 @@ $$
 \epsilon = \frac{\sigma}{E},
 $${#eq-strain}
 
-where E is the Young's modulus of acrylic, or $2.5~\mathrm{GPa}$. 
+where $E = 2.5~\mathrm{GPa}$ is the Young's modulus of acrylic.
 
 ## Results
 
@@ -90,9 +90,11 @@ The slope of the line of best fit, as well as the $R^2$ coefficient for each lin
 
 According to this analysis, one tick on the slider would correspond to an applied force of $7.45~\mathrm N$ with a standard deviation of 0.51 N.
 
-## Sources of Error
+## Discussion
 
-Two distinct sources of error were identified. First is the unavoidable random error created by imprecision in measuring the strain gauges. Over the course of the experiment, the strain gauges were observed to vary by $\pm 5 ~\mu \epsilon$. The second and much more significant source of error is backlash in the force-applying mechanism. Contrary to prediction, no increase in strain was observed between slider values of 0 and 3. This suggests that the mechanism did not begin to apply force to the truss until at least a slider value of 3. Such backlash is normally avoided by applying preload to a mechanism; it's likely that if the zero value on the slider corresponded to a non-zero amount of applied force, such backlash would not be observed.
+Two distinct sources of error were identified. First is the unavoidable random error created by imprecision in measuring the strain gauges. Over the course of the experiment, the strain gauges were observed to vary by $\pm 5 ~\mu \epsilon$. The second and much more significant source of error is backlash in the force-applying mechanism. No increase in strain was observed between slider values of 0 and 3. This suggests that the mechanism did not begin to apply force to the truss until at least a slider value of 3. Such backlash is normally avoided by applying preload to a mechanism; it's likely that if the zero value on the slider corresponded to a non-zero amount of applied force, such backlash would not be observed.
+
+## Postscript
 
 To see the effect of the systematic error caused by backlash, the linear regression was repeated starting at a slider value of 3 instead of the slider value of 0. The results from this analysis are given in @tbl-parameters-2 and @fig-strain-2.
 
@@ -109,9 +111,9 @@ To see the effect of the systematic error caused by backlash, the linear regress
 
 ![Regression of strain values and slider position starting at slider=3](Truss_Figure_2.png){#fig-strain-2}
 
-In this analysis, one tick on the slider would correspond to an applied force of $10.47~\mathrm N$ with a standard deviation of 0.73. 
+In this analysis, one tick on the slider would correspond to an applied force of $10.47~\mathrm N$ with a standard deviation of 0.73 N. 
 
-It is worth noting that, although removing the first measurement increased the accuracy of the linear regression (as indicated by the increased $R^2$ values), it increased the deviation in the force estimate.
+It is worth noting that, although removing the first measurement increased the accuracy of the linear regression (as indicated by the increased $R^2$ values), it increased the deviation in the force estimate. Also, from examining @fig-strain-2, it still appears that the strain does not increase linearly with slider value. Further investigation could reveal the source of this non-linear error.
 
 # Composite Action in a Beam
 
@@ -119,7 +121,7 @@ It is worth noting that, although removing the first measurement increased the a
 
 In this section, beams of composite construction are loaded, and the evoked internal strains are compared against predictions from Euler beam theory.
 
-The force applied to the beam is created by the following lever system:
+The force $F$ applied to the beam is created by the following lever system:
 
 \input{lever_drawing.tex}
 
@@ -194,7 +196,7 @@ These relationships hold because the load on the beam is incident on a principal
 
 ![Predicted and measured strain vs internal height for 150N load](Beam_Figure_1.png){#fig-beamanal}
 
-## Analysis
+## Discussion
 
 From @fig-beamanal, the internally bonded beam had internal strains closely matching the prediction from Euler beam theory. However, the beam without the internal bond varied significantly from the predicted stress, with large discrepancies over the entire cross-section. 
 
@@ -214,13 +216,168 @@ The experimental setup is illustrated in Figure 3.1:
 
 \input{torsion_setup.tex}
 
-The weight $W$ acting on a lever arm evokes a moment $M$ in the shaft:
+The weight $W$ acting on a lever arm creates a torque $T$ in the shaft:
 
 \input{torsion_moment.tex}
 
-This moment causes a torsion in the beam, which creates a deflection in the lever arm. This deflection is measured at point $P$.
+The torque on the shaft is
 
-\input{}
+$$
+T = 100~W
+$$
 
+This torque causes the beam to twist, which creates a deflection in the lever arm. This deflection is measured by a dial indicator at point $P$.
+
+\input{deflection.tex}
+
+The distance $\delta_l$ between P and 
+$\mathrm P'$ gives the angle of twist $\phi$ of the bars:
+
+$$
+\sin\phi =  \frac{\delta_l}{55}
+$${#eq-sinphi}
+
+Since $\phi$ is small, we can apply the fundamental theorem of engineering
+
+$$
+\sin\phi \approx \phi
+$${#eq-sin-approximation}
+
+and thus (by @eq-sinphi) 
+
+$$
+\phi = \frac{\delta_l}{55}
+$${#eq-phidl}
+
+The general expression for torsion in a uniform member is given by
+
+$$
+\phi = \frac{TL}{GJ}
+$${#eq-gentorsion}
+
+where $L = 280~\mathrm{mm}$ is the length of the bar and $J$ is the torsion constant of the bar. For a bar 10mm in diameter,
+
+$$
+J = \frac{\pi r^4}{2} = 981.7~\mathrm{mm^4}
+$${#eq-torsionconstant}
+
+First the deflection of the equipment is measured with no twist in the bar. The mechanism is expected to flex slightly under load without the beam twisting, and this flexure must be subtracted from the subsequent measurements. Then the deflections are measured for steel and aluminum bars; for each test, the lever arm is loaded with 0.9kg and 1.8kg weights.
+
+## Results
+
+| Material | Mass/ kg | Deflection/ mm | Corrected Deflection/ mm | Torque/ kN-mm | Rotation/ rad |
+|----------|----------|----------------|--------------------------|---------------|---------------|
+| Steel    | 0.9      | 0.30           | 0.22                     | 0.88          | 0.0040        |
+| Steel    | 1.8      | 0.58           | 0.42                     | 1.77          | 0.0076        |
+| Aluminum | 0.9      | 0.71           | 0.63                     | 0.88          | 0.012         |
+| Aluminum | 1.8      | 1.39           | 1.23                     | 1.77          | 0.022         |
+
+: Measured results from the torsion experiment {#tbl-torsionresults}
+
+Using the experimental results and @eq-gentorsion, the shear moduli of steel and aluminum were calculated. 
+
+| Material | Shear Modulus $G$/ $\mathrm{kN/mm^2}$ |
+|----------|------------------------|
+| Steel    | $64.5 \pm 1.5$         |
+| Aluminum | $22.3 \pm 0.3$         |
+
+![Rotation vs. Torque for each shaft](Torsion_Figure_1.png)
+
+## Discussion
+
+The most likely source of error in the estimates is in the measurements from the dial indicator. Although the indicator is precise and accurate, it is difficult to obtain repeatable sub-millimeter precision over the course of an experiment. If the tip of the dial indicator drifted slightly over the course of loading and unloading the beam, or the support structure shifted by a few hundredths of a millimeter, it would introduce a systematic error to all measurements made after the shift. This error can be minimized by the experimenter, but it takes extreme care and caution to obtain accurate measurements.
 
 # Membrane Stresses in a Pressure Vessel
+
+In the final section, plane stresses are evoked in a pressure vessel.
+
+The pressure vessel has two configurations: "Open" and "Closed". In the "Open" configuration, the vessel behaves as an open pipe, withstanding only circumferential or hoop stresses. In the "Closed" configuration, the vessel behaves as a full pressure vessel, withstanding both hoop and longitudinal stresses.
+
+In either configuration, the hoop stresses $\sigma_h$ are given by
+
+$$
+\sigma_h = \frac{pr}{t},
+$${#eq-hoop}
+
+where $p = 20~\mathrm{bar}$ is the pressure on the vessel, $r=36.25~\mathrm{mm}$ is the radius to the center of the wall, and $t = 2.5~\mathrm{mm}$ is the wall thickness.
+
+When the pressure vessel is in the closed configuration, it is also subject to longitudinal stresses $\sigma_l$ given by
+
+$$
+\sigma_l = \frac{pr}{2t}
+$${#eq-long}
+
+The hoop and longitudinal stresses cause strains in the cylinder. In the case of the open cylinder, which only has hoop stress, the principal strains are given by the typical uniaxial stress strain relation. The strain $\epsilon_h$ in the hoop direction is given by
+
+$$
+\epsilon_h = \frac{\sigma_h}{E},
+$${#eq-uniax-h}
+
+where $E = 70 \mathrm{kN/mm^2}$ is the Young's Modulus of aluminum. The strain $\epsilon_l$ in the longitudinal direction is
+
+$$
+\epsilon_l = -\nu \epsilon_h,
+$${#eq-uniax-l}
+
+where $\nu = 0.33$ is Poisson's Ratio for aluminum. @eq-uniax-h and @eq-uniax-l only apply in the "Open" configuration. In the "Closed" configuration, two principal stresses exist, and the stress-strain equations for biaxial stress must be used. The hoop strain is then
+
+$$
+\epsilon_h = \frac{\sigma_h}{E} - \frac{\nu\sigma_l}{E}
+$${#eq-hoop-strain}
+
+and the longitudinal strain is
+
+$$
+\epsilon_l = \frac{\sigma_l}{E} - \frac{\nu \sigma_h}{E}
+$${#eq-long-strain}
+
+@tbl-pressure-pred shows the results of this analysis.
+
+| Configuration | $\sigma_h$/ $\mathrm{kN/mm^2}$ | $\sigma_l$/ $\mathrm{kN/mm^2}$  | $\mu\epsilon_h$ | $\mu\epsilon_l$ |
+|------------------|-----------|----------|---------|---------|
+| Open          | 0.0290                         | 0                               | 414             | -136            |
+| Closed        | 0.0290                         | 0.0145                          | 346             | 70.4            |
+
+: Predicted hoop and longitudinal stress and strain values (strain given in $\mu \epsilon$) {#tbl-pressure-pred}
+
+![Mohr's Circle for internal stresses in "Open" and "Closed" configurations](Mohr_Circle.png)
+
+To cause yield in the aluminum, the Von Mises stress would have to exceed the yield strength of the material. For principal stresses $\sigma_h$ and $\sigma_l$, the Von Mises stress is
+
+$$
+\sigma_{eq} = \sqrt{\sigma_h^2 - \sigma_h \sigma_l + \sigma_l^2}
+$${#eq-vonmises}
+
+Using @eq-hoop and @eq-long, @eq-vonmises can be rewritten in terms of pressure $p$, mean radius $r$, and vessel thickness $t$.
+
+$$
+\begin{aligned}
+\sigma_{eq} &= \sqrt{\left( \frac{pr}{t} \right)^2 - \left( \frac{pr}{t} \right)\left( \frac{pr}{2t} \right) + \left( \frac{pr}{2t} \right)^2} \\
+&= \frac{pr}{t}\sqrt{\frac{3}{4}}
+\end{aligned}
+$${#eq-vonmisesrewritten}
+
+The yield strength of aluminum is $270~\mathrm{kN/mm^2}$. Setting the Von Mises stress equal to the yield strength and solving for pressure, the cylinder is found to yield at 
+$21~\mathrm{kN/mm^2}$, or 210000 bar.
+
+## Results 
+
+| Gauge | Orientation | Open Reading/ $\mu \epsilon$ | Closed Reading/ $\mu \epsilon$ |
+|-------|--------------|-----------|----------|
+| G1    | 0° (Longitudinal) | -83.325                      | 64.354                         |
+| G2    | 30°         | 36.665                       | 130.324                        |
+| G3    | 45°         | 132.102                      | 181.066                        |
+| G4    | 60°         | 255.089                      | 250.646                        |
+| G5    | 90° (Hoop)  | 360.623                      | 309.778                        |
+
+: Gauges and strain readings for different orientations, Open and Closed configuration {#tbl-results-pressure}
+
+## Discussion
+
+Out of all four experiments conducted, the experimental results in the pressure vessel are the worst match for predicted values. The predicted strains overshot the measured strains by 10% or more in all cases. Especially egregious was the longitudinal strain in the "Open" configuration, where the predicted value was off by a factor of nearly 50%! The likeliest explanation for this particular discrepancy is that some longitudinal stress was still expressed in the aluminum cylinder, even in the open position. The negative strain predicted in the "Open" configuration is the lateral contraction resulting from the hoop stress, according to Poisson's ratio. Any longitudinal stress in the pressure vessel will have the opposite sense and thus counteract that contractive strain. 
+
+\vspace{\fill}
+
+------------
+
+Jasper Day 2022. Typeset in \LaTeX, with diagrams made in TikZ and the \texttt{StAnLi} structural analysis library. With thanks to [*Quarto*](https://quarto.org/)
