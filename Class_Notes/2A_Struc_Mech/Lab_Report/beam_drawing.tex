@@ -1,0 +1,34 @@
+\begin{figure}[H]
+\label{fig-beam}
+\caption{Composite beam under load}
+\centering
+\begin{tikzpicture}
+    \scaling{0.5}
+    \point{a}{0}{0};
+    \point{b}{8.5}{0};
+    \point{c}{11.5}{0};
+    \point{d}{20}{0};
+    \point{m}{10}{0};
+    \beam{1}{a}{d};
+
+    \support{1}{a};
+    \support{2}{d};
+    \hinge{1}{a}
+    \hinge{1}{d}
+
+    \load{1}{b}[90][1.5]
+    \load{1}{c}[90][1.5]
+
+    \point{l1}{8.5}{1}
+    \point{l2}{11.5}{1}
+
+    \notation{2}{m}{P}[below=.5]
+    \notation{1}{l1}{$\frac{F}{2}$}[above left]
+    \notation{1}{l2}{$\frac{F}{2}$}
+
+    \dimensioning{1}{b}{m}{-1.5}[$75$]
+    \dimensioning{1}{m}{c}{-1.5}[$75$]
+    \dimensioning{1}{a}{m}{-2.25}[$500$]
+    \dimensioning{1}{m}{d}{-2.25}[$500$]
+\end{tikzpicture}
+\end{figure}

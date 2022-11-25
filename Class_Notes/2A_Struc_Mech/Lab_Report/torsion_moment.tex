@@ -1,0 +1,31 @@
+\begin{figure}[H]
+\label{fig-torsionmoment}
+\caption{Moments evoked on the shaft}
+\centering
+\setcoords{-135}{0}
+\vspace{1em}
+\begin{tikzpicture}[coords]
+    \dpoint{a}{0}{0}{0};
+    \dpoint{b}{0}{4}{1};
+    \dpoint{c}{8}{4}{0};
+    \dpoint{d}{8}{4}{1};
+    \dpoint{e}{8}{0}{1};
+    \daxis{1}{a};
+    \dbeam{1}{b}{d};
+    %\dsupport{2}{b}[yz];
+    \dsupport{1}{d}[0][-1];
+    \dsupport{1}{b}[0][-1];
+    \dbeam{3}{d}{e};
+    \dhinge{4}{d}[e][b];
+    %\dload{1}{e}[0][0];
+    \ddimensioning{xy}{b}{d}{6}[280][2];
+    %\ddimensioning{yx}{d}{e}{9}[100][2];
+    %\dnotation{1}{e}{$W$}[above left=3mm];
+    \dnotation{1}{d}{A}[below right=2mm];
+    \dnotation{1}{b}{B}[below right=2mm];
+    \dload{4}{d}[90][0][2];
+    \dload{4}{b}[-90][0][2];
+    \dnotation{1}{d}{$T$}[below left= 20mm];
+    \dnotation{1}{b}{$T$}[above right=20mm];
+\end{tikzpicture}
+\end{figure}
