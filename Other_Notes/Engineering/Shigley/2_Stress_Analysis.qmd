@@ -48,6 +48,9 @@ And the same for the plane shear stress:
 
 Shigleys is incorrect. The tau shear term should have **negative** $\frac{\sigma_x - \sigma_y}{2}\sin 2\phi$, not positive. This is why it pays to go through the derivations yourself!
 
+Further, you can notice that these equations parameterize a circle around the point (0, $\frac{\sigma_x + \sigma_y}{2}$) with respect to theta. 
+
+
 :::
 
 All in all, here are the equations for the shear stress and the normal stress on a plane at angle $\phi$ to the x-axis:
@@ -107,6 +110,10 @@ Plot Mohr's circle from the stress state by laying off $\sigma_x$ as OA, $\tau_{
 
 Point B represents the stress coordinates $(\sigma_x, \tau_{xy})$ on the $x$ faces, and point D represents the stress coordinates $(\sigma_y, \tau_{yx})$ on the $y$ faces. Point F is the location of the maximum normal stress, and the angle from the xy-line to the abscissa is $2\phi$. Point G is the location of the minimum normal stress. The maximum shear stress occurs at points H and I.
 
+The key thing to note here is that *one full rotation around the circle equals a physical stress-element rotation of 180°.* This is why the other side of the $x-y$ line represents the stresses on the face at 90° to the x face.
+
+When plotting Mohr's circle, remember that **clockwise shear is positive and counterclockwise shear is negative** - the opposite of the normal angle convention! Also, rotations *in physical space* result in rotations in *the same direction* in Mohr's circle space.
+
 # Triaxial Stress States
 
 As with the two-dimensional case, there is a particular orientation of the stress element for which all shear-stress components are zero. When an element has this orientation, the normals to the faces are the principal stresses. The process involves finding the three roots to the cubic:
@@ -116,6 +123,25 @@ $$
 \sigma^3 - (\sigma_x + \sigma_y + \sigma_z)\sigma^2 \\ + (\sigma_x\,\sigma_y + \sigma_x\,\sigma_z + \sigma_y\,\sigma_z - \tau_{xy}^2 - \tau_{yz}^2 - \tau_{zx}^2)\sigma \\ - (\sigma_x\,\sigma_y\,\sigma_z + 2\tau_{xy}\,\tau_{yz}\,\tau_{zx} - \sigma_x\,\tau_{yz}^2 - \sigma_y\,\tau_{zx}^2 - \sigma_z\,\tau_{xy}^2) = 0
 \end{gather}
 $$
+
+# Further Notes about Mohr's Circle:
+
+The principal stresses can also be found by *diagonalizing* the stress matrix **$\sigma$**:
+
+$$
+\begin{align}
+\bf \sigma &= \begin{bmatrix}
+\sigma_{xx} & \sigma_{xy} \\
+\sigma_{yx} & \sigma_{yy}
+\end{bmatrix} \\
+&= \bf{\Sigma \Lambda \Sigma^{-1}} 
+\end{align}
+$$
+
+Then the values of the principal stresses are the eigenvalues of the stress matrix. Mohr's circle is a shortcut to finding these eigenvalues for a symmetric stress matrix.
+
+Note - Von Mises Stress
+
 
 # Uniformly Distributed Stresses
 
