@@ -7,12 +7,16 @@
 |  Date      |  2022.11.17              | 
 +============+==========================+
 
-Goal: Implement an annunciator panel in Python using your blinkstick and the 
-scada.py library.
-- A green light should come on when the sensor is above 4.27V
-- A red light should come on when the sensor is below -2.56V
-- No lights must show between -2.56 and 4.27V
-- Lights must not flicker
+This code implements an annunciator panel for a voltage sensor.
+
+The sensor yields a reading corresponding to a voltage between REF_LOW and 
+    REF_HIGH. The reading is an integer between 0 and 2^BITS. The readings are 
+    taken every half-second and are plotted live with `matplotlib`.
+
+The voltage readings are smoothed by convolution with a user-defined kernel. 
+    The Annunciator class gives a method for creating arbitrary Gaussian 
+    kernels with a given length and standard deviation, or a custom kernel may 
+    be used. 
 
 """
 
@@ -20,108 +24,156 @@ from scada import DAQ
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib import style
-import numpy as np 
+import numpy as np
 import pandas as pd
 
-REF_HIGH = +5.0 # high voltage limit on sensor
+REF_HIGH = +5.0  # high voltage limit on sensor
 REF_LOW = -5.0  # low voltage limit on sensor
-BITS = 10       # number of bits used to encode the signal
-DELTA_T = 0.5   # sample period (s)
-V_HIGH = 4.27   # highest permissible voltage
-V_LOW = -2.56   # lowest permissible voltage
+BITS = 10  # number of bits used to encode the signal
+V_HIGH = 4.27  # highest permissible voltage
+V_LOW = -2.56  # lowest permissible voltage
 
 style.use("fast")
 
-# Data Acquisition setup 
+# Data Acquisition setup
 
-my_daq = DAQ(matric = 's2265891', user = 'Jasper Day')
-my_daq.connect('coursework')
+my_daq = DAQ(matric="s2265891", user="Jasper Day")
+my_daq.connect("constant")
 my_daq.trigger()
 
-# The Annunciator class implements a digital display of the current voltage 
+# The Annunciator class implements a digital display of the current voltage
 # readout, as well as interfacing with the blinkstick.
 
+
 class Annunciator:
-    def __init__(self, ax, daq):
-        self.ax = ax
+    def __init__(self, axs, daq):
+        self.ax = axs[0]
+        self.axkernel = axs[1]
         self.daq = daq
         self.voltages = []
-        self.clean_voltages = []
-    
+        self.array_length = 120
+        self.convolved_voltages = []
+        self.kernel = self.gaussian_kernel(length=5, sigma=1)
+        self.kernel_length = len(self.kernel)
+
     def update(self, frame):
-        self.clean_voltage()
+        self.convolve_voltage()
 
-        self.ax.clear()
+        # Plotting section
 
-        self.ax.plot(self.voltages[-120:], color="blue", label="Raw")
-        self.ax.plot(self.clean_voltages[-120:], color="green", label="Smoothed")
+        self.plot_setup()
+        self.plot_voltages()
+        self.plot_voltage_limits()
+        self.plot_kernel()
 
-        self.ax.set_ylim(REF_LOW - 0.5, REF_HIGH + 0.5)
-
-        self.ax.set_ylabel("Voltage")
-        self.ax.set_title("Voltage vs. Time for DAQ")
-
-        # Graph upper and lower limits for voltage
-
-        self.ax.axhline(y = V_LOW, color="red", linestyle="--")
-        self.ax.axhline(y = V_HIGH, color="red", linestyle="--")
-
-        self.ax.fill_between(x = self.ax.set_xlim(), y1=V_LOW,y2=V_HIGH, color="green", hatch='/', alpha=0.2)
-        self.ax.fill_between(x = self.ax.set_xlim(), y1=REF_LOW,y2=V_LOW, color="red", hatch='/', alpha=0.2)
-        self.ax.fill_between(x = self.ax.set_xlim(), y1=V_HIGH,y2=REF_HIGH, color="red", hatch='/', alpha=0.2)
-        
-        
-        self.ax.legend()
+        print("# of voltage readings: " + str(len(self.voltages)))
+        print("Length of convolved vector: " + str(len(self.convolved_voltages)))
+        print(
+            "RMS of reading vector: "
+            + str(np.inner(self.voltages, self.voltages) / len(self.convolved_voltages))
+        )
+        print(
+            "RMS of convolved vector: "
+            + str(
+                np.inner(self.convolved_voltages, self.convolved_voltages)
+                / len(self.convolved_voltages)
+            )
+        )
 
     def read_voltage(self):
         cur_time, cur_volts = self.daq.next_reading()
-        Q = (REF_HIGH - REF_LOW) / 2 ** BITS
+        Q = (REF_HIGH - REF_LOW) / 2**BITS
         cur_volts_converted = cur_volts * Q + REF_LOW
-        print(f"The time is {cur_time} and the voltage is {cur_volts_converted}")
+        print(
+            "The time is "
+            + str(cur_time)
+            + " and the voltage is "
+            + str(cur_volts_converted)
+        )
         self.voltages.append(cur_volts_converted)
         yield 1
+
+    def gaussian_kernel(self, length=5, sigma=0.8):
+        # Create even / odd kernel centered around 0
+        if length % 2 == 0:
+            kernel = np.linspace(-length / 2, length / 2 - 1, length)
+        else:
+            kernel = np.linspace(-(length - 1) / 2.0, (length - 1) / 2.0, length)
+
+        # gaussian = e ^ (-0.5 x^2/σ^2)
+        kernel = np.exp(-0.5 * np.square(kernel) / np.square(sigma))
+
+        # normalize kernel
+        return kernel / np.sum(kernel)
+
+    def convolve_voltage(self):
+        self.convolved_voltages = np.convolve(self.voltages, self.kernel)[0:-self.kernel_length + 1]
     
-    def clean_voltage(self):
-        self.clean_voltages.append(np.average(self.voltages[-10:]))
+    def plot_setup(self):
+        # Clear all axes
+        self.ax.clear()
+        self.axkernel.clear()
+        # Title and labels
+        self.ax.set_title("Voltage vs. Time for DAQ")
+        self.ax.set_ylabel("Voltage")
+        # Ylimits
+        self.ax.set_ylim(REF_LOW - 0.5, REF_HIGH + 0.5)
+    
+    def plot_voltage_limits(self):
+        # Graph upper and lower limits for voltage
+        self.ax.axhline(y=V_LOW, color="red", linestyle="--")
+        self.ax.axhline(y=V_HIGH, color="red", linestyle="--")
+        self.ax.axhline(y=0, color="black", linestyle="--", alpha=0.5)
+        self.ax.fill_between(
+            x=self.ax.set_xlim(), y1=V_LOW, y2=V_HIGH, color="k", hatch="/", alpha=0.1
+        )
+        self.ax.fill_between(
+            x=self.ax.set_xlim(), y1=REF_LOW, y2=V_LOW, color="r", hatch="/", alpha=0.2
+        )
+        self.ax.fill_between(
+            x=self.ax.set_xlim(), y1=V_HIGH, y2=REF_HIGH, color="g", hatch="/", alpha=0.2
+        )
 
-fig, ax = plt.subplots()
-annunciator = Annunciator(ax, my_daq)
+    def plot_voltages(self):
+        # Raw (measured) voltages
+        self.ax.plot(self.voltages, color="k", label="Raw")
+        # Convolved (smoothed) voltages
+        self.ax.plot(self.convolved_voltages, color="C5", label="Convolved Voltages")
+        self.ax.legend()
 
-ani = animation.FuncAnimation(fig, annunciator.update, annunciator.read_voltage, interval=50)
+    def plot_kernel(self):
+        self.axkernel.axhline(y=0, linestyle="--", color="black", alpha=0.5)
+        self.axkernel.plot(self.kernel, color="C5", label="kernel")
+        # Fancy lights
+        if self.convolved_voltages[-1] < V_LOW:
+            self.axkernel.fill_between(
+                x=(
+                    self.axkernel.get_xlim()[0] + 0.2,
+                    self.axkernel.get_xlim()[1] - 0.2,
+                ),
+                y1=0,
+                y2=np.amax(kernel),
+                color="red",
+                alpha=0.2,
+            )
+        if self.convolved_voltages[-1] > V_HIGH:
+            self.axkernel.fill_between(
+                x=(
+                    self.axkernel.get_xlim()[0] + 0.2,
+                    self.axkernel.get_xlim()[1] - 0.2,
+                ),
+                y1=0,
+                y2=np.amax(kernel),
+                color="green",
+                alpha=0.2,
+            )
+
+
+fig, axs = plt.subplots(2, gridspec_kw={"height_ratios": [3, 1]})
+annunciator = Annunciator(axs, my_daq)
+
+ani = animation.FuncAnimation(
+    fig, annunciator.update, annunciator.read_voltage, interval=50
+)
 
 plt.show()
-
-# volts = []
-# x_time = []
-
-# style.use("fivethirtyeight")
-
-# fig, ax = plt.subplots()
-# ln, = ax.plot(x_time, volts)
-
-# def init():
-#     ax.set_ylim(-4.5,4.5)   
-#     ax.set_xlim(0,100)
-#     return ln,
-
-# def update(cur_volts):
-#     global volts
-#     volts.append(cur_volts)
-#     # x_time = x_time[-50,:]
-
-#     ln.set_data(x_time, volts)
-#     return ln,
-
-# def generator(daq):
-#     cur_time, cur_volts = my_daq.next_reading()
-#     return cur_volts
-
-
-# ani = animation.FuncAnimation(fig, update, generator, interval=5, init_func=init, blit=True)
-
-# plt.show()
-
-# # while True:
-# #     cur_time, cur_volts = my_daq.next_reading()
-# #     df.loc[cur_time] = cur_volts
-# #     print(f"The time is {cur_time} and the voltage is {cur_volts}")
