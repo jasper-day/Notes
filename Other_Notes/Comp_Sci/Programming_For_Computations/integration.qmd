@@ -83,7 +83,7 @@ A = 0
 B = 1
 dx = 0.01
 
-x = arange(A, B, dx)
+x = arange(A, B + dx, dx)
 
 f = lambda x: 2 * x * exp(x ** 2)
 
