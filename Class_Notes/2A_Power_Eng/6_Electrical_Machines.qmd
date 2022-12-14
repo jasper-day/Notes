@@ -16,9 +16,14 @@ All machines consist of a *stator* and a *rotor*.
 
 The stator is stationary, the rotor rotates. Either one can contain conductors or permanent magnets (or occasionally neither!).
 
-A squirrel cage rotor has biased copper rods connected with a ring, inserted into the stator.
-
 # Electromagnetic terms
+
+There are four basic principles governing the production of a magnetic field in a device.
+
+1. A current-carrying wire produces a magnetic field in the area around it, according to the right hand rule.
+2. A time-changing magnetic field induces a voltage in a coil of wire if it passes through that coil. (basis of *transformer action*)
+3. A current-carying wire in the presence of a magnetic field has a force induced on it. (basis of *motor action*)
+4. A moving wire in the presence of a magnetic field has a voltage induced in it. (basis of *generator action*)
 
 ## Flux
 
@@ -26,39 +31,77 @@ Symbol $\phi$
 
 Measured in Webers (Wb)
 
-
-Always flows in closed loops
+Always flows in closed loops (the divergence $\nabla \cdot \bf B$ at any point must be 0, like a fluid.)
 
 The direction of flux is determined by the right hand rule. Put your thumb in the direction of current in a DC wire, and the fingers of your thumb match the direction of the flux.
 
-In a coil, put your forefingers in the direction of the current and your thumb points north.
+In a coil, put your forefingers in the direction of the current and your thumb points north (where the flux exits the coil).
 
 ![](Images/6_rhr_flux.png)
 
+## Magnetic field intensity
+
+The magnetic field intensity is a vector **H**. It's produced by a current according to *Ampere's law*:
+
+$$
+\oint \bf H \cdot \it d~\bf l =\it I_{net}
+$$
+
+In a ferromagnetic core, most of the flux will pass through the core itself, so you can assume there is no leakage and the path of integration becomes the mean path of the core. The current passing through the path of integration $I_{net}$ is equal to 
+$Ni$: the number of turns in the coil cutting the path of integration times the current in that coil. Then
+
+$$
+H l_c = Ni
+$$
+
+where $H$ is the magnitude of the magnetic field vector **H**.
+
 ## Flux Density
 
-This is a measure of how much flux fows through a unit cross sectional area.
+This is a measure of how much flux flows through a unit cross sectional area. The symbol of flux density is $\bf B$.
 
-Measured in Teslas, like my net worth.
+Flux density is measured in Teslas (much like my net worth).
 $$
-T = \frac{Wb}{m^2}
+\rm{T} = \frac{\rm{Wb}}{\rm{m}^2}
 $$
 
-Note that unlike most measures, where you measure an actual cross section, the area which goes into calculating Teslas is the product of the *axial length* in the direction of flux flow, and the *width* of the cross section under examination.
+The relationship between magnetic field intensity **H** and resulting magnetic flux density **B** is given by 
+
+$$
+\bf B = \mu \bf H
+$$
+
+The relationship between flux and flux density is 
+
+$$
+\phi = \iint_A \bf{B}\cdot \it d\bf{A}
+$$
+
+If the flux density vector is perpendicular to a plane of area $A$, as usually happens in the internal cross-sections of motors, then the expression simplifies to
+
+$$
+\phi = BA.
+$$
 
 ## B-H curve
 
 In a B-H curve, you plot flux density against magnetic field strength. 
 
 $$
-B = \mu_0 \mu_r H
+\bf B = \mu_0 \mu_r \bf H
 $$
 
 where $\mu_0$ is the permeability of vacuum, and $\mu_r$ is the relative permeability of the material.
 
+The permeability of vacuum is about the same as the permeability of air:
+
+$$
+\mu_0 = 4\pi \times 10^{-7} ~\rm {H/m}
+$$
+
 ## Flux linkage
 
-If a flux $\phi$ flows through a coil with $N$ turns, then the total flux $\psi = N \ \psi$. 
+
 
 If that flux $\phi$ is produced by a coil with a particular current $I_f$, and if the material of the machine is within the linear current-flux portion of its B-H curve, then we can say that 
 $\phi = k\ I_f$.
@@ -98,7 +141,6 @@ You can also remember this much more simply by the right hand rule for cross pro
 ![](https://i.redd.it/ege0jpg7e4961.png)
 
 To determine the power in an electrical machine, note that the force creates a shear stress acting on the air in the air gap, of area $\pi \ D \  L$.
-
 
 $$
 P = 2 \ (B K_E) \left( \pi \frac{D^2}{4} L \right)\ \omega (W)

@@ -11,4 +11,4 @@ DFT = np.power(w, J*K)
 DFT = np.real(DFT)
 
 plt.imshow(DFT)
-plt.show()
+plt.show()  

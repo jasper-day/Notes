@@ -7,6 +7,20 @@ date: Mon 10/03/2022
 
 When you connect a load across a current source, the power consumed is the product of the voltage across the load and the current flowing through that load.
 
+In a DC current, this relationship takes the simple form
+
+$$
+P = VI,
+$${#eq-dc}
+
+since the voltage across the load and the current flowing through it are constant with respect to time.
+
+When voltages and currents are sinusoidal, however, as in an ac circuit, the situation is more complex. There might be a *phase difference* between **V** and **I**. The *instantaneous power* is still the same as in @eq-dc, but the *average* power supplied to the load will be affected by the phase angle between the voltage and the current.
+
+
+
+
+
 $$
 \begin{align}
 p &= vi \\

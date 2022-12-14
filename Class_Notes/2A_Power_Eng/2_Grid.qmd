@@ -21,7 +21,7 @@ The future of the grid - check the National Grid ESO scenarios
 
 # Generation
 
-## Gas generation: Cimmbined Cycle Gas Turbine
+## Gas generation: Combined Cycle Gas Turbine
 
 Virtually all gas generation systems in the UK use CCGT (extremely similar to the turbine in a commercial jet airliner)
 

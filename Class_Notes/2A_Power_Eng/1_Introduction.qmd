@@ -101,9 +101,9 @@ P = \frac{V^2}{R}
 \end{gather}
 $$
 
-## Components
+# Components
 
-### Resistors
+## Resistors
 
 A resistor is a passive electrical component with an electrical resistance. The flow of current is equal to some constant times $V$. 
 
@@ -115,7 +115,7 @@ Resistors can be drawn two ways: *specific*  and *generic*.
 
 ![Generic resistor](Images/1_Generic_Resistor.png)
 
-### Capacitors
+## Capacitors
 
 Two conductive surfaces separated by an insulating dielectric. 
 
@@ -131,7 +131,7 @@ Capacitors are often used as filters in electrical circuits to prevent the flow 
 
 They play a [very important role](#) in power engineering.
 
-### Inductors
+## Inductors
 
 Formed by winding a conductor around a core material (metal, air, steel)
 
@@ -143,7 +143,7 @@ Where $L$ is the inductance, measured in Henrys.
 
 Often used as filters.
 
-### Fuses
+## Fuses
 
 Prevent current from passing above a certain amperage (thin wire which melts).
 
