@@ -1,0 +1,170 @@
+---
+title: Numerical Methods for Integration
+author: Jasper Day
+date: Wed 12/14/2022 
+code-fold: show
+---
+
+The *integral* $\int f(x) dx$ comes to us from mathematics as the antiderivative of a function. That is, you find
+
+$$
+\int_a^b f(x) dx = F(b) - F(a),
+$${#eq-integral}
+
+where 
+
+$$
+f(x) = \frac{dF(x)}{dx}.
+$${#eq-antid}
+
+This mathematical interpretation is often fine for finding exact solutions, but presents problems. Some $f(x)$ require complicated operations to integrate analytically, and some are downright impossible, like the error function 
+$e^{-x^2}$. Computerized integration, however, can be done much more simply. The usual method is to break up @eq-integral into smaller integrals, which are evaluated individually:
+
+$$
+\int_a^b f(x) dx = \int_{x_0}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx + \int_{x_2}^{x_3} f(x) dx + ... + \int_{x_{n-1}}^{x_n} f(x) dx
+$${#eq-numerical}
+
+These smaller integrals can then be approximated in different ways.
+
+For the following examples we will take the integral
+
+$$
+\int_0^t v(t)dt,
+$$
+
+where $v(t)$ is a velocity function
+
+$$
+v(t) = 2te^{t^2}
+$$
+
+Then the analytic solution of our integral equation on the interval [0,1] is given by
+
+$$
+\int_0^1 v(t) dt = \left. e^{t^2} \right|_{t=0}^{t=1} = e - 1 \approx 1.71828...
+$$
+
+# The Trapezoidal Rule
+
+For each $x_i,~ x_{i+1}$ pair, approximate the function $f(x)$ as a straight line connecting
+$f(x_i), ~ f(x_{i+1})$. The equation of this line is
+
+$$
+\begin{align}
+f^*(x) &= f(x_i) + \frac{f(x_{i+1}) - f(x_i)}{x_{i+1} - x_i}(x - x_i) \\
+&= f(x_i) + m(x - x_i)
+\end{align}
+$$
+
+with $m = \frac{f(x_{i+1} - f(x_i))}{x_{i+1} - x_i}$
+
+which we can integrate:
+
+$$
+\begin{align}
+\int_{x_i}^{x_{i+1}} f^*(x) &= \left[ xf(x_i) + \frac{1}{2}mx^2 - x_imx\right]_{x=x_i}^{x=x_{i+1}}\\
+&= (x_{i + 1} - x_i) f(x_i) + \frac{1}{2} m x_{i+1}^2 - \frac{1}{2}mx_i^2 + mx_i^2 - mx_{i+1}x_i \\
+&= (x_{i + 1} - x_i) f(x_i) + \frac{1}{2}m\left( x_{i+1}^2 - 2x_ix_{i+1} + x_i^2\right) \\
+&= (x_{i + 1} - x_i) f(x_i) + \frac{1}{2}m \left(x_{i+1} - x_i\right)^2,
+\end{align}
+$$
+
+which is the area enclosed by the trapezoid in @fig-trapezoid.
+
+![](images/trapezoid.jpg){#fig-trapezoid}
+
+This trapezoidal approximation can be easily implemented in python:
+
+```{python}
+from math import exp
+from numpy import arange
+
+A = 0
+B = 1
+dx = 0.01
+
+x = arange(A, B, dx)
+
+f = lambda x: 2 * x * exp(x ** 2)
+
+def cumtrapz(x,f):
+    def trapezoid(x, f, index):
+        xi = x[index]
+        xj = x[index + 1]
+        deltax = xj-xi
+        m = (f(xj) - f(xi))/(deltax)
+        return (deltax) * f(xi) + 0.5 * m * (deltax)**2
+    trapezoids = [trapezoid(x,f,index) for index in range(len(x)-1)]
+    # i love list comprehensions
+    # and cumtrapz (with apologies to MatLab)
+    return sum(trapezoids)
+
+print(cumtrapz(x,f))
+```
+
+Note that the trapezoidal sum contains the correcting term $1/2 m(x_{i+1}-x_{i})^2$, which quickly goes to zero as 
+$\Delta x$, the difference in $x_{i+1}$ and $x_i$, diminishes.
+
+This suggests that a close approximation of the result from the trapezoidal rule can be obtained by taking the sum from either side:
+
+
+```{python}
+
+def cumleft(x,f):
+    def leftint(x, f, index):
+        xi = x[index]
+        xj = x[index + 1]
+        deltax = xj-xi
+        return (deltax) * f(xi)
+    leftints = [leftint(x,f,index) for index in range(len(x)-1)]
+    return sum(leftints)
+
+print(cumleft(x,f))
+```
+
+Indexing from the left will undershoot an increasing function, and indexing from the right will overshoot.
+
+```{python}
+def cumright(x,f):
+    def rightint(x, f, index):
+        xi = x[index]
+        xj = x[index + 1]
+        deltax = xj-xi
+        return (deltax) * f(xj)
+    rightints = [rightint(x,f,index) for index in range(len(x)-1)]
+    return sum(rightints)
+
+print(cumright(x,f))
+```
+
+Obviously, the trapezoidal approximation is better than either the approximation with constant steps from the left or right. In fact, `cumtrapz` can be obtained simply by averaging `cumleft` and `cumright`:
+
+```{python}
+print("Value from trapezoidal sum:")
+print(cumtrapz(x, f))
+print("Average of left and right integrals:")
+print((cumleft(x, f) + cumright(x, f))/2)
+```
+
+# The Midpoint Method
+
+A better approximation of the value of the function can be found by creating a rectangle at the midpoint of the subintervals $[x_i, x_{i+1}]$:
+
+![](images/midpoint.jpg){#fig-midpoint}
+
+```{python}
+def cummid(x,f):
+    def midint(x,f,index):
+        xi = x[index]
+        xj = x[index + 1]
+        dx = xj - xi
+        return dx * f(xi + dx/2)
+    midints = [midint(x,f,index) for index in range(len(x) - 1)]
+    return sum(midints)
+
+print(cummid(x,f))
+```
+
+As you can see, the midpoint approximation is a little closer to our desired value of $1.71828...$ than the trapezoidal approximation.
+
+Further methods of numerically approximating integrals, such as [Simpson's Rule](https://en.wikipedia.org/wiki/Simpson%27s_rule) and [Gaussian integration](https://en.wikipedia.org/wiki/Gaussian_quadrature) exist and are easily implemented.

@@ -1,0 +1,36 @@
+---
+title: Math 2A Cheat Sheet
+subtitle: What to Put on It
+author: Jasper Day
+date: Sun 12/11/2022 
+---
+
+Derivative rules for sinh and cosh:
+
+$$
+\frac{d}{dx}\sinh{x} = \cosh{x} \hspace{2em} \frac{d}{dx}\cosh{x} = \sinh{x}
+$${#eq-sinh}
+
+Governing equation for a damped oscillator:
+
+$$
+\frac{d^2x}{dt^2} + 2 \xi \omega \frac{dx}{dt} + \omega^2x = 0
+$$
+
+Roots:
+
+$$
+s = - \xi \omega \pm \sqrt{\xi^2 - 1}
+$$
+
+Exponential response to forced damping:
+
+$$
+Ay'' + By' + Cy = e^{st} \hspace{0.5em} \textnormal{is solved by} \hspace{0.5em} y = Ye^{st} = \frac{1}{As^2 + Bs + C}e^{st}
+$$
+
+That Y is the transfer function. $s$ may be any complex number $a + i\omega$. For resonance introduce an extra $t$: $y_p = Yte^{st}$.
+
+Undamped forced oscillation with $f(t) = \sin(n\pi t)$ or $\cos(n\pi t)$:
+
+STABILITY DOES NOT DEPEND ON SYSTEM INPUT

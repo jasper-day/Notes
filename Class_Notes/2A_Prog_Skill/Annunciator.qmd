@@ -3,7 +3,7 @@ title: Annunciator Project Lab Report
 author: Jasper Day
 date: Sun 11/27/2022 
 documentclass: article
-format: pdf
+# format: pdf
 number-sections: false
 ---
 <!-- two side report describing the algorithm you have designed, how the implementation has been done,  the timings at which the lights come on and off must be given, and any challenges you faced explained.  One short paragraph should be included explaining how a sensor like this could be used in your own engineering discipline.  Please include the listing of your Python programme as an appendix to the report.  Please note that the program listing will not count against the page limit. -->
