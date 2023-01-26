@@ -1,0 +1,32 @@
+---
+title: Inviscid, Irrotational flow over a cylinder
+date: Mon 12/26/2022 
+author: Jasper Day
+---
+
+We have four fundamental building blocks for inviscid, irrotational flow.
+
+| Type of Flow | Velocity | $\phi$ | $\psi$ |
+|--------------|----------|--------|--------|
+| Uniform flow in x-direction | $u = V_{\infty}$ | $V_{\infty} x$ | $V_{\infty} y$ |
+| Source | $V_r = \frac{\Lambda}{2 \pi r}$ | $\frac{\Lambda}{2\pi} \ln{r}$ | $ \frac{\Lambda}{2\pi} \theta $ |
+| Vortex | $V_{\theta} = -\frac{\Gamma}{2 \pi r} $  | $ -\frac{\Gamma}{2\pi}\theta $ | $\frac{\Gamma}{2\pi }\ln{r}$ |
+| Doublet | $V_r = -\frac{\kappa}{2 \pi}\frac{\cos{\theta}}{r^2}$ | $\frac{\kappa}{2\pi} \frac{\cos{\theta}}{r} $ | $ -\frac{\kappa}{2\pi} \frac{\sin{theta}}{r} $ |
+| | $V_{\theta} = -\frac{\kappa}{2\pi} \frac{\sin{\theta}}{r^2}$ | | |
+
+Reference: Anderson, *Fundamentals of Aerodynamics*, pg. 267
+
+These flows may be combined to create flows over various surfaces. When you combine the uniform flow in the x-direction with a doublet source, you obtain flow over a *cylinder*:
+
+Recall that constant values of the stream function $\psi$ correspond to streamlines of the flow field. We convert everything to polar coordinates for convenience:
+
+Uniform flow: $\psi = V_{\infty}\,r \,\sin{\theta} $
+
+Doublet flow: $\psi = -\frac{\kappa}{2\pi}\, \frac{\sin{\theta}}{r}$
+
+Result: Flow over a cylinder
+
+$$
+\psi =  V_{\infty}\,r\, \sin{\theta} -\frac{\kappa}{2\pi} \,\frac{\sin{\theta}}{r}
+$$
+

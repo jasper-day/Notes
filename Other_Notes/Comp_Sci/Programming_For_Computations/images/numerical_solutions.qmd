@@ -1,0 +1,12 @@
+---
+title: Solving Nonlinear Algebraic Equations
+author: Jasper Day
+date: Wed 12/14/2022 
+---
+
+It is often desirable to see where a function of one or many variables achieves a particular value, a local maximum, or an inflection point. This can be done analytically for simple functions like small polynomials and trigonometric functions, but analytic solutions to higher-degree polynomials or nonlinear equations are usually impossible to find. 
+
+They can, however, be solved numerically.
+
+Consider a function whose desired values occur at $f(x) = 0$ (any function with a desired value may be put in this form). We use computer programs to determine the roots of this function.
+
