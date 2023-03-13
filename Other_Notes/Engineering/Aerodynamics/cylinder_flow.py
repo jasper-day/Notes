@@ -53,4 +53,4 @@ def update_figure(rotation):
 
 
 if __name__ == "__main__":
-    app.run_server(host= '192.168.0.67', debug = True)
+    app.run_server()

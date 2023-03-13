@@ -1,0 +1,32 @@
+---
+title: Gyroscope Lab
+subtitle: Dynamics 2 MECE08009
+author: Jasper Day
+date: Thu 02/02/2023 
+bibliography: satellite.bib
+csl: D:/documents/csl_citation_styles/ieee.csl
+---
+
+# Introduction
+
+<!-- In no more than 200 words explain the purpose of the experiment and why gyroscopes are important -->
+
+Gyroscopes are devices found in most large vehicles, including boats, airplanes, and spaceships. At its core, a gyroscope is a spinning mass, often balanced on gimbals. Since gyroscopes stay stationary in an inertial reference frame, they can be used to calibrate navigational systems. Further, an applied torque will cause a gyro to precess in a direction 90° offset to the applied torque, with application in attitude control and balance.
+
+Gyroscopes are used to adjust the attitude of sattelites: when the satellite applies a torque to its gyroscope, the gyroscope applies an equal and opposite torque to the satellite, allowing its attitude to be adjusted without throwing mass overboard. [@CURTIS2010573].
+
+Gyroscopes have also been used for fun. They're sold as childrens' toys, and can serve as toys for academics and roboticists as well. Reference @7508999 create a unicycle balancing robot, which uses the precession of two symmetric flywheels to maintain its balance. A simple feedback loop (combined with understanding of gyroscope dynamics) allows their robot to balance.
+
+# Results and Error Analysis
+
+<!-- State the formal error expressions for the experiments in Tables 1 and 2 and show your calculations for the first line of each table. Paste the graphs and tables into this section. Ensure all graphs and tables are labelled appropriately. -->
+
+
+
+
+
+# Discussion
+
+# Conclusions
+
+# References

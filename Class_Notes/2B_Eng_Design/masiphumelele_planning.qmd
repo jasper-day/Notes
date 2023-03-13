@@ -1,0 +1,58 @@
+---
+title: Masterplan creation for settlement of Masiphumelele
+author: Jasper Day
+date: Fri 03/03/2023 
+---
+
+Main ideas:
+
+- Fire prevention
+- Medicinal health
+- Schooling / education
+
+Useful sources:
+
+1. https://discovered.ed.ac.uk/permalink/44UOE_INST/1viuo5v/cdi_proquest_journals_2524194651: Punitive Welfare on the Margins of the State: Narratives of Punishment and (In)Justice in Masiphumelele
+
+Interviews with local Masiphumelele residents following incident of mob justice. Much useful context about the township and settlement and the opinions of the residents.
+
+Key quotes: 
+
+"With the assistance of various interviewees, I went on multiple site visits to the Wetlands and to locations where instances of collective violence had occurred. Since informal settlements have either non-existent or sporadic and inadequate access to the services that ratepayers in more affluent areas pay for, conditions in the Wetlands are appalling. Approximately 3000 people live in each of its seven sections; there is only one waterpoint and the ratio of outside, often malfunctioning, toilets to residents is approximately 1 to 100 (Bulelani, 21 June 2018; field notes, 21 June 2018). The canals that run between the sections are often clogged with rubbish, including sewage; the area is prone to fires and flooding and massive mounds of garbage lie heaped throughout the narrow footpaths that traverse the area (field notes, 21 June 2018). During one site visit, I witnessed the aftermath of a City of Cape Town authorized shack demolition and a shack fire, which residents doused themselves by forming a human chain, passing buckets from one person to the next. Despite the fact that someone had called the fire department, a fire engine did not arrive. This is typical of the way in which residents in informal settlements have been forced (out of necessity) to assume responsibility for ‘self-governance’ (Steinberg, 2016: 11), including the investigation of crime and punishing of alleged criminals (Steinberg, 2016)."
+
+
+2. https://discovered.ed.ac.uk/permalink/44UOE_INST/7g3mt6/alma9924616241402466 : Modelling the Relative Risk of Large Fires
+across the Informal Settlements of Cape Town
+
+Masiphumelele had a risk score of 63, one of the highest in the dataset.
+
+Key quotes:
+
+"Once the fire service reaches the vicinity of a burning settlement, they must still navigate to a position from which they can engage the fire. A significant issue with informal settlements is that, though there may be road access to the settlement, there may be few or no access routes of sufficient quality within the settlement, which delays or even prevents the fire service from reaching the fire. Certainly, difficulty accessing the interior of the settlement has been noted as a pivotal factor in highly destructive fires in Cape Town (eNCA, 2017), Nairobi (BBC, 2018) and Manila (Villamor & Goldman, 2017) – fires which destroyed many thousands of dwellings in a matter of hours"
+
+"The relative weights produced (Table 4.3) highlight that dwelling spacing, critical patch size, wind speed and topography are expected to be the most influential factors for fire risk. Each has a relative weight above the average of 10%, with dwelling spacing constituting the largest proportion – 15.74% of risk."
+
+3. https://ewn.co.za/2015/11/30/Over-4000-left-homeless-following-Masiphumelele-shack-fire
+
+Pictures from the Masiphumelele house fire
+
+4. https://www.masicorp.org/masicorp/about-masiphumelele/ 
+
+From a non-profit "established to make a real difference in the lives of the residents of Masiphumelele".
+
+"If all you can afford is a single room shack, then you have enough space for one double bed, something on which to stand your cooktop, a small refrigerator, probably with an old TV on top, and some cartons and suitcases for all your worldly goods. The floor is the dirt beneath your feet and most people will have a piece of linoleum or carpet.
+
+"You can get connected to electricity but water is from a standpipe and a toilet will be within 50 metres and shared with many others – queuing is a way of life.
+
+"Most Masiphumelele families, of up to 5 or 6, live in one or two roomed shacks. Sleeping is by rota in the bed.
+
+"Masicorp built 23 brick construction houses in the first 10 years of its existence for erf owners and there are other NGO’s working in the area, most notably and successfully the Mellon Foundation mentioned earlier and the Amakhaya ngoku Housing Association. As of January 2014, 232 families have been re-housed in 8 blocks of flats with a community hall and park/playground under construction."
+
+"Shacks get built from anything that comes to hand: wooden pallets on-end for the walls, plastic sheeting nailed to the outside to keep out the wind and cardboard cartons pinned to the inside to keep out the cold. A few sheets of corrugated tin and some wood to support it are needed for the roof, as are a few big stones on top to help keep it place in the Cape storms. Heating in the winter is necessary, and the cheapest way to heat a shack is to use a paraffin heater.
+
+"A shack is not well ventilated in any event and paraffin heaters put out heat nd a lot of moisture. They keep people warm, but they also contribute to the many respiratory health problems that residents of Masiphumelele suffer."
+
+5. https://www.masicorp.org/masicorp/an-inside-guide-into-chasmay-road-campus/ 
+
+A list of various community initiatives undertaken by Masicorp.
+
