@@ -1,0 +1,158 @@
+---
+title: Journalism As A Profession
+subtitle: Notes
+author: Jasper Day
+date: Mon 02/13/2023 
+csl: D:/documents/csl_citation_styles/ieee.csl
+bibliography: journalism.bib
+---
+
+<!-- The task:
+
+Select an occupation and discuss whether the occupation can be considered a profession.
+
+- select an occupation
+- showcase your understanding of the occupation in relation to the social and protectionist view
+- consider each of the attributes of a profession and the degree to which your chosen occupation does or does not accord with these.
+
+Do not exceed 2 pages of A4.
+
+ -->
+
+Ideas: 
+
+- Open source software contributor
+- Something in entertainment (acting?)
+- Journalism ***
+
+Key points about journalism:
+
+direct, obvious:
+- journalists provide a *social good*: investigating (creating) and disseminating information about issues in society.
+- journalists also have the ability to create harm; trusted sources can push narratives, encourage bad things (iraq war, "no evidence" as relates to medical treatments)
+    - journalism as a source of narratives - NYT oped about journalists not having to tell the truth anymore as long as it helps black people?
+- journalists ideally not controlled by government - first amendment. But there are still gatekeepers of journalism in the form of big publishing companies. In day of internet there is basically no gatekeeping to journalism but still network effects which make it difficult for small / independent journalists to reach large audiences.
+- journalists rely on the good reputation of their profession to convince people that the news that they are spreading is correct and accurate
+- contrast journalism in command countries (say Communist Russia) - where the press is controlled by the government "for the good of the people" resulting in many bad things
+    - Good quote in here from Bend Sinister:
+        "In our truly democratic nation a homogeneous press is responsible before the nation for the correctness of the political education which it provides."
+    - "It has been a magnificent harvest" means the harvest is ok, "it has been a good harvest" means we're all going to starve to death
+    - Isvestiya and Pravda - professional propaganda sources (of course they were professionals: *they were the government*. Actually, is the government a professional body?)
+    - Samizdat
+- What separates a "journalist" from some dude (lady etc) who just writes stuff?
+    - they get paid for it
+    - they work for a major newspaper
+- Code of ethics? Good to see if the NYT has one of these. I would assume that they do, and I would assume that it has changed significantly in recent years. Certainly they have slogans: "All the news that's fit to print." "Democracy dies in darkness". "Always on hand" - that one kinda sucks ngl wsj step up your game
+- Society of Professional Journalists exists, has a code of ethics, *does not* indicate pay increases from joining (indicates different relationship with the government from most other professions). Other professions are allowed to gatekeep only professionals with the blessing of the government. Journalists are not, because that would clearly be the government infringing on freedom of the press. (If only we had freedom of barbering, medicine, and engineering!). We recognize that government has a conflict of interest in this case: not only would gatekeeping lower the quality of journalism (by reducing the number of journalists), but it would also reduce trust in journalism because the fourth estate is intended to keep a check on the government itself, which is not generally true of eg doctors.
+
+Notes:
+
+tim vos [@timvos2018]
+
+who is a journalist?
+- Craft and Davis 2016: "Journalism is a set of transparent, independent procedures aimed at gathering, verifying and reporting truthful information of consequence to citizens in a democracy."
+    - values and practices
+- "journalism is the socially valued and structured work of crafting and distributing socially significant news and discussion"
+    - seems to beg the question of the social view: if it's not socially valued, it's not journalism, per that description.
+    - structured: precludes "random acts of journalism" 
+    - Socially valued: honesty, independence, serving self-governance
+    - discussion: his definition includes op-eds, letters to editor, blogged responses
+    - socially significant news: public good and service: "connecting people to events and discussions that shape the world we share".
+- journalism as text, as profession, as institution, as people, as practices
+
+"Some journalists and journalism studies scholars have embraced the idea of journalism being a profession. It not only ennobles the work, it speaks to its social purpose. A profession's obligation is to the public, not to the self or to the financial or political ends of publishers (Davis 2010). That obligation is expressed in formal codes of ethics, creating a socially respected identity for the field (Ward 2004). A profession has authority and autonomy in regulating itself, which speaks to a normative desire to define journalism in terms of press freedom and freedom of speech (Craft 2010)." [p 4]
+- journalists have autonomy, social purpose, social contract, codes of ethics
+
+"Meanwhile, some practicioners and scholars have chafed at the notion of journalism as a profession. They question whether journalism can really be a profession if its membership is not controlled, if it has no monopoly on specialized knowledge, and so forth. Some have even questioned whether professionalism, which involves some level of self-regulation, might be its own form of limiting press freedom (merril 1990)."
+- journalism lacks protection from people who want to become journalists and spread "fake news" or misinformation.
+
+"Journalistic work is rooted in an informal social contract: providing public service in exchange for some degree of press freedom."
+
+Adam & Clark 2006 argue for journalism as a *craft* rather than a profession. -> "'craft' fails to convey the socal import, its significance beyond the here and now".
+
+- "journalism can and does exist in places with minimal democracy" (mostly non-Western and non-modern forms of journalism)
+    - This could be very valuable as a comparison (see again USSR)
+
+"In the US, professionalization marked a turn away from other ways of elevating the occupation, especially organizing as a craft union... The professionalization project narrowed the path from the composing room to the newsroom, breaking the common culture between mechanical and editorial workers, and invited reporters and correspondents to think of their work as intellectual or knowledge-based, like medicine or law."
+
+"There was noting inherent in journalism that retarded unionization. In other countries, particularly Italy and the Nordic countries, professionalization and uninonization worked together. The variation in these histories testifies to the artificiality of journalism's professional status. Any profession requires a monopoly on practice, often (as in the case of medicine) enforced by state licensing. Such a monopoly usually draws legitimacy from an arcane body of theoretical knowledge, like medical science. Journalism has never had such a science, and in most countries lacks a strict licensing process as well. But the occupation did come to exercise something like a monopoly over news production, not because of science but because of bottlenecks, like wires services and dominant local newspapers and later broadcasting."
+- which countries have a strict licensing process for journalists?
+- no arcane body of knowledge
+
+"What is more unusual about journalism as a profession is its lack of independence. In theory, practitioners in the classic professions, like medicine or the clergy, contain the means of production in their heads and hands, and therefore do not have to work for a company or an employer. They can draw their income directly from their clients or patients. Because the professionals hold knowledge, moreover, their clients are dependent on them. Journalists hold knowledge, but it is not theoretical in nature; one might argue that the public depends on journalists in the same way that patients depend on doctors, but in practice a journalist can serve the public usually only by working for a news organization, which can fire her or him at will. Journalists’ income depends not on the public, but on the employing news organization, which often derives the large majority of its revenue from advertisers.""
+
+- Journalistic gatekeeping: filtering out immense stream of new information, chooosing what to keep and what to discard, is a fundamental role of prof. journalism 
+    - newspaper had a limited number of pages
+- Seven consideratios that affect news selection:
+    - source (who did you get it from)
+    - substantive (what is it)
+    - product (will it sell)
+    - value
+    - political
+    - commercial
+    - audience
+
+- journalism and censorship: threats from the *state*, the *market*, and the *people*. 
+    - official ideology of PRC holds that media should serve as the mouthpieceof the Communist Party.
+    - only 13% of world's population live in societies where 'coverage of political news is robust, the safety of journalists is guaranteed, state intrusion in media affairs is minimal, and the press is not subject to onerous legal or economic pressures.'
+    - public accountability provides legitimacy to government; but governments want to reduce the uncertainty that follows freedom of choce.
+    - pre-enlightenment: licensing of newspapers, vetting of articles, sedition and blasphemy laws to torture, jail, or execute critics of the powerful.
+        - still extant in malaysia and singapore
+        - imprisonment of journalists regular in egypt and turkey
+        - discrimination between individual and organized communication: states cannot suppress information as before, but prevent its organization and mobilization
+            - bottlenecks in getting information out to lots of people that originally led to the journalist professional monopoly on journalism still extant despite internet (citizen journalism simply not as impactful).
+    - people versus journalists: people often don't want to hear the truth, efforts to serve the public interest may be hampered by the public.
+        - indonesia: exclusivist & asolutist islam oppressing shia muslims. News organizations have to tone down their criticism of hard-line groups due to reactions from the ground.
+
+Virtue Ethics and Professional Journalism [@aquinn2018]
+
+- Profession vs craft
+    - pro profession: 
+        - social: moral obligations, ennoblement
+        - protectionist: bottlenecks constraining supply of organized / collectivized information
+    - anti profession: 
+        - protectionist: lack of arcane knowledge, training, licensure, self-regulation, often autonomy
+        - social: none?
+
+- sociological views of profession (cataloging what a profession actually is):
+    - finite set of professional traits
+        - salary or fees
+        - professional licensing
+        - autonomous
+        - ethical guidelines
+        - professional commitment (to society)
+        - determine a method of professional identification (clubs / brands ie imeche)
+        - clients instead of customers
+- power view of professionalism
+    - secure power, prestige, privileges (protectionism)
+    - facilitated by high demand, social status of members
+    - technical expertise separates insiders from outsiders
+- moral view
+    - autonomy -> competence, discretion, judgement
+    - theory / education -> competence
+    - ethics -> good behavior
+    - professional culture -> standards from collective consciousness
+
+journalists resist labeling: constraints threaten free speech, or inaccurate qua traditional professions. They lack most or all of the relevant sociological and power traits. However, they have a moral obligation to society (to provide relevant news and discussion, per @timvos2018)
+
+"reporters’ unions in the United States have routinely resisted the notion that a subsection of journalists—news gatherers such as reporters and photographers—are professionals because it prevents them from being paid for working overtime."
+
+moral aspects of journalism:
+- public interest news
+- objective reporting (historical basis in @timvos2018)
+
+Problem of the "professional thief": satisfies all of the sociological traits of a profession while running highly counter to the moral traits of the profession. Journalists are somewhat the opposite of professional thieves: they're professional anti-thieves. 
+
+- Thieves are ideally persecuted by the government; journalists are ideally unregulated by the government
+- Thieves hurt society, journalists ideally help society (by distribution of news)
+- thieves are organized, have high fees, are autonomous, can have methods of professional identification (eg mafia), and have clients instead of customers
+- thieves do not have professional licensing, although the mafia will use force to exclude infringement on its territory, and gangs offer a sort of analogue and counter to the idea of professional licensing
+- thieves have little protection and low social status
+- thieves are morally bad
+- journalists are not organized, do not have high fees, are not particularly autonomous, do not belong to gangs (although they do have a somewhat meaningless professional organization), and have bosses instead of customers or clients.
+- journalists do not have professional licensing, although major newspaper publishers have outsized reach thanks to network effects that multiply their audience.
+
+@timvos2018
+@chris2020
+@aquinn2018
+
