@@ -1,0 +1,134 @@
+---
+title: Materials Laboratory
+author: Jasper Day
+date: Mon 03/20/2023 
+csl: D:/documents/csl_citation_styles/ieee.csl
+format:
+  pdf:
+    documentclass: scrartcl
+    fig-pos: H
+bibliography: materials.bib
+---
+
+# Introduction
+
+<!-- Give a brief introduction to your report, stating the aims and outlining what you did. 
+ -->
+
+In this laboratory, different material properties were tested and tabulated. Specimens were tested to failure in both compression and tension. The strengths to yield and ultimate strengths of the materials were calculated, and sketches were made of the fracture surfaces. 
+
+Brittle materials were found to fail suddenly, without warning; ductile specimens experienced significant elongation to failure. The most ductile specimens, i.e High Density Polyethylene (HDPE) elongated as much as 300% before failing. These differences align with what would be expected of those materials due to their particular microstructure.
+
+Anisotropic materials like wood or laminated composites showed different characteristics when loaded in different directions, again due to microstructure. These materials are composed of small tubes which are strong in tension but weak in compression; when loads occur in neither of these directions, the behavior is dominated by the behavior of the matrix in which those tubes are embedded.
+
+
+
+# Mechanical Properties
+
+<!-- This section should provide three stress-strain curves, with key features annotated, and a table of
+results.
+• A graph with the stress-strain curves for the metallic specimens -> steel, aluminum
+• A graph with the stress-strain curves for all the polymer specimens.
+• A graph with the stress-strain curves for both timber specimens, concrete, and gypsum.
+• Table of results. For all specimens, include: specimen details, yield stress and ultimate stress. For
+tensile specimens only, include: elongation (%) and reduction in area at failure location (%). You
+may find it helpful to include data such as specimen dimensions etc. that were used in
+determining the results. Give the units for each of the values.
+You may need to correct your data so that it starts at (0,0) on the stress-strain diagram. Explain how you
+did this.
+Describe how you calculated stress, strain, ultimate strength, yield strength, and elongation, but you
+don’t need to show every calculation for every specimen. Comment on the behaviour of each specimen,
+and trends or relationships you observe between them. -->
+
+The engineering stress $\sigma$ was calculated by dividing the applied force by the initial area of the specimen: 
+
+$$
+\sigma = \frac{F_{applied}}{A_{initial}}
+$$
+
+Strain was calculated as the elongation in the length of the specimen divided by the gauge length of the specimen. For the tensile and compressive tests, the gauge length was taken as the distance between the jaws of the testing machine.
+
+$$
+\varepsilon = \frac{\delta}{\ell},
+$$
+
+where $\delta$ is the elongation and $\ell$ is the original (unstressed) length of the specimen.
+
+To calculate the yield strain, an estimate of the elastic modulus of the material was required. This was found by linear regression along the elastic portion of the stress-strain curve; this line of elastic best fit was offset by 0.2% of the gauge length and its intersection with the curve noted. The ultimate stress was taken as the maximum value of stress achieved, for the tensile tests, and as the stress at the end of the elastic region for the (non-brittle) compressive tests.
+
+When plotting the materials, ductile specimens were plotted on different axes than the brittle specimens, as the ductile specimens tended to elongate much further than the brittle specimens did.
+
+![Stress vs Strain for Metallic Specimens](metals.png){#fig-metal}
+
+![Stress vs Strain for Polymeric Specimens](polys_better_small.png){#fig-poly}
+
+![Stress vs Strain for Compressive Tests](compressive_better.png){#fig-comp}
+
+| Material type | Yield Stress [MPa] | Ultimate Stress [MPa] | Elongation (%) | Reduction in Area at Failure (%) |
+|----------|--------------------|-----------------------|----------------|----------------------------------|
+| Steel     | 355 | 416    | 33% | 68% |
+| Aluminum  | 127 | 212    | 15% | 49% |
+| PLA       | 29 | 29     | 3.5% | 0% |
+| Polystyrene | 39 | 39   | 2.5% | (Not measured) |
+| HDPE      | 15 | 20.3   | 366% | - |
+| LDPE      | 8 | 9.7    | 121% | - |
+| Concrete  | 47 | 47     | - | - |
+| Gypsum    | 56 | 56     | - | - |
+| Timber (Parallel to Grain)        | 7.2 | 7.2 | - | - |
+| Timber (Perpendicular to Grain)   | 6.8 | 6.8 | - | - |
+: Material properties {#tbl-mats tbl-colwidths="[27,15,18,15,25]"}
+
+
+
+# Fracture Sketches
+
+<!-- This section should contain annotated sketches of each of the fractured specimens, to describe your
+observations. In addition, briefly discuss the characteristics that you observe.
+In your discussion, consider:
+• What do you notice about the shape of the specimens now, compared to before testing?
+• What do the fracture surfaces look like?
+• Can you see any of the internal structure? If so, what does it look like?
+• What differences do you notice between the different specimens, between materials and
+between tension and compression tests?
+• Can you make links between the appearance of the fractured specimens and the properties and
+microstructure of the materials? -->
+
+The specimens can be broadly classified into ductile and brittle materials. The more ductile a material is, the more it tends to elongate before breaking. Brittle materials, on the other hand, fail suddenly and without warning [@shigley, p. 254]. 
+
+Ductile materials extend further than brittle materials because their microstructure rearranges to accommodate the strain [@new_science, p. 92]. In a metal, for example, dislocations in the crystal lattice allow the layers of the lattice to shear with little stress [@new_science, pp. 216-217]. In a plastic, on the other hand, the long chains of molecules, which are randomly arranged in an undeformed sample, stretch in the direction of principal stress to accommodate an applied load [@materials, p. 74]. This untangling action of the chains gives certain "elastomers" a great amount of elasticity and enables them to withstand immense amounts of elongation before failure.
+
+In the steel and aluminum specimens (@fig-metal), a degree of necking was observed in the specimens. This is due to the fact that the principal stresses of an object in pure tension exist at an angle to the applied tension, so the material deforms primarily at an angle to the applied force [@shigley, p. 187]. The mechanism of break occurs with many small fractures parallel to the applied force, which creates a shiny, dendritic surface at the point of failure. These fractures are created as voids within the material expand (due to stress concentrations at their tips) and eventually link along the fracture line [@materials, p. 211].
+
+![Failure of the aluminum and steel specimens](Steel.png){#fig-metal}
+
+There was a broad range of behavior in the polymeric specimens. The polystyrene and PLA both exhibited brittle failure, with no ductile section of the stress-strain curve. At the point of failure of the polystyrene, horizontal cracks appeared across the entirety of the surface, and it broke into multiple sections at different horizontal points (@fig-polystyrene). It is likely that these horizontal cracks were already present in the surface, but were enlarged under the tensile stress at the point of fracture. Horizontal cracks would spread preferentially to cracks in other directions because they release the most strain energy when they propagate, which also explains why the specimen broke in a horizontal direction [@new_science, p. 81]
+
+![Polystyrene exhibiting horizontal fracture](ps.png){#fig-polystyrene}
+
+The high density polyethylene exhibited immense amounts of ductile flow. High density polyethylene has very long molecules, and it was these long molecular chains that allow for significant deformaion before breakage [@materials, p. 74]. The point of fracture exhibited almost fibrous behavior, as the molecular chains were so aligned with each other that voids or inclusions could spread a long distance parallel to the applied load before breaking along the chains.
+
+![High Density Polyethylene, with extreme elongation and necking](hdpe.png){#fig-hdpe}
+
+The low density polyethylene (LDPE) exhibited characteristics of both the polystyrene and the high density polyethylene. It showed horizontal surface cracks or washboarding but exhibited significant necking and elongation before fracture. Since the molecular chains in LDPE are not as long as those in HDPE, the specimen could not elongate quite as much as the LDPE could.
+
+![Low Density Polyethylene](ldpe.png){#fig-ldpe}
+
+The concrete exhibited brittle compressive failure, fracturing into many pieces of loose aggregate. @fig-concrete shows that the failure occurred at an angle to the applied load, much like the ductile specimens which were studied earlier. Unlike the polycarbonate, where a single crack suffices to break the material, concrete is filled with many cracks, defects, and inclusions. Under compression, these cracks propagate *parallel* to the applied compression, and will only propagate further when the applied stress is increased [@materials, p. 214]. If the concrete had been loaded in tension, then the worst crack in the material would have quickly propagated and destroyed the specimen, but since it was loaded in compression, the material did not fail until enough internal cracks had built up to allow the specimen to crush.
+
+![Concrete loaded in compression showing crush band](concrete.png){#fig-concrete}
+
+The timber specimens exhibited two different characteristics in compression. When the grains were aligned parallel with the applied force, the specimen showed a slightly lower compressive modulus. Timber loaded along the grain fails by buckling of the internal tubes or fibers of the wood, which displays as visible compression creases along the grain of the specimen (@fig-wood) [@structures, p. 276]. When the grains are loaded perpendicular to the applied force, the timber specimen instead bulges in shear along its sides, and the grains are seen to be squashed out of the sides - much like a tube of toothpaste.
+
+![Timber loaded in two different directions](timber.png){#fig-wood}
+
+# Conclusion
+
+<!-- This section should draw together the key points made in the main part of the report. -->
+
+Different materials exhibit wildly different properties under load, thanks to their particular microstructures. While there are obvious differences between materials (like the difference between brittle and ductile materials), there are also subtle differences, depending sometimes on the orientation of the material itself.
+
+Every failure case exhibited different methods of crack creation and propagation. The more brittle the material was, the more likely it was to form horizontal cracks on the surface when pulled in tension, and it was these horizontal cracks that caused the material to fail. The ductile materials, however, tended to exhibit cracks parallel to the direction of the applied force, and these cracks eventually grew together and became large enough to break the material. 
+
+When choosing materials for a particular purpose, consideration should be given to the microstructure of the material to make sure it fits that purpose.
+
+# References
