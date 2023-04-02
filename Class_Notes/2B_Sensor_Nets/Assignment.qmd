@@ -1,0 +1,123 @@
+---
+title: SNADA Machine Learning Assignment
+author: Jasper Day
+date: Tue 03/14/2023 
+---
+
+Q1:
+
+```py
+# `rate` is number of samples per second; `len(data)` is the number of samples.
+# divide the number of samples by the rate to get the time in seconds
+
+time = len(data) / rate
+```
+
+Q2:
+```py
+# largest magnitude is `max` value of data_freq
+
+magnitude = max(data_freq)
+
+# dominant frequency occurs at the index of `magnitude`
+# in the case of multiple frequencies occurring at the same magnitude, this code takes the lowest
+
+dominant_index = np.where(data_freq == max(data_freq))[0][0]
+
+dominant_frequency = freq_values[dominant_index]
+```
+
+Q3:
+```py
+# note: since X has more columns than rows (unusual for a dataset) the code above would run much faster with `X @ X.T` than 
+# `X.T @ X`, as the former is a much smaller matrix (1000x1000)
+
+# note 2: I was confused why the code explicitly takes the real parts of the eigenvectors and eigenvalues as these are guaranteed
+# real for a symmetric matrix like `X.T @ X`, but on testing found that numpy always gives complex eigenvalues and eigenvectors,
+# even for strictly real eigendecompositions, and that the smallest principal components had minor complex parts,
+# likely due to round-off error. So it seems like that choice is actually well-justified.
+
+### CODE BEGINS
+
+# The principal components w are the eigenvectors of X'X ordered by decreasing eigenvalue; we take the first two:
+
+W = eigenvectors[:, :2] # take first two eigenvectors
+
+# project dataset onto eigenvectors
+
+X_d = X @ W
+
+# --- Plotting ---
+
+# Split dataset into George and Jackson
+
+george_rows = np.where(y==0)[0]
+jackson_rows = np.where(y==1)[0]
+
+george_data = X_d[george_rows] # pull out data for G and J
+jackson_data = X_d[jackson_rows]
+
+# scatterplot
+
+fig, ax = plt.subplots()
+ax.scatter(george_data[:,0], george_data[:,1], color="g", label="George") # plot data
+ax.scatter(jackson_data[:,0], jackson_data[:,1], color="orange", label="Jackson")
+ax.set_xlabel("First Principal Component") # set x label
+ax.set_ylabel("Second Principal Component") # set y label
+ax.set_title("Principal Components of Voice Dataset") # set title
+ax.legend()
+
+plt.show()
+```
+
+Q5:
+
+```py
+from scipy.stats import mode
+import scipy
+
+def find_nearest_neighbors(training_set, test_point):
+    """ 
+    Inputs:
+        training_set: N-D array of training points
+        test_point: 
+    Returns the indices of the k nearest neighbors to a test point. 
+    """
+    norms = np.zeros(len(training_set)) # array to store distances to each point
+    
+    for i in range(len(training_set)):
+        norms[i] = np.linalg.norm(test_point - training_set[i]) # calculate distance between points
+        
+    return np.argsort(norms)
+
+def classify_point(indices, training_class, k):
+    """
+    Given a set of indices ordered by distance to a test point and training set classifications, classifies the test point
+    """
+    neighbors = training_class[indices] # classifications of nearest neighbors
+    moderes = mode(neighbors[:k]) # scipy mode function returns a mode and its count, we take the first k members
+    return moderes.mode
+
+def validation_accuracy(training_set, training_class, test_set, test_class, k):
+    """
+    Returns the validation accuracy of a k-nearest-neighbors algorithm, as a percentage correct out of total points.
+    """
+    num_correct = 0
+    num_test_points = len(test_set)
+    for test_index in range(num_test_points):
+        
+        test_point = test_set[test_index] # get test point
+        class_actual = test_class[test_index] # classification of test point
+        
+        # perform k-nearest-neighbors classification
+        min_indices = find_nearest_neighbors(training_set, test_point)
+        class_predicted = classify_point(min_indices, training_class, k)
+        
+        if class_actual == class_predicted:
+            num_correct += 1
+    return num_correct / num_test_points * 100
+
+val_k1 = validation_accuracy(X_train, y_train, X_val, y_val, 1)
+val_k3 = validation_accuracy(X_train, y_train, X_val, y_val, 3)
+val_k13 = validation_accuracy(X_train, y_train, X_val, y_val, 13)
+```
